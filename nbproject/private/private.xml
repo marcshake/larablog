@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/home/marcel/www/larablog/database/seeds/DatabaseSeeder.php</file>
+            <file>file:/home/marcel/www/larablog/.env</file>
+            <file>file:/home/marcel/www/larablog/database/migrations/2019_04_28_084510_create_content_pages_table.php</file>
+            <file>file:/home/marcel/www/larablog/database/migrations/2019_04_28_084410_create_blog_posts_table.php</file>
+        </group>
+    </open-files>
 </project-private>
