@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\BlogPosts;
+
 class BlogpostsSeeder extends Seeder
 {
     /**
