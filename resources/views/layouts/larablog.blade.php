@@ -10,11 +10,11 @@
 </head>
 
 <body>
-    <nav class="navbar is-light" role="navigation" aria-label="main navigation">
+    <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
         <div class="container">
             <div class="navbar-brand">
                 <a class="navbar-item" href="{{ url('/') }}">
-                    <img src="https://www.trancefish.de/assets/tlog.svg.svg"
+                    <img src="https://www.trancefish.de/assets/tlogW.svg.svg"
                         alt="TLOG5 - Laravel based Blogging Solution" height="16">
                 </a>
 
