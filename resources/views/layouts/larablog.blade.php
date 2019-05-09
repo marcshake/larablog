@@ -35,7 +35,7 @@
                 @guest
                 <div class="navbar-item">
                     <div class="buttons">
-                        <a href="#login" class="button is-light">Einloggen</a>
+                        <a href="{{ url('login')}}" class="button is-light">Einloggen</a>
                     </div>
                 </div>
                 @endguest
