@@ -12,8 +12,8 @@
 <body>
     <div class="container">
         <div class="columns">
-            <div class="column is-2">
-                <aside class="menu">
+            <div class="column is-4">
+                <aside class="menu has-background-black-bis">
                     <p class="menu-label">Dashboard</p>
                     <ul class="menu-list">
                         <li>

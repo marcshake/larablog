@@ -1,11 +1,15 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\BlogPosts;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
+    public function list() {
+        $posts = BlogPosts::orderBy('id', 'DESC')->paginate(15);
+        return view('adminListBlogs',$posts);
+    }
     public function __construct()
     {
         $this->middleware('auth');
