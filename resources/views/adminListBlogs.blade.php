@@ -22,7 +22,7 @@
                 {{$item->title}}
                 <span class="tag is-light">entwurf</span>
             </td>
-            <td>$item->author</td>
+            <td>{{$item->authorName->name}}</td>
             <td>just, a, bunch, of, tags</td>
             <td>just, a, bunch, of, categories</td>
         </tr>

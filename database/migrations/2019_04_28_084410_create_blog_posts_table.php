@@ -17,6 +17,8 @@ class CreateBlogPostsTable extends Migration
             $table->bigIncrements('id');
             $table->string('title');
             $table->longText('contents');
+            $table->integer('author')->nullable(true);
+            $table->boolean('visible')->default(false);
             $table->timestamps();
         });
     }
