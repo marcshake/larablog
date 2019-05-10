@@ -12,8 +12,13 @@
     <div class="field">
         <label class="label">Inhalt</label>
         <div class="control">
-          <textarea class="textarea" placeholder="Textarea" id="contents">{{$contents->contents}}</textarea>
+            <textarea class="textarea" placeholder="Textarea" id="contents">{{$contents->contents}}</textarea>
         </div>
-      </div>
+    </div>
 </form>
+<script>CKEDITOR.replace('contents');</script>
+@endsection
+
+@section('script')
+<script src="https://cdn.ckeditor.com/4.11.4/standard/ckeditor.js"></script>
 @endsection
