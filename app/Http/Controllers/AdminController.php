@@ -6,9 +6,10 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
-    public function list() {
-        $posts = BlogPosts::orderBy('id', 'DESC')->paginate(15);
-        return view('adminListBlogs',$posts);
+    public function list()
+    {
+        $posts = BlogPosts::orderBy('id', 'DESC')->paginate(100);
+        return view('adminListBlogs', ['collection'=>$posts]);
     }
     public function __construct()
     {

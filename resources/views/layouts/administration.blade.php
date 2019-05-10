@@ -10,9 +10,41 @@
 </head>
 
 <body>
-    <div class="container">
+    <nav class="navbar has-shadow" role="navigation" aria-label="main navigation">
+        <div class="container">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="{{ url('/') }}">
+                    <img src="https://www.trancefish.de/assets/tlogW.svg.svg"
+                        alt="TLOG5 - Laravel based Blogging Solution" height="16">
+                </a>
+
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+            <div class="navnar-menu" id="navMenu">
+                <div class="navbar-start">
+                    <a href="{{ url('admin')}}" class="navbar-item">Admin-Start</a>
+                </div>
+            </div>
+
+            <div class="navbar-end">
+                @auth
+                <div class="navbar-item">
+                    <div class="buttons">
+                        <a href="{{ url('logout')}}" class="button is-light">Ausloggen</a>
+                    </div>
+                </div>
+                @endauth
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
         <div class="columns">
-            <div class="column is-4">
+            <div class="column is-3">
                 <aside class="menu has-background-black-bis">
                     <p class="menu-label">Dashboard</p>
                     <ul class="menu-list">
