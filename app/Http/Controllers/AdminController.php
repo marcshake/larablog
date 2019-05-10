@@ -7,11 +7,9 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
-    public function list()
-    {
-        $posts = BlogPosts::orderBy('id', 'DESC')->paginate(100);
-        return view('adminListBlogs', ['collection'=>$posts]);
-    }
+    /**
+     * Invited people only
+     */
     public function __construct()
     {
         $this->middleware('auth');
@@ -25,6 +23,17 @@ class AdminController extends Controller
     {
         return view('adminPanel');
     }
+    /**
+     * Get a list of blogentries
+     *
+     * @return void
+     */
+    public function list()
+    {
+        $posts = BlogPosts::overview();
+        return view('adminListBlogs', ['collection'=>$posts]);
+    }
+
 
     /**
      * Show the form for creating a new resource.

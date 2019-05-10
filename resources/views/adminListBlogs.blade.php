@@ -17,10 +17,14 @@
         @foreach ($collection as $item)
         <tr>
             <td>{{$loop->iteration}}</td>
-            <td>{{$item->created_at}}</td>
+            <td>{{$item->created_at->formatLocalized('%d.%m.%Y')}}</td>
             <td>
-                {{$item->title}}
+                <a href="{{url('adminEdit',$item->id)}}">
+                    {{$item->title}}
+                </a>
+                @if ($item->visible==0)
                 <span class="tag is-light">entwurf</span>
+                @endif
             </td>
             <td>{{$item->authorName->name}}</td>
             <td>just, a, bunch, of, tags</td>
