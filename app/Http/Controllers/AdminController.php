@@ -75,7 +75,8 @@ class AdminController extends Controller
      */
     public function edit($id)
     {
-        //
+        $contents = BlogPosts::findOrFail($id);
+        return view('adminEditor', ['contents' => $contents]);
     }
 
     /**

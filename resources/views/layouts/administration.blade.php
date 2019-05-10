@@ -57,10 +57,10 @@
                     </p>
                     <ul class="menu-list">
                         <li>
-                            <a href="{{url('adminBlogs')}}">Alle Beiträge</a>
+                            <a href="{{url('admin/blogs')}}">Alle Beiträge</a>
                         </li>
                         <li>
-                            <a href="{{url('adminNew')}}">Neuer Beitrag</a>
+                            <a href="{{url('admin/new')}}">Neuer Beitrag</a>
                         </li>
                     </ul>
 

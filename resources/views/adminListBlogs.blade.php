@@ -19,7 +19,7 @@
             <td>{{$loop->iteration}}</td>
             <td>{{$item->created_at->formatLocalized('%d.%m.%Y')}}</td>
             <td>
-                <a href="{{url('adminEdit',$item->id)}}">
+                <a href="{{url('admin/edit',$item->id)}}">
                     {{$item->title}}
                 </a>
                 @if ($item->visible==0)
