@@ -1,7 +1,7 @@
 @extends('layouts.administration')
 
 @section('content')
-<form action="{{ url('admin.save')}}" method="post">
+<form action="{{ url('admin/save')}}" method="post">
     <div class="field">
         <label class="label" for="title">Überschrift</label>
         <div class="control">
@@ -10,13 +10,34 @@
         </div>
     </div>
     <div class="field">
-        <label class="label">Inhalt</label>
+        <label for="contents" class="label">Inhalt</label>
         <div class="control">
             <textarea class="textarea" placeholder="Textarea" id="contents">{{$contents->contents}}</textarea>
         </div>
     </div>
+    <div class="field">
+        <label for="tags" class="label">Tags</label>
+        <div class="control">
+            <input class="input" type="text" name="tags" id="tags" value="{{$contents->tags}}">
+        </div>
+    </div>
+    <div class="field">
+        <label for="kategorie" class="label">Kategorien</label>
+        <div class="control">
+            <input class="input" type="text" name="kategorie" id="kategorie" value="{{$contents->kategorie}}">
+        </div>
+    </div>
+    <div class="buttons">
+        <input value="Speichern" class="button is-primary" type="submit">
+        <a href="{{url('admin/blogs')}}" class="is-light button">Verwerfen</a>
+        <a href="{{url('admin/status',$contents->id)}}" class="button is-dark">
+            {{$contents->visible ? 'Verstecken' : 'Veröffentlichen'}}
+        </a>
+    </div>
 </form>
-<script>CKEDITOR.replace('contents');</script>
+<script>
+    CKEDITOR.replace('contents');
+</script>
 @endsection
 
 @section('script')
