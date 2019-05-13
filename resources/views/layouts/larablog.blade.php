@@ -14,15 +14,10 @@
         <div class="container">
             <div class="navbar-brand">
                 <a class="navbar-item" href="{{ url('/') }}">
-                    <img src="https://www.trancefish.de/assets/tlogW.svg.svg"
-                        alt="TLOG5 - Laravel based Blogging Solution" height="16">
+                    <img src="https://www.trancefish.de/assets/tlog.svg.svg"
+                        alt="TLOG5 - Laravel based Blogging Solution" height="32">
                 </a>
 
-                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                </a>
             </div>
             <div class="navnar-menu" id="navMenu">
                 <div class="navbar-start">

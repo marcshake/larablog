@@ -128,11 +128,74 @@ body {
   color: $light-grey;
 }
 
+.tag {
+  border-radius: $global-radius;
+  font-size: 0.8em;
+  padding: 0.25em;
+  margin: 0.25em;
+}
+.is-dark {
+  background: $dark-grey;
+  color: $light-grey;
+}
+.is-light {
+  background: $light-grey;
+  color: $dark-grey;
+}
+
 .has-background-black-bis a {
-    background: $dark-grey;
-    color: $primary-color;
-  }
+  background: $dark-grey;
+  color: $primary-color;
+}
 
 .menu {
   padding: $padding;
+}
+
+.navbar {
+  background: $light-grey;
+}
+.navbar .navbar-item {
+  padding: $padding;
+}
+.navbar-brand {
+  float: left;
+}
+.navbar-end {
+  float: right;
+}
+.navbar-menu {
+  float: left;
+  display: inline;
+}
+.navbar-start {
+  float: left;
+}
+
+.card {
+  border: 1px solid $light-grey;
+  padding: $padding;
+  border-radius: $global-radius;
+}
+.card-header {
+  border-bottom: 1px solid $light-grey;
+  text-align: center;
+  font-weight: bold;
+}
+.card-body {
+  font-size: 0.9em;
+}
+.control .input {
+  display: block;
+  width: 100%;
+}
+
+.has-shadow {
+  -webkit-box-shadow: 0px 2px 4px 0px rgba(87, 87, 87, 1);
+  -moz-box-shadow: 0px 2px 4px 0px rgba(87, 87, 87, 1);
+  box-shadow: 0px 2px 4px 0px rgba(87, 87, 87, 1);
+}
+
+.mt-4 {
+  margin-top: 1em;
 }
