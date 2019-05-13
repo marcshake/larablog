@@ -849,7 +849,102 @@ form {
   margin-bottom: 2.5rem;
 }
 
+.button.button-secondary,
+button.button-secondary {
+  color: #fff;
+  background-color: #333;
+  border-color: #333;
+}
+
+input[type=submit].button-secondary,
+input[type=reset].button-secondary,
+input[type=button].button-secondary {
+  color: #fff;
+  background-color: #333;
+  border-color: #333;
+}
+
+.button.button-secondary:hover,
+button.button-secondary:hover {
+  color: #fff;
+  background-color: #e1e1e1;
+  border-color: #e1e1e1;
+}
+
+input[type=submit].button-secondary:hover,
+input[type=reset].button-secondary:hover,
+input[type=button].button-secondary:hover {
+  color: #fff;
+  background-color: #e1e1e1;
+  border-color: #e1e1e1;
+}
+
+.button.button-secondary:focus,
+button.button-secondary:focus {
+  color: #fff;
+  background-color: #e1e1e1;
+  border-color: #e1e1e1;
+}
+
+input[type=submit].button-secondary:focus,
+input[type=reset].button-secondary:focus,
+input[type=button].button-secondary:focus {
+  color: #fff;
+  background-color: #e1e1e1;
+  border-color: #e1e1e1;
+}
+
+input[type=email],
+input[type=number],
+input[type=search],
+input[type=text],
+input[type=tel],
+input[type=url],
+input[type=password] {
+  height: 38px;
+  padding: 6px 10px;
+  background-color: #fff;
+  border: 1px solid #d1d1d1;
+  border-radius: 4px;
+  box-shadow: none;
+  box-sizing: border-box;
+}
+
+.fluidMedia {
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.fluidMedia iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+img {
+  max-width: 100%;
+}
+
 body {
   font-family: "Raleway", Arial, Helvetica, sans-serif;
+}
+
+.has-background-black-bis {
+  background: #333;
+  color: #e1e1e1;
+}
+
+.has-background-black-bis a {
+  background: #333;
+  color: #33c3f0;
+}
+
+.menu {
+  padding: 0 4px;
 }
 

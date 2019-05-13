@@ -28,9 +28,9 @@
         </div>
     </div>
     <div class="buttons">
-        <input value="Speichern" class="button is-primary" type="submit">
-        <a href="{{url('admin/blogs')}}" class="is-light button">Verwerfen</a>
-        <a href="{{url('admin/status',$contents->id)}}" class="button is-dark">
+        <input value="Speichern" class="button button-primary" type="submit">
+        <a href="{{url('admin/blogs')}}" class="button">Verwerfen</a>
+        <a href="{{url('admin/status',$contents->id)}}" class="button button-secondary">
             {{$contents->visible ? 'Verstecken' : 'Veröffentlichen'}}
         </a>
     </div>

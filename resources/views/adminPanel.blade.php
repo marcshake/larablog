@@ -47,10 +47,10 @@
                     </div>
                     <div class="field is-grouped">
                         <div class="control">
-                            <button class="button is-link">Submit</button>
+                            <button class="button button-primary">Submit</button>
                         </div>
                         <div class="control">
-                            <button class="button is-text">Cancel</button>
+                            <button class="button">Cancel</button>
                         </div>
                     </div>
                 </form>
