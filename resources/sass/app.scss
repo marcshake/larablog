@@ -1,19 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 
-@import '~bulma/bulma';
-
-.mt-1 {
-    margin-top: .25rem;
-}
-.mt-2 {
-    margin-top: .5rem;
-}
-.mt-3 {
-    margin-top: .75rem;
-}
-.mt-4 {
-    margin-top: 1rem;
-}
+@import '~skeleton-scss/scss/skeleton.scss';
 
 body {
     font-family:'Raleway', Arial, Helvetica, sans-serif;

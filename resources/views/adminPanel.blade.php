@@ -1,13 +1,13 @@
 @extends('layouts.administration')
 @section('content')
-<div class="columns">
-    <div class="column">
+<div class="row">
+    <div class="columns six">
         <div class="card">
             <div class="card-header">
                 Übersicht:
             </div>
             <div class="card-content">
-                <div class="columns">
+                <div class="row">
                     <div class="column">
                         xyz Beiträge
                     </div>
@@ -16,7 +16,7 @@
                     </div>
 
                 </div>
-                <div class="columns">
+                <div class="row">
                     <div class="column">
                         xyz Kommentare
                         <br>
@@ -26,7 +26,7 @@
             </div>
         </div>
     </div>
-    <div class="column">
+    <div class="columns six">
         <div class="card">
             <div class="card-header">
                 Neuer Beitrag

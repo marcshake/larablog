@@ -44,8 +44,8 @@
     </nav>
 
     <div class="container mt-4">
-        <div class="columns">
-            <div class="column is-3">
+        <div class="row">
+            <div class="columns three">
                 <aside class="menu has-background-black-bis">
                     <p class="menu-label">Dashboard</p>
                     <ul class="menu-list">
@@ -67,7 +67,7 @@
 
                 </aside>
             </div>
-            <div class="column">
+            <div class="columns nine">
 
                 @yield('content')
             </div>
