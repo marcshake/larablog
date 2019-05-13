@@ -1023,3 +1023,12 @@ body {
   background-color: #e1e1e1;
 }
 
+.alert-success {
+  background: green;
+  color: white;
+}
+
+.alert {
+  padding: 4px;
+}
+

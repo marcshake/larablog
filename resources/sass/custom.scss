@@ -203,3 +203,10 @@ body {
 .is-striped tr:nth-child(even) {
   background-color: $light-grey;
 }
+.alert-success {
+    background: green;
+    color:white;
+}
+.alert {
+    padding:4px;
+}
