@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Raleway);/*
+@import url(https://fonts.googleapis.com/css?family=Oxygen);/*
 * Skeleton V2.0.4
 * Copyright 2014, Dave Gamache
 * www.getskeleton.com
@@ -931,7 +931,7 @@ img {
 }
 
 body {
-  font-family: "Raleway", Arial, Helvetica, sans-serif;
+  font-family: "Oxygen", Arial, Helvetica, sans-serif;
 }
 
 .has-background-black-bis {
@@ -1017,5 +1017,9 @@ body {
 
 .mt-4 {
   margin-top: 1em;
+}
+
+.is-striped tr:nth-child(even) {
+  background-color: #e1e1e1;
 }
 

@@ -20,3 +20,5 @@ Route::get('logout', 'Auth\LoginController@logout');
 Route::get('admin', 'AdminController@index');
 Route::get('admin/blogs','AdminController@list');
 Route::get('admin/edit/{id}','AdminController@edit');
+
+Route::post('admin/update/{id}', 'AdminController@update');

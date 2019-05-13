@@ -1,7 +1,14 @@
 @extends('layouts.administration')
 
 @section('content')
-<form action="{{ url('admin/save')}}" method="post">
+@if (session('status'))
+    <div class="alert alert-success">
+        {{ session('status') }}
+    </div>
+@endif
+
+<form action="{{ url('admin/update',$contents->id)}}" method="post">
+    @csrf
     <div class="field">
         <label class="label" for="title">Überschrift</label>
         <div class="control">
@@ -12,7 +19,7 @@
     <div class="field">
         <label for="contents" class="label">Inhalt</label>
         <div class="control">
-            <textarea class="textarea" placeholder="Textarea" id="contents">{{$contents->contents}}</textarea>
+            <textarea name="contents" class="textarea" placeholder="Textarea" id="contents">{{$contents->contents}}</textarea>
         </div>
     </div>
     <div class="field">

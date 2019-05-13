@@ -34,6 +34,13 @@
                     </div>
                 </div>
                 @endguest
+                @auth
+                <div class="navbar-item">
+                    <div class="buttons">
+                        <a href="{{ url('logout')}}" class="button is-light">Ausloggen</a>
+                    </div>
+                </div>
+                @endauth
 
             </div>
         </div>

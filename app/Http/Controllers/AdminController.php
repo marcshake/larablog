@@ -88,7 +88,12 @@ class AdminController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        #dd($request);
+        $contents = BlogPosts::findOrFail($id);
+        $contents->title = $request->title;
+        $contents->contents = $request->contents;
+        $contents->save();
+        return redirect('admin/edit/'.$id)->with('status', 'Änderungen gespeichert!');
     }
 
     /**
