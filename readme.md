@@ -12,3 +12,27 @@ Whenever this program is *stable*, this text will be modified. Just take this ti
 ## Licence
 Nope. Not now. The usual licenses of the dependencies apply but these codes are totally not worth a licence at the moment.
 
+## Project Status
+### Frontend
+* We have a simple page listing up our Blogposts. 
+* We can log in ``demo@demo.dem`` with password ``test`` 
+
+### Backend
+We can edit posts. 
+
+## Installation
+
+**Warning: When installing this software, the Database will be reset and reseeded as long as this is not a stable branch**
+
+* Clone the repository
+* run ``composer install`` which will download the necessary dependencies and run some user scripts
+* Edit your ``.env``-File (database stuff mainly)
+* run ``php artisan migrate:fresh --seed`` to setup Database and populate it with demodata
+* run ``npm run dev`` to create the assets
+* run ``php artisan serve`` to start your local development server
+
+There will be a real installation-routine, when the software is ready.
+
+## Closing words
+
+Please be always aware that this program is not for using in production environments. I have put that online to improve my laravel-skills and let you be part of it. 
