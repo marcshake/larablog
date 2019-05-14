@@ -1,4 +1,7 @@
 @extends('layouts.administration')
+@section('title')
+Eintragsübersicht
+@endsection
 
 @section('content')
 <table class="table is-striped is-hoverable">

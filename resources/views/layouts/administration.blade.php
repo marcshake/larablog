@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="{{asset('css/admin.css')}}">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     @yield('script')
-    <title>Document</title>
+    <title>
+        @yield('title')
+    </title>
 </head>
 
 <body>

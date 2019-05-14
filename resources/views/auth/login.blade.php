@@ -1,4 +1,7 @@
 @extends('layouts.larablog')
+@section('title')
+Einloggen
+@endsection
 
 @section('maincontents')
 <div class="container"><div class="content">

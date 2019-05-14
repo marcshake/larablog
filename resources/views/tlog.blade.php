@@ -1,5 +1,9 @@
 @extends('layouts.larablog')
 
+@section('title')
+Larablog - Testseite
+@endsection
+
 @section('maincontents')
 
 <div class="container">

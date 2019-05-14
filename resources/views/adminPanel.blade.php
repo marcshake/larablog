@@ -1,4 +1,8 @@
 @extends('layouts.administration')
+@section('title')
+Administrationspanel
+@endsection
+
 @section('content')
 <div class="row">
     <div class="columns six">

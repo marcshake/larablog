@@ -1,5 +1,9 @@
 @extends('layouts.administration')
 
+@section('title')
+    {{$contents->title}} bearbeiten
+@endsection
+
 @section('content')
 @if (session('status'))
     <div class="alert alert-success">

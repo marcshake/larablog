@@ -2,6 +2,9 @@
 
 @section('content')
 
+@section('title')
+  Neuen Eintrag anlegen
+@endsection
 
 <form action="{{ url('admin/save')}}" method="post">
     @csrf
