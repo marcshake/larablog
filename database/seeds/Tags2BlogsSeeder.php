@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\Tags2Blogs;
+
 class Tags2BlogsSeeder extends Seeder
 {
     /**
