@@ -11,7 +11,7 @@
     <div class="field">
         <label class="label" for="title">Überschrift</label>
         <div class="control">
-            <input class="input" type="text" placeholder="Überschrift" value="" name="title"
+            <input class="input" type="text" placeholder="Überschrift" value="" name="title" autocomplete="false"
                 id="title">
         </div>
     </div>

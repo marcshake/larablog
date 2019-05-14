@@ -1,25 +1,14 @@
 <?php
-
-use Illuminate\Database\Seeder;
+  use Illuminate\Database\Seeder;
 use App\BlogPosts;
 
 class BlogpostsSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
     public function run()
     {
-        BlogPosts::create(['author'=>1,'title'=>'Some other Text','contents'=>'<p>The Problem on writing dummy-content is, that you have to write stuff down, that does not even make sense. So I write a little story about this boy:</p>
-        <p>Once upon a time, there was a coder who strongly believed in <b>html</b> and <b>PHP</b>. He did not care about the fact that other people <i>believed</i>
-        HTML is weird and php is unsecure. He did the best to code stable stuff.</p>
-        <p>Then, there were the frameworks. Code that almost writes itself.</p>']);
-        BlogPosts::create(['author'=>1,'title'=>'Some other Text','contents'=>'<p>The Problem on writing dummy-content is, that you have to write stuff down, that does not even make sense. So I write a little story about this boy:</p>
-        <p>Once upon a time, there was a coder who strongly believed in <b>html</b> and <b>PHP</b>. He did not care about the fact that other people <i>believed</i>
-        HTML is weird and php is unsecure. He did the best to code stable stuff.</p>
-        <p>Then, there were the frameworks. Code that almost writes itself.</p>','visible'=>1]);
+        BlogPosts::create(['author'=>1,'title'=>'Some other Text','contents'=>'<p>The Problem on writing dummy-content is, that you have to write stuff down, that does not even make sense. So I write a little story about this boy:</p>         <p>Once upon a time, there was a coder who strongly believed in <b>html</b> and <b>PHP</b>. He did not care about the fact that other people <i>believed</i>         HTML is weird and php is unsecure. He did the best to code stable stuff.</p>         <p>Then, there were the frameworks. Code that almost writes itself.</p>']);
+        BlogPosts::create(['author'=>1,'title'=>'Some other Text','contents'=>'<p>The Problem on writing dummy-content is, that you have to write stuff down, that does not even make sense. So I write a little story about this boy:</p>         <p>Once upon a time, there was a coder who strongly believed in <b>html</b> and <b>PHP</b>. He did not care about the fact that other people <i>believed</i>         HTML is weird and php is unsecure. He did the best to code stable stuff.</p>         <p>Then, there were the frameworks. Code that almost writes itself.</p>','visible'=>1]);
         BlogPosts::create(['author'=>1,'title'=>'Welcome','contents'=>'<p>Welcome to Larablog. This code was written by me to learn some Laravel. There should be a Tutorial on how I made this, online at <a href="http://trancefish.de/">Trancefish.de</a> somewhere.</p><p>You can login to the backend and remove this posting</p>']);
+        BlogPosts::create(['author'=>1,'title'=>'Lipsum','contents'=>'<p>Macaroon chupa chups I love brownie tootsie roll. Oat cake apple pie oat cake chupa chups lemon drops pastry pudding jelly beans cheesecake. Cotton candy oat cake I love tiramisu dessert halvah cookie. Fruitcake sweet roll jelly-o. Brownie cheesecake cookie liquorice macaroon marzipan croissant I love. Carrot cake pudding halvah muffin I love lollipop pastry croissant fruitcake. </p><p>         Cake lollipop gingerbread I love. Toffee I love biscuit cookie carrot cake. Topping muffin pie bear claw. Danish croissant sesame snaps I love cupcake cake chocolate soufflé brownie. Jelly beans biscuit chocolate chocolate powder I love marzipan tiramisu dragée. Sweet roll I love gummies brownie carrot cake. Gingerbread gummies fruitcake. Marzipan I love topping.         </p><p>         Liquorice candy canes sesame snaps topping jelly beans oat cake halvah brownie. Tiramisu jujubes ice cream chupa chups candy tootsie roll. Sesame snaps gummies croissant gummi bears oat cake soufflé sweet roll sweet. Icing liquorice cheesecake macaroon. Soufflé macaroon apple pie apple pie apple pie sesame snaps. Marzipan soufflé bonbon topping I love cotton candy I love marzipan dragée. Tootsie roll bonbon chupa chups toffee cookie jelly-o. Dessert I love dragée tart cake gingerbread icing. Jelly gummies muffin chupa chups jujubes. Muffin cupcake pie.         </p><p>         Carrot cake topping macaroon chupa chups sugar plum jujubes gummi bears. Apple pie cookie cake chocolate cake halvah fruitcake liquorice. Chocolate cake pudding tootsie roll sweet roll carrot cake chocolate cake I love donut gummi bears. Gummi bears pie chocolate cake jelly beans croissant jujubes cheesecake lollipop wafer. Sugar plum tart candy danish. Biscuit pastry topping. Toffee soufflé pudding muffin. Gummi bears powder pastry jelly beans brownie. Lollipop muffin wafer wafer fruitcake brownie bear claw biscuit I love.         </p><p>         Chocolate pastry chocolate cake chupa chups cake tootsie roll marzipan. Donut carrot cake chocolate cake. Pie tart I love halvah. Sesame snaps cake chocolate cake I love. Tiramisu candy canes marzipan gingerbread dragée I love. Jelly beans sweet roll jujubes cotton candy biscuit gingerbread bonbon sweet roll toffee. Candy marzipan I love sweet cupcake cheesecake wafer chocolate bar.</p>']);
     }
 }

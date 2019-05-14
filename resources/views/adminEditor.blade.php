@@ -11,7 +11,7 @@
     <div class="field">
         <label class="label" for="title">Überschrift</label>
         <div class="control">
-            <input class="input" type="text" placeholder="Überschrift" value="{{$contents->title}}" name="title"
+            <input autocomplete="false" class="input" type="text" placeholder="Überschrift" value="{{$contents->title}}" name="title"
                 id="title">
         </div>
     </div>
