@@ -42,6 +42,6 @@
 @endsection
 
 @section('script')
-<script src="{{ asset('js/public/ckeditor.js') }}"></script>
+<script src="{{ asset('js/ckeditor/ckeditor.js') }}"></script>
 
 @endsection
