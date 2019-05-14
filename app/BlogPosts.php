@@ -6,6 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class BlogPosts extends Model
 {
+    /**
+     * Get the Authors name
+     *
+     * @return void
+     */
     public function authorName()
     {
         return $this->hasOne('App\User', 'id', 'author');
