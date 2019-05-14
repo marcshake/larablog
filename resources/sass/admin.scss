@@ -12,6 +12,7 @@ $bp-larger-than-desktophd: "min-width: 1200px" !default;
 
 // Colors
 $light-grey: #e1e1e1 !default;
+$white: #e8e8e8 !default;
 $dark-grey: #333 !default;
 $primary-color: #33c3f0 !default;
 $secondary-color: lighten($dark-grey, 13.5%) !default;
@@ -205,6 +206,11 @@ body {
 .is-striped tr:nth-child(even) {
   background-color: $light-grey;
 }
+
+.is-striped tr:hover {
+  background-color: $white;
+}
+
 .alert-success {
   background: green;
   color: white;
@@ -214,5 +220,56 @@ body {
 }
 
 .container {
-    max-width: 1280px;
+  max-width: 1280px;
+}
+
+.pagination {
+  list-style: none;
+}
+.page-item {
+  float: left;
+}
+.page-item a,
+.page-item span {
+  border: 1px solid $border-color;
+  padding: 1em;
+  margin: 0;
+}
+.table {
+  @extend .u-full-width;
+}
+.table td {
+    padding:1em 0;
+}
+
+ul.menu-list {
+  padding: 0;
+  list-style: none;
+  margin: 0;
+}
+.menu-label {
+  margin: 0;
+  padding-top: 1em;
+  border-bottom: 1px solid $light-grey;
+}
+.menu-list a {
+  display: block;
+  padding: 0.25em 0;
+  text-decoration: none;
+}
+.menu-list a:hover {
+  background-color: $light-grey;
+  color: $dark-grey;
+}
+.menu-list a.active {
+  background-color: $light-grey;
+  color: $dark-grey;
+}
+td .subaction {
+    display:none;
+    position: absolute;
+    font-size:.8em;
+}
+td:hover .subaction {
+    display: block;
 }

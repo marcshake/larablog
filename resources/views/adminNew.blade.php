@@ -5,11 +5,6 @@
 @section('title')
   Neuen Eintrag anlegen
 @endsection
-@if (session('warning'))
-    <div class="alert alert-fail">
-        {{ session('warning') }}
-    </div>
-@endif
 
 <form action="{{ url('admin/save')}}" method="post">
     @csrf

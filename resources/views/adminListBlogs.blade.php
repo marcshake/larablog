@@ -20,14 +20,20 @@ Eintragsübersicht
         @foreach ($collection as $item)
         <tr>
             <td>{{$loop->iteration}}</td>
-            <td>{{$item->created_at->formatLocalized('%d.%m.%Y')}}</td>
+            <td>{{$item->created_at->formatLocalized('%d.%m.%Y')}}
+                @if ($item->visible==0)
+                <span class="tag is-light">entwurf</span>
+                @endif
+
+            </td>
             <td>
                 <a href="{{url('admin/edit',$item->id)}}">
                     {{$item->title}}
                 </a>
-                @if ($item->visible==0)
-                <span class="tag is-light">entwurf</span>
-                @endif
+                <span class="subaction">
+                    <a href="{{url('admin/delete',$item->id)}}">Löschen</a>
+                    <a href="#">Vorschau</a>
+                </span>
             </td>
             <td>{{$item->authorName->name}}</td>
             <td>just, a, bunch, of, tags</td>
@@ -36,5 +42,6 @@ Eintragsübersicht
         @endforeach
     </tbody>
 </table>
+{{$collection->links()}}
 
 @endsection

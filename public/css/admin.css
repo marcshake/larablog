@@ -269,7 +269,8 @@ hr {
   border-top: 1px solid #e1e1e1;
 }
 
-.u-full-width {
+.u-full-width,
+.table {
   width: 100%;
   box-sizing: border-box;
 }
@@ -1023,6 +1024,10 @@ body {
   background-color: #e1e1e1;
 }
 
+.is-striped tr:hover {
+  background-color: #e8e8e8;
+}
+
 .alert-success {
   background: green;
   color: white;
@@ -1034,5 +1039,62 @@ body {
 
 .container {
   max-width: 1280px;
+}
+
+.pagination {
+  list-style: none;
+}
+
+.page-item {
+  float: left;
+}
+
+.page-item a,
+.page-item span {
+  border: 1px solid #bbb;
+  padding: 1em;
+  margin: 0;
+}
+
+.table td {
+  padding: 1em 0;
+}
+
+ul.menu-list {
+  padding: 0;
+  list-style: none;
+  margin: 0;
+}
+
+.menu-label {
+  margin: 0;
+  padding-top: 1em;
+  border-bottom: 1px solid #e1e1e1;
+}
+
+.menu-list a {
+  display: block;
+  padding: 0.25em 0;
+  text-decoration: none;
+}
+
+.menu-list a:hover {
+  background-color: #e1e1e1;
+  color: #333;
+}
+
+.menu-list a.active {
+  background-color: #e1e1e1;
+  color: #333;
+}
+
+td .subaction {
+  display: none;
+  position: absolute;
+  font-size: 0.8em;
+}
+
+td:hover .subaction {
+  display: block;
 }
 

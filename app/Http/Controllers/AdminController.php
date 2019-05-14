@@ -21,7 +21,7 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('adminPanel');
+        return view('adminPanel', ['beitraege' => BlogPosts::count()]);
     }
     /**
      * Get a list of blogentries
@@ -53,13 +53,15 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        if($request->title==null) {
-            return redirect('admin/new')->with('warning','Der Titel darf nicht leer sein');
+        if ($request->title==null) {
+            return redirect('admin/new')->with('warning', 'Der Titel darf nicht leer sein');
         }
-        if($request->contents==null) {
-            return redirect('admin/new')->with('warning','Der Inhalt darf nicht leer sein');
+        if ($request->contents==null) {
+            return redirect('admin/new')->with('warning', 'Der Inhalt darf nicht leer sein');
         }
-
+        if (isset($request->lb) && $request->lb == 1) {
+            $request->contents = nl2br($request->contents);
+        }
         $contents = new BlogPosts;
         $contents->title = $request->title;
         $contents->contents = $request->contents;
@@ -117,6 +119,8 @@ class AdminController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $entry = BlogPosts::findOrFail($id);
+        $entry->delete();
+        return redirect('admin/blogs')->with('status', 'Eintrag gelöscht');
     }
 }

@@ -13,7 +13,7 @@ Administrationspanel
             <div class="card-content">
                 <div class="row">
                     <div class="column">
-                        xyz Beiträge
+                        {{$beitraege}} Beiträge
                     </div>
                     <div class="column">
                         xyz Seiten
@@ -36,7 +36,9 @@ Administrationspanel
                 Neuer Beitrag
             </div>
             <div class="card-content">
-                <form action="#">
+                <form action="{{ url('admin/save')}}" method="post">
+                    <input type="hidden" name="lb" value="1">
+                    @csrf
                     <div class="field">
                         <label class="label">Titel</label>
                         <div class="control">
@@ -46,12 +48,12 @@ Administrationspanel
                     <div class="field">
                         <label class="label">Beitrag</label>
                         <div class="control">
-                            <textarea class="textarea" placeholder="Beitrag" name="content"></textarea>
+                            <textarea class="textarea u-full-width" placeholder="Beitrag" name="contents"></textarea>
                         </div>
                     </div>
                     <div class="field is-grouped">
                         <div class="control">
-                            <button class="button button-primary">Submit</button>
+                            <button class="button button-primary">Speichern</button>
                         </div>
                         <div class="control">
                             <button class="button">Cancel</button>

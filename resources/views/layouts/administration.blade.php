@@ -18,8 +18,8 @@
         <div class="container">
             <div class="navbar-brand">
                 <a class="navbar-item" href="{{ url('/') }}">
-                    <img src="https://www.trancefish.de/assets/tlogW.svg.svg"
-                        alt="TLOG5 - Laravel based Blogging Solution" height="16">
+                    <img src="https://www.trancefish.de/assets/tlog.svg.svg"
+                        alt="TLOG5 - Laravel based Blogging Solution" height="32">
                 </a>
 
                 <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
@@ -53,7 +53,9 @@
                     <p class="menu-label">Dashboard</p>
                     <ul class="menu-list">
                         <li>
-                            <a href="{{url('admin')}}">Startseite</a>
+                            <a href="{{url('admin')}}" {!!Request::is('admin')?'class="active"':''!!}>
+                                Startseite
+                            </a>
                         </li>
                     </ul>
                     <p class="menu-label">
@@ -61,16 +63,34 @@
                     </p>
                     <ul class="menu-list">
                         <li>
-                            <a href="{{url('admin/blogs')}}">Alle Beiträge</a>
+                            <a href="{{url('admin/blogs')}}" {!!Request::is('admin/blogs')?'class="active"':''!!}>Alle Beiträge</a>
                         </li>
                         <li>
-                            <a href="{{url('admin/new')}}">Neuer Beitrag</a>
+                            <a href="{{url('admin/new')}}" {!!Request::is('admin/new')?'class="active"':''!!}>Neuer Beitrag</a>
+                        </li>
+                    </ul>
+                    <p class="menu-label">
+                        Bilder / Videos
+                    </p>
+                    <ul class="menu-list">
+                        <li>
+                            <a href="{{url('admin/filer')}}" {!!Request::is('admin/filer')?'class="active"':''!!}>Bilder</a>
                         </li>
                     </ul>
 
                 </aside>
             </div>
             <div class="columns nine">
+                    @if (session('warning'))
+                    <div class="alert alert-fail">
+                        {{ session('warning') }}
+                    </div>
+                @endif
+                @if (session('status'))
+                <div class="alert alert-success">
+                    {{ session('status') }}
+                </div>
+            @endif
 
                 @yield('content')
             </div>
