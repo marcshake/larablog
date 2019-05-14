@@ -53,7 +53,20 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if($request->title==null) {
+            return redirect('admin/new')->with('warning','Der Titel darf nicht leer sein');
+        }
+        if($request->contents==null) {
+            return redirect('admin/new')->with('warning','Der Inhalt darf nicht leer sein');
+        }
+
+        $contents = new BlogPosts;
+        $contents->title = $request->title;
+        $contents->contents = $request->contents;
+        $contents->author = \Auth::user()->id;
+        $contents->save();
+        $id = $contents->id;
+        return redirect('admin/edit/'.$id)->with('status', 'Änderungen gespeichert!');
     }
 
     /**

@@ -12,14 +12,15 @@
 */
 
 
-Auth::routes();
+Auth::routes(['register'=>false]);
 
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('blog', 'BlogController@index');
 Route::get('logout', 'Auth\LoginController@logout');
 Route::get('admin', 'AdminController@index');
-Route::get('admin/blogs','AdminController@list');
-Route::get('admin/edit/{id}','AdminController@edit');
+Route::get('admin/blogs', 'AdminController@list');
+Route::get('admin/edit/{id}', 'AdminController@edit');
 Route::get('admin/new', 'AdminController@create');
 
 Route::post('admin/update/{id}', 'AdminController@update');
+Route::post('admin/save', 'AdminController@store');
