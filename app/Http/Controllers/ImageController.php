@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Media;
+use Auth;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Intervention\Image\ImageManager;
 
 class ImageController extends Controller
 {
@@ -44,8 +47,23 @@ class ImageController extends Controller
      */
     public function store(Request $request)
     {
-        $file = $request->mediaFile->store('public');
+            $validated = $request->validate(['file' => 'image|required']);
+            $file = $request->file;
+            $originalName = $file->getClientOriginalName();
+            $internalFilename = $file->getFileName();
+            $iM = new ImageManager;
 
+            $file->storeAs('public/uploads', $originalName);
+            $file->storeAs('public/thumbnail', $originalName);
+            $path = storage_path('thumbnail/'.$originalName); // HÄ?! Geht voll nicht.
+            dd($path);
+            $iM->make($path)->fit(400)->save($path);
+            $media = new Media;
+            $media->filename = $originalName;
+            $media->internalFilename = $internalFilename;
+            $media->userID = Auth::user()->id;
+            $media->thumbnail = $thumbnail;
+            $media->save();
     }
 
     /**

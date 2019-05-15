@@ -36842,27 +36842,10 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
  */
 
 
-$(function () {
-  var bar = $('.bar');
-  var percent = $('.percent');
-  var status = $('#status');
-  $('#uploader').ajaxForm({
-    beforeSend: function beforeSend() {
-      status.empty();
-      $('.progress').removeClass('hidden');
-      var percentVal = '0%';
-      bar.width(percentVal);
-      percent.html(percentVal);
-    },
-    uploadProgress: function uploadProgress(event, position, total, percentComplete) {
-      var percentVal = percentComplete + '%';
-      bar.width(percentVal);
-      percent.html(percentVal);
-    },
-    complete: function complete(xhr) {
-      status.html(xhr.responseText);
-    }
-  });
+$.ajaxSetup({
+  headers: {
+    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+  }
 });
 
 /***/ }),
