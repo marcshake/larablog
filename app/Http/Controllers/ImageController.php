@@ -26,7 +26,8 @@ class ImageController extends Controller
      */
     public function index()
     {
-        return view('adminImageBrowser', ['collection'=>Media::all()]);
+        $collection = Media::orderBy('id','desc')->paginate(100);
+        return view('adminImageBrowser', ['collection'=>$collection]);
     }
 
     /**
@@ -55,7 +56,7 @@ class ImageController extends Controller
 
         $file->storeAs('public/uploads', $originalName);
         $file->storeAs('public/thumbnail', $originalName);
-        $path = public_path('storage/thumbnail/'.$originalName); // HÄ?! Geht voll nicht.
+        $path = public_path('storage/thumbnail/'.$originalName);
         $iM->make($path)->fit(400)->save($path);
         $media = new Media;
         $media->filename = $originalName;

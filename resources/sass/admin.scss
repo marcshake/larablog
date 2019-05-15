@@ -277,3 +277,11 @@ td:hover .subaction {
 .hidden {
     display:none;
 }
+.thumb {
+    border:transparent 3px solid;
+    max-width: 100px;
+}
+.thumb:hover {
+    border:$secondary-color 3px solid;
+
+}

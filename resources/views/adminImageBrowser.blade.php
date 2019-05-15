@@ -23,25 +23,20 @@ Bilder / Mediendateien
         </form>
     </div>
 </div>
-
-@forelse ($collection->chunk(6) as $chunk)
 <div class="row">
-    @foreach ($chunk as $item)
+@forelse ($collection as $item)
 
-    <div class="columns two">
-        <img src="{{asset('storage/thumbnail/'.$item->filename)}}" class="u-full-width" alt="Upload by User">
+    <div class="u-pull-left">
+        <img class="thumb" src="{{asset('storage/thumbnail/'.$item->filename)}}" alt="Upload by User">
 
     </div>
 
 
-    @endforeach
-</div>
+
+
 @empty
-<div class="row">
-    <div class="twelve columns">
         Leider sind noch keine Mediendateien hinterlegt
-    </div>
-</div>
-
+{{$collection->links()}}
 @endforelse
+</div>
 @endsection

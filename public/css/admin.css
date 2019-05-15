@@ -1102,3 +1102,12 @@ td:hover .subaction {
   display: none;
 }
 
+.thumb {
+  border: transparent 3px solid;
+  max-width: 100px;
+}
+
+.thumb:hover {
+  border: #555555 3px solid;
+}
+
