@@ -47,23 +47,25 @@ class ImageController extends Controller
      */
     public function store(Request $request)
     {
-            $validated = $request->validate(['file' => 'image|required']);
-            $file = $request->file;
-            $originalName = $file->getClientOriginalName();
-            $internalFilename = $file->getFileName();
-            $iM = new ImageManager;
+        $validated = $request->validate(['file' => 'image|required']);
+        $file = $request->file;
+        $originalName = $file->getClientOriginalName();
+        $internalFilename = $file->getFileName();
+        $iM = new ImageManager;
 
-            $file->storeAs('public/uploads', $originalName);
-            $file->storeAs('public/thumbnail', $originalName);
-            $path = storage_path('thumbnail/'.$originalName); // HÄ?! Geht voll nicht.
-            dd($path);
-            $iM->make($path)->fit(400)->save($path);
-            $media = new Media;
-            $media->filename = $originalName;
-            $media->internalFilename = $internalFilename;
-            $media->userID = Auth::user()->id;
-            $media->thumbnail = $thumbnail;
-            $media->save();
+        $file->storeAs('public/uploads', $originalName);
+        $file->storeAs('public/thumbnail', $originalName);
+        $path = public_path('storage/thumbnail/'.$originalName); // HÄ?! Geht voll nicht.
+        $iM->make($path)->fit(400)->save($path);
+        $media = new Media;
+        $media->filename = $originalName;
+        $media->internalFilename = $internalFilename;
+        $media->userID = Auth::user()->id;
+        $media->thumbnail = $originalName;
+
+        $media->save();
+
+        return redirect('admin/filer')->with('status', 'Bild hochgeladen');
     }
 
     /**

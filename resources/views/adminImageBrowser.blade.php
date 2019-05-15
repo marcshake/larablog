@@ -29,7 +29,8 @@ Bilder / Mediendateien
     @foreach ($chunk as $item)
 
     <div class="columns two">
-        {{$item->filename}}
+        <img src="{{asset('storage/thumbnail/'.$item->filename)}}" class="u-full-width" alt="Upload by User">
+
     </div>
 
 
