@@ -29,3 +29,4 @@ Route::get('admin/filer', 'ImageController@index');
 
 Route::post('admin/update/{id}', 'AdminController@update');
 Route::post('admin/save', 'AdminController@store');
+Route::post('admin/filer/save', 'ImageController@store');
