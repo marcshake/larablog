@@ -27,7 +27,7 @@ Bilder / Mediendateien
 @forelse ($collection as $item)
 
     <div class="u-pull-left">
-        <img class="thumb" src="{{asset('storage/thumbnail/'.$item->filename)}}" alt="Upload by User">
+        <img class="thumb" src="{{asset('storage/thumbnail/tiny_'.$item->filename)}}" alt="Upload by User">
 
     </div>
 

@@ -49,7 +49,7 @@
 
     <div class="mt-4">
         <div class="row">
-            <div class="columns three">
+            <div class="columns two">
                 <aside class="menu has-background-black-bis">
                     <p class="menu-label">Dashboard</p>
                     <ul class="menu-list">
@@ -81,7 +81,7 @@
 
                 </aside>
             </div>
-            <div class="columns nine">
+            <div class="columns ten">
                     @if (session('warning'))
                     <div class="alert alert-fail">
                         {{ session('warning') }}
