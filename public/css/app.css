@@ -286,6 +286,12 @@ h3.secondary {
   max-width: 400px;
 }
 
+.previewContents {
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+}
+
 /*
 * Skeleton V2.0.4
 * Copyright 2014, Dave Gamache

@@ -1,7 +1,7 @@
 @extends('layouts.administration')
 
 @section('title')
-    {{$contents->title}} bearbeiten
+{{$contents->title}} bearbeiten
 @endsection
 
 @section('content')
@@ -11,27 +11,45 @@
     <div class="field">
         <label class="label" for="title">Überschrift</label>
         <div class="control">
-            <input autocomplete="false" class="input" type="text" placeholder="Überschrift" value="{{$contents->title}}" name="title"
-                id="title">
+            <input autocomplete="false" class="input" type="text" placeholder="Überschrift" value="{{$contents->title}}"
+                name="title" id="title">
         </div>
     </div>
     <div class="field">
         <label for="contents" class="label">Inhalt</label>
         <div class="control">
-            <textarea name="contents" class="textarea" placeholder="Textarea" id="contents">{{$contents->contents}}</textarea>
+            <textarea name="contents" class="textarea" placeholder="Textarea"
+                id="contents">{{$contents->contents}}</textarea>
         </div>
     </div>
-    <div class="field">
-        <label for="tags" class="label">Tags</label>
-        <div class="control">
-            <input class="input" type="text" name="tags" id="tags" value="{{$contents->tags}}">
+    <div class="row">
+        <div class="four columns">
+            <div class="field">
+                <label for="tags" class="label">Tags</label>
+                <div class="control">
+                    <input class="input" type="text" name="tags" id="tags" value="{{$contents->tags}}">
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="field">
-        <label for="kategorie" class="label">Kategorien</label>
-        <div class="control">
-            <input class="input" type="text" name="kategorie" id="kategorie" value="{{$contents->kategorie}}">
+        <div class="four columns">
+            <div class="field">
+                <label for="kategorie" class="label">Kategorien</label>
+                <div class="control">
+                    <input class="input" type="text" name="kategorie" id="kategorie" value="{{$contents->kategorie}}">
+                </div>
+            </div>
         </div>
+        <div class="four columns">
+            <div class="field">
+                <label for="artikelbild" class="label">Artikelbild</label>
+                <div class="control">
+                    <input class="input" type="text" name="mainImage" id="artikelbild" value="{{$contents->mainImage}}">
+                </div>
+            </div>
+
+
+        </div>
+
     </div>
     <div class="buttons">
         <input value="Speichern" class="button button-primary" type="submit">

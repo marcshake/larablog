@@ -107,6 +107,7 @@ class AdminController extends Controller
         $contents = BlogPosts::findOrFail($id);
         $contents->title = $request->title;
         $contents->contents = $request->contents;
+        $contents->mainImage = $request->mainImage;
         $contents->save();
         return redirect('admin/edit/'.$id)->with('status', 'Änderungen gespeichert!');
     }

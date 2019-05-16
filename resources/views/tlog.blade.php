@@ -7,7 +7,7 @@ Larablog - Testseite
 @section('maincontents')
 <div class="slideShow">
     @forelse ($posts as $item)
-    <div class="slide" style="background-image: url({{asset('images/wall.jpg')}})">
+    <div class="slide" style="background-image: url({{$item->mainImage ? $item->mainImage: asset('images/wall.jpg')}})">
         <div class="container">
 
             <h2 class="title {{$loop->iteration % 2 == 0 ? 'primary' : 'secondary' }}">
@@ -39,7 +39,7 @@ Larablog - Testseite
             @foreach ($chunk as $items)
             <div class="four columns">
                 <div class="image-header">
-                    <img src="{{asset('images/wall.jpg')}}" class="u-full-width" alt="Bild">
+                    <img src="{{$items->mainImage ? $items->mainImage: asset('images/wall.jpg')}}" class="u-full-width" alt="Bild">
                 </div>
                 <div class="headline">
                     <h3 class="title {{$loop->iteration % 2 == 0 ? 'primary' : 'secondary' }}"><a
