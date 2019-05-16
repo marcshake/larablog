@@ -29,7 +29,10 @@ php artisan config:cache
 npm install
 
 # Build assets using Laravel Mix
-npm run dev
+npm run prod
+
+# build storage link
+php artisan storage:link
 
 # Turn off maintenance mode
 php artisan up
