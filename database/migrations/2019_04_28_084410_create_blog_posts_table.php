@@ -19,6 +19,7 @@ class CreateBlogPostsTable extends Migration
             $table->longText('contents');
             $table->integer('author')->nullable(true);
             $table->boolean('visible')->default(false);
+            $table->string('mainImage')->nullable(true);
             $table->timestamps();
         });
     }
