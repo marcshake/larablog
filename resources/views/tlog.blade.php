@@ -10,9 +10,20 @@ Larablog - Testseite
     <div class="slide" style="background-image: url({{asset('images/wall.jpg')}})">
         <div class="container">
 
-            <h2 class="title {{$loop->iteration % 2 == 0 ? 'primary' : 'secondary' }}">{{$item->title}}</h2>
+            <h2 class="title {{$loop->iteration % 2 == 0 ? 'primary' : 'secondary' }}">
+                {{$item->title}}
+            </h2>
             <div class="halftone mt-4">
                 {!! $item->contents !!}
+
+                <div class="row">
+                    <a href="{{url('blog/show',$item->title)}}" class="u-pull-right">
+                        Weiterlesen...
+                    </a>
+
+                </div>
+
+
             </div>
         </div>
     </div>
@@ -31,7 +42,10 @@ Larablog - Testseite
                     <img src="{{asset('images/wall.jpg')}}" class="u-full-width" alt="Bild">
                 </div>
                 <div class="headline">
-                    <h3 class="title {{$loop->iteration % 2 == 0 ? 'primary' : 'secondary' }}">{{$items->title}}</h3>
+                    <h3 class="title {{$loop->iteration % 2 == 0 ? 'primary' : 'secondary' }}"><a
+                            href="{{url('blog/show',$item->title)}}">{{$items->title}}</a>
+                    </h3>
+
                 </div>
                 <div class="previewContents">
                     {!!$items->contents!!}
@@ -54,7 +68,8 @@ Larablog - Testseite
             </figcaption>
         </figure>
         <p>
-            Todo: Irgendwas programmieren, das hier eine geile Startseite anzeigt. Im Backend muss eine Home-Seite definiert werden, die dann irgendwas macht.
+            Todo: Irgendwas programmieren, das hier eine geile Startseite anzeigt. Im Backend muss eine Home-Seite
+            definiert werden, die dann irgendwas macht.
             Damit das funktioniert, muss ein CMS-Modul gebaut werden.
         </p>
     </div>

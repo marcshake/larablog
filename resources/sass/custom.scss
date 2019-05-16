@@ -212,8 +212,8 @@ body {
 }
 
 h2.title {
-    display: inline;
-    font-weight: bold;
+  display: inline;
+  font-weight: bold;
 }
 h2.primary {
   background: $primary-color;
@@ -228,8 +228,8 @@ h2.secondary {
 }
 
 h3.title {
-    display: inline;
-    font-weight: bold;
+  display: inline;
+  font-weight: bold;
 }
 h3.primary {
   background: $primary-color;
@@ -242,43 +242,55 @@ h3.secondary {
   box-shadow: 0.7rem 0 $dark-grey;
   color: $light-grey;
 }
-
-
+.secondary a {
+  color: $light-grey;
+}
+.primary a {
+  color: #000;
+}
 
 .slideShow {
-    background:#333;
+  background: #333;
 }
 .slide {
-    min-height: 50vh;
-    background-color:#404040;
-	background-size: cover;
-	background-position: 50% 0;
-	background-attachment: fixed;
-    display: none;
-	animation: fadeIn 1.5s
+  min-height: 50vh;
+  background-color: #404040;
+  background-size: cover;
+  background-position: 50% 0;
+  background-attachment: fixed;
+  display: none;
+  animation: fadeIn 1.5s;
 }
 .slide img {
-	box-shadow: 1px 1px 20px #000
+  box-shadow: 1px 1px 20px #000;
 }
 @keyframes fadeIn {
-	from {
-		opacity: 0
-	}
-	to {
-		opacity: 1
-	}
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .halftone {
-    background:#0000007f;
-    max-width: 75%;
-    margin-left:auto;
-    margin-top: 1em;
-    padding: 1.5em;
-    color:#fff;
-    font-size:1.5em;
-    border-radius: $global-radius;
+  background: #0000007f;
+  max-width: 75%;
+  margin-left: auto;
+  margin-top: 1em;
+  padding: 1.5em;
+  color: #fff;
+  font-size: 1.5em;
+  border-radius: $global-radius;
 }
+.halftone a {
+  color: #fff;
+  text-decoration: none;
+}
+.title a {
+  text-decoration: none;
+}
+
 .img-500 {
-    max-width:400px;
+  max-width: 400px;
 }

@@ -215,6 +215,14 @@ h3.secondary {
   color: #e1e1e1;
 }
 
+.secondary a {
+  color: #e1e1e1;
+}
+
+.primary a {
+  color: #000;
+}
+
 .slideShow {
   background: #333;
 }
@@ -263,6 +271,15 @@ h3.secondary {
   color: #fff;
   font-size: 1.5em;
   border-radius: 4px;
+}
+
+.halftone a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.title a {
+  text-decoration: none;
 }
 
 .img-500 {
