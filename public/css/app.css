@@ -107,7 +107,7 @@ body {
 
 .has-background-black-bis a {
   background: #333;
-  color: #33c3f0;
+  color: #edf033;
 }
 
 .menu {
@@ -179,6 +179,72 @@ body {
 
 .alert {
   padding: 4px;
+}
+
+h2.title {
+  display: inline;
+  font-weight: bold;
+}
+
+h2.primary {
+  background: #edf033;
+  box-shadow: 0.7rem 0 #edf033;
+  color: #000;
+}
+
+h2.secondary {
+  background: #333;
+  box-shadow: 0.7rem 0 #333;
+  color: #e1e1e1;
+}
+
+.slideShow {
+  padding: 1em;
+  background-size: cover;
+  background-position: 50% 0;
+  background-attachment: fixed;
+  min-height: 50vh;
+  background-color: #404040;
+}
+
+.slide {
+  display: none;
+  -webkit-animation: fadeIn 2s;
+          animation: fadeIn 2s;
+}
+
+.slide img {
+  box-shadow: 1px 1px 20px #000;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.halftone {
+  background: #0000007f;
+  max-width: 75%;
+  margin-left: auto;
+  margin-top: 1em;
+  padding: 1.5em;
+  color: #fff;
+  font-size: 1.5em;
 }
 
 /*
@@ -814,16 +880,16 @@ input[type=button]:focus {
 .button.button-primary,
 button.button-primary {
   color: #fff;
-  background-color: #33c3f0;
-  border-color: #33c3f0;
+  background-color: #edf033;
+  border-color: #edf033;
 }
 
 input[type=submit].button-primary,
 input[type=reset].button-primary,
 input[type=button].button-primary {
   color: #fff;
-  background-color: #33c3f0;
-  border-color: #33c3f0;
+  background-color: #edf033;
+  border-color: #edf033;
 }
 
 .button.button-primary:hover,
@@ -911,13 +977,13 @@ input[type=text]:focus,
 input[type=tel]:focus,
 input[type=url]:focus,
 input[type=password]:focus {
-  border: 1px solid #33c3f0;
+  border: 1px solid #edf033;
   outline: 0;
 }
 
 textarea:focus,
 select:focus {
-  border: 1px solid #33c3f0;
+  border: 1px solid #edf033;
   outline: 0;
 }
 
