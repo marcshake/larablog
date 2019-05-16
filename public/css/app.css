@@ -199,15 +199,15 @@ h2.secondary {
 }
 
 .slideShow {
-  padding: 1em;
-  background-size: cover;
-  background-position: 50% 0;
-  background-attachment: fixed;
-  min-height: 50vh;
-  background-color: #404040;
+  background: #333;
 }
 
 .slide {
+  min-height: 50vh;
+  background-color: #404040;
+  background-size: cover;
+  background-position: 50% 0;
+  background-attachment: fixed;
   display: none;
   -webkit-animation: fadeIn 2s;
           animation: fadeIn 2s;
