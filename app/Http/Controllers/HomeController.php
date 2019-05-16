@@ -15,8 +15,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $posts = BlogPosts::orderBy('id', 'DESC')->limit(5)->get();
-        $morePosts  = BlogPosts::orderBy('id', 'DESC')->limit(25)->get();
+        $posts = BlogPosts::getPosts(3);
+        $morePosts  = BlogPosts::getPosts(25);
         foreach ($posts as $r=> $entry) {
             $posts[$r]->contents = $this->shorten($entry->contents);
         }

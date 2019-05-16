@@ -22,6 +22,21 @@ class BlogPosts extends Model
      */
     public static function overview()
     {
-        return self::select('id', 'title', 'visible', 'created_at', 'author')->orderBy('id', 'DESC')->paginate(100);
+        return self::select('id', 'title', 'visible', 'created_at', 'author')->orderBy('id', 'DESC')->where('trashed', null)->paginate(100);
+    }
+    /**
+     * Get a List of Posts
+     *
+     * @param INT number of rows
+     * @return void
+     */
+    public static function getPosts($limit)
+    {
+        return self::orderBy('id', 'DESC')->where('trashed', null)->where('visible', 1)->limit($limit)->get();
+    }
+
+    public function mainImagePath()
+    {
+        return $this->hasOne('App\Media', 'id', 'mainImage');
     }
 }

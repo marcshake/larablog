@@ -1,12 +1,9 @@
-@extends('layouts.administration')
-
-@section('title')
+@extends('layouts.administration') @section('title')
 {{$contents->title}} bearbeiten
 @endsection
+ @section('content')
 
-@section('content')
-
-<form action="{{ url('admin/update',$contents->id)}}" method="post">
+ <form action="{{ url('admin/update',$contents->id)}}" method="post">
     @csrf
     <div class="field">
         <label class="label" for="title">Überschrift</label>
@@ -43,13 +40,18 @@
             <div class="field">
                 <label for="artikelbild" class="label">Artikelbild</label>
                 <div class="control">
-                    <input class="input" type="text" name="mainImage" id="artikelbild" value="{{$contents->mainImage}}">
+                    @if ($contents->mainImage == null)
+                    Kein Artikelbild
+                    @else
+                    <img src="{{asset('storage/thumbnail/tiny_'.$contents->mainImagePath->filename)}}"
+                        alt="Upload by User">
+                    @endif
+                    <div class="row">
+                        <a href="#modal" class="imageBrowser button">Artikelbild</a>
+                    </div>
                 </div>
             </div>
-
-
         </div>
-
     </div>
     <div class="buttons">
         <input value="Speichern" class="button button-primary" type="submit">
@@ -62,8 +64,8 @@
 <script>
     CKEDITOR.replace('contents');
 </script>
-@endsection
 
+@endsection
 @section('script')
 <script src="{{ asset('js/ckeditor/ckeditor.js') }}"></script>
 @endsection

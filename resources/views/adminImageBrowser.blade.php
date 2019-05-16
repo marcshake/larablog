@@ -23,20 +23,5 @@ Bilder / Mediendateien
         </form>
     </div>
 </div>
-<div class="row">
-@forelse ($collection as $item)
-
-    <div class="u-pull-left">
-        <img class="thumb" src="{{asset('storage/thumbnail/tiny_'.$item->filename)}}" alt="Upload by User">
-
-    </div>
-
-
-
-
-@empty
-        Leider sind noch keine Mediendateien hinterlegt
-{{$collection->links()}}
-@endforelse
-</div>
+@include('partial.imagebrowser')
 @endsection

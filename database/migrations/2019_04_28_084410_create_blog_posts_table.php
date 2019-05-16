@@ -17,9 +17,10 @@ class CreateBlogPostsTable extends Migration
             $table->bigIncrements('id');
             $table->string('title');
             $table->longText('contents');
-            $table->integer('author')->nullable(true);
+            $table->bigInteger('author')->nullable(true);
             $table->boolean('visible')->default(false);
-            $table->string('mainImage')->nullable(true);
+            $table->bigInteger('mainImage')->nullable(true);
+            $table->boolean('trashed')->nullable(true);
             $table->timestamps();
         });
     }

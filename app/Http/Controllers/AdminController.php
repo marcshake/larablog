@@ -121,7 +121,8 @@ class AdminController extends Controller
     public function destroy($id)
     {
         $entry = BlogPosts::findOrFail($id);
-        $entry->delete();
+        $entry->trashed = 1;
+        $entry->save();
         return redirect('admin/blogs')->with('status', 'Eintrag gelöscht');
     }
 }
