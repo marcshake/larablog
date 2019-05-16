@@ -22,8 +22,9 @@ Larablog - Testseite
 </div>
 <div class="container">
     <div class="mt-4">
+        <h2 class="title secondary">NEU im Blog:</h2>
         @forelse ($morePosts->chunk(3) as $chunk)
-        <div class="row">
+        <div class="row mt-4">
             @foreach ($chunk as $items)
             <div class="four columns">
                 <div class="image-header">
@@ -41,6 +42,21 @@ Larablog - Testseite
         @empty
         Blog ist leer
         @endforelse
+    </div>
+</div>
+<div class="container">
+    <h2 class="primary title">Über diese Seite</h2>
+    <div class="mt-4">
+        <figure class="u-pull-right img-500">
+            <img src="{{asset('images/wall.jpg')}}" alt="Bild" class="u-full-width">
+            <figcaption>
+                Headline zum Bild
+            </figcaption>
+        </figure>
+        <p>
+            Todo: Irgendwas programmieren, das hier eine geile Startseite anzeigt. Im Backend muss eine Home-Seite definiert werden, die dann irgendwas macht.
+            Damit das funktioniert, muss ein CMS-Modul gebaut werden.
+        </p>
     </div>
 </div>
 @endsection

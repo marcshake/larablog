@@ -49,7 +49,11 @@
         </div>
     </nav>
     @yield('maincontents')
-
+    <footer class="is-dark">
+        <div class="container">
+            Made with &hearts; in germany by Marcel Schindler
+        </div>
+    </footer>
 </body>
 
 </html>

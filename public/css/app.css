@@ -265,6 +265,10 @@ h3.secondary {
   border-radius: 4px;
 }
 
+.img-500 {
+  max-width: 400px;
+}
+
 /*
 * Skeleton V2.0.4
 * Copyright 2014, Dave Gamache
