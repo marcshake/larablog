@@ -253,7 +253,8 @@ h3.secondary {
   background: #333;
 }
 .slide {
-  min-height: 50vh;
+  height: 50vh;
+  overflow:hidden;
   background-color: #404040;
   background-size: cover;
   background-position: 50% 0;
@@ -274,13 +275,12 @@ h3.secondary {
 }
 
 .halftone {
-  background: #0000007f;
+  background: rgba(0,0,0,0.5);
   max-width: 75%;
   margin-left: auto;
   margin-top: 1em;
   padding: 1.5em;
   color: #fff;
-  font-size: 1.5em;
   border-radius: $global-radius;
 }
 .halftone a {
