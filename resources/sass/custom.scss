@@ -250,7 +250,8 @@ h3.secondary {
 }
 
 .slideShow {
-  background: #333;
+    transition: height 0.15 ease-out;
+    background: #333;
 }
 .slide {
   height: 50vh;

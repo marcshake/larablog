@@ -224,6 +224,7 @@ h3.secondary {
 }
 
 .slideShow {
+  transition: height 0.15 ease-out;
   background: #333;
 }
 
