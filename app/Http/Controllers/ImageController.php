@@ -26,7 +26,7 @@ class ImageController extends Controller
      */
     public function index()
     {
-        $collection = Media::orderBy('id','desc')->paginate(100);
+        $collection = Media::orderBy('id', 'desc')->paginate(100);
         return view('adminImageBrowser', ['collection'=>$collection]);
     }
 

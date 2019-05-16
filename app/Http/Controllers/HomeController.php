@@ -15,11 +15,15 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $posts = BlogPosts::orderBy('id', 'DESC')->limit(15)->get();
-        foreach($posts as $r=> $entry) {
+        $posts = BlogPosts::orderBy('id', 'DESC')->limit(5)->get();
+        $morePosts  = BlogPosts::orderBy('id', 'DESC')->limit(25)->get();
+        foreach ($posts as $r=> $entry) {
             $posts[$r]->contents = $this->shorten($entry->contents);
         }
-        return view('tlog', ['posts'=>$posts]);
+        foreach ($morePosts as $r=> $entry) {
+            $morePosts[$r]->contents = $this->shorten($entry->contents);
+        }
+        return view('tlog', ['posts'=>$posts, 'morePosts'=>$morePosts]);
     }
 
     private function shorten($string)

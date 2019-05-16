@@ -198,6 +198,23 @@ h2.secondary {
   color: #e1e1e1;
 }
 
+h3.title {
+  display: inline;
+  font-weight: bold;
+}
+
+h3.primary {
+  background: #edf033;
+  box-shadow: 0.7rem 0 #edf033;
+  color: #000;
+}
+
+h3.secondary {
+  background: #333;
+  box-shadow: 0.7rem 0 #333;
+  color: #e1e1e1;
+}
+
 .slideShow {
   background: #333;
 }
@@ -209,8 +226,8 @@ h2.secondary {
   background-position: 50% 0;
   background-attachment: fixed;
   display: none;
-  -webkit-animation: fadeIn 2s;
-          animation: fadeIn 2s;
+  -webkit-animation: fadeIn 1.5s;
+          animation: fadeIn 1.5s;
 }
 
 .slide img {
@@ -245,6 +262,7 @@ h2.secondary {
   padding: 1.5em;
   color: #fff;
   font-size: 1.5em;
+  border-radius: 4px;
 }
 
 /*
