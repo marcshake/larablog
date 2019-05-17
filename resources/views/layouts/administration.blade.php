@@ -47,7 +47,7 @@
         </div>
     </nav>
 
-    <div class="mt-4">
+    <div class="mt-4 fluidContainer">
         <div class="row">
             <div class="columns two">
                 <aside class="menu has-background-black-bis">
