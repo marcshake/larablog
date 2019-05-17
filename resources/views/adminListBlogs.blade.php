@@ -43,7 +43,15 @@ Eintragsübersicht
 
                 @endforelse
             </td>
-            <td>just, a, bunch, of, categories</td>
+            <td>
+                @forelse ($item->categories as $cats)
+                    <span class="tag">{{$cats->name}}</span>,
+                @empty
+
+                @endforelse
+
+
+            </td>
         </tr>
         @endforeach
     </tbody>

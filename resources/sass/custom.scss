@@ -211,6 +211,22 @@ body {
   padding: 4px;
 }
 
+h1.title {
+  display: inline;
+  font-weight: bold;
+}
+h1.primary {
+  background: red;
+  box-shadow: 0.7rem 0 red;
+  color: #000;
+}
+
+h1.secondary {
+  background: blue;
+  box-shadow: 0.7rem 0 blue;
+  color: whitesmoke;
+}
+
 h2.title {
   display: inline;
   font-weight: bold;
@@ -250,12 +266,12 @@ h3.secondary {
 }
 
 .slideShow {
-    transition: height 0.15 ease-out;
-    background: #333;
+  transition: height 0.15 ease-out;
+  background: #333;
 }
 .slide {
   height: 50vh;
-  overflow:hidden;
+  overflow: hidden;
   background-color: #404040;
   background-size: cover;
   background-position: 50%;
@@ -276,7 +292,7 @@ h3.secondary {
 }
 
 .halftone {
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
   max-width: 75%;
   margin-left: auto;
   margin-top: 1em;
@@ -297,5 +313,5 @@ h3.secondary {
 }
 
 .previewContents {
-    hyphens: auto;
+  hyphens: auto;
 }

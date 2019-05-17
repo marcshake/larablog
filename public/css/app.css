@@ -181,6 +181,23 @@ body {
   padding: 4px;
 }
 
+h1.title {
+  display: inline;
+  font-weight: bold;
+}
+
+h1.primary {
+  background: red;
+  box-shadow: 0.7rem 0 red;
+  color: #000;
+}
+
+h1.secondary {
+  background: blue;
+  box-shadow: 0.7rem 0 blue;
+  color: whitesmoke;
+}
+
 h2.title {
   display: inline;
   font-weight: bold;

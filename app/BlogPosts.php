@@ -44,4 +44,9 @@ class BlogPosts extends Model
     {
         return $this->belongsToMany('App\Tags', 'Tags2_blogs', 'blogId', 'tagId');
     }
+
+    public function categories()
+    {
+        return $this->belongsToMany('App\Category', 'category2_blogs', 'blogId', 'catId');
+    }
 }

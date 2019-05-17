@@ -1,7 +1,7 @@
 @extends('layouts.larablog')
 
 @section('title')
-Larablog - Testseite
+Startseite
 @endsection
 
 @section('maincontents')
@@ -51,8 +51,10 @@ Larablog - Testseite
                         class="u-full-width" alt="Bild">
                 </div>
                 <div class="headline">
-                    <h3 class="title {{$loop->iteration % 2 == 0 ? 'primary' : 'secondary' }}"><a
-                            href="{{url('blog/show',$item->title)}}">{{$items->title}}</a>
+                    <h3 class="title {{$loop->iteration % 2 == 0 ? 'primary' : 'secondary' }}">
+                        <a href="{{url('blog/show/'.$items->categories[0]->name,$items->title)}}">
+                            {{$items->title}}
+                        </a>
                     </h3>
 
                 </div>
