@@ -1,5 +1,7 @@
 # Small Blogsoftware in Laravel
 
+[![Build Status](https://travis-ci.org/marcshake/larablog.svg?branch=master)](https://travis-ci.org/marcshake/larablog)
+
 **This software is not intended to be used in a live environment. This repository is public, because I am working at this project LIVE and it is going to be improved on a daily basis. DO NOT USE THIS ON A PRODUCTION ENVIRONMENT!!!**
 
 ## What is this?
