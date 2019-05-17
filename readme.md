@@ -16,19 +16,22 @@ Nope. Not now. The usual licenses of the dependencies apply but these codes are 
 ### Frontend
 * We have a simple page listing up our Blogposts. 
 * We can log in ``demo@demo.dem`` with password ``test`` 
+* Mobile-first (thanks to skeleton)
 
 ### Backend
-We can edit posts. 
+We can edit posts.
+We can upload media
+We can create new posts
+We can delete posts
 
 ## Installation
 
 **Warning: When installing this software, the Database will be reset and reseeded as long as this is not a stable branch**
 
 * Clone the repository
-* run ``composer install`` which will download the necessary dependencies and run some user scripts
-* Edit your ``.env``-File (database stuff mainly)
-* run ``php artisan migrate:fresh --seed`` to setup Database and populate it with demodata
-* run ``npm run dev`` to create the assets
+* copy ``.env.example`` to ``.env`` and edit your Database-Connection.
+* In a bash you can start ``./deploy.sh`` which will install composer dependencies, setup node_modules, clears the caches, installs assets and even links the storage-directory
+* OPTIONAL: run ``php artisan migrate:refresh --seed`` to install test-data (you won't be able to login without test-data anyways)
 * run ``php artisan serve`` to start your local development server
 
 There will be a real installation-routine, when the software is ready.
