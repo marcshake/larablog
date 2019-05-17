@@ -24,7 +24,7 @@
             <div class="field">
                 <label for="tags" class="label">Tags</label>
                 <div class="control">
-                    <input class="input" type="text" name="tags" id="tags" value="{{$contents->tags}}">
+                    <input class="input" type="text" name="tags" id="tags" value="@forelse ($contents->Tags as $tags){{$tags->tag}}, @empty @endforelse">
                 </div>
             </div>
         </div>

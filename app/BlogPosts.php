@@ -39,4 +39,9 @@ class BlogPosts extends Model
     {
         return $this->hasOne('App\Media', 'id', 'mainImage');
     }
+
+    public function tags()
+    {
+        return $this->belongsToMany('App\Tags', 'Tags2_blogs', 'blogId', 'tagId');
+    }
 }

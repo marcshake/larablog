@@ -36,7 +36,13 @@ Eintragsübersicht
                 </span>
             </td>
             <td>{{$item->authorName->name}}</td>
-            <td>just, a, bunch, of, tags</td>
+            <td>
+                @forelse ($item->Tags as $tags)
+                    <span class="tag">{{$tags->tag}}</span>,
+                @empty
+
+                @endforelse
+            </td>
             <td>just, a, bunch, of, categories</td>
         </tr>
         @endforeach

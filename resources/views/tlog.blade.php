@@ -7,7 +7,8 @@ Larablog - Testseite
 @section('maincontents')
 <div class="slideShow">
     @forelse ($posts as $item)
-    <div class="slide" style="background-image: url({{$item->mainImage ? asset('storage/uploads/'.$item->mainImagePath->filename): asset('images/wall.jpg')}})">
+    <div class="slide"
+        style="background-image: url({{$item->mainImage ? asset('storage/uploads/'.$item->mainImagePath->filename): asset('images/wall.jpg')}})">
         <div class="container">
 
             <h2 class="title {{$loop->iteration % 2 == 0 ? 'primary' : 'secondary' }}">
@@ -15,7 +16,14 @@ Larablog - Testseite
             </h2>
             <div class="halftone mt-4">
                 {!! $item->contents !!}
+                <div class="row">
+                    @forelse ($item->Tags as $tags)
+                    <span class="tag">{{$tags->tag}}</span>,
+                    @empty
 
+                    @endforelse
+
+                </div>
                 <div class="row">
                     <a href="{{url('blog/show',$item->title)}}" class="u-pull-right">
                         Weiterlesen...
@@ -39,7 +47,8 @@ Larablog - Testseite
             @foreach ($chunk as $items)
             <div class="four columns">
                 <div class="image-header">
-                    <img src="{{$items->mainImage ? asset('storage/thumbnail/tiny_'.$items->mainImagePath->filename): asset('images/wall.jpg')}}" class="u-full-width" alt="Bild">
+                    <img src="{{$items->mainImage ? asset('storage/thumbnail/tiny_'.$items->mainImagePath->filename): asset('images/wall.jpg')}}"
+                        class="u-full-width" alt="Bild">
                 </div>
                 <div class="headline">
                     <h3 class="title {{$loop->iteration % 2 == 0 ? 'primary' : 'secondary' }}"><a
