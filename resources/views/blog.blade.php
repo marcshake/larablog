@@ -27,7 +27,7 @@
                         Autor: {{$item->authorName->name}}
                         <br>Kategorie:
                         @forelse ($item->categories as $cats)
-                        <a class="tag is-dark" href="{{url('blog/show',$cats->name)}}">{{$cats->name}}</a>
+                        <a class="tag is-dark" href="{{url('category',$cats->name)}}">{{$cats->name}}</a>
                         @empty
 
                         @endforelse
@@ -38,7 +38,7 @@
                     </div>
                     <div class="seven columns">
                         <h2 class="title {{$loop->iteration % 2 == 0 ? 'primary' : 'secondary' }}">
-                            <a href="{{url('blog/show/'.$item->categories[0]->name,$item->title)}}">
+                            <a href="{{url('blog/'.$item->title,$item->id)}}">
                                 {{$item->title}}
                             </a>
                         </h2>

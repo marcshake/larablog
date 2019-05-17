@@ -18,14 +18,14 @@ Startseite
                 {!! $item->contents !!}
                 <div class="row">
                     @forelse ($item->Tags as $tags)
-                    <span class="tag">{{$tags->tag}}</span>,
+                    <span class="tag is-dark">{{$tags->tag}}</span>
                     @empty
 
                     @endforelse
 
                 </div>
                 <div class="row">
-                    <a href="{{url('blog/show',$item->title)}}" class="u-pull-right button button-primary">
+                    <a href="{{url('blog/'.$item->title,$item->id)}}" class="u-pull-right button button-primary">
                         Weiterlesen...
                     </a>
 
@@ -52,7 +52,7 @@ Startseite
                 </div>
                 <div class="headline">
                     <h3 class="title {{$loop->iteration % 2 == 0 ? 'primary' : 'secondary' }}">
-                        <a href="{{url('blog/show/'.$items->categories[0]->name,$items->title)}}">
+                        <a href="{{url('blog/'.$items->title,$items->id)}}">
                             {{$items->title}}
                         </a>
                     </h3>

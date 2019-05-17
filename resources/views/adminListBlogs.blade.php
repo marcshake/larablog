@@ -38,14 +38,14 @@ Eintragsübersicht
             <td>{{$item->authorName->name}}</td>
             <td>
                 @forelse ($item->Tags as $tags)
-                    <span class="tag">{{$tags->tag}}</span>,
+                    <span class="tag">{{$tags->tag}}</span>
                 @empty
 
                 @endforelse
             </td>
             <td>
                 @forelse ($item->categories as $cats)
-                    <span class="tag">{{$cats->name}}</span>,
+                    <span class="tag">{{$cats->name}}</span>
                 @empty
 
                 @endforelse
