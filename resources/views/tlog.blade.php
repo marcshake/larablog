@@ -25,7 +25,7 @@ Startseite
 
                 </div>
                 <div class="row">
-                    <a href="{{url('blog/show',$item->title)}}" class="u-pull-right">
+                    <a href="{{url('blog/show',$item->title)}}" class="u-pull-right button button-primary">
                         Weiterlesen...
                     </a>
 
@@ -72,7 +72,7 @@ Startseite
 <div class="container">
     <h2 class="primary title">Über diese Seite</h2>
     <div class="mt-4">
-        <figure class="u-pull-right img-500">
+        <figure class="u-pull-right img-200">
             <img src="{{asset('images/wall.jpg')}}" alt="Bild" class="u-full-width">
             <figcaption>
                 Headline zum Bild
