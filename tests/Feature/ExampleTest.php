@@ -9,7 +9,7 @@ class ExampleTest extends TestCase
 {
     use RefreshDatabase;
     /**
-     * A basic test example.
+     * A basic test example. (Homepage coming?)
      *
      * @return void
      */

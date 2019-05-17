@@ -64,6 +64,7 @@ class AdminController extends Controller
         }
         $contents = new BlogPosts;
         $contents->title = $request->title;
+        #$contents->tags()->syncWithoutDetaching($array); // Todo: ordentlichen Sync bauen
         $contents->contents = $request->contents;
         $contents->author = \Auth::user()->id;
         $contents->save();
@@ -108,6 +109,7 @@ class AdminController extends Controller
         $contents->title = $request->title;
         $contents->contents = $request->contents;
         $contents->mainImage = $request->mainImage;
+#        $contents->tags()->syncWithoutDetaching($array); //todo: check for used tags and add new ones, if necessary
         $contents->save();
         return redirect('admin/edit/'.$id)->with('status', 'Änderungen gespeichert!');
     }
