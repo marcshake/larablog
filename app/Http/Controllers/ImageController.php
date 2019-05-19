@@ -19,6 +19,12 @@ class ImageController extends Controller
         $this->middleware('auth');
     }
 
+    public function ajax()
+    {
+        $collection = Media::orderBy('id', 'desc')->paginate(100);
+        return view('adminInlineImage', ['collection'=>$collection]);
+    }
+
     /**
      * Display a listing of the resource.
      *

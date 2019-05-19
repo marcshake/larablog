@@ -97,6 +97,7 @@
             </div>
         </div>
     </div>
+    @include('partial.modal')
 </body>
 
 </html>

@@ -47,7 +47,7 @@
                         alt="Upload by User">
                     @endif
                     <div class="row">
-                        <a href="#modal" class="imageBrowser button">Artikelbild</a>
+                        <a href="#modal" class="imageBrowser button open-modal">Artikelbild</a>
                     </div>
                 </div>
             </div>

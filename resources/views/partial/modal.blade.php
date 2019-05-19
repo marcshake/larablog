@@ -1,4 +1,4 @@
-<div class="modal modal-open">
+<div class="modal modal-open hidden">
     <div class="modal-inner">
         <div class="modal-content">
             <div class="modal-close-icon">
