@@ -285,12 +285,16 @@ h3.secondary {
 .headerimage {
     height:50vh;
     overflow: hidden;
+    position: relative;
 }
 .headerimage img {
     position: relative;
-    top:-50%;
-    object-fit: cover;
+    object-fit: fill;
     z-index:0;
+    overflow: auto;
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
 }
 
 .slide {

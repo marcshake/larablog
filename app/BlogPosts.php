@@ -4,14 +4,16 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class BlogPosts extends Model {
+class BlogPosts extends Model
+{
 
     /**
      * Get the Authors name
      *
      * @return void
      */
-    public function authorName() {
+    public function authorName()
+    {
         return $this->hasOne('App\User', 'id', 'author');
     }
 
@@ -20,7 +22,8 @@ class BlogPosts extends Model {
      *
      * @return void
      */
-    public static function overview() {
+    public static function overview()
+    {
         return self::select('id', 'title', 'visible', 'created_at', 'author')->orderBy('id', 'DESC')->where('trashed', null)->paginate(100);
     }
 
@@ -30,24 +33,28 @@ class BlogPosts extends Model {
      * @param INT number of rows
      * @return void
      */
-    public static function getPosts($limit) {
+    public static function getPosts($limit)
+    {
         return self::orderBy('id', 'DESC')->where('trashed', null)->where('visible', 1)->limit($limit)->get();
     }
 
-    public function mainImagePath() {
+    public function mainImagePath()
+    {
         return $this->hasOne('App\Media', 'id', 'mainImage');
     }
 
-    public function tags() {
+    public function tags()
+    {
         return $this->belongsToMany('App\Tags', 'Tags2_blogs', 'blogId', 'tagId');
     }
 
-    public function categories() {
+    public function categories()
+    {
         return $this->belongsToMany('App\Category', 'category2_blogs', 'blogId', 'catId');
     }
 
-    public static function getSpecific($title, $id) {
+    public static function getSpecific($title, $id)
+    {
         return self::where('trashed', null)->where('visible', 1)->where('title', $title)->where('id', $id)->firstOrFail();
     }
-
 }

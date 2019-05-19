@@ -9,12 +9,11 @@ class BlogController extends Controller
 {
     public function index($title=false, $id = false)
     {
-        if(!$title && !$id) {
-        $posts = BlogPosts::orderBy('id', 'DESC')->where('visible', 1)->where('trashed', null)->paginate(15);
-        return view('blog', ['blogposts'=>$posts]);
+        if (!$title && !$id) {
+            $posts = BlogPosts::orderBy('id', 'DESC')->where('visible', 1)->where('trashed', null)->paginate(15);
+            return view('blog', ['blogposts'=>$posts]);
         }
-        $post = BlogPosts::getSpecific($title,$id);
+        $post = BlogPosts::getSpecific($title, $id);
         return view('posting', ['posting'=>$post]);
-        
     }
 }
