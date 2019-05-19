@@ -21,7 +21,7 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('adminPanel', ['beitraege' => BlogPosts::count()]);
+        return view('admin.adminPanel', ['beitraege' => BlogPosts::count()]);
     }
     /**
      * Get a list of blogentries
@@ -31,7 +31,7 @@ class AdminController extends Controller
     public function list()
     {
         $posts = BlogPosts::overview();
-        return view('adminListBlogs', ['collection'=>$posts]);
+        return view('admin.adminListBlogs', ['collection'=>$posts]);
     }
 
 
@@ -42,7 +42,7 @@ class AdminController extends Controller
      */
     public function create()
     {
-        return view('adminNew');
+        return view('admin.adminNew');
     }
 
     /**
@@ -92,7 +92,7 @@ class AdminController extends Controller
     public function edit($id)
     {
         $contents = BlogPosts::findOrFail($id);
-        return view('adminEditor', ['contents' => $contents]);
+        return view('admin.adminEditor', ['contents' => $contents]);
     }
 
     /**

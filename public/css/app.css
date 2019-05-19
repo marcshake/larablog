@@ -849,6 +849,10 @@ form {
   margin-bottom: 2.5rem;
 }
 
+html {
+  min-height: 101%;
+}
+
 .button.button-secondary,
 button.button-secondary {
   color: #fff;
@@ -1107,6 +1111,19 @@ h3.secondary {
   background: #333;
 }
 
+.headerimage {
+  height: 50vh;
+  overflow: hidden;
+}
+
+.headerimage img {
+  position: relative;
+  top: -50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  z-index: 0;
+}
+
 .slide {
   height: 50vh;
   overflow: hidden;
@@ -1144,7 +1161,7 @@ h3.secondary {
 }
 
 .halftone {
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.75);
   max-width: 75%;
   margin-left: auto;
   margin-top: 1em;
@@ -1179,5 +1196,11 @@ h3.secondary {
 .has-bottom-border {
   padding-bottom: 1em;
   border-bottom: solid 1px #edf033;
+}
+
+.superHeadline {
+  font-size: 3.4em;
+  top: -0.5em;
+  position: relative;
 }
 

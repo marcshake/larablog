@@ -22,7 +22,7 @@ class ImageController extends Controller
     public function ajax()
     {
         $collection = Media::orderBy('id', 'desc')->paginate(100);
-        return view('adminInlineImage', ['collection'=>$collection]);
+        return view('admin.adminInlineImage', ['collection'=>$collection]);
     }
 
     /**
@@ -33,7 +33,7 @@ class ImageController extends Controller
     public function index()
     {
         $collection = Media::orderBy('id', 'desc')->paginate(100);
-        return view('adminImageBrowser', ['collection'=>$collection]);
+        return view('admin.adminImageBrowser', ['collection'=>$collection]);
     }
 
     /**

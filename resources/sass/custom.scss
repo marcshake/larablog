@@ -35,301 +35,322 @@ $padding: 0 4px;
 // Buttons
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-.button.button-secondary,
-button.button-secondary {
-  color: #fff;
-  background-color: $dark-grey;
-  border-color: $dark-grey;
+html {
+    min-height:101%;
 }
 
-input {
-  &[type="submit"].button-secondary,
-  &[type="reset"].button-secondary,
-  &[type="button"].button-secondary {
+.button.button-secondary,
+button.button-secondary {
     color: #fff;
     background-color: $dark-grey;
     border-color: $dark-grey;
-  }
+}
+
+input {
+    &[type="submit"].button-secondary,
+    &[type="reset"].button-secondary,
+    &[type="button"].button-secondary {
+        color: #fff;
+        background-color: $dark-grey;
+        border-color: $dark-grey;
+    }
 }
 
 .button.button-secondary:hover,
 button.button-secondary:hover {
-  color: #fff;
-  background-color: $light-grey;
-  border-color: $light-grey;
-}
-
-input {
-  &[type="submit"].button-secondary:hover,
-  &[type="reset"].button-secondary:hover,
-  &[type="button"].button-secondary:hover {
     color: #fff;
     background-color: $light-grey;
     border-color: $light-grey;
-  }
+}
+
+input {
+    &[type="submit"].button-secondary:hover,
+        &[type="reset"].button-secondary:hover,
+        &[type="button"].button-secondary:hover {
+        color: #fff;
+        background-color: $light-grey;
+        border-color: $light-grey;
+    }
 }
 
 .button.button-secondary:focus,
 button.button-secondary:focus {
-  color: #fff;
-  background-color: $light-grey;
-  border-color: $light-grey;
-}
-
-input {
-  &[type="submit"].button-secondary:focus,
-  &[type="reset"].button-secondary:focus,
-  &[type="button"].button-secondary:focus {
     color: #fff;
     background-color: $light-grey;
     border-color: $light-grey;
-  }
-  &[type="email"],
-  &[type="number"],
-  &[type="search"],
-  &[type="text"],
-  &[type="tel"],
-  &[type="url"],
-  &[type="password"] {
-    height: 38px;
-    padding: 6px 10px; // The 6px vertically centers text on FF, ignored by Webkit
-    background-color: #fff;
-    border: 1px solid lighten($border-color, 8.8%);
-    border-radius: $global-radius;
-    box-shadow: none;
-    box-sizing: border-box;
-  }
+}
+
+input {
+    &[type="submit"].button-secondary:focus,
+        &[type="reset"].button-secondary:focus,
+        &[type="button"].button-secondary:focus {
+        color: #fff;
+        background-color: $light-grey;
+        border-color: $light-grey;
+    }
+    &[type="email"],
+    &[type="number"],
+    &[type="search"],
+    &[type="text"],
+    &[type="tel"],
+    &[type="url"],
+    &[type="password"] {
+        height: 38px;
+        padding: 6px 10px; // The 6px vertically centers text on FF, ignored by Webkit
+        background-color: #fff;
+        border: 1px solid lighten($border-color, 8.8%);
+        border-radius: $global-radius;
+        box-shadow: none;
+        box-sizing: border-box;
+    }
 }
 
 .fluidMedia {
-  padding-bottom: 56.25%;
-  padding-top: 30px;
-  height: 0;
-  overflow: hidden;
-  position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden;
+    position: relative;
 }
 .fluidMedia iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 img {
-  max-width: 100%;
+    max-width: 100%;
 }
 
 body {
-  font-family: $font-family;
-  line-height: 2;
-  font-size: 1.6em;
+    font-family: $font-family;
+    line-height: 2;
+    font-size: 1.6em;
 }
 
 .has-background-black-bis {
-  background: $dark-grey;
-  color: $light-grey;
+    background: $dark-grey;
+    color: $light-grey;
 }
 
 .tag {
-  border-radius: $global-radius;
-  font-size: 0.8em;
-  padding: 0.25em;
-  margin: 0.25em;
+    border-radius: $global-radius;
+    font-size: 0.8em;
+    padding: 0.25em;
+    margin: 0.25em;
 }
 .is-dark {
-  background: $dark-grey;
-  color: $light-grey;
+    background: $dark-grey;
+    color: $light-grey;
 }
 .is-light {
-  background: $light-grey;
-  color: $dark-grey;
+    background: $light-grey;
+    color: $dark-grey;
 }
 
 .has-background-black-bis a {
-  background: $dark-grey;
-  color: $primary-color;
+    background: $dark-grey;
+    color: $primary-color;
 }
 
 .menu {
-  padding: $padding;
+    padding: $padding;
 }
 
 .navbar {
-  background: $light-grey;
+    background: $light-grey;
 }
 .navbar .navbar-item {
-  padding: $padding;
+    padding: $padding;
 }
 .navbar-brand {
-  float: left;
+    float: left;
 }
 .navbar-end {
-  float: right;
+    float: right;
 }
 .navbar-menu {
-  float: left;
-  display: inline;
+    float: left;
+    display: inline;
 }
 .navbar-start {
-  float: left;
+    float: left;
 }
 
 .card {
-  border: 1px solid $light-grey;
-  padding: $padding;
-  border-radius: $global-radius;
+    border: 1px solid $light-grey;
+    padding: $padding;
+    border-radius: $global-radius;
 }
 .card-header {
-  border-bottom: 1px solid $light-grey;
-  text-align: center;
-  font-weight: bold;
+    border-bottom: 1px solid $light-grey;
+    text-align: center;
+    font-weight: bold;
 }
 .card-body {
-  font-size: 0.9em;
+    font-size: 0.9em;
 }
 .control .input {
-  display: block;
-  width: 100%;
+    display: block;
+    width: 100%;
 }
 
 .has-shadow {
-  -webkit-box-shadow: 0px 2px 4px 0px rgba(87, 87, 87, 1);
-  -moz-box-shadow: 0px 2px 4px 0px rgba(87, 87, 87, 1);
-  box-shadow: 0px 2px 4px 0px rgba(87, 87, 87, 1);
+    -webkit-box-shadow: 0px 2px 4px 0px rgba(87, 87, 87, 1);
+    -moz-box-shadow: 0px 2px 4px 0px rgba(87, 87, 87, 1);
+    box-shadow: 0px 2px 4px 0px rgba(87, 87, 87, 1);
 }
 
 .mt-4 {
-  margin-top: 1em;
+    margin-top: 1em;
 }
 
 .is-striped tr:nth-child(even) {
-  background-color: $light-grey;
+    background-color: $light-grey;
 }
 .alert-success {
-  background: green;
-  color: white;
+    background: green;
+    color: white;
 }
 .alert {
-  padding: 4px;
+    padding: 4px;
 }
 h1,
 h2,
 h3,
 h4,
 h5 {
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  letter-spacing: 0.25em;
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    letter-spacing: 0.25em;
 }
 h1.title {
-  display: inline;
-  font-weight: bold;
+    display: inline;
+    font-weight: bold;
 }
 h1.primary {
-  background: red;
-  box-shadow: 0.7rem 0 red;
-  color: #000;
+    background: red;
+    box-shadow: 0.7rem 0 red;
+    color: #000;
 }
 
 h1.secondary {
-  background: blue;
-  box-shadow: 0.7rem 0 blue;
-  color: whitesmoke;
+    background: blue;
+    box-shadow: 0.7rem 0 blue;
+    color: whitesmoke;
 }
 
 h2.title {
-  display: inline;
-  font-weight: bold;
+    display: inline;
+    font-weight: bold;
 }
 h2.primary {
-  background: $primary-color;
-  box-shadow: 0.7rem 0 $primary-color;
-  color: #000;
+    background: $primary-color;
+    box-shadow: 0.7rem 0 $primary-color;
+    color: #000;
 }
 
 h2.secondary {
-  background: $dark-grey;
-  box-shadow: 0.7rem 0 $dark-grey;
-  color: $light-grey;
+    background: $dark-grey;
+    box-shadow: 0.7rem 0 $dark-grey;
+    color: $light-grey;
 }
 
 h3.title {
-  display: inline;
-  font-weight: bold;
+    display: inline;
+    font-weight: bold;
 }
 h3.primary {
-  background: $primary-color;
-  box-shadow: 0.7rem 0 $primary-color;
-  color: #000;
+    background: $primary-color;
+    box-shadow: 0.7rem 0 $primary-color;
+    color: #000;
 }
 
 h3.secondary {
-  background: $dark-grey;
-  box-shadow: 0.7rem 0 $dark-grey;
-  color: $light-grey;
+    background: $dark-grey;
+    box-shadow: 0.7rem 0 $dark-grey;
+    color: $light-grey;
 }
 .secondary a {
-  color: $light-grey;
+    color: $light-grey;
 }
 .primary a {
-  color: #000;
+    color: #000;
 }
 
 .slideShow {
-  transition: height 0.15 ease-out;
-  background: #333;
+    transition: height 0.15 ease-out;
+    background: #333;
 }
+.headerimage {
+    height:50vh;
+    overflow: hidden;
+}
+.headerimage img {
+    position: relative;
+    top:-50%;
+    object-fit: cover;
+    z-index:0;
+}
+
 .slide {
-  height: 50vh;
-  overflow: hidden;
-  background-color: #404040;
-  background-size: cover;
-  background-position: 50%;
-  background-attachment: fixed;
-  display: none;
-  animation: fadeIn 1.5s;
+    height: 50vh;
+    overflow: hidden;
+    background-color: #404040;
+    background-size: cover;
+    background-position: 50%;
+    background-attachment: fixed;
+    display: none;
+    animation: fadeIn 1.5s;
 }
 .slide img {
-  box-shadow: 1px 1px 20px #000;
+    box-shadow: 1px 1px 20px #000;
 }
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 .halftone {
-  background: rgba(0, 0, 0, 0.5);
-  max-width: 75%;
-  margin-left: auto;
-  margin-top: 1em;
-  padding: 1.5em;
-  color: #fff;
-  border-radius: $global-radius;
+    background: rgba(0, 0, 0, 0.75);
+    max-width: 75%;
+    margin-left: auto;
+    margin-top: 1em;
+    padding: 1.5em;
+    color: #fff;
+    border-radius: $global-radius;
 }
 .halftone a {
-  color: #fff;
-  text-decoration: none;
+    color: #fff;
+    text-decoration: none;
 }
 .title a {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 .img-400 {
-  max-width: 400px;
+    max-width: 400px;
 }
 .img-200 {
-  max-width: 200px;
+    max-width: 200px;
 }
 
 .previewContents {
-  hyphens: auto;
+    hyphens: auto;
 }
 
 
 .has-bottom-border {
     padding-bottom:1em;
     border-bottom: solid 1px $primary-color;
+}
+
+.superHeadline {
+    font-size:3.4em;
+    top:-.5em;
+    position: relative;
 }

@@ -36850,7 +36850,7 @@ window.slideIndex = 0;
 function carousel() {
   var i;
   var x = document.getElementsByClassName("slide");
-  if (x === null) return false;
+  if (x.length == 0) return false;
 
   for (i = 0; i < x.length; i++) {
     x[i].style.display = "none";
@@ -36868,6 +36868,13 @@ function carousel() {
 
 window.addEventListener("load", function () {
   carousel();
+  var allimages = document.getElementsByTagName('img');
+
+  for (var i = 0; i < allimages.length; i++) {
+    if (allimages[i].getAttribute('data-src')) {
+      allimages[i].setAttribute('src', allimages[i].getAttribute('data-src'));
+    }
+  }
 });
 
 /***/ }),

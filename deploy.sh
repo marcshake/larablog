@@ -29,10 +29,13 @@ php artisan config:cache
 npm install
 
 # Build assets using Laravel Mix
-npm run prod
+npm run dev
 
 # build storage link
 php artisan storage:link
+
+./vendor/bin/php-cs-fixer fix ./app
+
 
 # Turn off maintenance mode
 php artisan up
