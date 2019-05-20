@@ -8,7 +8,7 @@
 <div class="slideShow">
     @forelse ($posts as $item)
     <div class="slide"
-        style="background-image: url({{$item->mainImage ? asset('storage/uploads/'.$item->mainImagePath->filename): asset('images/wall.jpg')}})">
+        style="background-image: url('{{$item->mainImage ? asset('storage/uploads/'.$item->mainImagePath->filename): asset('images/wall.jpg')}}')">
         <div class="container">
 
             <h2 class="title {{$loop->iteration % 2 == 0 ? 'primary' : 'secondary' }}">
