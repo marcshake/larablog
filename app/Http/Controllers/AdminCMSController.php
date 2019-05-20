@@ -73,6 +73,7 @@ class AdminCMSController extends Controller
         $validate = $request->validate([
             'title' => 'required',
             'filename' => 'required',
+            'contents' => 'required'
         ]);
 
         $page = CmsPages::findOrFail($id);
