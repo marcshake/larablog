@@ -4,8 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\CmsPages;
+
 class AdminCMSController extends Controller
 {
+    /**
+     * Invited people only
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -58,7 +67,7 @@ class AdminCMSController extends Controller
     public function edit($id)
     {
         $page = CmsPages::findOrFail($id);
-        return view('admin.cmsEdit',['page'=>$page]);
+        return view('admin.cmsEdit', ['page'=>$page]);
     }
 
     /**
@@ -82,7 +91,6 @@ class AdminCMSController extends Controller
         $page->filename = $request->filename;
         $page->save();
         return redirect('admin/cms')->with('status', 'Seite gespeichert');
-
     }
 
     /**
