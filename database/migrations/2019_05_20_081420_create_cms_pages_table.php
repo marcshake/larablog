@@ -17,10 +17,10 @@ class CreateCmsPagesTable extends Migration
             $table->bigIncrements('id');
             $table->string('filename');
             $table->string('title');
-            $table->string('contents');
+            $table->longText('contents');
             $table->timestamps();
         });
-        DB::table('cms_pages')->insert(['filename'=>'home', 'title'=>'homepage', 'contents'=>'<p>Moin</p>']);
+        DB::table('cms_pages')->insert(['filename'=>'home', 'title'=>'Willkommen', 'contents'=>'<p>Startseite. Diese Seite kannst Du bearbeiten, aber sie darf nicht gelöscht werden. Erlaubt ist hier, was gefällt. Leere Seiten sind auch erlaubt</p><p>Viel Spaß mit der Software!</p>']);
     }
 
     /**

@@ -1,7 +1,7 @@
 @extends('layouts.larablog')
 
 @section('title')
-Startseite
+{{$home->title}}
 @endsection
 
 @section('maincontents')
@@ -70,19 +70,9 @@ Startseite
     </div>
 </div>
 <div class="container">
-    <h2 class="primary title">Über diese Seite</h2>
+    <h2 class="primary title">{{$home->title}}</h2>
     <div class="mt-4">
-        <figure class="u-pull-right img-200">
-            <img src="{{asset('images/wall.jpg')}}" alt="Bild" class="u-full-width">
-            <figcaption>
-                Headline zum Bild
-            </figcaption>
-        </figure>
-        <p>
-            Todo: Irgendwas programmieren, das hier eine geile Startseite anzeigt. Im Backend muss eine Home-Seite
-            definiert werden, die dann irgendwas macht.
-            Damit das funktioniert, muss ein CMS-Modul gebaut werden.
-        </p>
+        {!!$home->contents!!}
     </div>
 </div>
 @endsection

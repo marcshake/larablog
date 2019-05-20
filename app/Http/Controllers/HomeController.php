@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\BlogPosts;
+use App\CmsPages;
 
 class HomeController extends Controller
 {
@@ -23,7 +24,9 @@ class HomeController extends Controller
         foreach ($morePosts as $r=> $entry) {
             $morePosts[$r]->contents = $this->shorten($entry->contents);
         }
-        return view('tlog', ['posts'=>$posts, 'morePosts'=>$morePosts]);
+        $home = CmsPages::getHomepage();
+
+        return view('tlog', ['posts'=>$posts, 'morePosts'=>$morePosts, 'home'=>$home]);
     }
 
     private function shorten($string)

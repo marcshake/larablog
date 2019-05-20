@@ -24,8 +24,10 @@ Route::get('admin/new', 'AdminController@create');
 Route::get('admin/delete/{id}', 'AdminController@destroy');
 
 Route::get('admin/filer', 'ImageController@index');
+Route::get('admin/cms', 'AdminCMSController@index');
+Route::get('admin/cms/edit/{id}', 'AdminCMSController@edit');
 
-
+Route::post('admin/cms/edit/{id}', 'AdminCMSController@update');
 
 Route::post('admin/update/{id}', 'AdminController@update');
 Route::post('admin/save', 'AdminController@store');
