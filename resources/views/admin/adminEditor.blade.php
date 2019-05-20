@@ -5,6 +5,7 @@
 
  <form action="{{ url('admin/update',$contents->id)}}" method="post">
     @csrf
+    <input type="hidden" name="mainImage" id="imageID" value="{{$contents->mainImage}}">
     <div class="field">
         <label class="label" for="title">Überschrift</label>
         <div class="control">

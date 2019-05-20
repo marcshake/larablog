@@ -3,7 +3,7 @@ require('./bootstrap');
 
 
 
-$(document).ready(function(){
+$(document).ready(function () {
     $.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -12,15 +12,20 @@ $(document).ready(function(){
 
     var myImagelib = function () {
         $('#modalTitle').html('Bild auswählen');
-        $.post('/ajax/image', function(data) {
+        $.post('/ajax/image', function (data) {
             $('#modalContents').html(data);
         });
     };
 
-    $('.close-modal').click(function(){$('.modal').addClass('hidden')});
-    $('.open-modal').click(function(){$('.modal').removeClass('hidden')});
+    var useImage = function (item) {
+        var img = item.data('item');
+        $('#imageID').val(img);
+    }
 
-    $('.imageBrowser').click(function(){myImagelib()})
+    $('.close-modal').click(function () { $('.modal').addClass('hidden') });
+    $('.open-modal').click(function () { $('.modal').removeClass('hidden') });
+    $('.ibrowser').on('click', '.thumb', function () { useImage($(this)) });
+    $('.imageBrowser').click(function () { myImagelib() })
 });
 
 

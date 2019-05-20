@@ -36852,11 +36852,19 @@ $(document).ready(function () {
     });
   };
 
+  var useImage = function useImage(item) {
+    var img = item.data('item');
+    $('#imageID').val(img);
+  };
+
   $('.close-modal').click(function () {
     $('.modal').addClass('hidden');
   });
   $('.open-modal').click(function () {
     $('.modal').removeClass('hidden');
+  });
+  $('.ibrowser').on('click', '.thumb', function () {
+    useImage($(this));
   });
   $('.imageBrowser').click(function () {
     myImagelib();

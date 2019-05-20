@@ -6,7 +6,7 @@
             </div>
             <div class="modal-content-inner">
                 <h4 id="modalTitle">Loading...</h4>
-                <div id="modalContents">
+                <div id="modalContents" class="ibrowser">
                     Loading...
                 </div>
             </div>

@@ -1132,7 +1132,7 @@ h3.secondary {
 }
 
 .slide {
-  height: 50vh;
+  height: 100vh;
   overflow: hidden;
   background-color: #404040;
   background-size: cover;
