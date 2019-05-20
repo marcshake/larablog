@@ -32,5 +32,6 @@ Route::get('admin/cms/edit/{id}', 'AdminCMSController@edit');
 Route::post('admin/update/{id}', 'AdminController@update');
 Route::post('admin/save', 'AdminController@store');
 Route::post('admin/filer', 'ImageController@store');
-Route::post('ajax/image', 'ImageController@ajax');
+Route::post('ajax/image/', 'ImageController@ajax');
+Route::post('ajax/loadImage/{id}', 'ImageController@ajaxImage');
 Route::post('admin/cms/edit/{id}', 'AdminCMSController@update');

@@ -43,9 +43,12 @@
                 <div class="control">
                     @if ($contents->mainImage == null)
                     Kein Artikelbild
+                    <span id="previewImag"></span>
                     @else
+                    <span id="previewImag">
                     <img src="{{asset('storage/thumbnail/tiny_'.$contents->mainImagePath->filename)}}"
                         alt="Upload by User">
+                    </span>
                     @endif
                     <div class="row">
                         <a href="#modal" class="imageBrowser button open-modal">Artikelbild</a>

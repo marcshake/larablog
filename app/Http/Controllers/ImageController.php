@@ -18,7 +18,11 @@ class ImageController extends Controller
     {
         $this->middleware('auth');
     }
-
+    public function ajaxImage($id)
+    {
+        $img = Media::findOrFail($id);
+        return response()->json(['thumbnail'=>($img->filename)]);
+    }
     public function ajax()
     {
         $collection = Media::orderBy('id', 'desc')->paginate(100);

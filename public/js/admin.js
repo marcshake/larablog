@@ -36855,6 +36855,11 @@ $(document).ready(function () {
   var useImage = function useImage(item) {
     var img = item.data('item');
     $('#imageID').val(img);
+    $.post('/ajax/loadImage/' + img, function (imageDetail) {
+      $('#previewImag').empty();
+      $('#previewImag').append($('img').attr('src', '/storage/thumbnail/' + imageDetail['thumbnail']));
+      return false;
+    });
   };
 
   $('.close-modal').click(function () {
@@ -36938,7 +36943,7 @@ if (token) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\larablog\resources\js\admin.js */"./resources/js/admin.js");
+module.exports = __webpack_require__(/*! /home/marcel/www/larablog/resources/js/admin.js */"./resources/js/admin.js");
 
 
 /***/ })
