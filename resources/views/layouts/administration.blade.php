@@ -50,36 +50,7 @@
     <div class="mt-4 fluidContainer">
         <div class="row">
             <div class="columns two">
-                <aside class="menu has-background-black-bis">
-                    <p class="menu-label">Dashboard</p>
-                    <ul class="menu-list">
-                        <li>
-                            <a href="{{url('admin')}}" {!!Request::is('admin')?'class="active"':''!!}>
-                                Startseite
-                            </a>
-                        </li>
-                    </ul>
-                    <p class="menu-label">
-                        Beiträge
-                    </p>
-                    <ul class="menu-list">
-                        <li>
-                            <a href="{{url('admin/blogs')}}" {!!Request::is('admin/blogs')?'class="active"':''!!}>Alle Beiträge</a>
-                        </li>
-                        <li>
-                            <a href="{{url('admin/new')}}" {!!Request::is('admin/new')?'class="active"':''!!}>Neuer Beitrag</a>
-                        </li>
-                    </ul>
-                    <p class="menu-label">
-                        Bilder / Videos
-                    </p>
-                    <ul class="menu-list">
-                        <li>
-                            <a href="{{url('admin/filer')}}" {!!Request::is('admin/filer')?'class="active"':''!!}>Bilder</a>
-                        </li>
-                    </ul>
-
-                </aside>
+                @include('partial.adminMenu')
             </div>
             <div class="columns ten">
                     @if (session('warning'))
