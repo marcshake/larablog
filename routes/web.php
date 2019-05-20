@@ -22,6 +22,7 @@ Route::get('admin/blogs', 'AdminController@list');
 Route::get('admin/edit/{id}', 'AdminController@edit');
 Route::get('admin/new', 'AdminController@create');
 Route::get('admin/delete/{id}', 'AdminController@destroy');
+Route::get('admin/status/{id}', 'AdminController@status');
 
 Route::get('admin/filer', 'ImageController@index');
 Route::get('admin/cms', 'AdminCMSController@index');

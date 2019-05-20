@@ -104,7 +104,6 @@ class AdminController extends Controller
      */
     public function update(Request $request, $id)
     {
-        #dd($request);
         $contents = BlogPosts::findOrFail($id);
         $contents->title = $request->title;
         $contents->contents = $request->contents;
@@ -126,5 +125,19 @@ class AdminController extends Controller
         $entry->trashed = 1;
         $entry->save();
         return redirect('admin/blogs')->with('status', 'Eintrag gelöscht');
+    }
+    /**
+     * Change visibility of Post
+     *
+     * @param [type] $id
+     * @return void
+     */
+    public function status($id)
+    {
+        $entry = BlogPosts::findOrFail($id);
+        $vis = $entry->visible == 1 ? 0 : 1;
+        $entry->visible = $vis;
+        $entry->save();
+        return redirect('admin/edit/'.$id)->with('status', 'Sichtbarkeit geändert');
     }
 }
