@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\BlogPosts;
+use App\Tags;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -64,12 +65,35 @@ class AdminController extends Controller
         }
         $contents = new BlogPosts;
         $contents->title = $request->title;
-        #$contents->tags()->syncWithoutDetaching($array); // Todo: ordentlichen Sync bauen
         $contents->contents = $request->contents;
         $contents->author = \Auth::user()->id;
+
+
         $contents->save();
+        $this->handleTags($request, $contents);
         $id = $contents->id;
         return redirect('admin/edit/'.$id)->with('status', 'Änderungen gespeichert!');
+    }
+
+    public function handleTags($request, $contents)
+    {
+        if ($request->tags) {
+            $array = false;
+            if (!strstr($request->tags, ',')) {
+                $request->tags.',';
+            }
+            $vals = explode(',', $request->tags);
+            foreach ($vals as $val) {
+                $test = trim($val);
+                if (!empty($test)) {
+                    $tags = Tags::firstOrCreate(['tag'=>$test]);
+                    $array[] = $tags->id;
+                }
+            }
+            if ($array) {
+                $contents->tags()->sync($array);
+            }
+        }
     }
 
     /**
@@ -108,7 +132,9 @@ class AdminController extends Controller
         $contents->title = $request->title;
         $contents->contents = $request->contents;
         $contents->mainImage = $request->mainImage;
-        #        $contents->tags()->syncWithoutDetaching($array); //todo: check for used tags and add new ones, if necessary
+
+        $this->handleTags($request, $contents);
+
         $contents->save();
         return redirect('admin/edit/'.$id)->with('status', 'Änderungen gespeichert!');
     }

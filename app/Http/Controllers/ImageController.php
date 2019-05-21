@@ -23,7 +23,7 @@ class ImageController extends Controller
         $img = Media::findOrFail($id);
         return response()->json(['id'=>$img->id, 'thumbnail'=>($img->filename)]);
     }
-    public function ajax()
+    public function gallery()
     {
         $collection = Media::orderBy('id', 'desc')->paginate(100);
         return view('admin.adminInlineImage', ['collection'=>$collection]);
