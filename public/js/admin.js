@@ -36844,6 +36844,9 @@ $(document).ready(function () {
       'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
     }
   });
+  /**
+   * Browse Images
+   */
 
   var myImagelib = function myImagelib() {
     console.log('Called Imagebrowser');
@@ -36852,17 +36855,24 @@ $(document).ready(function () {
       $('#modalContents').html(data);
     });
   };
+  /**
+   * Use Specific Image
+   * @param {} item
+   */
+
 
   var useImage = function useImage(item) {
     var img = item.data('item');
-    console.log('Called Image-Selection');
     $('#imageID').val(img);
     $.post('/ajax/loadImage/' + img, function (imageDetail) {
-      $('#previewImag').html('<img src="/storage/thumbnail/' + imageDetail['thumbnail'] + '"'); // $('#previewImag').append($('img').attr('src','/storage/thumbnail/'+imageDetail['thumbnail']));
-
+      $('#previewImag').html('<img src="/storage/thumbnail/tiny_' + imageDetail['thumbnail'] + '">');
       return false;
     });
   };
+  /**
+   * All the Handlers
+   */
+
 
   $('.close-modal').click(function () {
     $('.modal').addClass('hidden');

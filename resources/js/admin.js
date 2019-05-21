@@ -1,8 +1,5 @@
 require('./bootstrap');
 
-
-
-
 $(document).ready(function () {
     $.ajaxSetup({
         headers: {
@@ -10,6 +7,9 @@ $(document).ready(function () {
         }
     });
 
+    /**
+     * Browse Images
+     */
     var myImagelib = function () {
         console.log('Called Imagebrowser');
         $('#modalTitle').html('Bild auswählen');
@@ -17,18 +17,22 @@ $(document).ready(function () {
             $('#modalContents').html(data);
         });
     };
-
+    /**
+     * Use Specific Image
+     * @param {} item
+     */
     var useImage = function (item) {
         var img = item.data('item');
-        console.log('Called Image-Selection');
         $('#imageID').val(img);
-        $.post('/ajax/loadImage/'+img,function(imageDetail){
-            $('#previewImag').html('<img src="/storage/thumbnail/'+imageDetail['thumbnail']+'"');
-           // $('#previewImag').append($('img').attr('src','/storage/thumbnail/'+imageDetail['thumbnail']));
+        $.post('/ajax/loadImage/' + img, function (imageDetail) {
+            $('#previewImag').html('<img src="/storage/thumbnail/tiny_' + imageDetail['thumbnail'] + '">');
             return false;
         });
     }
 
+    /**
+     * All the Handlers
+     */
     $('.close-modal').click(function () { $('.modal').addClass('hidden') });
     $('.open-modal').click(function () { $('.modal').removeClass('hidden') });
     $('.ibrowser').on('click', '.thumb', function () { useImage($(this)) });
