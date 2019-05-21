@@ -21,7 +21,7 @@ class ImageController extends Controller
     public function ajaxImage($id)
     {
         $img = Media::findOrFail($id);
-        return response()->json(['thumbnail'=>($img->filename)]);
+        return response()->json(['id'=>$img->id, 'thumbnail'=>($img->filename)]);
     }
     public function ajax()
     {
