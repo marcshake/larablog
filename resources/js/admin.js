@@ -11,6 +11,7 @@ $(document).ready(function () {
     });
 
     var myImagelib = function () {
+        console.log('Called Imagebrowser');
         $('#modalTitle').html('Bild auswählen');
         $.post('/ajax/image', function (data) {
             $('#modalContents').html(data);
@@ -19,10 +20,11 @@ $(document).ready(function () {
 
     var useImage = function (item) {
         var img = item.data('item');
+        console.log('Called Image-Selection');
         $('#imageID').val(img);
         $.post('/ajax/loadImage/'+img,function(imageDetail){
-            $('#previewImag').empty();
-            $('#previewImag').append($('img').attr('src','/storage/thumbnail/'+imageDetail['thumbnail']));
+            $('#previewImag').html('<img src="/storage/thumbnail/'+imageDetail['thumbnail']+'"');
+           // $('#previewImag').append($('img').attr('src','/storage/thumbnail/'+imageDetail['thumbnail']));
             return false;
         });
     }

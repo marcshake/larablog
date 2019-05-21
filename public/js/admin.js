@@ -36846,6 +36846,7 @@ $(document).ready(function () {
   });
 
   var myImagelib = function myImagelib() {
+    console.log('Called Imagebrowser');
     $('#modalTitle').html('Bild auswählen');
     $.post('/ajax/image', function (data) {
       $('#modalContents').html(data);
@@ -36854,10 +36855,11 @@ $(document).ready(function () {
 
   var useImage = function useImage(item) {
     var img = item.data('item');
+    console.log('Called Image-Selection');
     $('#imageID').val(img);
     $.post('/ajax/loadImage/' + img, function (imageDetail) {
-      $('#previewImag').empty();
-      $('#previewImag').append($('img').attr('src', '/storage/thumbnail/' + imageDetail['thumbnail']));
+      $('#previewImag').html('<img src="/storage/thumbnail/' + imageDetail['thumbnail'] + '"'); // $('#previewImag').append($('img').attr('src','/storage/thumbnail/'+imageDetail['thumbnail']));
+
       return false;
     });
   };
@@ -36943,7 +36945,7 @@ if (token) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/marcel/www/larablog/resources/js/admin.js */"./resources/js/admin.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\larablog\resources\js\admin.js */"./resources/js/admin.js");
 
 
 /***/ })
