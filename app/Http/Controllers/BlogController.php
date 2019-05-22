@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\BlogPosts;
+use App\Category;
 
 class BlogController extends Controller
 {
@@ -11,7 +12,8 @@ class BlogController extends Controller
     {
         if (!$title && !$id) {
             $posts = BlogPosts::blogHome();
-            return view('blog', ['blogposts'=>$posts]);
+            $categories = Category::all();
+            return view('blog', ['blogposts'=>$posts,'categories'=>$categories]);
         }
         $post = BlogPosts::getSpecific($title, $id);
         return view('posting', ['posting'=>$post]);

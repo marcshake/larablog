@@ -28,7 +28,7 @@ class BlogPosts extends Model
     }
     public static function blogHome()
     {
-        $posts = self::select('contents', 'id', 'title', 'visible', 'created_at', 'author')->orderBy('id', 'DESC')->where('visible', 1)->where('trashed', null)->paginate(15);
+        $posts = self::select('mainImage','contents', 'id', 'title', 'visible', 'created_at', 'author')->orderBy('id', 'DESC')->where('visible', 1)->where('trashed', null)->paginate(15);
         foreach ($posts as $r => $post) {
             $posts[$r]->shortcontents = self::shorten($post->contents);
         }

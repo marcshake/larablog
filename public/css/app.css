@@ -1,4 +1,4 @@
-/*
+@import url(https://fonts.googleapis.com/css?family=Anton|Fira+Sans&display=swap);/*
 * Skeleton V2.0.4
 * Copyright 2014, Dave Gamache
 * www.getskeleton.com
@@ -935,7 +935,7 @@ img {
 }
 
 body {
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-family: "Fira Sans", helvetica, arial;
   line-height: 2;
   font-size: 1.6em;
 }
@@ -1043,7 +1043,7 @@ h2,
 h3,
 h4,
 h5 {
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-family: "Anton", Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   letter-spacing: 0.25em;
 }
 
@@ -1106,17 +1106,23 @@ h3.secondary {
   color: #000;
 }
 
+.secondary a:hover {
+  color: #1eaedb;
+}
+
+.primary a:hover {
+  color: #1eaedb;
+}
+
 .slideShow {
-  height: 50vh;
-  transition: height 1s steps(1);
-  background: #333;
+  height: 100vh;
+  background-color: #333;
 }
 
 .headerimage {
   height: 50vh;
   overflow: hidden;
   position: relative;
-  transition: height 1s steps(1);
 }
 
 .headerimage img {
@@ -1135,14 +1141,14 @@ h3.secondary {
 
 .slide {
   overflow: hidden;
+  font-size: 2em;
   height: 100%;
-  background-color: #404040;
   background-size: cover;
   background-position: 50%;
   background-attachment: fixed;
   display: none;
-  -webkit-animation: fadeIn 1.5s;
-          animation: fadeIn 1.5s;
+  -webkit-animation: fadeIn 2s;
+          animation: fadeIn 2s;
 }
 
 .slide img {
