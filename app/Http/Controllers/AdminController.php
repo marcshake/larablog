@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\BlogPosts;
 use App\Tags;
+use App\Category;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -71,9 +72,32 @@ class AdminController extends Controller
 
         $contents->save();
         $this->handleTags($request, $contents);
+        $this->handleCategories($request, $contents);
         $id = $contents->id;
         return redirect('admin/edit/'.$id)->with('status', 'Änderungen gespeichert!');
     }
+
+    public function handleCategories($request, $contents)
+    {
+        if ($request->kategorie) {
+            $array = false;
+            if (!strstr($request->kategorie, ',')) {
+                $request->kategorie.',';
+            }
+            $vals = explode(',', $request->kategorie);
+            foreach ($vals as $val) {
+                $test = trim($val);
+                if (!empty($test)) {
+                    $tags = Category::firstOrCreate(['name'=>$test]);
+                    $array[] = $tags->id;
+                }
+            }
+            if ($array) {
+                $contents->categories()->sync($array);
+            }
+        }
+    }
+
 
     public function handleTags($request, $contents)
     {
@@ -134,6 +158,7 @@ class AdminController extends Controller
         $contents->mainImage = $request->mainImage;
 
         $this->handleTags($request, $contents);
+        $this->handleCategories($request, $contents);
 
         $contents->save();
         return redirect('admin/edit/'.$id)->with('status', 'Änderungen gespeichert!');

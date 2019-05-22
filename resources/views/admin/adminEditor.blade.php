@@ -33,7 +33,7 @@
             <div class="field">
                 <label for="kategorie" class="label">Kategorien</label>
                 <div class="control">
-                    <input class="input" type="text" name="kategorie" id="kategorie" value="{{$contents->kategorie}}">
+                    <input class="input" type="text" name="kategorie" id="kategorie" value="@forelse ($contents->categories as $tags){{$tags->name}}, @empty @endforelse">
                 </div>
             </div>
         </div>
