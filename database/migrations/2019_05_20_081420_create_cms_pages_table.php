@@ -20,7 +20,34 @@ class CreateCmsPagesTable extends Migration
             $table->longText('contents');
             $table->timestamps();
         });
-        DB::table('cms_pages')->insert(['filename'=>'home', 'title'=>'Willkommen', 'contents'=>'<p>Startseite. Diese Seite kannst Du bearbeiten, aber sie darf nicht gelöscht werden. Erlaubt ist hier, was gefällt. Leere Seiten sind auch erlaubt</p><p>Viel Spaß mit der Software!</p>']);
+        DB::table('cms_pages')->insert(['filename'=>'home', 'title'=>'Hallo!', 'contents'=>'
+<div class="row">
+    <div class="four columns">
+        <h2 clasS="title primary">Funktionen</h2>
+        <p>
+            Vollständige Bloglösung für mehrere Autoren, komplett aufgesetzt auf Laravel und Jquery. Kompromisslos schnell und sicher.
+        </p>
+        <ol>
+            <li>Beliebig viele Blogposts</li>
+            <li>Beliebig viele Kategorien, Tags</li>
+            <li>RSS-Feeds.</li>
+            <li>Kommentare. (*geplant*)</li>
+        </ol>
+    </div>
+    <div class="four columns">
+        <h2 clasS="title primary">NOch mehr Content</h2>
+        <p>
+        Bla blabla bla
+        </p>
+    </div>
+    <div class="four columns">
+        <h2 clasS="title primary">Funktionen</h2>
+        <p>
+        Ganz viel.
+        </p>
+    </div>
+</div>
+        ']);
     }
 
     /**

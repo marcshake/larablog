@@ -1107,7 +1107,8 @@ h3.secondary {
 }
 
 .slideShow {
-  transition: height 0.15 ease-out;
+  height: 50vh;
+  transition: height 1s steps(1);
   background: #333;
 }
 
@@ -1115,6 +1116,7 @@ h3.secondary {
   height: 50vh;
   overflow: hidden;
   position: relative;
+  transition: height 1s steps(1);
 }
 
 .headerimage img {
@@ -1132,8 +1134,8 @@ h3.secondary {
 }
 
 .slide {
-  height: 50vh;
   overflow: hidden;
+  height: 100%;
   background-color: #404040;
   background-size: cover;
   background-position: 50%;

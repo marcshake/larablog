@@ -41,7 +41,7 @@
                             </a>
                         </h2>
 
-                        {!! $item->contents !!}
+                        {!! $item->shortcontents !!}
                     </div>
 
                 </div>

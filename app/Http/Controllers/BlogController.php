@@ -10,7 +10,7 @@ class BlogController extends Controller
     public function index($title=false, $id = false)
     {
         if (!$title && !$id) {
-            $posts = BlogPosts::orderBy('id', 'DESC')->where('visible', 1)->where('trashed', null)->paginate(15);
+            $posts = BlogPosts::blogHome();
             return view('blog', ['blogposts'=>$posts]);
         }
         $post = BlogPosts::getSpecific($title, $id);

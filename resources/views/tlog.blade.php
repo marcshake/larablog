@@ -40,6 +40,13 @@
     @endforelse
 </div>
 <div class="container">
+    <h2 class="primary title">{{$home->title}}</h2>
+    <div class="mt-4">
+        {!!$home->contents!!}
+    </div>
+</div>
+
+<div class="container">
     <div class="mt-4">
         <h2 class="title secondary">NEU im Blog:</h2>
         @forelse ($morePosts->chunk(3) as $chunk)
@@ -67,12 +74,6 @@
         @empty
         Blog ist leer
         @endforelse
-    </div>
-</div>
-<div class="container">
-    <h2 class="primary title">{{$home->title}}</h2>
-    <div class="mt-4">
-        {!!$home->contents!!}
     </div>
 </div>
 @endsection

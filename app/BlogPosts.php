@@ -26,7 +26,14 @@ class BlogPosts extends Model
     {
         return self::select('id', 'title', 'visible', 'created_at', 'author')->orderBy('id', 'DESC')->where('trashed', null)->paginate(100);
     }
-
+    public static function blogHome()
+    {
+        $posts = self::select('contents', 'id', 'title', 'visible', 'created_at', 'author')->orderBy('id', 'DESC')->where('visible', 1)->where('trashed', null)->paginate(15);
+        foreach ($posts as $r => $post) {
+            $posts[$r]->shortcontents = self::shorten($post->contents);
+        }
+        return $posts;
+    }
     /**
      * Get a List of Posts
      *
@@ -56,5 +63,15 @@ class BlogPosts extends Model
     public static function getSpecific($title, $id)
     {
         return self::where('trashed', null)->where('visible', 1)->where('title', $title)->where('id', $id)->firstOrFail();
+    }
+
+    public static function shorten($string)
+    {
+        $v['contents'] = $string;
+        $start = strpos($v['contents'], '<p>');
+        $end = strpos($v['contents'], '</p>', $start);
+        $paragraph = substr($v['contents'], $start, $end - $start + 4);
+//        $tmp[$r]['contents'] = $paragraph;
+        return $paragraph;
     }
 }

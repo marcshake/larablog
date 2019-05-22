@@ -37,8 +37,6 @@ class CopyTlog4 extends Command
      */
     public function handle()
     {
-        $data = DB::connection('second')->select('title','contents','times','vis');
-
-
+        $data = DB::connection('second')->select('title', 'contents', 'times', 'vis');
     }
 }
