@@ -45,7 +45,7 @@
                         Contentblock
                     </h3>
                     <p>
-                        Todo: Show some blocks. Static pages, list of categories, tags, stuff like that
+                        Todo: Show some blocks. Static pages, list of categories, tags, stuff like that. Calender? Select-Container?
                     </p>
                 </div>
             </div>
