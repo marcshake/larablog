@@ -68,6 +68,10 @@
 <script>
     CKEDITOR.replace('contents');
 </script>
+<script>
+        CKEDITOR.config.contentsCss = "{{asset('css/admin.css')}}";
+        CKEDITOR.config.extraAllowedContent = 'div(*)';
+    </script>
 
 @endsection
 @section('script')
