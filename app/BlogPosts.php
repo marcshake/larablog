@@ -34,6 +34,23 @@ class BlogPosts extends Model
         }
         return $posts;
     }
+
+    public static function getByTag($tag) {
+
+        $posts = self::select('mainImage', 'contents', 'id', 'title', 'visible', 'created_at', 'author')
+            ->orderBy('created_at', 'DESC')
+            ->where('visible', 1)
+            ->where('trashed', null)
+            ->whereHas('Tags', function($query){
+                $query->where('id');
+            },'=',$tag)
+            ->paginate(15);
+        foreach ($posts as $r => $post) {
+            $posts[$r]->shortcontents = self::shorten($post->contents);
+        }
+        return $posts;
+
+    }
     /**
      * Get a List of Posts
      *

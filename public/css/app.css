@@ -141,6 +141,8 @@ samp {
 }
 
 button,
+.page-item a,
+.page-item span,
 input,
 optgroup,
 select,
@@ -150,16 +152,22 @@ textarea {
   margin: 0;
 }
 
-button {
+button,
+.page-item a,
+.page-item span {
   overflow: visible;
 }
 
 button,
+.page-item a,
+.page-item span,
 select {
   text-transform: none;
 }
 
 button,
+.page-item a,
+.page-item span,
 html input[type=button],
 input[type=reset],
 input[type=submit] {
@@ -168,11 +176,15 @@ input[type=submit] {
 }
 
 button[disabled],
+.page-item a[disabled],
+.page-item span[disabled],
 html input[disabled] {
   cursor: default;
 }
 
 button::-moz-focus-inner,
+.page-item a::-moz-focus-inner,
+.page-item span::-moz-focus-inner,
 input::-moz-focus-inner {
   border: 0;
   padding: 0;
@@ -556,7 +568,9 @@ p {
 }
 
 .button,
-button {
+button,
+.page-item a,
+.page-item span {
   display: inline-block;
   height: 38px;
   padding: 0 30px;
@@ -599,7 +613,9 @@ input[type=button] {
 }
 
 .button:hover,
-button:hover {
+button:hover,
+.page-item a:hover,
+.page-item span:hover {
   color: #333;
   border-color: #888888;
   outline: 0;
@@ -614,7 +630,9 @@ input[type=button]:hover {
 }
 
 .button:focus,
-button:focus {
+button:focus,
+.page-item a:focus,
+.page-item span:focus {
   color: #333;
   border-color: #888888;
   outline: 0;
@@ -629,7 +647,9 @@ input[type=button]:focus {
 }
 
 .button.button-primary,
-button.button-primary {
+button.button-primary,
+.page-item a.button-primary,
+.page-item span.button-primary {
   color: #fff;
   background-color: #33c3f0;
   border-color: #33c3f0;
@@ -644,7 +664,9 @@ input[type=button].button-primary {
 }
 
 .button.button-primary:hover,
-button.button-primary:hover {
+button.button-primary:hover,
+.page-item a.button-primary:hover,
+.page-item span.button-primary:hover {
   color: #fff;
   background-color: #1eaedb;
   border-color: #1eaedb;
@@ -659,7 +681,9 @@ input[type=button].button-primary:hover {
 }
 
 .button.button-primary:focus,
-button.button-primary:focus {
+button.button-primary:focus,
+.page-item a.button-primary:focus,
+.page-item span.button-primary:focus {
   color: #fff;
   background-color: #1eaedb;
   border-color: #1eaedb;
@@ -826,6 +850,8 @@ td:last-child {
 }
 
 button,
+.page-item a,
+.page-item span,
 .button {
   margin-bottom: 1rem;
 }
@@ -854,7 +880,9 @@ html {
 }
 
 .button.button-secondary,
-button.button-secondary {
+button.button-secondary,
+.page-item a.button-secondary,
+.page-item span.button-secondary {
   color: #fff;
   background-color: #333;
   border-color: #333;
@@ -869,7 +897,9 @@ input[type=button].button-secondary {
 }
 
 .button.button-secondary:hover,
-button.button-secondary:hover {
+button.button-secondary:hover,
+.page-item a.button-secondary:hover,
+.page-item span.button-secondary:hover {
   color: #fff;
   background-color: #e1e1e1;
   border-color: #e1e1e1;
@@ -884,7 +914,9 @@ input[type=button].button-secondary:hover {
 }
 
 .button.button-secondary:focus,
-button.button-secondary:focus {
+button.button-secondary:focus,
+.page-item a.button-secondary:focus,
+.page-item span.button-secondary:focus {
   color: #fff;
   background-color: #e1e1e1;
   border-color: #e1e1e1;
@@ -1223,5 +1255,18 @@ h3.secondary {
 h3 {
   font-family: "Fira Sans", helvetica, arial;
   letter-spacing: 0;
+}
+
+.pagination {
+  list-style: none;
+  margin-top: 1em;
+}
+
+.page-item {
+  float: left;
+}
+
+.page-item.active span.page-link {
+  background-color: #edf033;
 }
 

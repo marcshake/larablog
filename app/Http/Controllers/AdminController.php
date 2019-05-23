@@ -110,6 +110,7 @@ class AdminController extends Controller
             foreach ($vals as $val) {
                 $test = trim($val);
                 if (!empty($test)) {
+                    $test = strtolower($test);
                     $tags = Tags::firstOrCreate(['tag'=>$test]);
                     $array[] = $tags->id;
                 }

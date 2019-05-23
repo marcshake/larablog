@@ -19,10 +19,11 @@
                     <div class="sticky">
                             Tags:
                             @forelse ($posting->Tags as $tags)
-                            <span class="tag is-dark">{{$tags->tag}}</span>
+                                <a href="{{url('tag',$tags->tag)}}" class="tag is-dark">{{$tags->tag}}</a>
                             @empty
 
                             @endforelse
+                            <br>
                             Datum: {{ $posting->created_at->formatLocalized('%d.%m.%Y')}}
 
                             Autor: {{$posting->authorName->name}}

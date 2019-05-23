@@ -16,6 +16,7 @@ Auth::routes(['register'=>false]);
 
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('blog/{title?}/{id?}', 'BlogController@index');
+Route::get('tag/{name?}', 'BlogController@tag');
 Route::get('logout', 'Auth\LoginController@logout');
 Route::get('admin', 'AdminController@index');
 Route::get('admin/blogs', 'AdminController@list');
