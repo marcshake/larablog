@@ -1198,3 +1198,8 @@ td:hover .subaction {
   margin: auto;
 }
 
+.scrollable {
+  max-height: 55vh;
+  overflow: auto;
+}
+

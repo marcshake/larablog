@@ -1219,3 +1219,9 @@ h3.secondary {
   position: relative;
 }
 
+.contents h2,
+h3 {
+  font-family: "Fira Sans", helvetica, arial;
+  letter-spacing: 0;
+}
+

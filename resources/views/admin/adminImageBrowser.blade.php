@@ -24,6 +24,8 @@ Bilder / Mediendateien
     </div>
 </div>
 <div class="ibrowser">
+    <div class="row">
     @include('partial.imagebrowser')
+</div>
 </div>
 @endsection

@@ -370,3 +370,9 @@ h3.secondary {
   top: -0.5em;
   position: relative;
 }
+
+.contents h2, h3 {
+    font-family: $font-family;
+    letter-spacing: 0;
+}
+
