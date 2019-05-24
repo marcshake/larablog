@@ -17,5 +17,6 @@ class DatabaseSeeder extends Seeder
         $this->call(Tags2BlogsSeeder::class);
         $this->call(CategoriesSeeder::class);
         $this->call(Cats2BlogsSeeder::class);
+        $this->call(CMSPagesSeeder::class);
     }
 }
