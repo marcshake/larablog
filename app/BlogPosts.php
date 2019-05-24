@@ -37,7 +37,7 @@ class BlogPosts extends Model
 
     public static function getByCategory($category)
     {
-        $posts = self::select('created_at','mainImage', 'contents', 'id', 'title', 'visible', 'updated_at', 'author')
+        $posts = self::select('created_at', 'mainImage', 'contents', 'id', 'title', 'visible', 'updated_at', 'author')
             ->orderBy('created_at', 'DESC')
             ->where('visible', 1)
             ->where('trashed', null)
@@ -54,7 +54,7 @@ class BlogPosts extends Model
 
     public static function getByTag($tag)
     {
-        $posts = self::select('created_at','mainImage', 'contents', 'id', 'title', 'visible', 'updated_at', 'author')
+        $posts = self::select('created_at', 'mainImage', 'contents', 'id', 'title', 'visible', 'updated_at', 'author')
             ->orderBy('created_at', 'DESC')
             ->where('visible', 1)
             ->where('trashed', null)

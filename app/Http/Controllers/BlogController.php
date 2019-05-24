@@ -12,8 +12,7 @@ class BlogController extends Controller
     {
         $posts = BlogPosts::blogHome();
         if (!$title && !$id) {
-            $categories = Category::all();
-            return view('blog', ['blogposts'=>$posts,'categories'=>$categories]);
+            return view('blog', ['blogposts'=>$posts]);
         }
         $post = BlogPosts::getSpecific($title, $id);
         return view('posting', ['posting'=>$post,'blogposts'=>$posts]); //todo: Hook in View
@@ -21,15 +20,13 @@ class BlogController extends Controller
 
     public function tag($name)
     {
-        $categories = Category::all();
         $posts = BlogPosts::getByTag($name);
-        return view('blog', ['blogposts'=>$posts,'categories'=>$categories]);
+        return view('blog', ['blogposts'=>$posts]);
     }
 
     public function category($category)
     {
-        $categories = Category::all();
         $posts = BlogPosts::getByCategory($category);
-        return view('blog', ['blogposts'=>$posts,'categories'=>$categories]);
+        return view('blog', ['blogposts'=>$posts]);
     }
 }

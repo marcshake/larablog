@@ -1251,6 +1251,11 @@ h3.secondary {
   position: relative;
 }
 
+.contents {
+  border-top: #edf033 1px solid;
+  padding-top: 1em;
+}
+
 .contents h2,
 h3 {
   font-family: "Fira Sans", helvetica, arial;

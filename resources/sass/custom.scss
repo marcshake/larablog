@@ -369,6 +369,11 @@ h3.secondary {
   position: relative;
 }
 
+.contents {
+  border-top: $primary-color 1px solid;
+  padding-top: 1em;
+}
+
 .contents h2,
 h3 {
   font-family: $font-family;
@@ -384,8 +389,8 @@ h3 {
 }
 .page-item a,
 .page-item span {
-    @extend button;
+  @extend button;
 }
 .page-item.active span.page-link {
-    background-color:$primary-color;
+  background-color: $primary-color;
 }
