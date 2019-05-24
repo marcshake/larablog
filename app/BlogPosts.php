@@ -37,13 +37,15 @@ class BlogPosts extends Model
 
     public static function getByTag($tag)
     {
+        $tagid = Tags::select('id')->where('tag', $tag)->firstorFail();
+
         $posts = self::select('mainImage', 'contents', 'id', 'title', 'visible', 'created_at', 'author')
             ->orderBy('created_at', 'DESC')
             ->where('visible', 1)
             ->where('trashed', null)
-            ->whereHas('Tags', function ($query) {
-                $query->where('id');
-            }, '=', $tag)
+            ->with(['Tags'=> function ($query) use ($tag) {
+                $query->where('Tags.id');
+            }], '=', $tagid->id)
             ->paginate(15);
         foreach ($posts as $r => $post) {
             $posts[$r]->shortcontents = self::shorten($post->contents);

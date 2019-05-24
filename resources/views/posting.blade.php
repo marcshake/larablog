@@ -1,5 +1,7 @@
 @extends('layouts.larablog')
-
+@section('title')
+{{$posting->title}}
+@endsection
 @section('maincontents')
 <div class="headerimage">
     <img src="{{$posting->mainImage ? asset('storage/thumbnail/'.$posting->mainImagePath->filename): asset('images/wall.jpg')}}"

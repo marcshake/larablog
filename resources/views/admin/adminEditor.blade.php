@@ -1,9 +1,14 @@
 @extends('layouts.administration') @section('title')
 {{$contents->title}} bearbeiten
 @endsection
- @section('content')
 
- <form action="{{ url('admin/update',$contents->id)}}" method="post">
+@section('script')
+<script src="{{ asset('js/ckeditor/ckeditor.js') }}"></script>
+@endsection
+
+@section('content')
+
+<form action="{{ url('admin/update',$contents->id)}}" method="post">
     @csrf
     <input type="hidden" name="mainImage" id="imageID" value="{{$contents->mainImage}}">
     <div class="field">
@@ -25,7 +30,8 @@
             <div class="field">
                 <label for="tags" class="label">Tags</label>
                 <div class="control">
-                    <input class="input" type="text" name="tags" id="tags" value="@forelse ($contents->Tags as $tags){{$tags->tag}}, @empty @endforelse">
+                    <input class="input" type="text" name="tags" id="tags"
+                        value="@forelse ($contents->Tags as $tags){{$tags->tag}}, @empty @endforelse">
                 </div>
             </div>
         </div>
@@ -33,7 +39,8 @@
             <div class="field">
                 <label for="kategorie" class="label">Kategorien</label>
                 <div class="control">
-                    <input class="input" type="text" name="kategorie" id="kategorie" value="@forelse ($contents->categories as $tags){{$tags->name}}, @empty @endforelse">
+                    <input class="input" type="text" name="kategorie" id="kategorie"
+                        value="@forelse ($contents->categories as $tags){{$tags->name}}, @empty @endforelse">
                 </div>
             </div>
         </div>
@@ -46,8 +53,8 @@
                     <span id="previewImag"></span>
                     @else
                     <span id="previewImag">
-                    <img src="{{asset('storage/thumbnail/tiny_'.$contents->mainImagePath->filename)}}"
-                        alt="Upload by User">
+                        <img src="{{asset('storage/thumbnail/tiny_'.$contents->mainImagePath->filename)}}"
+                            alt="Upload by User">
                     </span>
                     @endif
                     <div class="row">
@@ -66,14 +73,8 @@
     </div>
 </form>
 <script>
-    CKEDITOR.replace('contents');
+   CKEDITOR.config.contentsCss = "{{asset('css/admin.css')}}";
+   CKEDITOR.config.allowedContent = true;
+   CKEDITOR.replace('contents');
 </script>
-<script>
-        CKEDITOR.config.contentsCss = "{{asset('css/admin.css')}}";
-        CKEDITOR.config.extraAllowedContent = 'div(*)';
-    </script>
-
-@endsection
-@section('script')
-<script src="{{ asset('js/ckeditor/ckeditor.js') }}"></script>
 @endsection

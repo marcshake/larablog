@@ -1,9 +1,13 @@
 @extends('layouts.administration')
 
+@section('script')
+<script src="{{ asset('js/ckeditor/ckeditor.js') }}"></script>
+@endsection
+
 @section('content')
 
 @section('title')
-  Neuen Eintrag anlegen
+Neuen Eintrag anlegen
 @endsection
 
 <form action="{{ url('admin/save')}}" method="post">
@@ -40,11 +44,8 @@
     </div>
 </form>
 <script>
-    CKEDITOR.replace('contents');
+    CKEDITOR.config.contentsCss = "{{asset('css/admin.css')}}";
+   CKEDITOR.config.allowedContent = true;
+   CKEDITOR.replace('contents');
 </script>
-@endsection
-
-@section('script')
-<script src="{{ asset('js/ckeditor/ckeditor.js') }}"></script>
-
 @endsection
