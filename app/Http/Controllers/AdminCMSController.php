@@ -114,6 +114,9 @@ class AdminCMSController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $page = CmsPages::findOrFail($id);
+        $page->delete();
+        return redirect('admin/cms')->with('status', 'Seite gelöscht');
+
     }
 }
