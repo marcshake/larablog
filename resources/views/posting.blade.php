@@ -9,9 +9,9 @@
         alt="{{$posting->title}}" class="u-full-width">
 </div>
 <div class="container">
-    <article class="mt-4">
         <h1 class="title primary superHeadline">{{$posting->title}}</h1>
 
+    <article class="mt-4">
         <div class="contents">
             <div class="row">
                 <div class="nine columns">

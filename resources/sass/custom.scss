@@ -187,6 +187,12 @@ body {
   border-bottom: 1px solid $light-grey;
   text-align: center;
   font-weight: bold;
+  background: #ffffff; /* Old browsers */
+  background: linear-gradient(to bottom, #ffffff 0%, #e5e5e5 100%);
+}
+.card-title {
+  font-size: 1em;
+  margin-top: 0.5em;
 }
 .card-body {
   font-size: 0.9em;
@@ -310,7 +316,7 @@ h3.secondary {
 
 .slide {
   overflow: hidden;
-  font-size: 2em;
+  font-size: 1.2em;
   height: 100%;
   background-size: cover;
   background-position: 50%;
