@@ -39,12 +39,9 @@
     Keine Inhalte?
     @endforelse
 </div>
-<div class="container">
-    <h2 class="primary title">{{$home->title}}</h2>
-    <div class="mt-4">
+    <div>
         {!!$home->contents!!}
     </div>
-</div>
 
 <div class="container">
     <div class="mt-4">

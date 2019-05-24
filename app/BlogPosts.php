@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class BlogPosts extends Model
 {
+    protected $table = 'blog_posts';
 
     /**
      * Get the Authors name
@@ -85,7 +86,7 @@ class BlogPosts extends Model
 
     public function tags()
     {
-        return $this->belongsToMany('App\Tags', 'Tags2_blogs', 'blogId', 'tagId');
+        return $this->belongsToMany('App\Tags', 'tags2_blogs', 'blogId', 'tagId');
     }
 
     public function categories()
