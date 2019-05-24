@@ -25,4 +25,11 @@ class BlogController extends Controller
         $posts = BlogPosts::getByTag($name);
         return view('blog', ['blogposts'=>$posts,'categories'=>$categories]);
     }
+
+    public function category($category)
+    {
+        $categories = Category::all();
+        $posts = BlogPosts::getByCategory($category);
+        return view('blog', ['blogposts'=>$posts,'categories'=>$categories]);
+    }
 }

@@ -31,7 +31,7 @@
                             Autor: {{$posting->authorName->name}}
                             <br>Kategorie:
                             @forelse ($posting->categories as $cats)
-                            <a class="tag is-dark" href="{{url('category/'.$cats->name,$cats->id)}}">{{$cats->name}}</a>
+                            <a class="tag is-dark" href="{{url('category',$cats->name)}}">{{$cats->name}}</a>
                             @empty
 
                             @endforelse

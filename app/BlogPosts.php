@@ -35,13 +35,30 @@ class BlogPosts extends Model
         return $posts;
     }
 
+    public static function getByCategory($category)
+    {
+        $posts = self::select('mainImage', 'contents', 'id', 'title', 'visible', 'created_at', 'author')
+            ->orderBy('created_at', 'DESC')
+            ->where('visible', 1)
+            ->where('trashed', null)
+            ->whereHas('categories', function ($query) use ($category) {
+                $query->where('name', $category);
+            })
+            ->paginate(15);
+        foreach ($posts as $r => $post) {
+            $posts[$r]->shortcontents = self::shorten($post->contents);
+        }
+        return $posts;
+    }
+
+
     public static function getByTag($tag)
     {
         $posts = self::select('mainImage', 'contents', 'id', 'title', 'visible', 'created_at', 'author')
             ->orderBy('created_at', 'DESC')
             ->where('visible', 1)
             ->where('trashed', null)
-            ->whereHas('Tags', function ($query) use ($tag) {
+            ->whereHas('tags', function ($query) use ($tag) {
                 $query->where('tag', $tag);
             })
             ->paginate(15);
