@@ -18,25 +18,31 @@
                     {!!$posting->contents!!}
                 </div>
                 <div class="three columns">
-                    <div class="sticky">
-                        Tags:
-                        @forelse ($posting->Tags as $tags)
-                        <a href="{{url('tag',$tags->tag)}}" class="tag is-dark">{{$tags->tag}}</a>
-                        @empty
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Infos</h4>
+                        </div>
+                        <div class="card-body">
+                            Tags:
+                            @forelse ($posting->Tags as $tags)
+                            <a href="{{url('tag',$tags->tag)}}" class="tag is-dark">{{$tags->tag}}</a>
+                            @empty
 
-                        @endforelse
-                        <br>
-                        Datum: {{ $posting->created_at->formatLocalized('%d.%m.%Y')}}
+                            @endforelse
+                            <br>
+                            Datum: {{ $posting->created_at->formatLocalized('%d.%m.%Y')}}
 
-                        Autor: {{$posting->authorName->name}}
-                        <br>Kategorie:
-                        @forelse ($posting->categories as $cats)
-                        <a class="tag is-dark" href="{{url('category',$cats->name)}}">{{$cats->name}}</a>
-                        @empty
+                            Autor: {{$posting->authorName->name}}
+                            <br>Kategorie:
+                            @forelse ($posting->categories as $cats)
+                            <a class="tag is-dark" href="{{url('category',$cats->name)}}">{{$cats->name}}</a>
+                            @empty
 
-                        @endforelse
-
+                            @endforelse
+                        </div>
                     </div>
+
+                    @include('partial.submenu')
                 </div>
             </div>
         </div>

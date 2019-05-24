@@ -40,14 +40,7 @@
                 {{$blogposts->links()}}
             </div>
             <div class="three columns">
-                <div class="mt-4">
-                    <h3 class="title primary">
-                        Contentblock
-                    </h3>
-                    <p>
-                        Todo: Show some blocks. Static pages, list of categories, tags, stuff like that. Calender? Select-Container?
-                    </p>
-                </div>
+                @include('partial.submenu')
             </div>
         </div>
     </div>

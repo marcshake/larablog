@@ -10,13 +10,13 @@ class BlogController extends Controller
 {
     public function index($title=false, $id = false)
     {
+        $posts = BlogPosts::blogHome();
         if (!$title && !$id) {
-            $posts = BlogPosts::blogHome();
             $categories = Category::all();
             return view('blog', ['blogposts'=>$posts,'categories'=>$categories]);
         }
         $post = BlogPosts::getSpecific($title, $id);
-        return view('posting', ['posting'=>$post]);
+        return view('posting', ['posting'=>$post,'blogposts'=>$posts]); //todo: Hook in View
     }
 
     public function tag($name)
