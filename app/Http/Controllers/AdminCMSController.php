@@ -33,7 +33,7 @@ class AdminCMSController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.cmsNew');
     }
 
     /**
@@ -44,7 +44,20 @@ class AdminCMSController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validate = $request->validate([
+            'title' => 'required',
+            'filename' => 'required',
+            'contents' => 'required'
+        ]);
+            $cms = new CmsPages;
+            $cms->title = $request->title;
+            $cms->filename = $request->filename;
+            $cms->contents = $request->contents;
+            $cms->save();
+            $id = $cms->id;
+            return redirect('admin/cms/edit/'.$id)->with('status', 'Seite gespeichert');
+
+
     }
 
     /**

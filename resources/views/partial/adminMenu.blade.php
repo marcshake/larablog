@@ -24,8 +24,8 @@
         <li>
         <a href="{{url('admin/cms')}}" {!!Request::is('admin/cms')?'class="active"':''!!}>Alle
         Contentseiten</a> </li> <li>
-        <a href="{{url('admin/cmsnew')}}"
-        {!!Request::is('admin/cmsnew')?'class="active"':''!!}>Neue Contentseite</a>
+        <a href="{{url('admin/cms/new')}}"
+        {!!Request::is('admin/cms/new')?'class="active"':''!!}>Neue Contentseite</a>
         </li>
     </ul> <p class="menu-label">
     Bilder / Videos

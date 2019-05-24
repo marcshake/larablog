@@ -28,7 +28,11 @@ Route::get('admin/status/{id}', 'AdminController@status');
 
 Route::get('admin/filer', 'ImageController@index');
 Route::get('admin/cms', 'AdminCMSController@index');
+Route::get('admin/cms/new', 'AdminCMSController@create');
 Route::get('admin/cms/edit/{id}', 'AdminCMSController@edit');
+
+// All other Routes
+Route::get('/{slug?}', 'CMSController@index');
 
 
 Route::post('admin/update/{id}', 'AdminController@update');
@@ -37,3 +41,4 @@ Route::post('admin/filer', 'ImageController@store');
 Route::post('ajax/image/', 'ImageController@gallery');
 Route::post('ajax/loadImage/{id}', 'ImageController@ajaxImage');
 Route::post('admin/cms/edit/{id}', 'AdminCMSController@update');
+Route::post('admin/cms/new', 'AdminCMSController@store');
