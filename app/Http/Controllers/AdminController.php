@@ -160,7 +160,7 @@ class AdminController extends Controller
 
         $this->handleTags($request, $contents);
         $this->handleCategories($request, $contents);
-
+        $contents->touch();
         $contents->save();
         return redirect('admin/edit/'.$id)->with('status', 'Änderungen gespeichert!');
     }
@@ -189,6 +189,8 @@ class AdminController extends Controller
         $entry = BlogPosts::findOrFail($id);
         $vis = $entry->visible == 1 ? 0 : 1;
         $entry->visible = $vis;
+        $entry->touch();
+
         $entry->save();
         return redirect('admin/edit/'.$id)->with('status', 'Sichtbarkeit geändert');
     }

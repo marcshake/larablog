@@ -24,11 +24,11 @@ class BlogPosts extends Model
      */
     public static function overview()
     {
-        return self::select('id', 'title', 'visible', 'created_at', 'author')->orderBy('created_at', 'DESC')->where('trashed', null)->paginate(100);
+        return self::select('id', 'title', 'visible', 'created_at', 'author')->orderBy('updated_at', 'DESC')->where('trashed', null)->paginate(100);
     }
     public static function blogHome()
     {
-        $posts = self::select('mainImage', 'contents', 'id', 'title', 'visible', 'created_at', 'author')->orderBy('created_at', 'DESC')->where('visible', 1)->where('trashed', null)->paginate(15);
+        $posts = self::select('mainImage', 'contents', 'id', 'title', 'visible', 'created_at', 'author')->orderBy('updated_at', 'DESC')->where('visible', 1)->where('trashed', null)->paginate(15);
         foreach ($posts as $r => $post) {
             $posts[$r]->shortcontents = self::shorten($post->contents);
         }
@@ -37,7 +37,7 @@ class BlogPosts extends Model
 
     public static function getByCategory($category)
     {
-        $posts = self::select('mainImage', 'contents', 'id', 'title', 'visible', 'created_at', 'author')
+        $posts = self::select('mainImage', 'contents', 'id', 'title', 'visible', 'updated_at', 'author')
             ->orderBy('created_at', 'DESC')
             ->where('visible', 1)
             ->where('trashed', null)
@@ -54,7 +54,7 @@ class BlogPosts extends Model
 
     public static function getByTag($tag)
     {
-        $posts = self::select('mainImage', 'contents', 'id', 'title', 'visible', 'created_at', 'author')
+        $posts = self::select('mainImage', 'contents', 'id', 'title', 'visible', 'updated_at', 'author')
             ->orderBy('created_at', 'DESC')
             ->where('visible', 1)
             ->where('trashed', null)
@@ -75,7 +75,7 @@ class BlogPosts extends Model
      */
     public static function getPosts($limit)
     {
-        return self::orderBy('created_at', 'DESC')->where('trashed', null)->where('visible', 1)->limit($limit)->get();
+        return self::orderBy('updated_at', 'DESC')->where('trashed', null)->where('visible', 1)->limit($limit)->get();
     }
 
     public function mainImagePath()
