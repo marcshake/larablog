@@ -12,8 +12,8 @@ class TagsSeeder extends Seeder
      */
     public function run()
     {
-        Tags::create(['id'=>1,'tag'=>'Information']);
-        Tags::create(['id'=>2,'tag'=>'Software']);
-        Tags::create(['id'=>3,'tag'=>'Technology']);
+        Tags::create(['id'=>1,'tag'=>'information']);
+        Tags::create(['id'=>2,'tag'=>'software']);
+        Tags::create(['id'=>3,'tag'=>'technology']);
     }
 }

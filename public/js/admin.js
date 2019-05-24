@@ -36955,7 +36955,7 @@ if (token) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\larablog\resources\js\admin.js */"./resources/js/admin.js");
+module.exports = __webpack_require__(/*! /home/marcel/www/larablog/resources/js/admin.js */"./resources/js/admin.js");
 
 
 /***/ })
