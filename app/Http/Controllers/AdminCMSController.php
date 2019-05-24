@@ -49,15 +49,13 @@ class AdminCMSController extends Controller
             'filename' => 'required',
             'contents' => 'required'
         ]);
-            $cms = new CmsPages;
-            $cms->title = $request->title;
-            $cms->filename = $request->filename;
-            $cms->contents = $request->contents;
-            $cms->save();
-            $id = $cms->id;
-            return redirect('admin/cms/edit/'.$id)->with('status', 'Seite gespeichert');
-
-
+        $cms = new CmsPages;
+        $cms->title = $request->title;
+        $cms->filename = $request->filename;
+        $cms->contents = $request->contents;
+        $cms->save();
+        $id = $cms->id;
+        return redirect('admin/cms/edit/'.$id)->with('status', 'Seite gespeichert');
     }
 
     /**
@@ -117,6 +115,5 @@ class AdminCMSController extends Controller
         $page = CmsPages::findOrFail($id);
         $page->delete();
         return redirect('admin/cms')->with('status', 'Seite gelöscht');
-
     }
 }
