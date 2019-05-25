@@ -31,6 +31,7 @@ We can delete posts
 **Warning: When installing this software, the Database will be reset and reseeded as long as this is not a stable branch**
 
 * Clone the repository
+* Make sure, you have ``composer`` and ``nodejs`` installed
 * copy ``.env.example`` to ``.env`` and edit your Database-Connection.
 * In a bash you can start ``./deploy.sh`` which will install composer dependencies, setup node_modules, clears the caches, installs assets and even links the storage-directory
 * OPTIONAL: run ``php artisan migrate:refresh --seed`` to install test-data (you won't be able to login without test-data anyways)
