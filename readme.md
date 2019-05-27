@@ -1,8 +1,6 @@
 # Small Blogsoftware in Laravel
 
-[![Build Status](https://travis-ci.org/marcshake/larablog.svg?branch=master)](https://travis-ci.org/marcshake/larablog)
-
-**This software is not intended to be used in a live environment. This repository is public, because I am working at this project LIVE and it is going to be improved on a daily basis. DO NOT USE THIS ON A PRODUCTION ENVIRONMENT!!!**
+LIVEDEMO at http://dev.trancefish.de/
 
 ## What is this?
 Hi, my name is Marcel Schindler and I have been a webdeveloper for a long time. I usually worked on Webservices and never had the opportunity nor the necessarity of working with a full-featured-framework. I have a blog running at http://www.trancefish.de which is coded with my own little "Framework" which you can see over here: https://github.com/marcshake/tlog
@@ -28,8 +26,6 @@ We can delete posts
 
 ## Installation
 
-**Warning: When installing this software, the Database will be reset and reseeded as long as this is not a stable branch**
-
 * Clone the repository
 * Make sure, you have ``composer`` and ``nodejs`` installed
 * copy ``.env.example`` to ``.env`` and edit your Database-Connection.
@@ -37,8 +33,8 @@ We can delete posts
 * OPTIONAL: run ``php artisan migrate:refresh --seed`` to install test-data (you won't be able to login without test-data anyways)
 * run ``php artisan serve`` to start your local development server
 
-There will be a real installation-routine, when the software is ready.
+There will be a real installation-routine, when the software is ready. I guess.
 
 ## Closing words
 
-Please be always aware that this program is not for using in production environments. I have put that online to improve my laravel-skills and let you be part of it. 
+Consider this a work in progress. I do use this in a live environment, but that may change everytime.
