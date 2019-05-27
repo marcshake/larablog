@@ -14,6 +14,6 @@ class CategoriesComposer
         $view->with('alltags', Tags::whereHas('BlogPosts', function ($query) {
             $query->where('visible', 1);
             $query->where('trashed', null);
-        })->take(10)->get());
+        })->take(25)->get());
     }
 }

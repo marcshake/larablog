@@ -237,13 +237,13 @@ h1.title {
 }
 h1.primary {
   background: red;
-  box-shadow: 0.7rem 0 red;
+  box-shadow: 0.7em 0 red;
   color: #000;
 }
 
 h1.secondary {
   background: blue;
-  box-shadow: 0.7rem 0 blue;
+  box-shadow: 0.7em 0 blue;
   color: whitesmoke;
 }
 
@@ -322,7 +322,7 @@ h3.secondary {
   background-position: 50%;
   background-attachment: fixed;
   display: none;
-  animation: fadeIn 2s;
+  animation: fadeIn 1s;
 }
 .slide img {
   box-shadow: 1px 1px 20px #000;
