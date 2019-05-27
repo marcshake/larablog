@@ -48,10 +48,10 @@
 <div class="container">
     <div class="mt-4">
         <h2 class="title secondary">NEU im Blog:</h2>
-        @forelse ($morePosts->chunk(3) as $chunk)
+        @forelse ($morePosts->chunk(2) as $chunk)
         <div class="row mt-4">
             @foreach ($chunk as $items)
-            <div class="four columns">
+            <div class="six columns">
                 <div class="image-header">
                     <img src="{{$items->mainImage ? asset('storage/thumbnail/tiny_'.$items->mainImagePath->filename): asset('images/wall.jpg')}}"
                         class="u-full-width" alt="Bild">
