@@ -10,6 +10,6 @@ class Tags extends Model
     protected $table = 'tags';
     public function BlogPosts()
     {
-        return $this->belongsToMany('App\BlogPosts', 'Tags2_blogs', 'tagId', 'blogId');
+        return $this->belongsToMany('App\BlogPosts', 'tags2_blogs', 'tagId', 'blogId');
     }
 }

@@ -23,7 +23,7 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin.adminPanel', ['beitraege' => BlogPosts::count()]);
+        return view('admin.adminPanel', ['beitraege' => BlogPosts::where('trashed', null)->count()]);
     }
     /**
      * Get a list of blogentries

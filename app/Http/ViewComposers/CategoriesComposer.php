@@ -11,6 +11,9 @@ class CategoriesComposer
     {
         $view->with('categories', Category::all());
         $view->with('allposts', BlogPosts::blogHome());
-        $view->with('alltags', Tags::take(30)->get());
+        $view->with('alltags', Tags::whereHas('BlogPosts', function ($query) {
+            $query->where('visible', 1);
+            $query->where('trashed', null);
+        })->take(10)->get());
     }
 }
