@@ -67,9 +67,6 @@
     <div class="buttons">
         <input value="Speichern" class="button button-primary" type="submit">
         <a href="{{url('admin/blogs')}}" class="button">Verwerfen</a>
-        <a href="{{url('admin/status',$contents->id)}}" class="button button-secondary">
-            {{$contents->visible ? 'Verstecken' : 'Veröffentlichen'}}
-        </a>
     </div>
 </form>
 <script>

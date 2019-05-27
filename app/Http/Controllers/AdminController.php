@@ -192,6 +192,6 @@ class AdminController extends Controller
         $entry->touch();
 
         $entry->save();
-        return redirect('admin/edit/'.$id)->with('status', 'Sichtbarkeit geändert');
+        return redirect('admin/blogs')->with('status', 'Sichtbarkeit geändert');
     }
 }

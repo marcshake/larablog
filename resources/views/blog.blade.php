@@ -6,7 +6,7 @@
 
 @section('maincontents')
 <div class="container">
-    <h1 class="title primary">Blogübersicht</h1>
+
     <div class="mt-4">
         <div class="row">
             <div class="nine columns">
@@ -23,13 +23,14 @@
 
                         {!! $item->shortcontents !!}
                         <div class="row">
+                            <div class="twelve columns">
                             Geschrieben: {{$item->created_at->formatLocalized('%d.%m.%Y')}} von
                             {{$item->authorname->name}}
                             <a href="{{url('blog/'.$item->title,$item->id)}}"
-                                class="button button-primary u-pull-right">
-                                {{$item->title}} weiterlesen
+                                class="u-pull-right button button-primary">
+                                weiterlesen
                             </a>
-
+                        </div>
                         </div>
                     </section>
 

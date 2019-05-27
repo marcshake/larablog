@@ -33,6 +33,10 @@ Eintragsübersicht
                 <span class="subaction">
                     <a href="{{url('admin/delete',$item->id)}}">Löschen</a>
                     <a href="#">Vorschau</a>
+                    <a href="{{url('admin/status',$item->id)}}">
+                        {{$item->visible ? 'Verstecken' : 'Veröffentlichen'}}
+                    </a>
+
                 </span>
             </td>
             <td>{{$item->authorName->name}}</td>
