@@ -292,10 +292,6 @@ h3.secondary {
   color: $link-color;
 }
 
-.slideShow {
-  height: 100vh;
-  background-color: #333;
-}
 .headerimage {
   height: 50vh;
   overflow: hidden;
@@ -313,19 +309,25 @@ h3.secondary {
   bottom: 0;
   right: 0;
 }
+.slideShow {
+  height: 75vh;
+  background-color: #333;
+}
 
 .slide {
-  overflow: hidden;
   font-size: 1.2em;
-  height: 100%;
-  background-size: cover;
-  background-position: 50%;
-  background-attachment: fixed;
   display: none;
   animation: fadeIn 1s;
+  position: relative;
+  height: 100%;
+  overflow: hidden;
 }
 .slide img {
-  box-shadow: 1px 1px 20px #000;
+  z-index: 0;
+  overflow: auto;
+  margin: auto;
+  position: absolute;
+  width: 100%;
 }
 @keyframes fadeIn {
   from {

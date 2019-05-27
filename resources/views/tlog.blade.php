@@ -9,9 +9,10 @@
 <div class="slideShow">
     @forelse ($posts as $item)
     <div class="slide">
+        <img src="{{$item->mainImage ? asset('storage/thumbnail/'.$item->mainImagePath->filename): asset('images/wall.jpg')}}"
+            data-src="{{$item->mainImage ? asset('storage/uploads/'.$item->mainImagePath->filename): asset('images/wall.jpg')}}"
+            alt="{{$item->title}}">
         <div class="container">
-                <img src="{{$item->mainImage ? asset('storage/thumbnail/'.$item->mainImagePath->filename): asset('images/wall.jpg')}}" data-src="{{$item->mainImage ? asset('storage/uploads/'.$item->mainImagePath->filename): asset('images/wall.jpg')}}" alt="">
-
             <h2 class="title {{$loop->iteration % 2 == 0 ? 'primary' : 'secondary' }}">
                 {{$item->title}}
             </h2>
@@ -41,11 +42,11 @@
     Keine Inhalte?
     @endforelse
 </div>
-    <div class="has-background-black-bis">
-        <div class="container">
+<div class="has-background-black-bis">
+    <div class="container">
         {!!$home->contents!!}
     </div>
-    </div>
+</div>
 
 <div class="container">
     <div class="mt-4">
