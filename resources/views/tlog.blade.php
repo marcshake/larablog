@@ -4,12 +4,13 @@
 {{$home->title}}
 @endsection
 
+
 @section('maincontents')
 <div class="slideShow">
     @forelse ($posts as $item)
-    <div class="slide"
-        style="background-image: url('{{$item->mainImage ? asset('storage/uploads/'.$item->mainImagePath->filename): asset('images/wall.jpg')}}')">
+    <div class="slide">
         <div class="container">
+                <img src="{{$item->mainImage ? asset('storage/thumbnail/'.$item->mainImagePath->filename): asset('images/wall.jpg')}}" data-src="{{$item->mainImage ? asset('storage/uploads/'.$item->mainImagePath->filename): asset('images/wall.jpg')}}" alt="">
 
             <h2 class="title {{$loop->iteration % 2 == 0 ? 'primary' : 'secondary' }}">
                 {{$item->title}}
@@ -34,6 +35,7 @@
 
             </div>
         </div>
+
     </div>
     @empty
     Keine Inhalte?
