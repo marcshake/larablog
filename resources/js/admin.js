@@ -37,6 +37,7 @@ $(document).ready(function () {
     $('.open-modal').click(function () { $('.modal').removeClass('hidden') });
     $('.ibrowser').on('click', '.thumb', function () { useImage($(this)) });
     $('.imageBrowser').click(function () { myImagelib() })
+    $('.alert').delay(5000).fadeOut('slow');
 });
 
 
