@@ -22,25 +22,6 @@
         <div class="container">
             Made with &hearts; in germany by Marcel Schindler
         </div>
-        <div class="u-pull-right">
-            @guest
-
-            <div class="buttons">
-                <a href="{{ url('login')}}" class="button is-light">Einloggen</a>
-            </div>
-
-            @endguest
-            @auth
-
-            <div class="buttons">
-                <a href="{{ url('logout')}}" class="button is-light">Ausloggen</a>
-                <a class="button is-light" href="{{url('admin')}}">Administration</a>
-            </div>
-
-            @endauth
-
-        </div>
-
     </footer>
 </body>
 
