@@ -1,9 +1,6 @@
 @extends('layouts.larablog')
 
 @section('title')
-Übersicht
-@endsection
-@section('title')
 {{$page->title}}
 @endsection
 @section('maincontents')
