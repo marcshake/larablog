@@ -6,42 +6,7 @@
 
 
 @section('maincontents')
-<div class="slideShow">
-    @forelse ($posts as $item)
-    <div class="slide">
-        <img src="{{$item->mainImage ? asset('storage/thumbnail/'.$item->mainImagePath->filename): asset('images/wall.jpg')}}"
-            data-src="{{$item->mainImage ? asset('storage/uploads/'.$item->mainImagePath->filename): asset('images/wall.jpg')}}"
-            alt="{{$item->title}}">
-        <div class="container">
-            <h2 class="title {{$loop->iteration % 2 == 0 ? 'primary' : 'secondary' }}">
-                {{$item->title}}
-            </h2>
-            <div class="halftone mt-4">
-                {!! $item->contents !!}
-                <div class="row">
-                    @forelse ($item->Tags as $tags)
-                    <span class="tag is-dark">{{$tags->tag}}</span>
-                    @empty
 
-                    @endforelse
-
-                </div>
-                <div class="row">
-                    <a href="{{url('blog/'.$item->title,$item->id)}}" class="u-pull-right button button-primary">
-                        Weiterlesen...
-                    </a>
-
-                </div>
-
-
-            </div>
-        </div>
-
-    </div>
-    @empty
-    Keine Inhalte?
-    @endforelse
-</div>
 <div class="has-background-black-bis">
     <div class="container">
         {!!$home->contents!!}

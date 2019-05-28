@@ -12,46 +12,35 @@
 </head>
 
 <body>
-    <nav class="navbar has-shadow" role="navigation" aria-label="main navigation">
-        <div class="container">
-            <div class="navbar-brand">
-                <a class="navbar-item" href="{{ url('/') }}">
-                    <img src="https://www.trancefish.de/assets/tlog.svg.svg"
-                        alt="TLOG5 - Laravel based Blogging Solution" height="32">
-                </a>
+    <div class="navbar has-shadow" role="navigation" aria-label="main navigation">
+        @include('partial.mainmenu')
 
-            </div>
-            <div class="navnar-menu" id="navMenu">
-                <div class="navbar-start">
-                    @include('partial.mainmenu')
-                </div>
-            </div>
 
-            <div class="navbar-end">
-                @guest
-                <div class="navbar-item">
-                    <div class="buttons">
-                        <a href="{{ url('login')}}" class="button is-light">Einloggen</a>
-                    </div>
-                </div>
-                @endguest
-                @auth
-                <div class="navbar-item">
-                    <div class="buttons">
-                        <a href="{{ url('logout')}}" class="button is-light">Ausloggen</a>
-                        <a class="button is-light" href="{{url('admin')}}">Administration</a>
-                    </div>
-                </div>
-                @endauth
-
-            </div>
-        </div>
-    </nav>
+    </div>
     @yield('maincontents')
     <footer class="is-dark">
         <div class="container">
             Made with &hearts; in germany by Marcel Schindler
         </div>
+        <div class="u-pull-right">
+            @guest
+
+            <div class="buttons">
+                <a href="{{ url('login')}}" class="button is-light">Einloggen</a>
+            </div>
+
+            @endguest
+            @auth
+
+            <div class="buttons">
+                <a href="{{ url('logout')}}" class="button is-light">Ausloggen</a>
+                <a class="button is-light" href="{{url('admin')}}">Administration</a>
+            </div>
+
+            @endauth
+
+        </div>
+
     </footer>
 </body>
 

@@ -12,7 +12,7 @@ window.slideIndex = 0;
 function carousel() {
     var i;
     var x = document.getElementsByClassName("slide");
-    
+
     if (x.length == 0)
         return false;
     for (i = 0; i < x.length; i++) {
@@ -35,3 +35,15 @@ window.addEventListener("load", function () {
         }
     }
 });
+$(document).ready(function(){
+    function openDrawerMenu(){
+        var x = document.getElementById("mainNavBar");
+        if (x.className === "navBar"){
+          x.className += " responsive";
+        } else {
+          x.className = "navBar";
+        }
+      }
+      $('.drawer').click(openDrawerMenu);
+});
+

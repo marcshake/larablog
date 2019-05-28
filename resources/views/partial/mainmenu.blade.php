@@ -1,3 +1,9 @@
-<a class="button" href="{{ url('/')}}" class="navbar-item">Home</a>
-<a class="button" href="{{ url('blog/')}}" class="navbar-item">Blog</a>
-<a class="button" href="{{ url('impressum') }}" class="navbar-item">Impressum</a>
+<div class="navBar" id="mainNavBar">
+    <a href="{{ url('/')}}" >Home</a>
+    <a  href="{{ url('blog/')}}">Blog</a>
+    <a  href="{{ url('impressum') }}" >Impressum</a>
+        <a href="#" class="icon drawer">&#9776;</a>
+
+  </div>
+
+
