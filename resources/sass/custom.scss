@@ -462,3 +462,9 @@ h3 {
 .page-item.active span.page-link {
   background-color: $primary-color;
 }
+
+.cke_editable {/*reclaims space on the research textarea from the ckeditor default*/
+  cursor: text;
+  margin-left: 10px;
+  margin-right: 10px;
+  }
