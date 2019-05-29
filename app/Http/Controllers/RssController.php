@@ -16,6 +16,8 @@ class RssController extends Controller
      */
     public function index()
     {
+        $posts = BlogPosts::getPosts(100);
+        
 
     }
 }
