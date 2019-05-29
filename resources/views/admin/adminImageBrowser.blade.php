@@ -5,7 +5,7 @@ Bilder / Mediendateien
 
 @section('content')
 <div class="row">
-    <div class="three columns">Ziehe die Datei auf die Box</div>
+    <div class="three columns">Hochladen</div>
     <div class="nine columns">
         @if ($errors->any())
         <div class="alert alert-danger">
@@ -23,7 +23,7 @@ Bilder / Mediendateien
         </form>
     </div>
 </div>
-<div class="ibrowser">
+<div class="idetails">
     <div class="row">
     @include('partial.imagebrowser')
 </div>
