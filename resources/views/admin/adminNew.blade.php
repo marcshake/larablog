@@ -44,7 +44,6 @@ Neuen Eintrag anlegen
     </div>
 </form>
 <script>
-    CKEDITOR.config.contentsCss = "{{asset('css/admin.css')}}";
    CKEDITOR.config.allowedContent = true;
    CKEDITOR.replace('contents');
 </script>

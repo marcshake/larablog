@@ -46,10 +46,9 @@
 
 
 <script>
-        CKEDITOR.config.contentsCss = "{{asset('css/admin.css')}}";
-       CKEDITOR.config.allowedContent = true;
+    CKEDITOR.config.allowedContent = true;
        CKEDITOR.replace('contents');
-    </script>
+</script>
 
 
 @endsection

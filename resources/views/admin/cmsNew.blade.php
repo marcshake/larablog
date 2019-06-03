@@ -25,16 +25,15 @@
     <div class="field">
         <label class="label" for="title">Dateiname</label>
         <div class="control">
-            <input autocomplete="false" class="input" type="text" placeholder="Überschrift"
-                name="filename" id="filename">
+            <input autocomplete="false" class="input" type="text" placeholder="Überschrift" name="filename"
+                id="filename">
         </div>
     </div>
 
     <div class="field">
         <label for="contents" class="label">Inhalt</label>
         <div class="control">
-            <textarea name="contents" class="textarea" placeholder="Textarea"
-                id="contents"></textarea>
+            <textarea name="contents" class="textarea" placeholder="Textarea" id="contents"></textarea>
         </div>
     </div>
     <div class="buttons">
@@ -44,8 +43,7 @@
 </form>
 
 <script>
-    CKEDITOR.config.contentsCss = "{{asset('css/admin.css')}}";
-       CKEDITOR.config.allowedContent = true;
+    CKEDITOR.config.allowedContent = true;
        CKEDITOR.replace('contents');
 </script>
 @endsection
