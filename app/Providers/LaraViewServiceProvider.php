@@ -26,5 +26,6 @@ class LaraViewServiceProvider extends ServiceProvider
     public function boot()
     {
         View::composer('partial.submenu', 'App\Http\ViewComposers\CategoriesComposer');
+        View::composer('*', 'App\Http\ViewComposers\SnippetsComposer');
     }
 }

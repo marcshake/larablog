@@ -21,6 +21,7 @@
     <footer class="is-dark">
         <div class="container">
             Made with &hearts; in germany by Marcel Schindler
+            {!! $snippets !!}
         </div>
     </footer>
 </body>

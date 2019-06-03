@@ -11,4 +11,14 @@ class CmsPages extends Model
     {
         return self::where('filename', 'home')->firstOrFail();
     }
+
+    public static function getSnippets()
+    {
+        $snip = self::where('filename', 'snippets')->first();
+        if ($snip == null) {
+            $snip = new \StdClass();
+            $snip->contents = '';
+        }
+        return $snip->contents;
+    }
 }
