@@ -15,12 +15,11 @@
 </head>
 
 <body>
-    <nav class="navbar has-shadow" role="navigation" aria-label="main navigation">
+    <nav class="has-background-black-bis" role="navigation" aria-label="main navigation">
         <div class="container">
             <div class="navbar-brand">
                 <a class="navbar-item" href="{{ url('/') }}">
-                    <img src="https://www.trancefish.de/assets/tlog.svg.svg"
-                        alt="TLOG5 - Laravel based Blogging Solution" height="32">
+                    <img src="{{ asset('images/logo.svg') }}" alt="TLOG5 - Laravel based Blogging Solution" height="32">
                 </a>
 
                 <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
