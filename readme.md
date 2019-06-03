@@ -1,6 +1,6 @@
 # Small Blogsoftware in Laravel
 
-LIVEDEMO at http://dev.trancefish.de/
+LIVEDEMO at https://trancefish.de/
 
 ## What is this?
 Hi, my name is Marcel Schindler and I have been a webdeveloper for a long time. I usually worked on Webservices and never had the opportunity nor the necessarity of working with a full-featured-framework. I have a blog running at http://www.trancefish.de which is coded with my own little "Framework" which you can see over here: https://github.com/marcshake/tlog
