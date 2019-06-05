@@ -24,6 +24,7 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
+        "ckeditor": "^4.11.4",
         "skeleton-scss": "^2.0.4"
     }
 }
