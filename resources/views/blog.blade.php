@@ -4,6 +4,15 @@
 Übersicht
 @endsection
 
+@section('opengraph')
+
+    @forelse ($blogposts as $item)
+        <meta property="og:image" content="{{$item->mainImage ? asset('storage/thumbnail/'.$item->mainImagePath->filename): asset('images/wall.jpg')}}">
+    @empty
+
+    @endforelse
+@endsection
+
 @section('maincontents')
 <div class="container">
 

@@ -2,6 +2,12 @@
 @section('title')
 {{$posting->title}}
 @endsection
+
+@section('opengraph')
+    <meta content="{{$posting->title}}" property="og:title">
+    <meta content="{{$posting->mainImage ? asset('storage/uploads/'.$posting->mainImagePath->filename): asset('images/wall.jpg')}}" property="og:image">
+@endsection
+
 @section('maincontents')
 <div class="headerimage">
     <img src="{{$posting->mainImage ? asset('storage/thumbnail/'.$posting->mainImagePath->filename): asset('images/wall.jpg')}}"
