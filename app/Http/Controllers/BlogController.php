@@ -13,8 +13,6 @@ class BlogController extends Controller
         $posts = BlogPosts::blogHome();
 
         if (!$title && !$id) {
-
-
             return view('blog', ['blogposts'=>$posts]);
         }
         $post = BlogPosts::getSpecific($title, $id);
