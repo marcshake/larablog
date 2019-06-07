@@ -17,7 +17,12 @@ Content-Seiten bearbeiten
             @foreach ($collection as $item)
             <tr>
                 <td>{{$loop->iteration}}</td>
-                <td>{{$item->filename}}</td>
+                <td>{{$item->filename}}
+                    @if ($item->hidden==1)
+                    <span class="tag is-light">entwurf</span>
+                    @endif
+
+                </td>
                 <td>
                     <a href="{{url('admin/cms/edit',$item->id)}}">
                         {{$item->title}}
@@ -25,6 +30,10 @@ Content-Seiten bearbeiten
                     <span class="subaction">
                         <a href="{{url('admin/cms/delete',$item->id)}}">Löschen</a>
                         <a href="#">Vorschau</a>
+                        <a href="{{url('admin/cms/status',$item->id)}}">
+                            {{$item->hidden ? 'Veröffentlichen' : 'Verstecken'}}
+                        </a>
+
                     </span>
 
                 </td>

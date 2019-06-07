@@ -12,7 +12,7 @@ class CMSController extends Controller
         if ($slug=='snippets') {
             $slug == 'home';
         }
-        $page = CmsPages::where('filename', $slug)->firstOrFail();
+        $page = CmsPages::where('filename', $slug)->where('hidden', null)->firstOrFail();
         return view('page', ['page'=>$page]);
     }
 }

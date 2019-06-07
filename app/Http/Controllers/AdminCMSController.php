@@ -116,4 +116,21 @@ class AdminCMSController extends Controller
         $page->delete();
         return redirect('admin/cms')->with('status', 'Seite gelöscht');
     }
+
+    /**
+     * Change visibility of Post
+     *
+     * @param [type] $id
+     * @return void
+     */
+    public function status($id)
+    {
+        $entry = CmsPages::findOrFail($id);
+        $vis = $entry->hidden == 1 ? null : 1;
+        $entry->hidden = $vis;
+        $entry->touch();
+
+        $entry->save();
+        return redirect('admin/cms')->with('status', 'Sichtbarkeit geändert');
+    }
 }

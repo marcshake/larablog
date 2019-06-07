@@ -30,6 +30,7 @@ Route::get('admin/filer', 'ImageController@index');
 Route::get('admin/cms', 'AdminCMSController@index');
 Route::get('admin/cms/new', 'AdminCMSController@create');
 Route::get('admin/cms/edit/{id}', 'AdminCMSController@edit');
+Route::get('admin/cms/status/{id}', 'AdminCMSController@status');
 Route::get('admin/cms/delete/{id}', 'AdminCMSController@destroy');
 Route::get('rss', 'RssController@index');
 // All other Routes
