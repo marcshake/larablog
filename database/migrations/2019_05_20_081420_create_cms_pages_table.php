@@ -18,6 +18,7 @@ class CreateCmsPagesTable extends Migration
             $table->string('filename');
             $table->string('title');
             $table->longText('contents');
+            $table->boolean('hidden')->nullable(true);
             $table->timestamps();
         });
     }
