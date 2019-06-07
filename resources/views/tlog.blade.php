@@ -8,9 +8,7 @@
 @section('maincontents')
 
 <div class="has-background-black-bis">
-    <div class="container">
         {!!$home->contents!!}
-    </div>
 </div>
 
 <div class="container">
