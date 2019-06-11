@@ -15,7 +15,7 @@
     
     </image>
     <pubDate>
-    {{$item->created_at->format('D, d M Y H:i:s T')}}
+    {{$item->created_at->toIso8601String('%d.%m.%Y')}}
     </pubDate>
     <description><![CDATA[{{$item->contents}} ]]></description>
   </item>
