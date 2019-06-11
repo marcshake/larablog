@@ -9,6 +9,14 @@
   <item>
     <title>{{$item->title}}</title>
     <link>{{$item->link}}</link>
+    <image>
+    <url>{{$item->mainImage ? asset('storage/thumbnail/'.$item->mainImagePath->filename): asset('images/wall.jpg')}}</url>
+    <title>{{$item->title}}</title>
+    
+    </image>
+    <pubDate>
+    {{$item->created_at->format('D, d M Y H:i:s T')}}
+    </pubDate>
     <description><![CDATA[{{$item->contents}} ]]></description>
   </item>
 
