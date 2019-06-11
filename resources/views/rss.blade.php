@@ -18,6 +18,14 @@
     {{$item->created_at->toRfc822String('%d.%m.%Y')}}
     </pubDate>
     <description><![CDATA[{{$item->contents}} ]]></description>
+    <category>
+    @forelse ($item->Tags as $tags)
+                            {{$tags->tag}}/
+                            @empty
+
+                            @endforelse
+                            </category>
+
   </item>
 
   @endforeach
