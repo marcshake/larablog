@@ -22,13 +22,12 @@
             <description>
                 <![CDATA[{{$item->contents}} ]]>
             </description>
-            @forelse ($item->Tags as $tags)
+            @foreach ($item->Tags as $tags)
             <category>
                 {{$tags->tag}}
-                @empty
             </category>
 
-            @endforelse
+            @endforeach
 
         </item>
 
