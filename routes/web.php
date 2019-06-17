@@ -33,6 +33,9 @@ Route::get('admin/cms/edit/{id}', 'AdminCMSController@edit');
 Route::get('admin/cms/status/{id}', 'AdminCMSController@status');
 Route::get('admin/cms/delete/{id}', 'AdminCMSController@destroy');
 Route::get('rss', 'RssController@index');
+Route::get('preview/{title}/{id}', 'PreviewController@index');
+
+
 // All other Routes
 Route::get('/{slug?}', 'CMSController@index');
 

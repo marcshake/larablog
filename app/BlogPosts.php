@@ -93,6 +93,10 @@ class BlogPosts extends Model
     {
         return $this->belongsToMany('App\Category', 'category2_blogs', 'blogId', 'catId');
     }
+    public static function getPreview($title, $id)
+    {
+        return self::where('title', $title)->where('id', $id)->first();
+    }
 
     public static function getSpecific($title, $id)
     {
