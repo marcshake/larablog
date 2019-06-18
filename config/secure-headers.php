@@ -10,7 +10,7 @@ return [
      * Note: when server is empty string, it will not add to response header
      */
 
-    'server' => '',
+    'server' => 'shop.pc-099',
 
     /*
      * X-Content-Type-Options
