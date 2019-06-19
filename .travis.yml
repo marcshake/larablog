@@ -6,8 +6,8 @@ php:
 before_script:
   - cp .env.travis .env
   - composer install --no-interaction
+  - touch ./database/lara
   - php artisan key:generate
   - php artisan migrate:refresh --seed
-  - touch ./database/lara
 script:
   - vendor/bin/phpunit
