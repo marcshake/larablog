@@ -68,7 +68,7 @@ class ImageController extends Controller
         $file->storeAs('public/thumbnail', $originalName);
         $path = public_path('storage/thumbnail/'.$originalName);
         $pathtiny = public_path('storage/thumbnail/tiny_'.$originalName);
-        $iM->make($path)->fit(400)->save($path);
+        $iM->make($path)->fit(400, 225)->save($path);
         $iM->make($path)->fit(200)->save($pathtiny);
         $media = new Media;
         $media->filename = $originalName;
