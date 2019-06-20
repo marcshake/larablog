@@ -8,7 +8,7 @@
 @section('maincontents')
 
 <div class="has-background-black-bis">
-        {!!$home->contents!!}
+    {!!$home->contents!!}
 </div>
 
 <div class="container">
@@ -20,7 +20,7 @@
             <div class="six columns">
                 <div class="image-header">
                     <img src="{{$items->mainImage ? asset('storage/thumbnail/tiny_'.$items->mainImagePath->filename): asset('images/wall.jpg')}}"
-                        class="u-full-width" alt="Bild">
+                        class="u-full-width" alt="{{$items->title}}">
                 </div>
                 <div class="headline">
                     <h3 class="title {{$loop->iteration % 2 == 0 ? 'primary' : 'secondary' }}">
