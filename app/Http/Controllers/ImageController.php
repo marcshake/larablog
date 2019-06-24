@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Media;
 use Auth;
-
+use App\BlogPosts;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\ImageManager;
@@ -28,6 +28,7 @@ class ImageController extends Controller
         $img = Media::findOrFail($id);
         $file = $img->filename;
         $img->delete();
+        BlogPosts::where('mainImage', $img->id)->update(['mainImage'=>null]);
         unlink(\storage_path('app/public/uploads/'.$file));
         unlink(\storage_path('app/public/thumbnail/'.$file));
         unlink(\storage_path('app/public/thumbnail/tiny_'.$file));
