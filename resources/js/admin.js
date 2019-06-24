@@ -49,8 +49,9 @@ $(document).ready(function () {
 
     var deleteImage = function (item) {
         var image = item.data('id');
-        $.post('/ajax/deleteImage/'+img, function(data){
-
+        $.post('/ajax/deleteImage/' + image, function (data) {
+            $('[data-item=' + image + ']').hide();
+            $('.modal').addClass('hidden');
         });
     }
 

@@ -23,6 +23,17 @@ class ImageController extends Controller
         $img = Media::findOrFail($id);
         return response()->json(['id'=>$img->id, 'thumbnail'=>($img->filename)]);
     }
+
+    public function deleteImage($id) {
+        $img = Media::findOrFail($id);
+        $file = $img->filename;
+        $img->delete();
+        unlink(\storage_path('app/public/uploads/'.$file));
+        unlink(\storage_path('app/public/thumbnail/'.$file));
+        unlink(\storage_path('app/public/thumbnail/tiny_'.$file));
+        return response()->json(true);
+    }
+
     public function gallery()
     {
         $collection = Media::orderBy('id', 'desc')->paginate(100);

@@ -47,5 +47,6 @@ Route::post('admin/save', 'AdminController@store');
 Route::post('admin/filer', 'ImageController@store');
 Route::post('ajax/image/', 'ImageController@gallery');
 Route::post('ajax/loadImage/{id}', 'ImageController@ajaxImage');
+Route::post('ajax/deleteImage/{id}', 'ImageController@deleteImage');
 Route::post('admin/cms/edit/{id}', 'AdminCMSController@update');
 Route::post('admin/cms/new', 'AdminCMSController@store');
