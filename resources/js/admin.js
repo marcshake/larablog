@@ -38,13 +38,20 @@ $(document).ready(function () {
             var path = '/storage/thumbnail/tiny_' + imageDetail['thumbnail'];
             var fullpath = window.location.protocol + '//' + window.location.host + '/storage/uploads/' + imageDetail['thumbnail'];
             var myhtml = '<figure><img class="u-full-width" src="' + fullpath + '" /><figcaption>' + fullpath + '</figcaption></figure>';
+            myhtml += '<button id="deleteImage" data-id="' + imageDetail['id'] + '">Löschen</button>';
             $('#modalTitle').html('Bilddetails');
             $('#modalContents').html(myhtml);
             $('.modal').removeClass('hidden');
-            console.log(myhtml);
             return false;
         });
 
+    }
+
+    var deleteImage = function (item) {
+        var image = item.data('id');
+        $.post('/ajax/deleteImage/'+img, function(data){
+
+        });
     }
 
     /**
@@ -54,6 +61,7 @@ $(document).ready(function () {
     $('.open-modal').click(function () { $('.modal').removeClass('hidden') });
     $('.ibrowser').on('click', '.thumb', function () { useImage($(this)) });
     $('.idetails').on('click', '.thumb', function () { imageDetails($(this)) });
+    $('#modalContents').on('click', '#deleteImage', function () { deleteImage($(this)) });
     $('.imageBrowser').click(function () { myImagelib() })
     $('.alert').delay(5000).fadeOut('slow');
 });
