@@ -27,9 +27,10 @@
                                 {{$item->title}}
                             </a>
                         </h2>
+                        <div class="img-hover-zoom img-hover-zoom--slowmo">
                         <img src="{{$item->mainImage ? asset('storage/thumbnail/'.$item->mainImagePath->filename): asset('images/wall.jpg')}}"
                             class="u-full-width" alt="{{$item->title}}">
-
+                        </div>
                         {!! $item->shortcontents !!}
                         <div class="row">
                             <div class="twelve columns">

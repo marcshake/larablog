@@ -19,8 +19,10 @@
             @foreach ($chunk as $items)
             <div class="six columns">
                 <div class="image-header">
+                    <div class="img-hover-zoom img-hover-zoom--slowmo">
                     <img src="{{$items->mainImage ? asset('storage/thumbnail/tiny_'.$items->mainImagePath->filename): asset('images/wall.jpg')}}"
                         class="u-full-width" alt="{{$items->title}}">
+                    </div>
                 </div>
                 <div class="headline">
                     <h3 class="title {{$loop->iteration % 2 == 0 ? 'primary' : 'secondary' }}">
