@@ -483,5 +483,5 @@ h3 {
 /* The Transformation */
 .img-hover-zoom--slowmo:hover img {
   filter: brightness(100%);
-  transform: scale(2);
+  transform: scale(2) rotate(15deg);
 }
