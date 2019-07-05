@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # https://gist.github.com/BenSampo/aa5f72584df79f679a7e603ace517c14
 # Turn on maintenance mode
 php artisan down

@@ -1,10 +1,12 @@
 {
-    "name": "laravel/laravel",
+    "name": "marcshake/larablog",
     "type": "project",
-    "description": "The Laravel Framework.",
+    "description": "Laravel Based Blogging Software.",
     "keywords": [
         "framework",
-        "laravel"
+        "laravel",
+        "Blog",
+        "CMS"
     ],
     "license": "MIT",
     "require": {
