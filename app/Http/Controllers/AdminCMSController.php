@@ -39,16 +39,18 @@ class AdminCMSController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        $validate = $request->validate([
+        $validate = $request->validate(
+            [
             'title' => 'required',
             'filename' => 'required',
             'contents' => 'required'
-        ]);
+            ]
+        );
         $cms = new CmsPages;
         $cms->title = $request->title;
         $cms->filename = $request->filename;
@@ -61,7 +63,7 @@ class AdminCMSController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -72,7 +74,7 @@ class AdminCMSController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -84,17 +86,19 @@ class AdminCMSController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int                      $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        $validate = $request->validate([
+        $validate = $request->validate(
+            [
             'title' => 'required',
             'filename' => 'required',
             'contents' => 'required'
-        ]);
+            ]
+        );
 
         $page = CmsPages::findOrFail($id);
         $page->title = $request->title;
@@ -107,7 +111,7 @@ class AdminCMSController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
@@ -120,7 +124,7 @@ class AdminCMSController extends Controller
     /**
      * Change visibility of Post
      *
-     * @param [type] $id
+     * @param  [type] $id
      * @return void
      */
     public function status($id)

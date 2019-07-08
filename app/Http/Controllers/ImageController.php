@@ -24,7 +24,8 @@ class ImageController extends Controller
         return response()->json(['id'=>$img->id, 'thumbnail'=>($img->filename)]);
     }
 
-    public function deleteImage($id) {
+    public function deleteImage($id)
+    {
         $img = Media::findOrFail($id);
         $file = $img->filename;
         $img->delete();
@@ -65,7 +66,7 @@ class ImageController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -96,7 +97,7 @@ class ImageController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Media  $media
+     * @param  \App\Media $media
      * @return \Illuminate\Http\Response
      */
     public function show(Media $media)
@@ -107,7 +108,7 @@ class ImageController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Media  $media
+     * @param  \App\Media $media
      * @return \Illuminate\Http\Response
      */
     public function edit(Media $media)
@@ -118,8 +119,8 @@ class ImageController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Media  $media
+     * @param  \Illuminate\Http\Request $request
+     * @param  \App\Media               $media
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Media $media)
@@ -130,7 +131,7 @@ class ImageController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Media  $media
+     * @param  \App\Media $media
      * @return \Illuminate\Http\Response
      */
     public function destroy(Media $media)

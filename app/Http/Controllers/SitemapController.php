@@ -15,8 +15,8 @@ class SitemapController extends Controller
     public function index(Request $request)
     {
         $posts = BlogPosts::select('title')
-        ->where('visible', 1)
-        ->where('trashed', null)->get();
+            ->where('visible', 1)
+            ->where('trashed', null)->get();
         $host = $request->getSchemeAndHttpHost();
         foreach ($posts as $r => $item) {
             $posts[$r]->link = $host.'/blog/'.$item->title.'/'.$item->id;

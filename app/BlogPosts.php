@@ -42,9 +42,11 @@ class BlogPosts extends Model
             ->orderBy('created_at', 'DESC')
             ->where('visible', 1)
             ->where('trashed', null)
-            ->whereHas('categories', function ($query) use ($category) {
-                $query->where('name', $category);
-            })
+            ->whereHas(
+                'categories', function ($query) use ($category) {
+                    $query->where('name', $category);
+                }
+            )
             ->paginate(15);
         foreach ($posts as $r => $post) {
             $posts[$r]->shortcontents = self::shorten($post->contents);
@@ -59,9 +61,11 @@ class BlogPosts extends Model
             ->orderBy('created_at', 'DESC')
             ->where('visible', 1)
             ->where('trashed', null)
-            ->whereHas('tags', function ($query) use ($tag) {
-                $query->where('tag', $tag);
-            })
+            ->whereHas(
+                'tags', function ($query) use ($tag) {
+                    $query->where('tag', $tag);
+                }
+            )
             ->paginate(15);
         foreach ($posts as $r => $post) {
             $posts[$r]->shortcontents = self::shorten($post->contents);
@@ -71,7 +75,7 @@ class BlogPosts extends Model
     /**
      * Get a List of Posts
      *
-     * @param INT number of rows
+     * @param  INT number of rows
      * @return void
      */
     public static function getPosts($limit)
@@ -109,7 +113,7 @@ class BlogPosts extends Model
         $start = strpos($v['contents'], '<p>');
         $end = strpos($v['contents'], '</p>', $start);
         $paragraph = substr($v['contents'], $start, $end - $start + 4);
-//        $tmp[$r]['contents'] = $paragraph;
+        //        $tmp[$r]['contents'] = $paragraph;
         return $paragraph;
     }
 }

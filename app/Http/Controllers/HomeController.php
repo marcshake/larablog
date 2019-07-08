@@ -35,7 +35,7 @@ class HomeController extends Controller
         $start = strpos($v['contents'], '<p>');
         $end = strpos($v['contents'], '</p>', $start);
         $paragraph = substr($v['contents'], $start, $end - $start + 4);
-//        $tmp[$r]['contents'] = $paragraph;
+        //        $tmp[$r]['contents'] = $paragraph;
         return $paragraph;
     }
 }
