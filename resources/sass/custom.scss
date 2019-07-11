@@ -178,7 +178,6 @@ body {
 }*/
 
 .navBar {
-  background-color: whitesmoke;
   overflow: hidden;
 }
 
@@ -242,8 +241,6 @@ body {
   border-bottom: 1px solid $light-grey;
   text-align: center;
   font-weight: bold;
-  background: #ffffff; /* Old browsers */
-  background: linear-gradient(to bottom, #ffffff 0%, #e5e5e5 100%);
 }
 .card-title {
   font-size: 1em;
@@ -479,5 +476,5 @@ h3 {
 /* The Transformation */
 .img-hover-zoom--slowmo:hover img {
   filter: brightness(100%);
-  transform: scale(2) rotate(15deg);
+  transform: scale(1.2);
 }
