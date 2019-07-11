@@ -43,7 +43,8 @@ class BlogPosts extends Model
             ->where('visible', 1)
             ->where('trashed', null)
             ->whereHas(
-                'categories', function ($query) use ($category) {
+                'categories',
+                function ($query) use ($category) {
                     $query->where('name', $category);
                 }
             )
@@ -62,7 +63,8 @@ class BlogPosts extends Model
             ->where('visible', 1)
             ->where('trashed', null)
             ->whereHas(
-                'tags', function ($query) use ($tag) {
+                'tags',
+                function ($query) use ($tag) {
                     $query->where('tag', $tag);
                 }
             )

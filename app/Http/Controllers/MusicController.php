@@ -21,5 +21,4 @@ class MusicController extends Controller
     {
         //
     }
-
 }

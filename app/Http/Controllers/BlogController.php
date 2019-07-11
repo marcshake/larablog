@@ -8,7 +8,7 @@ use App\Category;
 
 class BlogController extends Controller
 {
-    public function index($title=false, $id = false)
+    public function index($title = false, $id = false)
     {
         $posts = BlogPosts::blogHome();
 

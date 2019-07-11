@@ -18,10 +18,10 @@ class HomeController extends Controller
     {
         $posts = BlogPosts::getPosts(3);
         $morePosts  = BlogPosts::getPosts(25);
-        foreach ($posts as $r=> $entry) {
+        foreach ($posts as $r => $entry) {
             $posts[$r]->contents = $this->shorten($entry->contents);
         }
-        foreach ($morePosts as $r=> $entry) {
+        foreach ($morePosts as $r => $entry) {
             $morePosts[$r]->contents = $this->shorten($entry->contents);
         }
         $home = CmsPages::getHomepage();
