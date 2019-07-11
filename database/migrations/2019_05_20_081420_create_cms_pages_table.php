@@ -13,14 +13,16 @@ class CreateCmsPagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('cms_pages', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('filename');
-            $table->string('title');
-            $table->longText('contents');
-            $table->boolean('hidden')->nullable(true);
-            $table->timestamps();
-        });
+        Schema::create(
+            'cms_pages', function (Blueprint $table) {
+                $table->bigIncrements('id');
+                $table->string('filename');
+                $table->string('title');
+                $table->longText('contents');
+                $table->boolean('hidden')->nullable(true);
+                $table->timestamps();
+            }
+        );
     }
 
     /**

@@ -13,16 +13,18 @@ class CreateBlogPostsTable extends Migration
      */
     public function up()
     {
-        Schema::create('blog_posts', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('title');
-            $table->longText('contents');
-            $table->bigInteger('author')->nullable(true);
-            $table->boolean('visible')->default(false);
-            $table->bigInteger('mainImage')->nullable(true);
-            $table->boolean('trashed')->nullable(true);
-            $table->timestamps();
-        });
+        Schema::create(
+            'blog_posts', function (Blueprint $table) {
+                $table->bigIncrements('id');
+                $table->string('title');
+                $table->longText('contents');
+                $table->bigInteger('author')->nullable(true);
+                $table->boolean('visible')->default(false);
+                $table->bigInteger('mainImage')->nullable(true);
+                $table->boolean('trashed')->nullable(true);
+                $table->timestamps();
+            }
+        );
     }
 
     /**
