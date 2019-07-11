@@ -17,9 +17,6 @@ $border-color: #bbb;
 $link-color: #1eaedb;
 $font-color: #222;
 
-@import url("https://fonts.googleapis.com/css?family=Anton|Fira+Sans&display=swap");
-// Typography
-$font-family: "Fira Sans", helvetica, arial;
 //Grid Variables
 $container-width: 960px;
 $container-width-larger-than-mobile: 85%;
@@ -124,7 +121,7 @@ img {
 }
 
 body {
-  font-family: $font-family;
+  font-family: arial,helvetica,verdana,sans-serif;
   line-height: 2;
   font-size: 1.6em;
   color: #000;
@@ -444,7 +441,6 @@ h3.secondary {
 
 .contents h2,
 h3 {
-  font-family: $font-family;
   letter-spacing: 0;
 }
 
