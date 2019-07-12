@@ -211,7 +211,7 @@ body {
   .navBar a.icon {
     display: block;
     float: right;
-    color: #333;
+    color: #fff;
   }
 
   /*The navBar class will be changed to 'navBar responsive' using JS. This chunk of CSS makes the menu icon stay where it is by making the position absolute within it's parent 'right top corner'. Without this, the icon will get kicked around when the items are collapsed and expanded*/
