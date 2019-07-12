@@ -5,7 +5,7 @@
     <div class="card-body">
         <ul>
             @forelse ($allposts as $blog)
-            <li><a href="{{url('blog/'.$blog->title,$blog->id)}}">
+            <li><a href="{{url('blog/'.$blog->url,$blog->id)}}">
                     {{$blog->title}}
                 </a></li>
 

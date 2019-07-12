@@ -26,7 +26,7 @@
                 </div>
                 <div class="headline">
                     <h3 class="title {{$loop->iteration % 2 == 0 ? 'primary' : 'secondary' }}">
-                        <a href="{{url('blog/'.$items->title,$items->id)}}">
+                        <a href="{{url('blog/'.$items->url,$items->id)}}">
                             {{$items->title}}
                         </a>
                     </h3>

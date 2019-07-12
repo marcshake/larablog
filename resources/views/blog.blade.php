@@ -23,7 +23,7 @@
                 <article class="mt-4 has-bottom-border">
                     <section>
                         <h2 class="title {{$loop->iteration % 2 == 0 ? 'primary' : 'secondary' }}">
-                            <a href="{{url('blog/'.$item->title,$item->id)}}">
+                            <a href="{{url('blog/'.$item->url,$item->id)}}">
                                 {{$item->title}}
                             </a>
                         </h2>
@@ -36,7 +36,7 @@
                             <div class="twelve columns">
                             Geschrieben: {{$item->created_at->formatLocalized('%d.%m.%Y')}} von
                             {{$item->authorname->name}}
-                            <a href="{{url('blog/'.$item->title,$item->id)}}"
+                            <a href="{{url('blog/'.$item->url,$item->id)}}"
                                 class="u-pull-right button button-primary">
                                 weiterlesen
                             </a>

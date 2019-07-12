@@ -32,8 +32,13 @@ class BlogPosts extends Model
         $posts = self::select('mainImage', 'contents', 'id', 'title', 'visible', 'created_at', 'author')->orderBy('updated_at', 'DESC')->where('visible', 1)->where('trashed', null)->paginate(15);
         foreach ($posts as $r => $post) {
             $posts[$r]->shortcontents = self::shorten($post->contents);
+            $posts[$r]->url = self::makeUrl($post->title);
         }
         return $posts;
+    }
+
+    private static function makeUrl($string) {
+        return urlencode($string);
     }
 
     public static function getByCategory($category)
@@ -51,6 +56,7 @@ class BlogPosts extends Model
             ->paginate(15);
         foreach ($posts as $r => $post) {
             $posts[$r]->shortcontents = self::shorten($post->contents);
+            $posts[$r]->url= self::makeUrl($post->title);
         }
         return $posts;
     }
@@ -71,6 +77,8 @@ class BlogPosts extends Model
             ->paginate(15);
         foreach ($posts as $r => $post) {
             $posts[$r]->shortcontents = self::shorten($post->contents);
+            $posts[$r]->url = self::makeUrl($post->title);
+
         }
         return $posts;
     }
@@ -82,7 +90,14 @@ class BlogPosts extends Model
      */
     public static function getPosts($limit)
     {
-        return self::orderBy('updated_at', 'DESC')->where('trashed', null)->where('visible', 1)->limit($limit)->get();
+        $posts =  self::orderBy('updated_at', 'DESC')->where('trashed', null)->where('visible', 1)->limit($limit)->get();
+        foreach ($posts as $r => $post) {
+            $posts[$r]->shortcontents = self::shorten($post->contents);
+            $posts[$r]->url = self::makeUrl($post->title);
+
+        }
+        return $posts;
+
     }
 
     public function mainImagePath()
@@ -101,12 +116,28 @@ class BlogPosts extends Model
     }
     public static function getPreview($title, $id)
     {
-        return self::where('title', $title)->where('id', $id)->first();
+        $title = urldecode($title);
+        $posts = self::where('title', $title)->where('id', $id)->first();
+        foreach ($posts as $r => $post) {
+            $posts[$r]->shortcontents = self::shorten($post->contents);
+            $posts[$r]->url = self::makeUrl($post->title);
+
+        }
+        return $posts;
+
     }
 
     public static function getSpecific($title, $id)
     {
-        return self::where('trashed', null)->where('visible', 1)->where('title', $title)->where('id', $id)->firstOrFail();
+        $title = urldecode($title);
+
+        $posts =  self::where('trashed', null)->where('visible', 1)->where('title', $title)->where('id', $id)->firstOrFail();
+
+
+            $posts->url = self::makeUrl($posts->title);
+
+        return $posts;
+
     }
 
     public static function shorten($string)
