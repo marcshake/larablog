@@ -16,6 +16,8 @@
 </head>
 
 <body>
+@include('cookieConsent::index')
+
     <div class="navbar has-shadow" role="navigation" aria-label="main navigation">
         @include('partial.mainmenu')
 
@@ -28,7 +30,6 @@
             {!! $snippets !!}
         </div>
     </footer>
-    @include('cookieConsent::index')
 </body>
 
 </html>
