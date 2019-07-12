@@ -28,6 +28,7 @@
             {!! $snippets !!}
         </div>
     </footer>
+    @include('cookieConsent::index')
 </body>
 
 </html>
