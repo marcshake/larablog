@@ -16,14 +16,16 @@
 </head>
 
 <body>
-@include('cookieConsent::index')
+    @include('cookieConsent::index')
 
     <div class="navbar has-shadow" role="navigation" aria-label="main navigation">
         @include('partial.mainmenu')
 
 
     </div>
-    @yield('maincontents')
+    <div class="leaveTopSpace">
+        @yield('maincontents')
+    </div>
     <footer class="is-dark">
         <div class="container">
             Made with &hearts; in germany by Marcel Schindler
