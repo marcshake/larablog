@@ -25,7 +25,12 @@ class BlogPosts extends Model
      */
     public static function overview()
     {
-        return self::select('id', 'title', 'visible', 'created_at', 'author')->orderBy('updated_at', 'DESC')->where('trashed', null)->paginate(100);
+        $posts = self::select('id', 'title', 'visible', 'created_at', 'author')->orderBy('updated_at', 'DESC')->where('trashed', null)->paginate(100);
+        foreach ($posts as $r => $post) {
+            $posts[$r]->url = self::makeUrl($post->title);
+        }
+        return $posts;
+
     }
     public static function blogHome()
     {
@@ -118,11 +123,7 @@ class BlogPosts extends Model
     {
         $title = urldecode($title);
         $posts = self::where('title', $title)->where('id', $id)->first();
-        foreach ($posts as $r => $post) {
-            $posts[$r]->shortcontents = self::shorten($post->contents);
-            $posts[$r]->url = self::makeUrl($post->title);
-
-        }
+        $posts->url = self::makeUrl($posts->url);
         return $posts;
 
     }

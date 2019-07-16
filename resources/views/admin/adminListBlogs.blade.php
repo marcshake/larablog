@@ -32,7 +32,7 @@ Eintragsübersicht
                 </a>
                 <span class="subaction">
                     <a href="{{url('admin/delete',$item->id)}}">Löschen</a>
-                    <a target="_blank" href="{{url('preview/'.$item->title,$item->id)}}">Vorschau</a>
+                    <a target="_blank" href="{{url('preview/'.$item->url,$item->id)}}">Vorschau</a>
                     <a href="{{url('admin/status',$item->id)}}">
                         {{$item->visible ? 'Verstecken' : 'Veröffentlichen'}}
                     </a>

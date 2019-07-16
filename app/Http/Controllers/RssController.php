@@ -22,7 +22,7 @@ class RssController extends Controller
         $title = Config::get('app.name');
         $host = $request->getSchemeAndHttpHost();
         foreach ($posts as $r => $item) {
-            $posts[$r]->link = $host.'/blog/'.$item->title.'/'.$item->id;
+            $posts[$r]->link = $host.'/blog/'.urlencode($item->title).'/'.$item->id;
         }
         $feed = view('rss', ['posts'=>$posts,'title'=>$title]);
         return response($feed)->header('Content-Type', 'application/rss+xml');
