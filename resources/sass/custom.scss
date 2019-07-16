@@ -121,10 +121,11 @@ img {
 }
 
 body {
-  font-family: arial, helvetica, verdana, sans-serif;
+  font-family: arial,helvetica,verdana,sans-serif;
   line-height: 2;
   font-size: 1.6em;
   color: #000;
+  background: whitesmoke;
 }
 
 .has-background-black-bis {
@@ -155,14 +156,29 @@ body {
 .menu {
   padding: $padding;
 }
+/*
+.navbar {
+  background: $light-grey;
+}
+.navbar .navbar-item {
+  padding: $padding;
+}
+.navbar-brand {
+  float: left;
+}
+.navbar-end {
+  float: right;
+}
+.navbar-menu {
+  float: left;
+  display: inline;
+}
+.navbar-start {
+  float: left;
+}*/
 
 .navBar {
   overflow: hidden;
-  background: #222;
-  position: fixed;
-  top: 0px;
-  width: 100%;
-  z-index: 2;
 }
 
 /*Floats each item to the left with padding of 14 & 16 px.
@@ -245,7 +261,7 @@ body {
 }
 
 .mt-4 {
-  margin-top: 2em;
+  margin-top: 1em;
 }
 
 .is-striped tr:nth-child(even) {
@@ -264,7 +280,8 @@ h3,
 h4,
 h5 {
   font-size: calc(16px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
-  line-height: calc(2em + (1.5 - 1.2) * ((100vw - 300px) / (1600 - 300)));
+  line-height: calc(2em + (1.5 - 1.2) * ((100vw - 300px)/(1600 - 300)));
+
 }
 
 h1.title {
@@ -439,16 +456,16 @@ h3 {
   background-color: $primary-color;
 }
 
-.cke_editable {
-  /*reclaims space on the research textarea from the ckeditor default*/
+.cke_editable {/*reclaims space on the research textarea from the ckeditor default*/
   cursor: text;
   margin-left: 10px;
   margin-right: 10px;
-}
+  }
 
-.img-hover-zoom {
-  overflow: hidden;
-}
+  .img-hover-zoom {
+      overflow: hidden;
+
+  }
 
 .img-hover-zoom--slowmo img {
   transform-origin: 50% 65%;
@@ -460,13 +477,4 @@ h3 {
 .img-hover-zoom--slowmo:hover img {
   filter: brightness(100%);
   transform: scale(1.2);
-}
-
-
-.leaveTopSpace {
-    clear: both;
-    float: left;
-    width:100%;
-    margin-top:62px;
-    padding:0;
 }
