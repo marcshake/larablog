@@ -121,7 +121,7 @@ img {
 }
 
 body {
-  font-family: arial,helvetica,verdana,sans-serif;
+  font-family: arial, helvetica, verdana, sans-serif;
   line-height: 2;
   font-size: 1.6em;
   color: #000;
@@ -211,7 +211,6 @@ body {
   .navBar a.icon {
     display: block;
     float: right;
-    color: #fff;
   }
 
   /*The navBar class will be changed to 'navBar responsive' using JS. This chunk of CSS makes the menu icon stay where it is by making the position absolute within it's parent 'right top corner'. Without this, the icon will get kicked around when the items are collapsed and expanded*/
@@ -280,8 +279,7 @@ h3,
 h4,
 h5 {
   font-size: calc(16px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
-  line-height: calc(2em + (1.5 - 1.2) * ((100vw - 300px)/(1600 - 300)));
-
+  line-height: calc(2em + (1.5 - 1.2) * ((100vw - 300px) / (1600 - 300)));
 }
 
 h1.title {
@@ -456,16 +454,16 @@ h3 {
   background-color: $primary-color;
 }
 
-.cke_editable {/*reclaims space on the research textarea from the ckeditor default*/
+.cke_editable {
+  /*reclaims space on the research textarea from the ckeditor default*/
   cursor: text;
   margin-left: 10px;
   margin-right: 10px;
-  }
+}
 
-  .img-hover-zoom {
-      overflow: hidden;
-
-  }
+.img-hover-zoom {
+  overflow: hidden;
+}
 
 .img-hover-zoom--slowmo img {
   transform-origin: 50% 65%;
