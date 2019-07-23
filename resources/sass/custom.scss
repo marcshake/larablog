@@ -18,7 +18,7 @@ $link-color: #1eaedb;
 $font-color: #222;
 
 //Grid Variables
-$container-width: 960px;
+$container-width: 1200px;
 $container-width-larger-than-mobile: 85%;
 $container-width-larger-than-phablet: 80%;
 $total-columns: 12;
@@ -34,6 +34,10 @@ $padding: 0 4px;
 
 html {
   min-height: 101%;
+}
+
+.container {
+    max-width:$container-width !important;
 }
 
 .button.button-secondary,
@@ -125,7 +129,7 @@ body {
   line-height: 2;
   font-size: 1.6em;
   color: #000;
-  background: whitesmoke;
+  background:whitesmoke;
 }
 
 .has-background-black-bis {
@@ -179,6 +183,7 @@ body {
 
 .navBar {
   overflow: hidden;
+  background: whitesmoke;
 }
 
 /*Floats each item to the left with padding of 14 & 16 px.
