@@ -18,8 +18,9 @@ class CategoriesComposer
                 function ($query) {
                     $query->where('visible', 1);
                     $query->where('trashed', null);
+
                 }
-            )->take(25)->get()
+            )->withCount(['BlogPosts'])->orderByDesc('Blog_Posts_count')->take(25)->get()
         );
     }
 }
