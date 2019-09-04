@@ -2,6 +2,10 @@
 
 LIVEDEMO at https://trancefish.de/
 
+## Info about release-cycle
+
+I have a closed repo of this program, too. While this is some sort of stable, I have another version with customized themes and even an installer. There will be updates to this repo, very soon.
+
 ## What is this?
 Hi, my name is Marcel Schindler and I have been a webdeveloper for a long time. I usually worked on Webservices and never had the opportunity nor the necessarity of working with a full-featured-framework. I have a blog running at http://www.trancefish.de which is coded with my own little "Framework" which you can see over here: https://github.com/marcshake/tlog
 
