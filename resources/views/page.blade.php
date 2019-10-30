@@ -4,7 +4,7 @@
 {{$page->title}}
 @endsection
 @section('maincontents')
-<div class="container">
+<div class="container contentsbg">
     <h1>{{$page->title}}</h1>
     <article class="mt-4">
         <div class="contents">

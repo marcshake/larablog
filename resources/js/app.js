@@ -9,27 +9,8 @@ $.ajaxSetup({
     }
 });
 
-/* TLog-Carousel */
-window.slideIndex = 0;
-function carousel() {
-    var i;
-    var x = document.getElementsByClassName("slide");
-
-    if (x.length == 0)
-        return false;
-    for (i = 0; i < x.length; i++) {
-        x[i].style.display = "none"
-    }
-    slideIndex++;
-    if (slideIndex > x.length) {
-        slideIndex = 1
-    }
-    x[slideIndex - 1].style.display = "block";
-    setTimeout(carousel, 5000)
-}
 
 window.addEventListener("load", function () {
-    carousel();
     var allimages = document.getElementsByTagName('img');
     for (var i = 0; i < allimages.length; i++) {
         if (allimages[i].getAttribute('data-src')) {
@@ -37,15 +18,35 @@ window.addEventListener("load", function () {
         }
     }
 });
-$(document).ready(function(){
-    function openDrawerMenu(){
+
+
+$(document).ready(function () {
+    $('.albums').on('click', 'a', function () {
+        var id = $(this).attr('data-albid');
+        $('.albums a').removeClass('button-primary');
+        // Hide all
+        $(this).addClass('button-primary');
+        $('.myAlbum').hide('slow');
+        $('.myAlbum[data-alb="' + id + '"]').show('slow');
+
+    });
+    function openDrawerMenu() {
         var x = document.getElementById("mainNavBar");
-        if (x.className === "navBar"){
-          x.className += " responsive";
+        if (x.className === "navBar") {
+            x.className += " responsive";
         } else {
-          x.className = "navBar";
+            x.className = "navBar";
         }
-      }
-      $('.drawer').click(openDrawerMenu);
+    }
+    $('.drawer').click(openDrawerMenu);
+    $('.doSubmit').click(function () { $('#mainForm').submit() });
+    $('.close-modal').click(function () { $('.modal').addClass('hidden') });
+    $('.open-modal').click(function () { $('.modal').removeClass('hidden') });
+    $('.search').on('click', function () {
+        $('#modalTitle').text('SUCHE');
+        $.post('search', function (data) {
+            $('#modalContents').html(data);
+        });
+    });
 });
 

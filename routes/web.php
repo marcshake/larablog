@@ -9,10 +9,9 @@
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
+ */
 
-
-Auth::routes(['register'=>false]);
+Auth::routes(['register' => false]);
 
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('blog/{title?}/{id?}', 'BlogController@index');
@@ -26,7 +25,10 @@ Route::get('admin/new', 'AdminController@create');
 Route::get('admin/delete/{id}', 'AdminController@destroy');
 Route::get('admin/status/{id}', 'AdminController@status');
 Route::get('sitemap.xml', 'SitemapController@index');
-Route::get('music','MusicController@index');
+Route::get('music', 'MusicController@index');
+Route::get('music/download/{song_id}', 'MusicController@download');
+Route::get('rss', 'RssController@index');
+Route::get('preview/{title}/{id}', 'PreviewController@index');
 
 Route::get('admin/filer', 'ImageController@index');
 Route::get('admin/cms', 'AdminCMSController@index');
@@ -34,13 +36,11 @@ Route::get('admin/cms/new', 'AdminCMSController@create');
 Route::get('admin/cms/edit/{id}', 'AdminCMSController@edit');
 Route::get('admin/cms/status/{id}', 'AdminCMSController@status');
 Route::get('admin/cms/delete/{id}', 'AdminCMSController@destroy');
-Route::get('rss', 'RssController@index');
-Route::get('preview/{title}/{id}', 'PreviewController@index');
-
+Route::get('admin/user/', 'UserManagerController@index');
+Route::get('admin/user/edit/{id}', 'UserManagerController@edit');
 
 // All other Routes
 Route::get('/{slug?}', 'CMSController@index');
-
 
 Route::post('admin/update/{id}', 'AdminController@update');
 Route::post('admin/save', 'AdminController@store');
@@ -50,3 +50,6 @@ Route::post('ajax/loadImage/{id}', 'ImageController@ajaxImage');
 Route::post('ajax/deleteImage/{id}', 'ImageController@deleteImage');
 Route::post('admin/cms/edit/{id}', 'AdminCMSController@update');
 Route::post('admin/cms/new', 'AdminCMSController@store');
+Route::post('admin/user/edit/{id}', 'UserManagerController@update');
+
+Route::post('search/', 'BlogController@Search');

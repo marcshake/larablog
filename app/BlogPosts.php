@@ -30,7 +30,6 @@ class BlogPosts extends Model
             $posts[$r]->url = self::makeUrl($post->title);
         }
         return $posts;
-
     }
     public static function blogHome()
     {
@@ -42,7 +41,8 @@ class BlogPosts extends Model
         return $posts;
     }
 
-    private static function makeUrl($string) {
+    private static function makeUrl($string)
+    {
         return urlencode($string);
     }
 
@@ -83,7 +83,6 @@ class BlogPosts extends Model
         foreach ($posts as $r => $post) {
             $posts[$r]->shortcontents = self::shorten($post->contents);
             $posts[$r]->url = self::makeUrl($post->title);
-
         }
         return $posts;
     }
@@ -95,14 +94,12 @@ class BlogPosts extends Model
      */
     public static function getPosts($limit)
     {
-        $posts =  self::orderBy('updated_at', 'DESC')->where('trashed', null)->where('visible', 1)->limit($limit)->get();
+        $posts =  self::orderBy('updated_at', 'DESC')->where('trashed', null)->with('mainImagePath')->where('visible', 1)->limit($limit)->get();
         foreach ($posts as $r => $post) {
             $posts[$r]->shortcontents = self::shorten($post->contents);
             $posts[$r]->url = self::makeUrl($post->title);
-
         }
         return $posts;
-
     }
 
     public function mainImagePath()
@@ -125,20 +122,18 @@ class BlogPosts extends Model
         $posts = self::where('title', $title)->where('id', $id)->first();
         $posts->url = self::makeUrl($posts->url);
         return $posts;
-
     }
 
     public static function getSpecific($title, $id)
     {
         $title = urldecode($title);
 
-        $posts =  self::where('trashed', null)->where('visible', 1)->where('title', $title)->where('id', $id)->firstOrFail();
+        $posts =  self::where('trashed', null)->where('visible', 1)->where('title', $title)->where('id', $id)->with('mainImagePath')->with('tags')->firstOrFail();
 
 
-            $posts->url = self::makeUrl($posts->title);
+        $posts->url = self::makeUrl($posts->title);
 
         return $posts;
-
     }
 
     public static function shorten($string)

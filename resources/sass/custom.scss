@@ -17,27 +17,20 @@ $border-color: #bbb;
 $link-color: #1eaedb;
 $font-color: #222;
 
-//Grid Variables
-$container-width: 1200px;
-$container-width-larger-than-mobile: 85%;
-$container-width-larger-than-phablet: 80%;
-$total-columns: 12;
-$column-width: 100 / $total-columns; // calculates individual column width based off of # of columns
-$column-margin: 4%; // space between columns
-
 // Misc
 $global-radius: 4px;
 $padding: 0 4px;
 
 // Buttons
 //––––––––––––––––––––––––––––––––––––––––––––––––––
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap");
 
 html {
   min-height: 101%;
 }
 
 .container {
-    max-width:$container-width !important;
+  padding: 0 1rem;
 }
 
 .button.button-secondary,
@@ -125,11 +118,10 @@ img {
 }
 
 body {
-  font-family: arial, helvetica, verdana, sans-serif;
+  font-family: Source Sans Pro, Arial, sans-serif, helvetica;
   line-height: 2;
-  font-size: 1.6em;
   color: #000;
-  background:whitesmoke;
+  background: whitesmoke;
 }
 
 .has-background-black-bis {
@@ -184,6 +176,9 @@ body {
 .navBar {
   overflow: hidden;
   background: whitesmoke;
+  position: relative;
+  width: 100%;
+  z-index: 4;
 }
 
 /*Floats each item to the left with padding of 14 & 16 px.
@@ -480,4 +475,102 @@ h3 {
 .img-hover-zoom--slowmo:hover img {
   filter: brightness(100%);
   transform: scale(1.2);
+}
+
+.contentsbg {
+  border-radius: 5px;
+}
+
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.65);
+  visibility: hidden;
+  backface-visibility: hidden;
+  opacity: 0;
+  z-index: 5;
+  transition: opacity 0.15s ease-in-out;
+
+  &.modal-open {
+    visibility: visible;
+    backface-visibility: visible;
+    opacity: 7;
+    z-index: 7;
+  }
+
+  .modal-inner {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .modal-content {
+      background-color: white;
+      max-width: 35em;
+      padding: 1em 1.5em;
+      position: relative;
+      margin: 2em;
+      box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.35);
+
+      .modal-close-icon {
+        position: absolute;
+        right: 1.5em;
+      }
+
+      .modal-content-inner {
+        padding-right: 2em;
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+          margin-bottom: 0.25em;
+        }
+
+        p {
+          margin-bottom: 1em;
+        }
+      }
+
+      .modal-buttons-seperator {
+        margin: 1.5em 0;
+        margin-top: 0;
+      }
+
+      .modal-buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+
+        button {
+          margin-left: 1em;
+
+          &:first-child {
+            margin-left: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.hugecover {
+  background-image: linear-gradient(white, black), url("/images/wall.jpg") !important;
+  background-size: cover;
+  background-blend-mode: overlay;
+  background-attachment: fixed;
+  font-size:1.5em;
+  text-shadow: #000 1px 1px 1px;
 }

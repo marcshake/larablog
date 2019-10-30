@@ -13,7 +13,7 @@
             <hr class="modal-buttons-seperator">
             <div class="modal-buttons">
                 <button class="button close-modal">Cancel</button>
-                <button class="button button-primary close-modal">OK</button>
+                <button class="button button-primary close-modal doSubmit">OK</button>
             </div>
         </div>
     </div>

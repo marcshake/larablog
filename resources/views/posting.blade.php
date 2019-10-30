@@ -16,44 +16,49 @@
         data-src="{{$posting->mainImage ? asset('storage/uploads/'.$posting->mainImagePath->filename): asset('images/wall.jpg')}}"
         alt="{{$posting->title}}" class="u-full-width">
 </div>
-<div class="container">
+<div class="container contentsbg">
     <h1 class="title primary superHeadline">{{$posting->title}}</h1>
 
     <article class="mt-4">
         <div class="contents">
             <div class="row">
-                <div class="twelve columns">
+                <div class="nine columns">
                     {!!$posting->contents!!}
+                </div>
+                <div class="three columns">
+                    Tags:
+                    @forelse ($posting->Tags as $tags)
+                    <a href="{{url('tag',$tags->tag)}}" class="tag is-dark">{{$tags->tag}}</a>
+                    @empty
+
+                    @endforelse
+                    <br>
+                    <br>Kategorie:
+                    @forelse ($posting->categories as $cats)
+                    <a class="tag is-dark" href="{{url('category',$cats->name)}}">{{$cats->name}}</a>
+                    @empty
+
+                    @endforelse
+
+
                 </div>
 
             </div>
         </div>
         <div class="row">
             <div class="eight columns">
-                Tags:
-                @forelse ($posting->Tags as $tags)
-                <a href="{{url('tag',$tags->tag)}}" class="tag is-dark">{{$tags->tag}}</a>
-                @empty
+                Autor: {{$posting->authorName->name}}
 
-                @endforelse
-                <br>
-                <br>Kategorie:
-                @forelse ($posting->categories as $cats)
-                <a class="tag is-dark" href="{{url('category',$cats->name)}}">{{$cats->name}}</a>
-                @empty
-
-                @endforelse
-
-            </div><div class="four columns">
+            </div>
+            <div class="four columns">
                 Datum: {{ $posting->created_at->formatLocalized('%d.%m.%Y')}}
 
-                Autor: {{$posting->authorName->name}}
             </div>
 
-            </div>
-            <hr><a href="{{url('blog')}}" class="button">Blog weiter lesen</a>
         </div>
+        <hr><a href="{{url('blog')}}" class="button">Blog weiter lesen</a>
+</div>
 
-    </article>
+</article>
 </div>
 @endsection

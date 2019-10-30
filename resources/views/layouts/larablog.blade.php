@@ -9,7 +9,7 @@
     <meta property="og:type" content="website">
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="stylesheet" href="{{ asset('css/app.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/trancefish.css')}}">
     @yield('opengraph')
     <script src="{{asset('js/app.js')}}"></script>
     <title>@yield('title')</title>
@@ -17,6 +17,7 @@
 
 <body>
     @include('cookieConsent::index')
+    @include('partial.modal')
 
     <div class="navbar has-shadow" role="navigation" aria-label="main navigation">
         @include('partial.mainmenu')
@@ -32,6 +33,10 @@
             {!! $snippets !!}
         </div>
     </footer>
+
+
+
+
 </body>
 
 </html>

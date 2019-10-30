@@ -6,6 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Music extends Model
 {
-
     protected $table = 'music';
+    protected $primaryKey = "song_id";
 }

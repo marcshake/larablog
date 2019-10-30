@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Music;
+use App\tff_albums;
 
 class MusicController extends Controller
 {
@@ -14,11 +15,13 @@ class MusicController extends Controller
     public function index()
     {
         $songs = Music::all();
-        return view('music', ['songs'=>$songs]);
+        $albmus = tff_albums::all();
+        return view('music', ['songs'=>$songs,'albums'=>$albmus]);
     }
 
     public function download($id)
     {
-        //
+        $filename = Music::findOrFail($id);
+        return response()->download(storage_path('app/public/music/'.$filename->filename));
     }
 }

@@ -3,11 +3,10 @@
         <h3 class="card-title">Neueste Beiträge</h3>
     </div>
     <div class="card-body">
-        <ul>
             @forelse ($allposts as $blog)
-            <li><a href="{{url('blog/'.$blog->url,$blog->id)}}">
+<a href="{{url('blog/'.$blog->url,$blog->id)}}">
                     {{$blog->title}}
-                </a></li>
+                </a> <br/>
 
             @empty
             <li>Keine Beiträge</li>
@@ -28,7 +27,7 @@
             @empty
 
             @endforelse
-        </ul>
+
     </div>
 </div>
 
