@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Cache;
 
 class CmsPages extends Model
 {
@@ -14,11 +15,29 @@ class CmsPages extends Model
 
     public static function getSnippets()
     {
-        $snip = self::where('filename', 'snippets')->first();
+        $snip = Cache::remember(
+            'snippets',
+            60,
+            function () {
+                return self::where('filename', 'snippets')->first();
+            }
+        );
         if ($snip == null) {
             $snip = new \StdClass();
             $snip->contents = '';
         }
         return $snip->contents;
+    }
+
+    public static function getMainMenu()
+    {
+        $file = Cache::remember(
+            'MainMenu',
+            10,
+            function () {
+                return self::where('filename', 'MAINMENU')->first();
+            }
+        );
+        return $file->contents;
     }
 }

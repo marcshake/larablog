@@ -8,5 +8,6 @@ class SnippetsComposer
     public function compose($view)
     {
         $view->with('snippets', CmsPages::getSnippets());
+        $view->with('MAINMENU', CmsPages::getMainMenu());
     }
 }
