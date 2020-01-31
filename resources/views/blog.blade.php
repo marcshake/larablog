@@ -1,8 +1,6 @@
 @extends('layouts.larablog')
 
-@section('title')
-Blogeinträge auf Trancefish.de
-@endsection
+@section('title') Blog {{$topic ?? ''}} @endsection
 
 @section('opengraph')
 
@@ -17,7 +15,6 @@ Blogeinträge auf Trancefish.de
 @section('maincontents')
 <div class="container contentsbg">
 
-    <div class="mt-4">
         <div class="row">
             <div class="twelve columns">
                 @forelse ($blogposts as $item)
@@ -58,7 +55,6 @@ Blogeinträge auf Trancefish.de
                 {{$blogposts->links()}}
             </div>
         </div>
-    </div>
     <div class="row">
         <div class="twelve columns">
             @include('partial.submenu')

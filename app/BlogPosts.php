@@ -25,7 +25,7 @@ class BlogPosts extends Model
      */
     public static function overview()
     {
-        $posts = self::select('id', 'title', 'visible', 'created_at', 'author')->orderBy('updated_at', 'DESC')->where('trashed', null)->paginate(100);
+        $posts = self::select('id', 'title', 'visible', 'created_at', 'author')->orderBy('id', 'DESC')->where('trashed', null)->paginate(100);
         foreach ($posts as $r => $post) {
             $posts[$r]->url = self::makeUrl($post->title);
         }
@@ -33,7 +33,7 @@ class BlogPosts extends Model
     }
     public static function blogHome()
     {
-        $posts = self::select('mainImage', 'contents', 'id', 'title', 'visible', 'created_at', 'author')->orderBy('updated_at', 'DESC')->where('visible', 1)->where('trashed', null)->paginate(15);
+        $posts = self::select('mainImage', 'contents', 'id', 'title', 'visible', 'created_at', 'author')->orderBy('id', 'DESC')->where('visible', 1)->where('trashed', null)->paginate(15);
         foreach ($posts as $r => $post) {
             $posts[$r]->shortcontents = self::shorten($post->contents);
             $posts[$r]->url = self::makeUrl($post->title);
@@ -49,7 +49,7 @@ class BlogPosts extends Model
     public static function getByCategory($category)
     {
         $posts = self::select('created_at', 'mainImage', 'contents', 'id', 'title', 'visible', 'updated_at', 'author')
-            ->orderBy('created_at', 'DESC')
+            ->orderBy('id', 'DESC')
             ->where('visible', 1)
             ->where('trashed', null)
             ->whereHas(
@@ -61,16 +61,15 @@ class BlogPosts extends Model
             ->paginate(15);
         foreach ($posts as $r => $post) {
             $posts[$r]->shortcontents = self::shorten($post->contents);
-            $posts[$r]->url= self::makeUrl($post->title);
+            $posts[$r]->url = self::makeUrl($post->title);
         }
         return $posts;
     }
 
-
     public static function getByTag($tag)
     {
         $posts = self::select('created_at', 'mainImage', 'contents', 'id', 'title', 'visible', 'updated_at', 'author')
-            ->orderBy('created_at', 'DESC')
+            ->orderBy('id', 'DESC')
             ->where('visible', 1)
             ->where('trashed', null)
             ->whereHas(
@@ -94,7 +93,7 @@ class BlogPosts extends Model
      */
     public static function getPosts($limit)
     {
-        $posts =  self::orderBy('updated_at', 'DESC')->where('trashed', null)->with('mainImagePath')->where('visible', 1)->limit($limit)->get();
+        $posts = self::orderBy('id', 'DESC')->where('trashed', null)->with('mainImagePath')->where('visible', 1)->limit($limit)->get();
         foreach ($posts as $r => $post) {
             $posts[$r]->shortcontents = self::shorten($post->contents);
             $posts[$r]->url = self::makeUrl($post->title);
@@ -110,6 +109,11 @@ class BlogPosts extends Model
     public function tags()
     {
         return $this->belongsToMany('App\Tags', 'tags2_blogs', 'blogId', 'tagId');
+    }
+
+    public function comments()
+    {
+        return $this->hasMany('App\Comment', 'blogid', 'id');
     }
 
     public function categories()
@@ -128,8 +132,7 @@ class BlogPosts extends Model
     {
         $title = urldecode($title);
 
-        $posts =  self::where('trashed', null)->where('visible', 1)->where('title', $title)->where('id', $id)->with('mainImagePath')->with('tags')->firstOrFail();
-
+        $posts = self::where('trashed', null)->where('visible', 1)->where('title', $title)->where('id', $id)->with('mainImagePath')->with('tags')->with('comments')->firstOrFail();
 
         $posts->url = self::makeUrl($posts->title);
 
@@ -144,5 +147,10 @@ class BlogPosts extends Model
         $paragraph = substr($v['contents'], $start, $end - $start + 4);
         //        $tmp[$r]['contents'] = $paragraph;
         return $paragraph;
+    }
+
+    public static function search($string)
+    {
+        return self::where('contents', 'like', '%' . $string . '%')->where('visible', 1)->where('trashed', null)->get();
     }
 }

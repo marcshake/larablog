@@ -16,13 +16,13 @@ Administrationspanel
                         {{$beitraege}} Beiträge
                     </div>
                     <div class="column">
-                        xyz Seiten
+                        {{$seiten}} Seiten
                     </div>
 
                 </div>
                 <div class="row">
                     <div class="column">
-                        xyz Kommentare
+                        0 Kommentare
                         <br>
                         Larablog
                     </div>

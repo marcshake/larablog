@@ -1,7 +1,5 @@
 @extends('layouts.larablog')
-@section('title')
-Free Music
-@endsection
+@section('title') Free Music @endsection
 
 
 @section('maincontents')

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\BlogPosts;
 use App\Category;
+use App\Comment;
+use Illuminate\Http\Request;
 
 class BlogController extends Controller
 {
@@ -15,23 +17,32 @@ class BlogController extends Controller
             return view('blog', ['blogposts' => $posts]);
         }
         $post = BlogPosts::getSpecific($title, $id);
-        return view('posting', ['posting' => $post, 'blogposts' => $posts]); //todo: Hook in View
+        $comments = Comment::where('blogid', $id)->get();
+        $description = $post->description;
+        return view('posting', ['metadescription'=>$description,'posting' => $post, 'blogposts' => $posts, 'comments' => $comments]);
     }
 
     public function tag($name)
     {
         $posts = BlogPosts::getByTag($name);
-        return view('blog', ['blogposts' => $posts]);
+        $topic = $name;
+        return view('blog', ['topic'=>'Getaggt mit: '.$name,'blogposts' => $posts]);
     }
 
     public function category($category)
     {
         $posts = BlogPosts::getByCategory($category);
-        return view('blog', ['blogposts' => $posts]);
+        $topic = $category;
+        return view('blog', ['topic'=>'Aus der Kategorie '.$category,'blogposts' => $posts]);
     }
-
-    public function search($slug = false)
+    public function searchForm()
     {
         return view('partial.search');
+    }
+    public function search(Request $request)
+    {
+        $such = $request->validate(['Suchbegriff' => 'required']);
+        $posts = BlogPosts::search($such['Suchbegriff']);
+        return view('results', ['results' => $posts]);
     }
 }

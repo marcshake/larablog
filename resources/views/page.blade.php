@@ -1,8 +1,6 @@
 @extends('layouts.larablog')
 
-@section('title')
-{{$page->title}}
-@endsection
+@section('title') {{$page->title}} @endsection
 @section('maincontents')
 <div class="container contentsbg">
     <h1>{{$page->title}}</h1>

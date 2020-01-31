@@ -1,7 +1,5 @@
 @extends('layouts.larablog')
-@section('title')
-{{$posting->title}}
-@endsection
+@section('title') {{$posting->title}} @endsection
 
 @section('opengraph')
 <meta content="{{$posting->title}}" property="og:title">
@@ -24,6 +22,8 @@
             <div class="row">
                 <div class="nine columns">
                     {!!$posting->contents!!}
+
+                    <hr>
                 </div>
                 <div class="three columns">
                     Tags:

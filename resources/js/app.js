@@ -1,6 +1,4 @@
 
-// require('./bootstrap');
-
 window.$ = window.jQuery = require('jquery');
 
 $.ajaxSetup({
@@ -44,7 +42,7 @@ $(document).ready(function () {
     $('.open-modal').click(function () { $('.modal').removeClass('hidden') });
     $('.search').on('click', function () {
         $('#modalTitle').text('SUCHE');
-        $.post('search', function (data) {
+        $.get('/search', function (data) {
             $('#modalContents').html(data);
         });
     });

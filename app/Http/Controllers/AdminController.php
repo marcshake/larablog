@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\BlogPosts;
 use App\Tags;
 use App\Category;
+use App\CmsPages;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -23,7 +24,7 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin.adminPanel', ['beitraege' => BlogPosts::where('trashed', null)->count()]);
+        return view('admin.adminPanel', ['beitraege' => BlogPosts::where('trashed', null)->count(),'seiten'=>CmsPages::count()]);
     }
     /**
      * Get a list of blogentries
@@ -68,7 +69,7 @@ class AdminController extends Controller
         $contents->title = $request->title;
         $contents->contents = $request->contents;
         $contents->author = \Auth::user()->id;
-
+        $contents->description = $request->description;
 
         $contents->save();
         $this->handleTags($request, $contents);
@@ -157,7 +158,8 @@ class AdminController extends Controller
         $contents->title = $request->title;
         $contents->contents = $request->contents;
         $contents->mainImage = $request->mainImage;
-
+        $contents->description = $request->description;
+        
         $this->handleTags($request, $contents);
         $this->handleCategories($request, $contents);
         $contents->touch();

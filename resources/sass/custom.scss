@@ -23,7 +23,6 @@ $padding: 0 4px;
 
 // Buttons
 //––––––––––––––––––––––––––––––––––––––––––––––––––
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap");
 
 html {
   min-height: 101%;
@@ -113,15 +112,25 @@ input {
   width: 100%;
   height: 100%;
 }
+figure img {
+  border-radius: 15px;
+}
 img {
   max-width: 100%;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    160deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(204, 204, 240, 1) 48%,
+    rgba(255, 255, 255, 1) 100%
+  );
 }
 
 body {
-  font-family: Source Sans Pro, Arial, sans-serif, helvetica;
+	font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 2;
   color: #000;
-  background: whitesmoke;
+  background:#41464d;
 }
 
 .has-background-black-bis {
@@ -152,26 +161,7 @@ body {
 .menu {
   padding: $padding;
 }
-/*
-.navbar {
-  background: $light-grey;
-}
-.navbar .navbar-item {
-  padding: $padding;
-}
-.navbar-brand {
-  float: left;
-}
-.navbar-end {
-  float: right;
-}
-.navbar-menu {
-  float: left;
-  display: inline;
-}
-.navbar-start {
-  float: left;
-}*/
+
 
 .navBar {
   overflow: hidden;
@@ -185,9 +175,8 @@ body {
   Removes the underline with text decoration = none.*/
 .navBar a {
   float: left;
-  padding: 14px 16px;
+  padding: 1em;
   text-decoration: none;
-  font-size: 17px;
 }
 
 /*Background color change during hover state*/
@@ -478,7 +467,8 @@ h3 {
 }
 
 .contentsbg {
-  border-radius: 5px;
+    background:whitesmoke;
+    box-shadow: 0 0 5px #000;
 }
 
 .modal {
@@ -571,6 +561,15 @@ h3 {
   background-size: cover;
   background-blend-mode: overlay;
   background-attachment: fixed;
-  font-size:1.5em;
+  font-size: 1.5em;
   text-shadow: #000 1px 1px 1px;
+}
+
+
+.hero {
+    background: rgba(0, 0, 0, 0.5);
+    color:#fff;
+    border-radius: 3px;
+    padding:1em;
+    box-shadow: #000 1px 1px 5px;
 }

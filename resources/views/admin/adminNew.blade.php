@@ -19,6 +19,13 @@ Neuen Eintrag anlegen
                 id="title">
         </div>
     </div>
+        <div class="field">
+    <label class="label" for="description">Kurzbeschreibung</label>
+    <div class="control">
+    	<input autocomplete="false" class="input" type="text" id="description" maxlength="255" name="description">
+    </div>
+    </div>
+    
     <div class="field">
         <label for="contents" class="label">Inhalt</label>
         <div class="control">

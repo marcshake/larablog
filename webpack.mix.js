@@ -13,6 +13,7 @@ const mix = require('laravel-mix');
 mix.copyDirectory('resources/images', 'public/images');
 // To keep ckeditor up to date, I use it as a nodemodule from now on.
 mix.copyDirectory('node_modules/ckeditor4', 'public/js/ckeditor');
+mix.copyDirectory('resources/fonts','public/fonts');
 
 mix.js('resources/js/app.js', 'public/js')
     .js('resources/js/admin.js','public/js')

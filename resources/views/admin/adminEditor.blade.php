@@ -7,7 +7,6 @@
 @endsection
 
 @section('content')
-
 <form action="{{ url('admin/update',$contents->id)}}" method="post">
     @csrf
     <input type="hidden" name="mainImage" id="imageID" value="{{$contents->mainImage}}">
@@ -18,6 +17,13 @@
                 name="title" id="title">
         </div>
     </div>
+    <div class="field">
+    <label class="label" for="description">Kurzbeschreibung</label>
+    <div class="control">
+    	<input autocomplete="false" class="input" type="text" id="description" value="{{$contents->description}}" name="description" maxlength="255">
+    </div>
+    </div>
+    
     <div class="field">
         <label for="contents" class="label">Inhalt</label>
         <div class="control">
