@@ -31,9 +31,10 @@ class BlogPosts extends Model
         }
         return $posts;
     }
+
     public static function blogHome()
     {
-        $posts = self::select('mainImage', 'contents', 'id', 'title', 'visible', 'created_at', 'author')->orderBy('id', 'DESC')->where('visible', 1)->where('trashed', null)->paginate(15);
+        $posts = self::select('mainImage', 'contents', 'id', 'title', 'visible', 'created_at', 'author')->orderBy('id', 'DESC')->where('visible', 1)->where('trashed', null)->with('authorname')->with('mainImagePath')->paginate(15);
         foreach ($posts as $r => $post) {
             $posts[$r]->shortcontents = self::shorten($post->contents);
             $posts[$r]->url = self::makeUrl($post->title);
@@ -57,7 +58,7 @@ class BlogPosts extends Model
                 function ($query) use ($category) {
                     $query->where('name', $category);
                 }
-            )
+            )->with('authorname')->with('mainImagePath')
             ->paginate(15);
         foreach ($posts as $r => $post) {
             $posts[$r]->shortcontents = self::shorten($post->contents);
@@ -77,7 +78,7 @@ class BlogPosts extends Model
                 function ($query) use ($tag) {
                     $query->where('tag', $tag);
                 }
-            )
+            )->with('authorname')->with('mainImagePath')
             ->paginate(15);
         foreach ($posts as $r => $post) {
             $posts[$r]->shortcontents = self::shorten($post->contents);
@@ -85,6 +86,7 @@ class BlogPosts extends Model
         }
         return $posts;
     }
+
     /**
      * Get a List of Posts
      *
@@ -120,6 +122,7 @@ class BlogPosts extends Model
     {
         return $this->belongsToMany('App\Category', 'category2_blogs', 'blogId', 'catId');
     }
+
     public static function getPreview($title, $id)
     {
         $title = urldecode($title);

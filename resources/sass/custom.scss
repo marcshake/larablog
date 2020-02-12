@@ -131,8 +131,22 @@ body {
   line-height: 2;
   color: #000;
   background:#41464d;
+  animation: fadeInBody ease 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+
 }
 
+
+
+@keyframes fadeInBody {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
 .has-background-black-bis {
   background: $dark-grey;
   color: $light-grey;

@@ -1,0 +1,287 @@
+@font-face {
+    font-family: 'AssailandBlack';
+        src: url('/assets/fonts/assailand/0f8871be17eead27c51611e279747550/65dfb78d525eb71d218738ae81d9c8af/AssailandBlack.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+      }
+
+@font-face {
+    font-family: 'AssailandBlackItalic';
+        src: url('/assets/fonts/assailand/0f8871be17eead27c51611e279747550/f4c51fadc837d44789b5a21ae6bc76f2/AssailandBlackItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+      }
+
+@font-face {
+    font-family: 'AssailandBold';
+        src: url('/assets/fonts/assailand/0f8871be17eead27c51611e279747550/24730c90411a85ef9ba3bc5e4f1561a5/AssailandBold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+      }
+
+@font-face {
+    font-family: 'AssailandBoldItalic';
+        src: url('/assets/fonts/assailand/0f8871be17eead27c51611e279747550/d87376108ea17702b320a83f3e32e317/AssailandBoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+      }
+
+@font-face {
+    font-family: 'AssailandExtraBold';
+        src: url('/assets/fonts/assailand/0f8871be17eead27c51611e279747550/9c17e5a551167936a3c313d0ae589eff/AssailandExtraBold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+      }
+
+@font-face {
+    font-family: 'AssailandExtraBoldItalic';
+        src: url('/assets/fonts/assailand/0f8871be17eead27c51611e279747550/435320828e118704aa4ee862b0631465/AssailandExtraBoldItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+      }
+
+@font-face {
+    font-family: 'AssailandExtraLight';
+        src: url('/assets/fonts/assailand/0f8871be17eead27c51611e279747550/3213a1ee3e92f959307433a30c890000/AssailandExtraLight.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+      }
+
+@font-face {
+    font-family: 'AssailandExtraLightItalic';
+        src: url('/assets/fonts/assailand/0f8871be17eead27c51611e279747550/455b0dd448c774a80de9b90ed3064eac/AssailandExtraLightItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+      }
+
+@font-face {
+    font-family: 'AssailandItalic';
+        src: url('/assets/fonts/assailand/0f8871be17eead27c51611e279747550/5d2faa6adf7ec3ebbfec75fd24ebd90d/AssailandItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+      }
+
+@font-face {
+    font-family: 'AssailandLight';
+        src: url('/assets/fonts/assailand/0f8871be17eead27c51611e279747550/a646a4fcc08e218fed318314d01e2ccb/AssailandLight.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+      }
+
+@font-face {
+    font-family: 'AssailandLightItalic';
+        src: url('/assets/fonts/assailand/0f8871be17eead27c51611e279747550/07a4aac712de60f32a1d09f400437f4f/AssailandLightItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+      }
+
+@font-face {
+    font-family: 'AssailandMedium';
+        src: url('/assets/fonts/assailand/0f8871be17eead27c51611e279747550/08ed9bc301519c820e304556c2d7cfb9/AssailandMedium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+      }
+
+@font-face {
+    font-family: 'AssailandMediumItalic';
+        src: url('/assets/fonts/assailand/0f8871be17eead27c51611e279747550/40740b9d5c2e10b010701980c15788ef/AssailandMediumItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+      }
+
+@font-face {
+    font-family: 'AssailandRegular';
+        src: url('/assets/fonts/assailand/0f8871be17eead27c51611e279747550/07b780c568cca0fa39d06bac45e19b23/AssailandRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+      }
+
+@font-face {
+    font-family: 'AssailandSemiBold';
+        src: url('/assets/fonts/assailand/0f8871be17eead27c51611e279747550/953464359843b203f7b46107c1eea61e/AssailandSemiBold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+      }
+
+@font-face {
+    font-family: 'AssailandSemiBoldItalic';
+        src: url('/assets/fonts/assailand/0f8871be17eead27c51611e279747550/debabc1c70c5bc894ec98385904c20a4/AssailandSemiBoldItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+      }
+
+@font-face {
+    font-family: 'AssailandThin';
+        src: url('/assets/fonts/assailand/0f8871be17eead27c51611e279747550/6790d9083ff71cc0c74068ce2ba8068b/AssailandThin.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+      }
+
+@font-face {
+    font-family: 'AssailandThinItalic';
+        src: url('/assets/fonts/assailand/0f8871be17eead27c51611e279747550/c6515aba03b1829177fce5aa16502a93/AssailandThinItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+      }
+
+ /* The following rules are deprecated. */
+
+@font-face {
+    font-family: 'Assailand';
+        src: url('/assets/fonts/assailand/0f8871be17eead27c51611e279747550/65dfb78d525eb71d218738ae81d9c8af/AssailandBlack.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+      }
+
+
+
+@font-face {
+    font-family: 'Assailand';
+        src: url('/assets/fonts/assailand/0f8871be17eead27c51611e279747550/f4c51fadc837d44789b5a21ae6bc76f2/AssailandBlackItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+      }
+
+
+
+@font-face {
+    font-family: 'Assailand';
+        src: url('/assets/fonts/assailand/0f8871be17eead27c51611e279747550/24730c90411a85ef9ba3bc5e4f1561a5/AssailandBold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+      }
+
+
+
+@font-face {
+    font-family: 'Assailand';
+        src: url('/assets/fonts/assailand/0f8871be17eead27c51611e279747550/d87376108ea17702b320a83f3e32e317/AssailandBoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+      }
+
+
+
+@font-face {
+    font-family: 'Assailand';
+        src: url('/assets/fonts/assailand/0f8871be17eead27c51611e279747550/9c17e5a551167936a3c313d0ae589eff/AssailandExtraBold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+      }
+
+
+
+@font-face {
+    font-family: 'Assailand';
+        src: url('/assets/fonts/assailand/0f8871be17eead27c51611e279747550/435320828e118704aa4ee862b0631465/AssailandExtraBoldItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+      }
+
+
+
+@font-face {
+    font-family: 'Assailand';
+        src: url('/assets/fonts/assailand/0f8871be17eead27c51611e279747550/3213a1ee3e92f959307433a30c890000/AssailandExtraLight.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+      }
+
+
+
+@font-face {
+    font-family: 'Assailand';
+        src: url('/assets/fonts/assailand/0f8871be17eead27c51611e279747550/455b0dd448c774a80de9b90ed3064eac/AssailandExtraLightItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+      }
+
+
+
+@font-face {
+    font-family: 'Assailand';
+        src: url('/assets/fonts/assailand/0f8871be17eead27c51611e279747550/5d2faa6adf7ec3ebbfec75fd24ebd90d/AssailandItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+      }
+
+
+
+@font-face {
+    font-family: 'Assailand';
+        src: url('/assets/fonts/assailand/0f8871be17eead27c51611e279747550/a646a4fcc08e218fed318314d01e2ccb/AssailandLight.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+      }
+
+
+
+@font-face {
+    font-family: 'Assailand';
+        src: url('/assets/fonts/assailand/0f8871be17eead27c51611e279747550/07a4aac712de60f32a1d09f400437f4f/AssailandLightItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+      }
+
+
+
+@font-face {
+    font-family: 'Assailand';
+        src: url('/assets/fonts/assailand/0f8871be17eead27c51611e279747550/08ed9bc301519c820e304556c2d7cfb9/AssailandMedium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+      }
+
+
+
+@font-face {
+    font-family: 'Assailand';
+        src: url('/assets/fonts/assailand/0f8871be17eead27c51611e279747550/40740b9d5c2e10b010701980c15788ef/AssailandMediumItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+      }
+
+
+
+@font-face {
+    font-family: 'Assailand';
+        src: url('/assets/fonts/assailand/0f8871be17eead27c51611e279747550/07b780c568cca0fa39d06bac45e19b23/AssailandRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+      }
+
+
+
+@font-face {
+    font-family: 'Assailand';
+        src: url('/assets/fonts/assailand/0f8871be17eead27c51611e279747550/953464359843b203f7b46107c1eea61e/AssailandSemiBold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+      }
+
+
+
+@font-face {
+    font-family: 'Assailand';
+        src: url('/assets/fonts/assailand/0f8871be17eead27c51611e279747550/debabc1c70c5bc894ec98385904c20a4/AssailandSemiBoldItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+      }
+
+
+
+@font-face {
+    font-family: 'Assailand';
+        src: url('/assets/fonts/assailand/0f8871be17eead27c51611e279747550/6790d9083ff71cc0c74068ce2ba8068b/AssailandThin.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+      }
+
+
+
+@font-face {
+    font-family: 'Assailand';
+        src: url('/assets/fonts/assailand/0f8871be17eead27c51611e279747550/c6515aba03b1829177fce5aa16502a93/AssailandThinItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+      }
