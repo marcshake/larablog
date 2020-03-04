@@ -4,7 +4,7 @@ Einloggen
 @endsection
 
 @section('maincontents')
-<div class="container"><div class="content">
+<div class="container contentsbg"><div class="content">
     <h1>Login?</h1>
 
         <form method="POST" action="{{ route('login') }}">

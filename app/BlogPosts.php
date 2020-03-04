@@ -25,7 +25,9 @@ class BlogPosts extends Model
      */
     public static function overview()
     {
-        $posts = self::select('id', 'title', 'visible', 'created_at', 'author')->orderBy('id', 'DESC')->where('trashed', null)->paginate(100);
+        $posts = self::select('id', 'title', 'visible', 'created_at', 'author')->orderBy('id', 'DESC')
+            ->with('mainImagePath')->with('tags')->with('authorname')->with('categories')
+            ->where('trashed', null)->paginate(100);
         foreach ($posts as $r => $post) {
             $posts[$r]->url = self::makeUrl($post->title);
         }
