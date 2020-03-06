@@ -38,6 +38,7 @@ class CmsPages extends Model
                 return self::where('filename', 'MAINMENU')->first();
             }
         );
-        return $file->contents;
+        $contents = isset($file->contents) ? $file->contents : null;
+        return $contents;
     }
 }
