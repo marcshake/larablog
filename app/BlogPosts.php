@@ -3,15 +3,24 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
+/**
+ * Class BlogPosts
+ *
+ * @package App
+ */
 class BlogPosts extends Model
 {
+    /**
+     * @var string
+     */
     protected $table = 'blog_posts';
 
     /**
      * Get the Authors name
      *
-     * @return void
+     * @return HasOne
      */
     public function authorName()
     {
@@ -34,6 +43,9 @@ class BlogPosts extends Model
         return $posts;
     }
 
+    /**
+     * @return mixed
+     */
     public static function blogHome()
     {
         $posts = self::select('mainImage', 'contents', 'id', 'title', 'visible', 'created_at', 'author')->orderBy('id', 'DESC')->where('visible', 1)->where('trashed', null)->with('authorname')->with('mainImagePath')->paginate(15);
@@ -44,11 +56,19 @@ class BlogPosts extends Model
         return $posts;
     }
 
+    /**
+     * @param  $string
+     * @return string
+     */
     private static function makeUrl($string)
     {
         return urlencode($string);
     }
 
+    /**
+     * @param  $category
+     * @return mixed
+     */
     public static function getByCategory($category)
     {
         $posts = self::select('created_at', 'mainImage', 'contents', 'id', 'title', 'visible', 'updated_at', 'author')
@@ -69,6 +89,10 @@ class BlogPosts extends Model
         return $posts;
     }
 
+    /**
+     * @param  $tag
+     * @return mixed
+     */
     public static function getByTag($tag)
     {
         $posts = self::select('created_at', 'mainImage', 'contents', 'id', 'title', 'visible', 'updated_at', 'author')
@@ -105,26 +129,43 @@ class BlogPosts extends Model
         return $posts;
     }
 
+    /**
+     * @return HasOne
+     */
     public function mainImagePath()
     {
         return $this->hasOne('App\Media', 'id', 'mainImage');
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
     public function tags()
     {
         return $this->belongsToMany('App\Tags', 'tags2_blogs', 'blogId', 'tagId');
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function comments()
     {
         return $this->hasMany('App\Comment', 'blogid', 'id');
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
     public function categories()
     {
         return $this->belongsToMany('App\Category', 'category2_blogs', 'blogId', 'catId');
     }
 
+    /**
+     * @param  $title
+     * @param  $id
+     * @return mixed
+     */
     public static function getPreview($title, $id)
     {
         $title = urldecode($title);
@@ -133,6 +174,11 @@ class BlogPosts extends Model
         return $posts;
     }
 
+    /**
+     * @param  $title
+     * @param  $id
+     * @return mixed
+     */
     public static function getSpecific($title, $id)
     {
         $title = urldecode($title);
@@ -144,6 +190,10 @@ class BlogPosts extends Model
         return $posts;
     }
 
+    /**
+     * @param  $string
+     * @return false|string
+     */
     public static function shorten($string)
     {
         $v['contents'] = $string;
@@ -154,6 +204,10 @@ class BlogPosts extends Model
         return $paragraph;
     }
 
+    /**
+     * @param  $string
+     * @return mixed
+     */
     public static function search($string)
     {
         return self::where('contents', 'like', '%' . $string . '%')->where('visible', 1)->where('trashed', null)->get();
