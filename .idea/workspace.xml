@@ -4,16 +4,8 @@
     <list default="true" id="5e767218-8020-4bc9-9469-6dca386f8f3a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/BlogPosts.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/BlogPosts.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Category2Blogs.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Category2Blogs.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/CmsPages.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/CmsPages.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Comment.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Comment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Media.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Media.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Music.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Music.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Tags.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Tags.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Tags2Blogs.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Tags2Blogs.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/tff_albums.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/tff_albums.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/adminListBlogs.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/adminListBlogs.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -206,7 +198,7 @@
       <workItem from="1562235790080" duration="198000" />
       <workItem from="1562236002407" duration="50000" />
       <workItem from="1583394023975" duration="238000" />
-      <workItem from="1583490818051" duration="2632000" />
+      <workItem from="1583490818051" duration="4135000" />
     </task>
     <servers />
   </component>
@@ -230,9 +222,9 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="301" y="72" key="SettingsEditor/0.0.1600.860@0.0.1600.860" timestamp="1583493240831" />
-    <state x="463" y="180" width="672" height="678" key="search.everywhere.popup" timestamp="1583491473255">
+    <state x="463" y="180" width="672" height="678" key="search.everywhere.popup" timestamp="1583494712242">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="463" y="180" width="672" height="678" key="search.everywhere.popup/0.0.1600.860@0.0.1600.860" timestamp="1583491473255" />
+    <state x="463" y="180" width="672" height="678" key="search.everywhere.popup/0.0.1600.860@0.0.1600.860" timestamp="1583494712242" />
   </component>
 </project>

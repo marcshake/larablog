@@ -32,11 +32,16 @@ class BlogPosts extends Model
      *
      * @return void
      */
-    public static function overview()
+    public static function overview($wip)
     {
         $posts = self::select('id', 'title', 'visible', 'created_at', 'author')->orderBy('id', 'DESC')
             ->with('mainImagePath')->with('tags')->with('authorname')->with('categories')
             ->where('trashed', null)->paginate(100);
+        if ($wip) {
+            $posts = self::select('id', 'title', 'visible', 'created_at', 'author')->orderBy('id', 'DESC')
+                ->with('mainImagePath')->with('tags')->with('authorname')->with('categories')
+                ->where('trashed', null)->where('visible', 0)->paginate(100);
+        }
         foreach ($posts as $r => $post) {
             $posts[$r]->url = self::makeUrl($post->title);
         }

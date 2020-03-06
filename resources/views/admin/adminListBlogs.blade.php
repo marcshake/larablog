@@ -4,6 +4,10 @@ Eintragsübersicht
 @endsection
 
 @section('content')
+    <div class="row">
+    <a href="{{url('admin/blogs/')}}">Beiträge</a>
+        <a href="{{url('admin/blogs/')}}?dev=1">Entwürfe</a>
+    </div>
 <table class="table is-striped is-hoverable">
     <thead>
         <tr>

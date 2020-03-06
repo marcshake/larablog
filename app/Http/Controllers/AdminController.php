@@ -31,9 +31,10 @@ class AdminController extends Controller
      *
      * @return void
      */
-    public function list()
+    public function list(Request $request)
     {
-        $posts = BlogPosts::overview();
+        $wip = $request->input('dev');
+        $posts = BlogPosts::overview($wip);
         return view('admin.adminListBlogs', ['collection'=>$posts]);
     }
 
@@ -159,7 +160,7 @@ class AdminController extends Controller
         $contents->contents = $request->contents;
         $contents->mainImage = $request->mainImage;
         $contents->description = $request->description;
-        
+
         $this->handleTags($request, $contents);
         $this->handleCategories($request, $contents);
         $contents->touch();
