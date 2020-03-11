@@ -127,7 +127,7 @@ img {
 }
 
 body {
-	font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 2;
   color: #000;
   background:#41464d;
@@ -586,4 +586,10 @@ h3 {
     border-radius: 3px;
     padding:1em;
     box-shadow: #000 1px 1px 5px;
+}
+
+.leaveTopSpace {
+  line-height: calc(2em + (1.5 - 1.2) * ((100vw - 300px) / (1600 - 300)));
+  font-size: calc(10px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+
 }
