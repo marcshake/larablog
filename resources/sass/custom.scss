@@ -30,6 +30,7 @@ html {
 
 .container {
     padding: 0 1rem;
+
 }
 
 .button.button-secondary,
@@ -133,8 +134,8 @@ img {
 body {
     font-family: Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
     color: #000;
-    font-size: 20px;
-    font-size: calc(100% + 1vw);
+    font-size: 16px;
+    font-size: calc(100% + 0.75vw);
 
     background: #41464d;
     animation: fadeInBody ease 1s;
