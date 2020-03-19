@@ -14,7 +14,8 @@ class CreateMediaTable extends Migration
     public function up()
     {
         Schema::create(
-            'media', function (Blueprint $table) {
+            'media',
+            function (Blueprint $table) {
                 $table->bigIncrements('id');
                 $table->string('filename');
                 $table->string('thumbnail');

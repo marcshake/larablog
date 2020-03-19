@@ -51,7 +51,7 @@ class CmsPages extends Model
     {
         $file = Cache::remember(
             'MainMenu',
-            10,
+            60,
             function () {
                 return self::where('filename', 'MAINMENU')->first();
             }

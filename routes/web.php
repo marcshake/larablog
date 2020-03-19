@@ -23,7 +23,7 @@ Route::get('music', 'MusicController@index');
 Route::get('music/download/{song_id}', 'MusicController@download');
 Route::get('rss', 'RssController@index');
 Route::get('preview/{title}/{id}', 'PreviewController@index');
-Route::get('search','BlogController@searchForm');
+Route::get('search', 'BlogController@searchForm');
 Route::get('admin', 'AdminController@index');
 
 //Admin-Routes

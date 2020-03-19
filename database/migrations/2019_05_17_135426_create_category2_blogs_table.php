@@ -14,7 +14,8 @@ class CreateCategory2BlogsTable extends Migration
     public function up()
     {
         Schema::create(
-            'category2_blogs', function (Blueprint $table) {
+            'category2_blogs',
+            function (Blueprint $table) {
                 $table->bigIncrements('id');
                 $table->bigInteger('blogId');
                 $table->bigInteger('catId');

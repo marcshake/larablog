@@ -15,7 +15,8 @@ class CreateMusicsTable extends Migration
     public function up()
     {
         Schema::create(
-            'musics', function (Blueprint $table) {
+            'music',
+            function (Blueprint $table) {
                 $table->bigIncrements('id');
                 $table->string('song_name');
                 $table->string('song_genre');
@@ -32,7 +33,6 @@ class CreateMusicsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('musics');
+        Schema::dropIfExists('music');
     }
-
 }

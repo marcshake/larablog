@@ -5,7 +5,7 @@ Whoops - four oh four
 @endsection
 
 @section('maincontents')
-<div class="container">
+<div class="container contentsbg">
     <h1 class="title primary">four oh four</h1>
     <h2 class="title secondary">
         This is not the page, you were looking for.

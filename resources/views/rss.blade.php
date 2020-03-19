@@ -20,7 +20,7 @@
                 {{$item->created_at->toRfc822String('%d.%m.%Y')}}
             </pubDate>
             <description>
-                <![CDATA[{{$item->contents}} ]]>
+                <![CDATA[{!! $item->contents !!} ]]>
             </description>
             @foreach ($item->Tags as $tags)
             <category>

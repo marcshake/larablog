@@ -1,15 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="Larablog">
+  <component name="PublishConfigData" serverName="larablog">
     <serverData>
-      <paths name="Larablog">
+      <paths name="Ideenformular">
         <serverdata>
           <mappings>
             <mapping local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>
-      <paths name="lisOld">
+      <paths name="Werksauftrag">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="larablog">
         <serverdata>
           <mappings>
             <mapping local="$PROJECT_DIR$" web="/" />

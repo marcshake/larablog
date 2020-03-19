@@ -14,7 +14,8 @@ class CreateTags2BlogsTable extends Migration
     public function up()
     {
         Schema::create(
-            'tags2_blogs', function (Blueprint $table) {
+            'tags2_blogs',
+            function (Blueprint $table) {
                 $table->bigIncrements('id');
                 $table->bigInteger('tagId');
                 $table->bigInteger('blogId');

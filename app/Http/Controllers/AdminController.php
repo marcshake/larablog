@@ -3,20 +3,26 @@
 namespace App\Http\Controllers;
 
 use App\BlogPosts;
-use App\Tags;
 use App\Category;
 use App\CmsPages;
+use App\Tags;
 use Illuminate\Http\Request;
 
+/**
+ * Class AdminController
+ * @package App\Http\Controllers
+ */
 class AdminController extends Controller
 {
+
     /**
-     * Invited people only
+     * AdminController constructor.
      */
     public function __construct()
     {
         $this->middleware('auth');
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -24,8 +30,9 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin.adminPanel', ['beitraege' => BlogPosts::where('trashed', null)->count(),'seiten'=>CmsPages::count()]);
+        return view('admin.adminPanel', ['beitraege' => BlogPosts::where('trashed', null)->count(), 'seiten' => CmsPages::count()]);
     }
+
     /**
      * Get a list of blogentries
      *
@@ -35,7 +42,7 @@ class AdminController extends Controller
     {
         $wip = $request->input('dev');
         $posts = BlogPosts::overview($wip);
-        return view('admin.adminListBlogs', ['collection'=>$posts]);
+        return view('admin.adminListBlogs', ['collection' => $posts]);
     }
 
 
@@ -52,16 +59,16 @@ class AdminController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        if ($request->title==null) {
-            return redirect('admin/new')->with('warning', 'Der Titel darf nicht leer sein');
+        if ($request->title == null) {
+            return redirect('admin/new')->with('warning', 'Title must not be null');
         }
-        if ($request->contents==null) {
-            return redirect('admin/new')->with('warning', 'Der Inhalt darf nicht leer sein');
+        if ($request->contents == null) {
+            return redirect('admin/new')->with('warning', 'Title must not be null');
         }
         if (isset($request->lb) && $request->lb == 1) {
             $request->contents = nl2br($request->contents);
@@ -76,44 +83,26 @@ class AdminController extends Controller
         $this->handleTags($request, $contents);
         $this->handleCategories($request, $contents);
         $id = $contents->id;
-        return redirect('admin/edit/'.$id)->with('status', 'Änderungen gespeichert!');
+        return redirect('admin/edit/' . $id)->with('status', 'Changes saved');
     }
 
-    public function handleCategories($request, $contents)
-    {
-        if ($request->kategorie) {
-            $array = false;
-            if (!strstr($request->kategorie, ',')) {
-                $request->kategorie.',';
-            }
-            $vals = explode(',', $request->kategorie);
-            foreach ($vals as $val) {
-                $test = trim($val);
-                if (!empty($test)) {
-                    $tags = Category::firstOrCreate(['name'=>$test]);
-                    $array[] = $tags->id;
-                }
-            }
-            if ($array) {
-                $contents->categories()->sync($array);
-            }
-        }
-    }
-
-
+    /**
+     * @param $request
+     * @param $contents
+     */
     public function handleTags($request, $contents)
     {
         if ($request->tags) {
             $array = false;
             if (!strstr($request->tags, ',')) {
-                $request->tags.',';
+                $request->tags . ',';
             }
             $vals = explode(',', $request->tags);
             foreach ($vals as $val) {
                 $test = trim($val);
                 if (!empty($test)) {
                     $test = strtolower($test);
-                    $tags = Tags::firstOrCreate(['tag'=>$test]);
+                    $tags = Tags::firstOrCreate(['tag' => $test]);
                     $array[] = $tags->id;
                 }
             }
@@ -124,9 +113,34 @@ class AdminController extends Controller
     }
 
     /**
+     * @param $request
+     * @param $contents
+     */
+    public function handleCategories($request, $contents)
+    {
+        if ($request->kategorie) {
+            $array = false;
+            if (!strstr($request->kategorie, ',')) {
+                $request->kategorie . ',';
+            }
+            $vals = explode(',', $request->kategorie);
+            foreach ($vals as $val) {
+                $test = trim($val);
+                if (!empty($test)) {
+                    $tags = Category::firstOrCreate(['name' => $test]);
+                    $array[] = $tags->id;
+                }
+            }
+            if ($array) {
+                $contents->categories()->sync($array);
+            }
+        }
+    }
+
+    /**
      * Display the specified resource.
      *
-     * @param  int $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -137,7 +151,7 @@ class AdminController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -149,8 +163,8 @@ class AdminController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
-     * @param  int                      $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -165,13 +179,13 @@ class AdminController extends Controller
         $this->handleCategories($request, $contents);
         $contents->touch();
         $contents->save();
-        return redirect('admin/edit/'.$id)->with('status', 'Änderungen gespeichert!');
+        return redirect('admin/edit/' . $id)->with('status', 'Changes saved!');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
@@ -179,8 +193,9 @@ class AdminController extends Controller
         $entry = BlogPosts::findOrFail($id);
         $entry->trashed = 1;
         $entry->save();
-        return redirect('admin/blogs')->with('status', 'Eintrag gelöscht');
+        return redirect('admin/blogs')->with('status', 'Dropped Entry');
     }
+
     /**
      * Change visibility of Post
      *
@@ -195,6 +210,6 @@ class AdminController extends Controller
         $entry->touch();
 
         $entry->save();
-        return redirect('admin/blogs')->with('status', 'Sichtbarkeit geändert');
+        return redirect('admin/blogs')->with('status', 'Changed Visibility');
     }
 }
