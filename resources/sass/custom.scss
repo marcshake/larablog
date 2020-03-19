@@ -25,118 +25,123 @@ $padding: 0 4px;
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 html {
-  min-height: 101%;
+    min-height: 101%;
 }
 
 .container {
-  padding: 0 1rem;
+    padding: 0 1rem;
 }
 
 .button.button-secondary,
 button.button-secondary {
-  color: #fff;
-  background-color: $dark-grey;
-  border-color: $dark-grey;
-}
-
-input {
-  &[type="submit"].button-secondary,
-  &[type="reset"].button-secondary,
-  &[type="button"].button-secondary {
     color: #fff;
     background-color: $dark-grey;
     border-color: $dark-grey;
-  }
+}
+
+input {
+    &[type="submit"].button-secondary,
+    &[type="reset"].button-secondary,
+    &[type="button"].button-secondary {
+        color: #fff;
+        background-color: $dark-grey;
+        border-color: $dark-grey;
+    }
 }
 
 .button.button-secondary:hover,
 button.button-secondary:hover {
-  color: #fff;
-  background-color: $light-grey;
-  border-color: $light-grey;
-}
-
-input {
-  &[type="submit"].button-secondary:hover,
-  &[type="reset"].button-secondary:hover,
-  &[type="button"].button-secondary:hover {
     color: #fff;
     background-color: $light-grey;
     border-color: $light-grey;
-  }
+}
+
+input {
+    &[type="submit"].button-secondary:hover,
+    &[type="reset"].button-secondary:hover,
+    &[type="button"].button-secondary:hover {
+        color: #fff;
+        background-color: $light-grey;
+        border-color: $light-grey;
+    }
 }
 
 .button.button-secondary:focus,
 button.button-secondary:focus {
-  color: #fff;
-  background-color: $light-grey;
-  border-color: $light-grey;
-}
-
-input {
-  &[type="submit"].button-secondary:focus,
-  &[type="reset"].button-secondary:focus,
-  &[type="button"].button-secondary:focus {
     color: #fff;
     background-color: $light-grey;
     border-color: $light-grey;
-  }
-  &[type="email"],
-  &[type="number"],
-  &[type="search"],
-  &[type="text"],
-  &[type="tel"],
-  &[type="url"],
-  &[type="password"] {
-    height: 38px;
-    padding: 6px 10px; // The 6px vertically centers text on FF, ignored by Webkit
-    background-color: #fff;
-    border: 1px solid lighten($border-color, 8.8%);
-    border-radius: $global-radius;
-    box-shadow: none;
-    box-sizing: border-box;
-  }
+}
+
+input {
+    &[type="submit"].button-secondary:focus,
+    &[type="reset"].button-secondary:focus,
+    &[type="button"].button-secondary:focus {
+        color: #fff;
+        background-color: $light-grey;
+        border-color: $light-grey;
+    }
+
+    &[type="email"],
+    &[type="number"],
+    &[type="search"],
+    &[type="text"],
+    &[type="tel"],
+    &[type="url"],
+    &[type="password"] {
+        height: 38px;
+        padding: 6px 10px; // The 6px vertically centers text on FF, ignored by Webkit
+        background-color: #fff;
+        border: 1px solid lighten($border-color, 8.8%);
+        border-radius: $global-radius;
+        box-shadow: none;
+        box-sizing: border-box;
+    }
 }
 
 .fluidMedia {
-  padding-bottom: 56.25%;
-  padding-top: 30px;
-  height: 0;
-  overflow: hidden;
-  position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden;
+    position: relative;
 }
+
 .fluidMedia iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
+
 figure img {
-  border-radius: 15px;
+    border-radius: 15px;
 }
+
 img {
-  max-width: 100%;
-  background: rgb(255, 255, 255);
-  background: linear-gradient(
-    160deg,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(204, 204, 240, 1) 48%,
-    rgba(255, 255, 255, 1) 100%
-  );
+    max-width: 100%;
+    background: rgb(255, 255, 255);
+    background: linear-gradient(
+            160deg,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(204, 204, 240, 1) 48%,
+            rgba(255, 255, 255, 1) 100%
+    );
 }
 
 body {
-  font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  line-height: 2;
-  color: #000;
-  background:#41464d;
-  animation: fadeInBody ease 1s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
+    font-family: Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
+    color: #000;
+    font-size: 20px;
+    font-size: calc(100% + 1vw);
+
+    background: #41464d;
+    animation: fadeInBody ease 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
 
 }
-
 
 
 @keyframes fadeInBody {
@@ -147,449 +152,469 @@ body {
         opacity: 1;
     }
 }
+
 .has-background-black-bis {
-  background: $dark-grey;
-  color: $light-grey;
+    background: $dark-grey;
+    color: $light-grey;
 }
 
 .tag {
-  border-radius: $global-radius;
-  font-size: 0.8em;
-  padding: 0.25em;
-  margin: 0.25em;
+    border-radius: $global-radius;
+    font-size: 0.8em;
+    padding: 0.25em;
+    margin: 0.25em;
 }
+
 .is-dark {
-  background: $dark-grey;
-  color: $light-grey;
+    background: $dark-grey;
+    color: $light-grey;
 }
+
 .is-light {
-  background: $light-grey;
-  color: $dark-grey;
+    background: $light-grey;
+    color: $dark-grey;
 }
 
 .has-background-black-bis a {
-  background: $dark-grey;
-  color: $primary-color;
+    background: $dark-grey;
+    color: $primary-color;
 }
 
 .menu {
-  padding: $padding;
+    padding: $padding;
 }
 
 
 .navBar {
-  overflow: hidden;
-  background: whitesmoke;
-  position: relative;
-  width: 100%;
-  z-index: 4;
+    overflow: hidden;
+    background: whitesmoke;
+    position: relative;
+    width: 100%;
+    z-index: 4;
 }
 
 /*Floats each item to the left with padding of 14 & 16 px.
   Removes the underline with text decoration = none.*/
 .navBar a {
-  float: left;
-  padding: 1em;
-  text-decoration: none;
+    float: left;
+    padding: 1em;
+    text-decoration: none;
 }
 
 /*Background color change during hover state*/
 .navBar a:hover {
-  background-color: $link-color;
-  color: #000;
+    background-color: $link-color;
+    color: #000;
 }
 
 /*Hides the menu Icon which will show when the nav needs to be responsive*/
 .navBar .icon {
-  display: none;
+    display: none;
 }
 
 /*Set your custom screen width here replacing 700*/
 @media (max-width: 700px) {
-  /*Ignores the first link (which is Home) in the div and       applies 'display = none' to everything else.   Basically hiding everything but Home*/
-  .navBar a:not(:first-child) {
-    display: none;
-  }
-  /*Brings the menu icon into view and floats it to the right*/
-  .navBar a.icon {
-    display: block;
-    float: right;
-  }
+    /*Ignores the first link (which is Home) in the div and       applies 'display = none' to everything else.   Basically hiding everything but Home*/
+    .navBar a:not(:first-child) {
+        display: none;
+    }
+    /*Brings the menu icon into view and floats it to the right*/
+    .navBar a.icon {
+        display: block;
+        float: right;
+    }
 
-  /*The navBar class will be changed to 'navBar responsive' using JS. This chunk of CSS makes the menu icon stay where it is by making the position absolute within it's parent 'right top corner'. Without this, the icon will get kicked around when the items are collapsed and expanded*/
-  .navBar.responsive {
-    position: relative;
-  }
-  .navBar.responsive a.icon {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
+    /*The navBar class will be changed to 'navBar responsive' using JS. This chunk of CSS makes the menu icon stay where it is by making the position absolute within it's parent 'right top corner'. Without this, the icon will get kicked around when the items are collapsed and expanded*/
+    .navBar.responsive {
+        position: relative;
+    }
+    .navBar.responsive a.icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
 
-  /*Removes the originally set float and brings them to view*/
-  .navBar.responsive a {
-    float: none;
-    display: block;
-    text-align: left;
-  }
+    /*Removes the originally set float and brings them to view*/
+    .navBar.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
 }
 
 .card {
-  border: 1px solid $light-grey;
-  padding: $padding;
-  border-radius: $global-radius;
+    border: 1px solid $light-grey;
+    padding: $padding;
+    border-radius: $global-radius;
 }
+
 .card-header {
-  border-bottom: 1px solid $light-grey;
-  text-align: center;
-  font-weight: bold;
+    border-bottom: 1px solid $light-grey;
+    text-align: center;
+    font-weight: bold;
 }
+
 .card-title {
-  font-size: 1em;
-  margin-top: 0.5em;
+    font-size: 1em;
+    margin-top: 0.5em;
 }
+
 .card-body {
-  font-size: 0.9em;
+    font-size: 0.9em;
 }
+
 .control .input {
-  display: block;
-  width: 100%;
+    display: block;
+    width: 100%;
 }
 
 .has-shadow {
-  -webkit-box-shadow: 0px 2px 4px 0px rgba(87, 87, 87, 1);
-  -moz-box-shadow: 0px 2px 4px 0px rgba(87, 87, 87, 1);
-  box-shadow: 0px 2px 4px 0px rgba(87, 87, 87, 1);
+    -webkit-box-shadow: 0px 2px 4px 0px rgba(87, 87, 87, 1);
+    -moz-box-shadow: 0px 2px 4px 0px rgba(87, 87, 87, 1);
+    box-shadow: 0px 2px 4px 0px rgba(87, 87, 87, 1);
 }
 
 .mt-4 {
-  margin-top: 1em;
+    margin-top: 1em;
 }
 
 .is-striped tr:nth-child(even) {
-  background-color: $light-grey;
+    background-color: $light-grey;
 }
+
 .alert-success {
-  background: green;
-  color: white;
+    background: green;
+    color: white;
 }
+
 .alert {
-  padding: 4px;
+    padding: 4px;
 }
+
 h1,
 h2,
 h3,
 h4,
 h5 {
-  font-size: calc(16px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
-  line-height: calc(2em + (1.5 - 1.2) * ((100vw - 300px) / (1600 - 300)));
+    font-size: calc(16px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+    line-height: calc(2em + (1.5 - 1.2) * ((100vw - 300px) / (1600 - 300)));
 }
 
 h1.title {
-  display: inline;
-  font-weight: bold;
+    display: inline;
+    font-weight: bold;
 }
+
 h1.primary {
-  background: red;
-  box-shadow: 0.7em 0 red;
-  color: #000;
+    background: red;
+    box-shadow: 0.7em 0 red;
+    color: #000;
 }
 
 h1.secondary {
-  background: blue;
-  box-shadow: 0.7em 0 blue;
-  color: whitesmoke;
+    background: blue;
+    box-shadow: 0.7em 0 blue;
+    color: whitesmoke;
 }
 
 h2.title {
-  display: inline;
-  font-weight: bold;
+    display: inline;
+    font-weight: bold;
 }
+
 h2.primary {
-  background: $primary-color;
-  box-shadow: 0.7rem 0 $primary-color;
-  color: #000;
+    background: $primary-color;
+    box-shadow: 0.7rem 0 $primary-color;
+    color: #000;
 }
 
 h2.secondary {
-  background: $dark-grey;
-  box-shadow: 0.7rem 0 $dark-grey;
-  color: $light-grey;
+    background: $dark-grey;
+    box-shadow: 0.7rem 0 $dark-grey;
+    color: $light-grey;
 }
 
 h3.title {
-  display: inline;
-  font-weight: bold;
+    display: inline;
+    font-weight: bold;
 }
+
 h3.primary {
-  background: $primary-color;
-  box-shadow: 0.7rem 0 $primary-color;
-  color: #000;
+    background: $primary-color;
+    box-shadow: 0.7rem 0 $primary-color;
+    color: #000;
 }
 
 h3.secondary {
-  background: $dark-grey;
-  box-shadow: 0.7rem 0 $dark-grey;
-  color: $light-grey;
+    background: $dark-grey;
+    box-shadow: 0.7rem 0 $dark-grey;
+    color: $light-grey;
 }
+
 .secondary a {
-  color: $light-grey;
+    color: $light-grey;
 }
+
 .primary a {
-  color: #000;
+    color: #000;
 }
 
 .secondary a:hover {
-  color: $link-color;
+    color: $link-color;
 }
+
 .primary a:hover {
-  color: $link-color;
+    color: $link-color;
 }
 
 .headerimage {
-  height: 50vh;
-  overflow: hidden;
-  position: relative;
+    height: 50vh;
+    overflow: hidden;
+    position: relative;
 }
+
 .headerimage img {
-  position: relative;
-  object-fit: fill;
-  z-index: 0;
-  overflow: auto;
-  margin: auto;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
+    position: relative;
+    object-fit: fill;
+    z-index: 0;
+    overflow: auto;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
 }
+
 .slideShow {
-  height: 75vh;
-  background-color: #333;
+    height: 75vh;
+    background-color: #333;
 }
 
 .slide {
-  font-size: 1.2em;
-  display: none;
-  animation: fadeIn 1s;
-  position: relative;
-  height: 100%;
-  overflow: hidden;
+    font-size: 1.2em;
+    display: none;
+    animation: fadeIn 1s;
+    position: relative;
+    height: 100%;
+    overflow: hidden;
 }
+
 .slide img {
-  z-index: 0;
-  filter: blur(5px);
-  overflow: auto;
-  margin: auto;
-  position: absolute;
-  width: 100%;
+    z-index: 0;
+    filter: blur(5px);
+    overflow: auto;
+    margin: auto;
+    position: absolute;
+    width: 100%;
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 .halftone {
-  background: rgba(0, 0, 0, 0.75);
-  max-width: 75%;
-  margin-left: auto;
-  margin-top: 1em;
-  padding: 1.5em;
-  color: #fff;
-  border-radius: $global-radius;
+    background: rgba(0, 0, 0, 0.75);
+    max-width: 75%;
+    margin-left: auto;
+    margin-top: 1em;
+    padding: 1.5em;
+    color: #fff;
+    border-radius: $global-radius;
 }
+
 .halftone a {
-  color: #fff;
-  text-decoration: none;
+    color: #fff;
+    text-decoration: none;
 }
+
 .title a {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 .img-400 {
-  max-width: 400px;
+    max-width: 400px;
 }
+
 .img-200 {
-  max-width: 200px;
+    max-width: 200px;
 }
 
 .previewContents {
-  hyphens: auto;
+    hyphens: auto;
 }
 
 .has-bottom-border {
-  padding-bottom: 1em;
-  border-bottom: solid 1px $primary-color;
+    padding-bottom: 1em;
+    border-bottom: solid 1px $primary-color;
 }
 
 .superHeadline {
-  top: -0.5em;
-  position: relative;
+    top: -0.5em;
+    position: relative;
 }
 
 .contents {
-  border-top: $primary-color 1px solid;
-  padding-top: 1em;
+    border-top: $primary-color 1px solid;
+    padding-top: 1em;
 }
 
 .contents h2,
 h3 {
-  letter-spacing: 0;
+    letter-spacing: 0;
 }
 
 .pagination {
-  list-style: none;
-  margin-top: 1em;
+    list-style: none;
+    margin-top: 1em;
 }
+
 .page-item {
-  float: left;
+    float: left;
 }
+
 .page-item a,
 .page-item span {
-  @extend button;
+    @extend button;
 }
+
 .page-item.active span.page-link {
-  background-color: $primary-color;
+    background-color: $primary-color;
 }
 
 .cke_editable {
-  /*reclaims space on the research textarea from the ckeditor default*/
-  cursor: text;
-  margin-left: 10px;
-  margin-right: 10px;
+    /*reclaims space on the research textarea from the ckeditor default*/
+    cursor: text;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .img-hover-zoom {
-  overflow: hidden;
+    overflow: hidden;
 }
 
 .img-hover-zoom--slowmo img {
-  transform-origin: 50% 65%;
-  transition: transform 5s, filter 3s ease-in-out;
-  filter: brightness(150%);
+    transform-origin: 50% 65%;
+    transition: transform 5s, filter 3s ease-in-out;
+    filter: brightness(150%);
 }
 
 /* The Transformation */
 .img-hover-zoom--slowmo:hover img {
-  filter: brightness(100%);
-  transform: scale(1.2);
+    filter: brightness(100%);
+    transform: scale(1.2);
 }
 
 .contentsbg {
-    background:whitesmoke;
+    background: whitesmoke;
     box-shadow: 0 0 5px #000;
 }
 
 .modal {
-  position: fixed;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.65);
-  visibility: hidden;
-  backface-visibility: hidden;
-  opacity: 0;
-  z-index: 5;
-  transition: opacity 0.15s ease-in-out;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.65);
+    visibility: hidden;
+    backface-visibility: hidden;
+    opacity: 0;
+    z-index: 5;
+    transition: opacity 0.15s ease-in-out;
 
-  &.modal-open {
-    visibility: visible;
-    backface-visibility: visible;
-    opacity: 7;
-    z-index: 7;
-  }
+    &.modal-open {
+        visibility: visible;
+        backface-visibility: visible;
+        opacity: 7;
+        z-index: 7;
+    }
 
-  .modal-inner {
-    position: relative;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    .modal-content {
-      background-color: white;
-      max-width: 35em;
-      padding: 1em 1.5em;
-      position: relative;
-      margin: 2em;
-      box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.35);
-
-      .modal-close-icon {
-        position: absolute;
-        right: 1.5em;
-      }
-
-      .modal-content-inner {
-        padding-right: 2em;
-
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-          margin-bottom: 0.25em;
-        }
-
-        p {
-          margin-bottom: 1em;
-        }
-      }
-
-      .modal-buttons-seperator {
-        margin: 1.5em 0;
-        margin-top: 0;
-      }
-
-      .modal-buttons {
+    .modal-inner {
+        position: relative;
+        height: 100%;
         display: flex;
-        flex-direction: row;
-        justify-content: flex-end;
+        flex-direction: column;
+        justify-content: center;
         align-items: center;
 
-        button {
-          margin-left: 1em;
+        .modal-content {
+            background-color: white;
+            max-width: 35em;
+            padding: 1em 1.5em;
+            position: relative;
+            margin: 2em;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.35);
 
-          &:first-child {
-            margin-left: 0;
-          }
+            .modal-close-icon {
+                position: absolute;
+                right: 1.5em;
+            }
+
+            .modal-content-inner {
+                padding-right: 2em;
+
+                h1,
+                h2,
+                h3,
+                h4,
+                h5,
+                h6 {
+                    margin-bottom: 0.25em;
+                }
+
+                p {
+                    margin-bottom: 1em;
+                }
+            }
+
+            .modal-buttons-seperator {
+                margin: 1.5em 0;
+                margin-top: 0;
+            }
+
+            .modal-buttons {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-end;
+                align-items: center;
+
+                button {
+                    margin-left: 1em;
+
+                    &:first-child {
+                        margin-left: 0;
+                    }
+                }
+            }
         }
-      }
     }
-  }
 }
 
 .hidden {
-  display: none;
+    display: none;
 }
 
 .hugecover {
-  background-image: linear-gradient(white, black), url("/images/wall.jpg") !important;
-  background-size: cover;
-  background-blend-mode: overlay;
-  background-attachment: fixed;
-  font-size: 1.5em;
-  text-shadow: #000 1px 1px 1px;
+    background-image: linear-gradient(white, black), url("/images/wall.jpg") !important;
+    background-size: cover;
+    background-blend-mode: overlay;
+    background-attachment: fixed;
+    font-size: 1.5em;
+    text-shadow: #000 1px 1px 1px;
 }
 
 
 .hero {
     background: rgba(0, 0, 0, 0.5);
-    color:#fff;
+    color: #fff;
     border-radius: 3px;
-    padding:1em;
+    padding: 1em;
     box-shadow: #000 1px 1px 5px;
 }
 
-.leaveTopSpace {
-  line-height: calc(2em + (1.5 - 1.2) * ((100vw - 300px) / (1600 - 300)));
-  font-size: 16px;
-
-}
