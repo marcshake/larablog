@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Support\Facades\Cache;
 
 /**
  * Class BlogPosts
@@ -187,8 +188,13 @@ class BlogPosts extends Model
     public static function getSpecific($title, $id)
     {
         $title = urldecode($title);
-
-        $posts = self::where('trashed', null)->where('visible', 1)->where('title', $title)->where('id', $id)->with('mainImagePath')->with('tags')->with('comments')->firstOrFail();
+        
+        $hash = md5($title.$id);
+        
+        
+        $posts = Cache::rememberForever($hash,function() use($title,$id) {
+            return self::where('trashed', null)->where('visible', 1)->where('title', $title)->where('id', $id)->with('mainImagePath')->with('tags')->with('comments')->firstOrFail();
+        });
 
         $posts->url = self::makeUrl($posts->title);
 
