@@ -192,7 +192,7 @@ class BlogPosts extends Model
         $hash = md5($title.$id);
         
         
-        $posts = Cache::rememberForever($hash,function() use($title,$id) {
+        $posts = Cache::rememberForever($hash, function () use ($title,$id) {
             return self::where('trashed', null)->where('visible', 1)->where('title', $title)->where('id', $id)->with('mainImagePath')->with('tags')->with('comments')->firstOrFail();
         });
 
