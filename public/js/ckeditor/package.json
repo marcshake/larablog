@@ -1,89 +1,27 @@
 {
-  "_args": [
-    [
-      "ckeditor4@^4.14.0",
-      "/var/www/html/larablog"
-    ]
-  ],
-  "_from": "ckeditor4@>=4.14.0 <5.0.0",
-  "_hasShrinkwrap": false,
-  "_id": "ckeditor4@4.14.0",
-  "_inCache": true,
-  "_installable": true,
-  "_location": "/ckeditor4",
-  "_nodeVersion": "10.18.0",
-  "_npmOperationalInternal": {
-    "host": "s3://npm-registry-packages",
-    "tmp": "tmp/ckeditor4_4.14.0_1583328884958_0.5735663431050062"
-  },
-  "_npmUser": {
-    "email": "npm@cksource.com",
-    "name": "cksource"
-  },
-  "_npmVersion": "6.13.4",
-  "_phantomChildren": {},
-  "_requested": {
-    "name": "ckeditor4",
-    "raw": "ckeditor4@^4.14.0",
-    "rawSpec": "^4.14.0",
-    "scope": null,
-    "spec": ">=4.14.0 <5.0.0",
-    "type": "range"
-  },
-  "_requiredBy": [
-    "/"
-  ],
-  "_resolved": "https://registry.npmjs.org/ckeditor4/-/ckeditor4-4.14.0.tgz",
-  "_shasum": "bfcbe942599fa0c6f488309ecbfe38b2519f919b",
-  "_shrinkwrap": null,
-  "_spec": "ckeditor4@^4.14.0",
-  "_where": "/var/www/html/larablog",
-  "author": {
-    "name": "CKSource",
-    "url": "https://cksource.com/"
-  },
-  "bugs": {
-    "url": "https://github.com/ckeditor/ckeditor4/issues"
-  },
-  "dependencies": {},
-  "description": "JavaScript WYSIWYG web text editor.",
-  "devDependencies": {},
-  "directories": {},
-  "dist": {
-    "fileCount": 2750,
-    "integrity": "sha512-g5p3bhbxbwB094bE7ss0rOyvG/azYdRjLTyngnPM2+fKZhnPrMVaFDx3SiiWKB+zyvndT3Deu54VTv/z2MQJCA==",
-    "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeX651CRA9TVsSAnZWagAAOQcP/2ElyAAVsQr6lH11vXiT\namXYujY+SpMsugJ/hOdO2oQNl8NjbeYZ9bfhVGiXZhcid+B8mTvkC05tx6q2\nUFbTiptBtHXJpXz8VJsvNPDFVp17vsZLNJzkIcIiQ5hCMEwZ9WhISGOwfhdH\ni2pJEctoPvu6AkPm3nfc+s/Ryo3GIIXKNRMe0QyDfqQ2SKUuukS/xNoEbZhD\nEJwGyM0QZvtpAA8aEJ3hsJ/Lt4Pm/NAVdw1MZX9gtAZUzv9rGcC5uYoRxu7T\nUznEvOO4knYB32RKKl01JERfDNnEJ35C3rK4ZK1+PbFGpS2M8KY99KFs98Sj\n0CfRZa5beNF6BgYaMwbReWt+op+f8aWDrSnXRM2UscFhb29ih1g9l8GnLqpd\n5WiyErMGzfVyZ4HqrLIn7MWFB0FH2F0QCxlrrnWEdJKYCz73l283rYm0Lwq1\nNUCVVT41RxBBSKHYhc8MLVArPh1MEpJ2X+oTymsVjnxZxo/+CdhYwsb+g28Z\n8a775OOMT230ew3w2AKJ90fq7xHGbBd/dnX/wW8jD68ZHO3MvyAo6vYzf15A\n0+n8QxG10pFOY3vY1hhOga1g+ORVRuI0nNejFOIXns0h/GBZSvcgr9GUCJNr\n/9zhGA4Ye1xzx2o5nqk5bKTvF7A6Z/IfJrXgKQlGV1CRL5I+jzdZmwAuf/6F\ntD6f\r\n=9PTT\r\n-----END PGP SIGNATURE-----\r\n",
-    "shasum": "bfcbe942599fa0c6f488309ecbfe38b2519f919b",
-    "tarball": "https://registry.npmjs.org/ckeditor4/-/ckeditor4-4.14.0.tgz",
-    "unpackedSize": 6840300
-  },
-  "gitHead": "998e43cd6305bca24304b9538a682da123ac5b73",
-  "homepage": "https://ckeditor.com/ckeditor-4/",
-  "keywords": [
-    "ckeditor",
-    "ckeditor4",
-    "editor",
-    "fckeditor",
-    "html",
-    "javascript",
-    "richtext",
-    "text",
-    "wysiwyg"
-  ],
-  "license": "(GPL-2.0 OR LGPL-2.1 OR MPL-1.1)",
-  "main": "ckeditor.js",
-  "maintainers": [
-    {
-      "name": "cksource",
-      "email": "npm@cksource.com"
-    }
-  ],
   "name": "ckeditor4",
-  "optionalDependencies": {},
-  "readme": "ERROR: No README data found!",
+  "version": "4.14.0",
+  "description": "JavaScript WYSIWYG web text editor.",
+  "main": "ckeditor.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ckeditor/ckeditor4-releases.git"
   },
-  "version": "4.14.0"
+  "keywords": [
+    "ckeditor4",
+    "ckeditor",
+    "fckeditor",
+    "editor",
+    "wysiwyg",
+    "html",
+    "richtext",
+    "text",
+    "javascript"
+  ],
+  "author": "CKSource (https://cksource.com/)",
+  "license": "(GPL-2.0 OR LGPL-2.1 OR MPL-1.1)",
+  "bugs": {
+    "url": "https://github.com/ckeditor/ckeditor4/issues"
+  },
+  "homepage": "https://ckeditor.com/ckeditor-4/"
 }
