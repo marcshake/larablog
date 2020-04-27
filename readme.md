@@ -37,4 +37,4 @@ There will be a real installation-routine, when the software is ready. I guess.
 
 ## Closing words
 
-Consider this a work in progress. I do use this in a live environment, but that may change everytime.
+Consider this a work in progress. I do use this in a live environment, but that may change everytime. Thanks to [Jetbrains](https://www.jetbrains.com/?from=Larablog) for supporting me with PHP-Storm.
