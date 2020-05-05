@@ -1,4 +1,3 @@
-
 window.$ = window.jQuery = require('jquery');
 
 $.ajaxSetup({
@@ -28,6 +27,7 @@ $(document).ready(function () {
         $('.myAlbum[data-alb="' + id + '"]').show('slow');
 
     });
+
     function openDrawerMenu() {
         var x = document.getElementById("mainNavBar");
         if (x.className === "navBar") {
@@ -36,10 +36,17 @@ $(document).ready(function () {
             x.className = "navBar";
         }
     }
+
     $('.drawer').click(openDrawerMenu);
-    $('.doSubmit').click(function () { $('#mainForm').submit() });
-    $('.close-modal').click(function () { $('.modal').addClass('hidden') });
-    $('.open-modal').click(function () { $('.modal').removeClass('hidden') });
+    $('.doSubmit').click(function () {
+        $('#mainForm').submit()
+    });
+    $('.close-modal').click(function () {
+        $('.modal').addClass('hidden')
+    });
+    $('.open-modal').click(function () {
+        $('.modal').removeClass('hidden')
+    });
     $('.search').on('click', function () {
         $('#modalTitle').text('SUCHE');
         $.get('/search', function (data) {

@@ -5,14 +5,50 @@ Benutzermanager
 
 @section('content')
 <h2>Benutzer</h2>
-@foreach ($users as $user)
-<div class="u-pull-left">
-    {{$user->name}}
-    <a class="button" href="{{url('admin/user/edit',$user->id)}}">bearbeiten</a>
-    <a class="button" href="{{url('admin/user/delete',$user->id)}}">löschen</a><br>
-</div>
+<table class="table u-full-width">
+    <thead>
+    <tr>
+        <th>
+            Username
+        </th>
 
-@endforeach
+        <th>
+            Email
+        </th>
+        <th>
+            Level
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach ($users as $user)
+
+    <tr>
+        <td>
+            {{$user->name}}
+            <span class="subaction">
+                <a href="{{url('admin/user/edit',$user->id)}}">Edit</a>
+            </span>
+        </td>
+        <td>{{$user->email}}</td>
+        <td>
+            // Todo
+        </td>
+    </tr>
+    @endforeach
+
+    </tbody>
+    <tfoot>
+    <tr>
+        <td colspan="3">
+            <a href="{{url('admin/user/new')}}" class="u-pull-right button button-primary">
+                Create User
+            </a>
+        </td>
+    </tr>
+    </tfoot>
+</table>
+
 {{$users->links()}}
 
 

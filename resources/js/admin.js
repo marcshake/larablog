@@ -47,6 +47,7 @@ $(document).ready(function () {
 
     }
 
+
     var deleteImage = function (item) {
         var image = item.data('id');
         $.post('/ajax/deleteImage/' + image, function (data) {
@@ -58,13 +59,32 @@ $(document).ready(function () {
     /**
      * All the Handlers
      */
-    $('.close-modal').click(function () { $('.modal').addClass('hidden') });
-    $('.open-modal').click(function () { $('.modal').removeClass('hidden') });
-    $('.ibrowser').on('click', '.thumb', function () { useImage($(this)) });
-    $('.idetails').on('click', '.thumb', function () { imageDetails($(this)) });
-    $('#modalContents').on('click', '#deleteImage', function () { deleteImage($(this)) });
-    $('.imageBrowser').click(function () { myImagelib() })
+    $('.close-modal').click(function () {
+        $('.modal').addClass('hidden')
+    });
+    $('.open-modal').click(function () {
+        $('.modal').removeClass('hidden')
+    });
+    $('.ibrowser').on('click', '.thumb', function () {
+        useImage($(this))
+    });
+    $('.idetails').on('click', '.thumb', function () {
+        imageDetails($(this))
+    });
+    $('#modalContents').on('click', '#deleteImage', function () {
+        deleteImage($(this))
+    });
+    $('.imageBrowser').click(function () {
+        myImagelib()
+    })
     $('.alert').delay(5000).fadeOut('slow');
+
+    $('#generator').click(function () {
+        var rndstring = Math.random().toString(36).slice(-15);
+        $('#password').val(rndstring);
+        return false;
+    });
+
 });
 
 

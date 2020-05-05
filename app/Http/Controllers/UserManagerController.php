@@ -76,21 +76,18 @@ class UserManagerController extends Controller
      */
     public function update(Request $request, $id)
     {
+
         $user = User::findOrFail($id);
-        $validated = $request->validate(
-            [
-            'name' => 'required',
-            'email' => 'required|email|unique:users',
-            'password' => 'required|min:6|confirmed'
-            ]
-        );
+
 
         $user->name = $request->name;
         $user->email = $request->email;
         $user->password = bcrypt($request->password);
-        return redirect('admin/cms/edit/'.$id)->with('status', 'Seite gespeichert');
-
+        $user->Userinfos->bio = 'Test';
         $user->save();
+        dd($user);
+        //return redirect('admin/cms/edit/'.$user->id)->with('status', 'Seite gespeichert');
+
     }
 
     /**
