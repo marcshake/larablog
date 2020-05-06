@@ -68,23 +68,9 @@ img {
 body {
     font-family: Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
     font-size: 16px;
-    font-size: calc(100% + 0.75vw);
-
-    animation: fadeInBody ease 1s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-
+    font-size: calc(100% + 0.60vw);
 }
 
-
-@keyframes fadeInBody {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
 
 .has-background-black-bis {
     background: $dark-grey;
@@ -443,7 +429,6 @@ h3 {
 }
 
 
-
 .modal {
     position: fixed;
     left: 0;
@@ -479,7 +464,7 @@ h3 {
             position: relative;
             margin: 2em;
             box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.35);
-            color:#000;
+            color: #000;
 
             .modal-close-icon {
                 position: absolute;
