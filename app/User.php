@@ -43,6 +43,6 @@ class User extends Authenticatable
 
     public function UserInfos()
     {
-        return $this->hasOne('App\UserInfos', 'UserId', 'id')->withDefault(['bio'=>'']);
+        return $this->hasOne('App\UserInfo', 'UserId', 'id')->withDefault(['bio'=>'']);
     }
 }

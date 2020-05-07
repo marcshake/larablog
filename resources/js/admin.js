@@ -80,8 +80,8 @@ $(document).ready(function () {
     $('.alert').delay(5000).fadeOut('slow');
 
     $('#generator').click(function () {
-        var rndstring = Math.random().toString(36).slice(-15);
-        $('#password').val(rndstring);
+        let r = Math.random().toString(36).substring(7);
+        $('#password').val(r);
         return false;
     });
 

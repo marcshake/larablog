@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\UserInfo;
 
 class UserManagerController extends Controller
 {
@@ -36,7 +37,7 @@ class UserManagerController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -47,7 +48,7 @@ class UserManagerController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -58,7 +59,7 @@ class UserManagerController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -70,30 +71,30 @@ class UserManagerController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
-     * @param  int                      $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-
         $user = User::findOrFail($id);
 
 
         $user->name = $request->name;
         $user->email = $request->email;
-        $user->password = bcrypt($request->password);
-        $user->Userinfos->bio = 'Test';
-        $user->save();
-        dd($user);
-        //return redirect('admin/cms/edit/'.$user->id)->with('status', 'Seite gespeichert');
-
+        if ($request->password != '') {
+            $user->password = bcrypt($request->password);
+        }
+        $user->UserInfo = new UserInfo();
+        $user->UserInfo->bio = $request->bio;
+        $user->push();
+        return redirect('admin/user/edit/' . $user->id)->with('status', 'Edited User');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

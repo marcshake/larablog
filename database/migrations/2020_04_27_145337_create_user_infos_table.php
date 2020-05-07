@@ -17,7 +17,7 @@ class CreateUserInfosTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('UserId');
             $table->longText('bio');
-            $table->text('avatar');
+            $table->text('avatar')->nullable(true);
             $table->timestamps();
         });
     }
