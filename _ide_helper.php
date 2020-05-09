@@ -3,7 +3,7 @@
 
 /**
  * A helper file for Laravel, to provide autocomplete information to your IDE
- * Generated for Laravel 6.18.10 on 2020-04-27 10:16:51.
+ * Generated for Laravel 6.18.13 on 2020-05-07 13:44:06.
  *
  * This file should not be included in your code, only analyzed by your IDE!
  *
@@ -8726,7 +8726,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Get the client user agent.
          *
-         * @return string 
+         * @return string|null 
          * @static 
          */ 
         public static function userAgent()
