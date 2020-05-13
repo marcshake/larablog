@@ -78,16 +78,12 @@ class UserManagerController extends Controller
     public function update(Request $request, $id)
     {
         $user = User::findOrFail($id);
-
-
         $user->name = $request->name;
         $user->email = $request->email;
         if ($request->password != '') {
             $user->password = bcrypt($request->password);
         }
-        $user->UserInfo = new UserInfo();
-        $user->UserInfo->bio = $request->bio;
-        $user->push();
+        $user->save();
         return redirect('admin/user/edit/' . $user->id)->with('status', 'Edited User');
     }
 
