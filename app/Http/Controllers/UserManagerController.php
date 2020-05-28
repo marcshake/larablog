@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\User;
-use App\UserInfo;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Intervention\Image\ImageManager;
 
 class UserManagerController extends Controller
 {
@@ -80,9 +81,27 @@ class UserManagerController extends Controller
         $user = User::findOrFail($id);
         $user->name = $request->name;
         $user->email = $request->email;
+        request()->validate([
+
+            'avatar' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+
+        ]);
+        $outpath = 'userimages';
+
         if ($request->password != '') {
             $user->password = bcrypt($request->password);
         }
+        if ($request->file('avatar')->isValid()) {
+            $filename = $user->id . uniqid() . '.jpg';
+            $imageManager = new ImageManager;
+            if (!Storage::exists($outpath)) {
+                Storage::makeDirectory($outpath);
+            }
+
+
+            //todo: $imageManager->make($request->file('avatar'))->fit(100)->save(storage_path($outpath) .DIRECTORY_SEPARATOR. $filename);
+        }
+
         $user->save();
         return redirect('admin/user/edit/' . $user->id)->with('status', 'Edited User');
     }

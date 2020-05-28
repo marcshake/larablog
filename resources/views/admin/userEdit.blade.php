@@ -4,7 +4,7 @@
 @endsection
 
 @section('content')
-    <form action="{{url('admin/user/edit',$edit->id)}}" method="post">
+    <form action="{{url('admin/user/edit',$edit->id)}}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="field">
             <label for="name" class="label">Benutzername</label>
