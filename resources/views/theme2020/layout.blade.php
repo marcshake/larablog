@@ -21,7 +21,7 @@
     @yield('maincontents')
     
     
-        <footer class="page-footer font-small"><div class="container">
+        <footer class="page-footer bg-dark text-white"><div class="container mt-4">
             Made with &hearts; in germany by Marcel Schindler
             {!! $snippets !!}
             </div>

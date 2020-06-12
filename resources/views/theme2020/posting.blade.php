@@ -27,7 +27,7 @@
             </article>
 
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 mt-4">
             Tags:
             @forelse ($posting->Tags as $tags)
                 <a href="{{url('tag',$tags->tag)}}" class="tag is-dark">{{$tags->tag}}</a>
