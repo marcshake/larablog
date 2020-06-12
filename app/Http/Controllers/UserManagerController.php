@@ -97,9 +97,9 @@ class UserManagerController extends Controller
             if (!Storage::exists($outpath)) {
                 Storage::makeDirectory($outpath);
             }
+            //$save = Storage::path($outpath);
 
-
-            //todo: $imageManager->make($request->file('avatar'))->fit(100)->save(storage_path($outpath) .DIRECTORY_SEPARATOR. $filename);
+            $imageManager->make($request->file('avatar'))->fit(100)->save(public_path($outpath).'/' . $filename);
         }
 
         $user->save();

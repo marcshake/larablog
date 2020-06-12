@@ -24,8 +24,9 @@
     <!-- Project One -->
     <div class="row">
       <div class="col-md-5">
-        <a href="{{url('blog/'.$item->url,$item->id)}}">            <img data-src="{{$item->mainImage ? asset('storage/thumbnail/'.$item->mainImagePath->filename): asset('images/wall.jpg')}}"
-            class="u-full-width" alt="{{$item->title}}">
+        <a href="{{url('blog/'.$item->url,$item->id)}}">            
+          <img data-src="{{$item->mainImage ? asset('storage/thumbnail/'.$item->mainImagePath->filename): asset('images/wall.jpg')}}"
+            class="img-fluid" alt="{{$item->title}}">
         </a>
       </div>
       <div class="col-md-7">
