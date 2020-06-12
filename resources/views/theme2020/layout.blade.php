@@ -19,6 +19,14 @@
     <!-- Navigation -->
     @include('theme2020.navigation')
     @yield('maincontents')
+    
+    
+        <footer class="page-footer font-small"><div class="container">
+            Made with &hearts; in germany by Marcel Schindler
+            {!! $snippets !!}
+            </div>
+        </footer>
+
     <script src="{{asset('js/theme2020.js')}}"></script>
 </body>
 
