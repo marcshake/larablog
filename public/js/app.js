@@ -11061,9 +11061,9 @@ $(document).ready(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /var/www/larablog/resources/js/app.js */"./resources/js/app.js");
-__webpack_require__(/*! /var/www/larablog/resources/sass/trancefish.scss */"./resources/sass/trancefish.scss");
-module.exports = __webpack_require__(/*! /var/www/larablog/resources/sass/admin.scss */"./resources/sass/admin.scss");
+__webpack_require__(/*! C:\xampp\htdocs\larablog\resources\js\app.js */"./resources/js/app.js");
+__webpack_require__(/*! C:\xampp\htdocs\larablog\resources\sass\trancefish.scss */"./resources/sass/trancefish.scss");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\larablog\resources\sass\admin.scss */"./resources/sass/admin.scss");
 
 
 /***/ })
