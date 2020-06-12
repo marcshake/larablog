@@ -3,6 +3,7 @@ Bootstrap based relaunch
 **/
 
 @import "~bootstrap";
+@import "darkster";
 
 /** Video **/
 
@@ -48,7 +49,7 @@ header .overlay {
 
 @media (pointer: coarse) and (hover: none) {
     header {
-        background: url("images/wall.jpg") black no-repeat center center scroll;
+        background: url("/images/wall.jpg") black no-repeat center center scroll;
     }
     header video {
         display: none;
