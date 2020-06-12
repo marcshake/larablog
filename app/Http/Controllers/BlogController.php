@@ -14,26 +14,26 @@ class BlogController extends Controller
         $posts = BlogPosts::blogHome();
 
         if (!$title && !$id) {
-            return view('blog', ['blogposts' => $posts]);
+            return view('theme2020.blog', ['blogposts' => $posts]);
         }
         $post = BlogPosts::getSpecific($title, $id);
         $comments = Comment::where('blogid', $id)->get();
         $description = $post->description;
-        return view('posting', ['metadescription'=>$description,'posting' => $post, 'blogposts' => $posts, 'comments' => $comments]);
+        return view('theme2020.posting', ['metadescription'=>$description,'posting' => $post, 'blogposts' => $posts, 'comments' => $comments]);
     }
 
     public function tag($name)
     {
         $posts = BlogPosts::getByTag($name);
         $topic = $name;
-        return view('blog', ['topic'=>'Getaggt mit: '.$name,'blogposts' => $posts]);
+        return view('theme2020.blog', ['topic'=>'Getaggt mit: '.$name,'blogposts' => $posts]);
     }
 
     public function category($category)
     {
         $posts = BlogPosts::getByCategory($category);
         $topic = $category;
-        return view('blog', ['topic'=>'Aus der Kategorie '.$category,'blogposts' => $posts]);
+        return view('theme2020.blog', ['topic'=>'Aus der Kategorie '.$category,'blogposts' => $posts]);
     }
     public function searchForm()
     {
@@ -43,6 +43,6 @@ class BlogController extends Controller
     {
         $such = $request->validate(['Suchbegriff' => 'required']);
         $posts = BlogPosts::search($such['Suchbegriff']);
-        return view('results', ['results' => $posts]);
+        return view('theme2020.results', ['results' => $posts]);
     }
 }
