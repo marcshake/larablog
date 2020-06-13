@@ -1,4 +1,5 @@
 @extends('theme2020.layout')
+@section('title') {{$home->title}} @endsection
 
 
   @section('maincontents')
