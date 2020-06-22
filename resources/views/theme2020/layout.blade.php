@@ -16,8 +16,11 @@
 </head>
 
 <body>
+@include('cookieConsent::index')
+
     <!-- Navigation -->
     @include('theme2020.navigation')
+
     @yield('maincontents')
 
 
