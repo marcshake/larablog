@@ -2,7 +2,7 @@
   "_args": [
     [
       "ckeditor4@4.14.0",
-      "C:\\xampp\\htdocs\\larablog"
+      "/home/vagrant/larablog"
     ]
   ],
   "_from": "ckeditor4@4.14.0",
@@ -26,7 +26,7 @@
   ],
   "_resolved": "https://registry.npmjs.org/ckeditor4/-/ckeditor4-4.14.0.tgz",
   "_spec": "4.14.0",
-  "_where": "C:\\xampp\\htdocs\\larablog",
+  "_where": "/home/vagrant/larablog",
   "author": {
     "name": "CKSource",
     "url": "https://cksource.com/"
