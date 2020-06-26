@@ -11,7 +11,7 @@
 |
  */
 
-Auth::routes(['register' => false]);
+Auth::routes(['register' => false,'reset'=>false]);
 
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('blog/{title?}/{id?}', 'BlogController@index');
@@ -41,7 +41,7 @@ Route::prefix('admin')->group(function () {
     Route::get('cms/delete/{id}', 'AdminCMSController@destroy');
     Route::get('user/', 'UserManagerController@index');
     Route::get('user/edit/{id}', 'UserManagerController@edit');
-    Route::get('purge','AdminController@cache');
+    Route::get('purge', 'AdminController@cache');
     Route::post('update/{id}', 'AdminController@update');
     Route::post('save', 'AdminController@store');
     Route::post('filer', 'ImageController@store');
