@@ -11,7 +11,7 @@
 |
  */
 
-Auth::routes(['register' => false]);
+Auth::routes(['register' => false, 'reset' =>false]);
 
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('blog/{title?}/{id?}', 'BlogController@index');
