@@ -26,7 +26,7 @@ class HomeController extends Controller
         }
         $home = CmsPages::getHomepage();
 
-        return view('tlog', ['posts'=>$posts, 'morePosts'=>$morePosts, 'home'=>$home]);
+        return view('theme2020.home', ['posts'=>$posts, 'morePosts'=>$morePosts, 'home'=>$home]);
     }
 
     private function shorten($string)

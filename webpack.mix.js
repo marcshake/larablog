@@ -15,7 +15,7 @@ mix.copyDirectory('resources/images', 'public/images');
 mix.copyDirectory('node_modules/ckeditor4', 'public/js/ckeditor');
 mix.copyDirectory('resources/fonts', 'public/fonts');
 
-mix.js('resources/js/app.js', 'public/js')
+mix.js('resources/js/theme2020.js', 'public/js')
     .js('resources/js/admin.js', 'public/js')
-    .sass('resources/sass/trancefish.scss', 'public/css')
+    .sass('resources/sass/theme2020.scss', 'public/css')
     .sass('resources/sass/admin.scss', 'public/css').options({processCssUrls: false});
