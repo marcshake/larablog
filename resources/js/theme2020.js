@@ -1,25 +1,28 @@
-require ('bootstrap');
+require('bootstrap');
 
 
 function para(thatID, factor) {
+    let intro = document.getElementById(thatID);
+    if (intro === null) {
+        return false
+    }
+
+
     window.onscroll = function () {
-        var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-        var scrollBarPosition = window.pageYOffset | document.body.scrollTop;
+        let w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+        let scrollBarPosition;
+        scrollBarPosition = (window.pageYOffset | document.body.scrollTop);
         if (w > 550) {
-            var intro = document.getElementById(thatID);
-            if (intro === null) {
-                return false
-            }
-            var tmpHeight = intro.clientHeight / 2;
-            var scroll = scrollBarPosition * factor;
-            intro.style.backgroundPosition = "50% -" + scroll + "px"
+
+            let scroll = (scrollBarPosition) * factor * -1;
+            intro.style.backgroundPositionY = scroll + "px"
         }
     }
 }
 
 
 window.addEventListener("load", function () {
-    para('parascroll',.5)
+    para('parascroll', .5)
     var allimages = document.getElementsByTagName('img');
     for (var i = 0; i < allimages.length; i++) {
         if (allimages[i].getAttribute('data-src')) {
