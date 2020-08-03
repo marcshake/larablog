@@ -23,13 +23,13 @@
 
     @yield('maincontents')
 
-
-        <footer class="page-footer bg-dark text-white"><div class="container mt-4">
+    <div class="bg-dark text-white">
+        <footer><div class="container mt-4">
             Made with &hearts; in germany by Marcel Schindler
             {!! $snippets !!}
             </div>
         </footer>
-
+    </div>
     <script src="{{asset('js/theme2020.js')}}"></script>
 </body>
 
