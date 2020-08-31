@@ -1,4 +1,4 @@
-@extends('layouts.larablog')
+@extends('theme2020.layout')
 
 @section('title')
 Whoops - four oh four
