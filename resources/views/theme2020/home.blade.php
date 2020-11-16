@@ -4,7 +4,6 @@
 
   @section('maincontents')
 
-@include('theme2020.video')
 
 <div class="container mt-4">
 
