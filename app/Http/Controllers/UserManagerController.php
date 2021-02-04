@@ -38,7 +38,7 @@ class UserManagerController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -49,7 +49,7 @@ class UserManagerController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param int $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -60,7 +60,7 @@ class UserManagerController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param int $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -72,8 +72,8 @@ class UserManagerController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
-     * @param int $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int                      $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -81,11 +81,13 @@ class UserManagerController extends Controller
         $user = User::findOrFail($id);
         $user->name = $request->name;
         $user->email = $request->email;
-        request()->validate([
+        request()->validate(
+            [
 
             'avatar' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
 
-        ]);
+            ]
+        );
         $outpath = 'userimages';
 
         if ($request->password != '') {
@@ -109,7 +111,7 @@ class UserManagerController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param int $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
