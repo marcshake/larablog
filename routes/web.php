@@ -19,8 +19,11 @@ Route::get('tag/{name?}', 'BlogController@tag');
 Route::get('category/{name?}', 'BlogController@category');
 Route::get('logout', 'Auth\LoginController@logout');
 Route::get('sitemap.xml', 'SitemapController@index');
+/*
 Route::get('music', 'MusicController@index');
 Route::get('music/download/{song_id}', 'MusicController@download');
+ */
+
 Route::get('rss', 'RssController@index');
 Route::get('preview/{title}/{id}', 'PreviewController@index');
 Route::get('search', 'BlogController@searchForm');
