@@ -9,5 +9,6 @@ class SnippetsComposer
     {
         $view->with('snippets', CmsPages::getSnippets());
         $view->with('MAINMENU', CmsPages::getMainMenu());
+        $view->with('BLOGREPEAT', CmsPages::getBlogRepeat());
     }
 }

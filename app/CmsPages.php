@@ -59,4 +59,21 @@ class CmsPages extends Model
         $contents = isset($file->contents) ? $file->contents : null;
         return $contents;
     }
+
+    public static function getBlogRepeat()
+    {
+        $file = Cache::remember(
+            'BlogRepeat',
+            60,
+            function () {
+                return self::where('filename', 'BLOGREPEAT')->first();
+            }
+        );
+        $contents = isset($file->contents) ? $file->contents : null;
+        if ($contents) {
+            $contents = str_replace('PAGE_URL', url()->current(), $contents);
+            $contents = str_replace('PAGE_IDENTIFIER', url()->current(), $contents);
+        }
+        return $contents;
+    }
 }

@@ -23,8 +23,12 @@
 
             <article class="mt-4">
                 {!!$posting->contents!!}
-
             </article>
+
+            @if ($BLOGREPEAT)
+            {!! $BLOGREPEAT !!}
+
+            @endif
 
         </div>
         <div class="col-md-4 mt-4">
