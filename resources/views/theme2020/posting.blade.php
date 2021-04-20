@@ -26,6 +26,8 @@
             </article>
 
             @if ($BLOGREPEAT)
+
+
             {!! $BLOGREPEAT !!}
 
             @endif
