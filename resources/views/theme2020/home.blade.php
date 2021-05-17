@@ -3,6 +3,9 @@
 
 
 @section('maincontents')
+<div class="has-background-black-bis hugecover">
+    {!!$home->contents!!}
+</div>
 
 
     <div class="container mt-4">
