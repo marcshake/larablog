@@ -1,4 +1,10 @@
 {
+  "_args": [
+    [
+      "ckeditor4@4.16.0",
+      "/var/www/larablog"
+    ]
+  ],
   "_from": "ckeditor4@4.16.0",
   "_id": "ckeditor4@4.16.0",
   "_inBundle": false,
@@ -16,12 +22,10 @@
     "fetchSpec": "4.16.0"
   },
   "_requiredBy": [
-    "#USER",
     "/"
   ],
   "_resolved": "https://registry.npmjs.org/ckeditor4/-/ckeditor4-4.16.0.tgz",
-  "_shasum": "b1027df210ccb66ad5430de2988bea36a775c2fc",
-  "_spec": "ckeditor4@4.16.0",
+  "_spec": "4.16.0",
   "_where": "/var/www/larablog",
   "author": {
     "name": "CKSource",
@@ -30,8 +34,6 @@
   "bugs": {
     "url": "https://github.com/ckeditor/ckeditor4/issues"
   },
-  "bundleDependencies": false,
-  "deprecated": false,
   "description": "JavaScript WYSIWYG web text editor.",
   "homepage": "https://ckeditor.com/ckeditor-4/",
   "keywords": [
