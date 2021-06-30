@@ -18,7 +18,7 @@
 </div>
 <div class="container mt-4">
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-9">
 
 
             <article class="mt-4">
@@ -33,7 +33,7 @@
             @endif
 
         </div>
-        <div class="col-md-4 mt-4">
+        <div class="col-md-3 mt-4">
             Tags:
             @forelse ($posting->Tags as $tags)
                 <a href="{{url('tag',$tags->tag)}}" class="tag is-dark">{{$tags->tag}}</a>
