@@ -188,10 +188,10 @@ class BlogPosts extends Model
     public static function getSpecific($title, $id)
     {
         $title = urldecode($title);
-        
+
         $hash = md5($title.$id);
-        
-        
+
+
         $posts = Cache::rememberForever(
             $hash,
             function () use ($title, $id) {

@@ -43,7 +43,7 @@ Eintragsübersicht
 
                 </span>
             </td>
-            <td>{{$item->authorName->name}}</td>
+            <td>{{$item->authorname->name}}</td>
             <td>
                 @forelse ($item->Tags as $tags)
                     <span class="tag">{{$tags->tag}}</span>
