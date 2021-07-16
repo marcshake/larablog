@@ -1,6 +1,6 @@
 # Small Blogsoftware in Laravel
 
-Discontinued.
+Discontinued. I won't add new features.
 
 
 
