@@ -24,6 +24,8 @@ class CreateBlogPostsTable extends Migration
                 $table->boolean('visible')->default(false);
                 $table->bigInteger('mainImage')->nullable(true);
                 $table->boolean('trashed')->nullable(true);
+                $table->boolean('markdown')->nullable(true);
+
                 $table->timestamps();
             }
         );
