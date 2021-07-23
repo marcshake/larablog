@@ -17,13 +17,13 @@
 
     @csrf
     <div class="field">
-        <label class="label" for="title">Überschrift</label>
+        <label class="label" for="title">Headline</label>
         <div class="control">
             <input autocomplete="false" class="input" type="text" placeholder="Überschrift" name="title" id="title">
         </div>
     </div>
     <div class="field">
-        <label class="label" for="title">Dateiname</label>
+        <label class="label" for="title">Slug<sup>*</sup></label>
         <div class="control">
             <input autocomplete="false" class="input" type="text" placeholder="Überschrift" name="filename"
                 id="filename">
@@ -44,6 +44,6 @@
 
 <script>
     CKEDITOR.config.allowedContent = true;
-       CKEDITOR.replace('contents');
+    CKEDITOR.replace('contents');
 </script>
 @endsection

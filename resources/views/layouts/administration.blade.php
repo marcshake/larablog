@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{{asset('css/admin.css')}}">
-    <script src="{{asset('js/admin.js')}}"></script>
+    <link rel="stylesheet" href="{{mix('css/admin.css')}}">
+    <script src="{{mix('js/admin.js')}}"></script>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     @yield('script')
     <title>
@@ -19,7 +19,7 @@
         <div class="container">
             <div class="navbar-brand">
                 <a class="navbar-item" href="{{ url('/') }}">
-                    <img src="{{ asset('images/logo.svg') }}" alt="TLOG5 - Laravel based Blogging Solution" height="32">
+                    <img src="{{ mix('images/logo.svg') }}" alt="TLOG5 - Laravel based Blogging Solution" height="32">
                 </a>
 
                 <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">

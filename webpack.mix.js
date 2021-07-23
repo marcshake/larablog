@@ -18,4 +18,4 @@ mix.copyDirectory('resources/fonts', 'public/fonts');
 mix.js('resources/js/theme2020.js', 'public/js')
     .js('resources/js/admin.js', 'public/js')
     .sass('resources/sass/theme2020.scss', 'public/css')
-    .sass('resources/sass/admin.scss', 'public/css').options({processCssUrls: false});
+    .sass('resources/sass/admin.scss', 'public/css').options({ processCssUrls: false }).version();
