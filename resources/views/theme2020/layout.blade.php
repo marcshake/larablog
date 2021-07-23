@@ -10,7 +10,7 @@
     <meta property="og:title" content="@yield('title')">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="description" content="{{$metadescription ?? env('DESCRIPTION','')}}">
-    <link rel="stylesheet" href="{{ asset('css/theme2020.css')}}">
+    <link rel="stylesheet" href="{{ mix('css/theme2020.css')}}">
     @yield('opengraph')
     <title>@yield('title') </title>
 </head>
@@ -30,7 +30,7 @@
             </div>
         </footer>
     </div>
-    <script src="{{asset('js/theme2020.js')}}"></script>
+    <script src="{{mix('js/theme2020.js')}}"></script>
 </body>
 
 </html>

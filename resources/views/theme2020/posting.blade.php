@@ -12,7 +12,7 @@
 <div id="parascroll" class="header-image" style="background-image: url('{{$posting->mainImage ? asset('storage/uploads/'.$posting->mainImagePath->filename): asset('images/wall.jpg')}}')">
     <div class="container h-100">
         <div class="d-flex h-100 text-center align-items-center text-white">
-        <h1 class="display-4">{{$posting->title}}</h1>
+        <h1>{{$posting->title}}</h1>
     </div>
     </div>
 </div>
@@ -25,12 +25,10 @@
                 {!!$posting->contents!!}
             </article>
 
-            @if ($BLOGREPEAT)
 
 
-            {!! $BLOGREPEAT !!}
+            {!! $BLOGREPEAT ?? ''!!}
 
-            @endif
 
         </div>
         <div class="col-md-3 mt-4">
