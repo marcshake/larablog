@@ -1,8 +1,5 @@
 @extends('layouts.administration')
 
-@section('script')
-<script src="{{ asset('js/ckeditor/ckeditor.js') }}"></script>
-@endsection
 
 @section('content')
 
@@ -28,7 +25,7 @@ Neuen Eintrag anlegen
     
     <div class="field">
         <label for="contents" class="label">Inhalt</label>
-        <div class="control">
+        <div class="control"><hr>
             <textarea name="contents" class="textarea" placeholder="Textarea" id="contents"></textarea>
         </div>
     </div>
@@ -50,8 +47,5 @@ Neuen Eintrag anlegen
 
     </div>
 </form>
-<script>
-   CKEDITOR.config.allowedContent = true;
-   CKEDITOR.replace('contents');
-</script>
+
 @endsection

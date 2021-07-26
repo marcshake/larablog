@@ -1,6 +1,9 @@
 window.$ = window.jQuery = require('jquery');
-$(document).ready(
+let MediumEditor = require('medium-editor');
+
+$(
     function () {
+        var editor = new MediumEditor('#contents');
         $.ajaxSetup(
             {
                 headers: {

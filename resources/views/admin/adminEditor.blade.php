@@ -2,9 +2,6 @@
 {{$contents->title}} bearbeiten
 @endsection
 
-@section('script')
-<script src="{{ asset('js/ckeditor/ckeditor.js') }}"></script>
-@endsection
 
 @section('content')
 <form action="{{ url('admin/update',$contents->id)}}" method="post">
@@ -27,6 +24,7 @@
     <div class="field">
         <label for="contents" class="label">Inhalt</label>
         <div class="control">
+            <hr>
             <textarea name="contents" class="textarea" placeholder="Textarea"
                 id="contents">{{$contents->contents}}</textarea>
         </div>
@@ -75,8 +73,5 @@
         <a href="{{url('admin/blogs')}}" class="button">Verwerfen</a>
     </div>
 </form>
-<script>
-   CKEDITOR.config.allowedContent = true;
-   CKEDITOR.replace('contents');
-</script>
+
 @endsection

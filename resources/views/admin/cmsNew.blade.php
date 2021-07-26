@@ -1,7 +1,4 @@
 @extends('layouts.administration')
-@section('script')
-<script src="{{ asset('js/ckeditor/ckeditor.js') }}"></script>
-@endsection
 
 @section('content')
 <form action="{{ url('admin/cms/new')}}" method="post">
@@ -32,7 +29,7 @@
 
     <div class="field">
         <label for="contents" class="label">Inhalt</label>
-        <div class="control">
+        <div class="control"><hr>
             <textarea name="contents" class="textarea" placeholder="Textarea" id="contents"></textarea>
         </div>
     </div>
@@ -42,8 +39,4 @@
     </div>
 </form>
 
-<script>
-    CKEDITOR.config.allowedContent = true;
-    CKEDITOR.replace('contents');
-</script>
 @endsection

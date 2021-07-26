@@ -33,7 +33,7 @@
 
     <div class="field">
         <label for="contents" class="label">Inhalt</label>
-        <div class="control">
+        <div class="control"><hr>
             <textarea name="contents" class="textarea" placeholder="Textarea"
                 id="contents">{{$page->contents}}</textarea>
         </div>
@@ -45,10 +45,6 @@
 </form>
 
 
-<script>
-CKEDITOR.config.allowedContent = true;
-CKEDITOR.replace('contents');
-</script>
 
 
 @endsection
