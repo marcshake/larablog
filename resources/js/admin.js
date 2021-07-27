@@ -3,7 +3,13 @@ let MediumEditor = require('medium-editor');
 
 $(
     function () {
-        var editor = new MediumEditor('#contents');
+        var editor = new MediumEditor(
+            '#contents', {
+                toolbar: {
+                    buttons: ['h2', 'h3', 'bold', 'italic', 'anchor', 'image', 'quote', 'html']
+                }
+            }
+        );
         $.ajaxSetup(
             {
                 headers: {
@@ -18,7 +24,8 @@ $(
             console.log('Called Imagebrowser');
             $('#modalTitle').html('Bild auswählen');
             $.post(
-                '/ajax/image', function (data) {
+                '/ajax/image',
+                function (data) {
                     $('#modalContents').html(data);
                 }
             );
@@ -32,7 +39,8 @@ $(
             var img = item.data('item');
             $('#imageID').val(img);
             $.post(
-                '/ajax/loadImage/' + img, function (imageDetail) {
+                '/ajax/loadImage/' + img,
+                function (imageDetail) {
                     $('#previewImag').html(
                         '<img src="/storage/thumbnail/tiny_' + imageDetail['thumbnail'] +
                         '">'
@@ -45,14 +53,15 @@ $(
             var img = item.data('item');
             $('#imageID').val(img);
             $.post(
-                '/ajax/loadImage/' + img, function (imageDetail) {
+                '/ajax/loadImage/' + img,
+                function (imageDetail) {
                     var path = '/storage/thumbnail/tiny_' + imageDetail['thumbnail'];
                     var fullpath = window.location.protocol + '//' + window.location.host +
-                    '/storage/uploads/' + imageDetail['thumbnail'];
+                        '/storage/uploads/' + imageDetail['thumbnail'];
                     var myhtml = '<figure><img class="u-full-width" src="' + fullpath + '" /><figcaption>' +
-                    fullpath + '</figcaption></figure>';
+                        fullpath + '</figcaption></figure>';
                     myhtml += '<button id="deleteImage" data-id="' + imageDetail['id'] +
-                    '">Löschen</button>';
+                        '">Löschen</button>';
                     $('#modalTitle').html('Bilddetails');
                     $('#modalContents').html(myhtml);
                     $('.modal').removeClass('hidden');
@@ -63,7 +72,8 @@ $(
         var deleteImage = function (item) {
             var image = item.data('id');
             $.post(
-                '/ajax/deleteImage/' + image, function (data) {
+                '/ajax/deleteImage/' + image,
+                function (data) {
                     $('[data-item=' + image + ']').hide();
                     $('.modal').addClass('hidden');
                 }
@@ -83,17 +93,20 @@ $(
             }
         );
         $('.ibrowser').on(
-            'click', '.thumb', function () {
+            'click', '.thumb',
+            function () {
                 useImage($(this))
             }
         );
         $('.idetails').on(
-            'click', '.thumb', function () {
+            'click', '.thumb',
+            function () {
                 imageDetails($(this))
             }
         );
         $('#modalContents').on(
-            'click', '#deleteImage', function () {
+            'click', '#deleteImage',
+            function () {
                 deleteImage($(this))
             }
         );
