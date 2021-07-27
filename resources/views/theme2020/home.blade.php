@@ -17,7 +17,7 @@
                         <a href="{{ url('blog/' . $items->url, $items->id) }}">
                             <img class="card-img-top"
                                 src="{{ $items->mainImage ? asset('storage/thumbnail/tiny_' . $items->mainImagePath->filename) : asset('images/wall.jpg') }}"
-                                alt="{{ $items->title }}">
+                                title="{{ $items->title }}" alt="{{ $items->title }}">
                         </a>
                         <div class="card-body">
                             <h4 class="card-title">
