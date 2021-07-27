@@ -1,9 +1,5 @@
 # Small Blogsoftware in Laravel
 
-Discontinued. I won't add new features. Or maybe I will? I am not quite sure.
-
-
-
 ## What is this?
 Hi, my name is Marcel Schindler and I have been a webdeveloper for a long time. I usually worked on Webservices and never had the opportunity nor the necessarity of working with a full-featured-framework. I have a blog running at http://www.trancefish.de which is coded with my own little "Framework" which you can see over here: https://github.com/marcshake/tlog
 
@@ -12,17 +8,17 @@ Now I started to use Laravel in my workplace, because I heard so many good thing
 Whenever this program is *stable*, this text will be modified. Just take this tiny codes to see, how easy it is to actually *start* your own Laravel-production.
 
 ## Licence
-Nope. Not now. The usual licenses of the dependencies apply but these codes are totally not worth a licence at the moment.
+GPL, I guess.
 
 ## Project Status
 ### Frontend
 * We have a simple page listing up our Blogposts. 
 * We can log in ``demo@demo.dem`` with password ``test`` 
-* Mobile-first (thanks to skeleton)
+* Mobile-first (thanks to skeleton and bootstrap)
 
 ### Backend
 We can edit posts.
-We can upload media
+We can upload media somehow
 We can create new posts
 We can delete posts
 
@@ -39,4 +35,8 @@ There will be a real installation-routine, when the software is ready. I guess.
 
 ## Closing words
 
-Consider this a work in progress. I do use this in a live environment, but that may change everytime. Thanks to [Jetbrains](https://www.jetbrains.com/?from=Larablog) for supporting me with PHP-Storm.
+Consider this a work in progress. I do use this in a live environment, but that may change everytime. 
+
+## Planned
+
+I removed CKeditor and installed an inline-editor. This might also change, because I want to go to *markdown* in this projekt, I guess.
