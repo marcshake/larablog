@@ -33,7 +33,7 @@
 
     <div class="field">
         <label for="contents" class="label">Inhalt</label>
-        <div class="control"><hr>
+        <div class="control editor">
             <textarea name="contents" class="textarea" placeholder="Textarea"
                 id="contents">{{$page->contents}}</textarea>
         </div>
