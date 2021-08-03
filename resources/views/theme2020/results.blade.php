@@ -3,7 +3,7 @@
 @section('title')Suche @endsection
 
 @section('maincontents')
-<div class="container mt-4">
+<div class="container mt-4 bg-light">
 <h2>Suche</h2>
 <ul>
 @forelse ($results as $item)

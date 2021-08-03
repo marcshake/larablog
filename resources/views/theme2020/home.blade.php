@@ -3,7 +3,7 @@
 
 
 @section('maincontents')
-<div class="has-background-black-bis hugecover">
+<div class="bg-light hugecover">
     {!!$home->contents!!}
 </div>
 
