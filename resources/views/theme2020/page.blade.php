@@ -2,7 +2,7 @@
 
 @section('title') {{$page->title}} @endsection
 @section('maincontents')
-<div class="container mt-4">
+<div class="container mt-4 bg-light rounded">
     <h1>{{$page->title}}</h1>
 
                     {!!$page->contents!!}

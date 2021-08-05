@@ -13,7 +13,7 @@
 @endsection
 
 @section('maincontents')
-    <div class="container">
+    <div class="container bg-light rounded">
 
         <!-- Page Heading -->
         <h1 class="my-4">Blogposts

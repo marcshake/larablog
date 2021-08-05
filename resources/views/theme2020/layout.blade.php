@@ -31,6 +31,7 @@
         </footer>
     </div>
     <script src="{{mix('js/theme2020.js')}}"></script>
+    
 </body>
 
 </html>
