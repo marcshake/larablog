@@ -21,7 +21,7 @@
         <div class="col-md-9">
 
 
-            <article class="mt-4">
+            <article class="mt-4 text-height-2">
                 {!!$posting->contents!!}
             </article>
 
