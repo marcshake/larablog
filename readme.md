@@ -27,11 +27,9 @@ We can delete posts
 * Clone the repository
 * Make sure, you have ``composer`` and ``nodejs`` installed
 * copy ``.env.example`` to ``.env`` and edit your Database-Connection.
-* In a bash you can start ``./deploy.sh`` which will install composer dependencies, setup node_modules, clears the caches, installs assets and even links the storage-directory
-* OPTIONAL: run ``php artisan migrate:refresh --seed`` to install test-data (you won't be able to login without test-data anyways)
+* run ``composer install``
+* run ``npm run production`` to create the public js and css-files.
 * run ``php artisan serve`` to start your local development server
-
-There will be a real installation-routine, when the software is ready. I guess.
 
 ## Closing words
 
@@ -39,4 +37,4 @@ Consider this a work in progress. I do use this in a live environment, but that 
 
 ## Planned
 
-I removed CKeditor and installed an inline-editor. This might also change, because I want to go to *markdown* in this projekt, I guess.
+* Wanna go to postCSS
