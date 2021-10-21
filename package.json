@@ -22,9 +22,7 @@
         "vue-template-compiler": "^2.6.14"
     },
     "dependencies": {
-        "lazyload": "^2.0.0-rc.2",
         "bootstrap": "^4.6.0",
-        "medium-editor": "^5.23.3",
         "skeleton-scss": "^2.0.4"
     }
 }

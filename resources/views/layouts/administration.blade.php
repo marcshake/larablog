@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{mix('css/admin.css')}}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor5/30.0.0/ckeditor.min.js" integrity="sha512-4/p6jGVEkS3BF73j6gLWSn1qRLiAo1Wgsu7wiFwD3HtrnVcEGfAUmt5hhOw5TgpKPur0WPrvubFEbvXQKG3jBA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="{{mix('js/admin.js')}}"></script>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     @yield('script')
@@ -68,6 +69,14 @@
         </div>
     </div>
     @include('partial.modal')
+
+    <script>
+    ClassicEditor
+        .create( document.querySelector( '#contents' ), {})
+        .catch( error => {
+            console.error( error );
+        } );
+</script>
 </body>
 
 </html>
