@@ -189,7 +189,7 @@ class BlogPosts extends Model
     {
         $title = urldecode($title);
 
-        $hash = md5($title.$id);
+        $hash = md5($title . $id);
 
 
         $posts = Cache::rememberForever(
