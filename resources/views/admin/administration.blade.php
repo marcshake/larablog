@@ -14,15 +14,16 @@
 </head>
 
 <body>
-
-    <div class="row">
-        <div class="two columns">
-            @include('admin.navigation')
+    
+        <div class="row">
+            <div class="two columns">
+                @include('admin.navigation')
+            </div>
+            <div class="columns ten">
+                @yield('contents')
+            </div>
         </div>
-        <div class="columns ten">
-            @yield('contents')
-        </div>
-    </div>
+    
 </body>
 
 </html>

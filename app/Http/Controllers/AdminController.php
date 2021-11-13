@@ -7,6 +7,9 @@ use App\Category;
 use App\CmsPages;
 use App\Tags;
 use Illuminate\Http\Request;
+use Illuminate\Mail\Markdown;
+use League\CommonMark\MarkdownConverter;
+use League\HTMLToMarkdown\HtmlConverter;
 
 /**
  * Class AdminController
@@ -158,6 +161,12 @@ class AdminController extends Controller
     public function edit($id)
     {
         $contents = BlogPosts::findOrFail($id);
+        if($contents->contentsmd == null) {
+            $tmp = new HtmlConverter();
+            $markdown = $tmp->convert($contents->contents);
+            $contents->contentsmd = $markdown;
+            $contents->save();
+        }
         return view('admin.adminEditor', ['contents' => $contents]);
     }
 
