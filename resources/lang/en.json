@@ -4,7 +4,7 @@
     "media": "Media",
     "Pages": "Pages",
     "List of Entries": "List of Entries",
-    "Create new": "Create new",
+    "Create New": "Create new",
     "Blog Categories": "Blog Categories",
     "Keywords": "Keywords",
     "Media list": "Media list",
@@ -15,5 +15,10 @@
     "Add User": "Add User",
     "General Settings": "General Settings",
     "administration": "Administration",
-    "List of Blogs":"List of Blogs"
+    "List of Blogs":"List of Blogs",
+    "number":"Number",
+    "tags":"Tags",
+    "date":"Date",
+    "author":"Author",
+    "categories":"Categories"
 }

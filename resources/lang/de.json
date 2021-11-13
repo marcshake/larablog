@@ -4,7 +4,7 @@
     "media": "Medien",
     "Pages": "Seiten",
     "List of Entries": "Liste aller Einträge",
-    "Create new": "Neu erstellen",
+    "Create New": "Neu erstellen",
     "Blog Categories": "Blog Kategorien",
     "Keywords": "Keywords",
     "Media list": "Medien",
@@ -15,5 +15,16 @@
     "Add User": "Neuer Benutzer",
     "General Settings": "Einstellungen",
     "administration": "Administration",
-    "List of Blogs": "Blogeinträge"
+    "List of Blogs": "Blogeinträge",
+    "number": "Nummer",
+    "tags": "Tags",
+    "date": "Datum",
+    "author": "Autor",
+    "categories": "Kategorien",
+    "entrytitle": "Eintrag",
+    "draft": "Entwurf",
+    "preview": "Vorschau",
+    "delete": "Löschen",
+    "hide": "Verstecken",
+    "publish": "Veröffentlichen"
 }
