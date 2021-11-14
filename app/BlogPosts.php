@@ -5,6 +5,8 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Support\Facades\Cache;
+use League\CommonMark\CommonMarkConverter;
+use League\HTMLToMarkdown\HtmlConverter;
 
 /**
  * Class BlogPosts
@@ -198,7 +200,15 @@ class BlogPosts extends Model
                 return self::where('trashed', null)->where('visible', 1)->where('title', $title)->where('id', $id)->with('mainImagePath')->with('tags')->with('comments')->firstOrFail();
             }
         );
-
+        if($posts->contentsmd == null) {
+            $tmp = new HtmlConverter(['header_style'=>'atx']);
+            $markdown = $tmp->convert($posts->contents);
+            $posts->contentsmd = $markdown;
+            $posts->save();
+        }
+        $html = new CommonMarkConverter();
+        // Only Markdown now.
+        $posts->output = $html->convertToHtml($posts->contentsmd);        
         $posts->url = self::makeUrl($posts->title);
 
         return $posts;
