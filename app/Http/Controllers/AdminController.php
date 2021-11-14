@@ -162,7 +162,7 @@ class AdminController extends Controller
     {
         $contents = BlogPosts::findOrFail($id);
         if($contents->contentsmd == null) {
-            $tmp = new HtmlConverter();
+            $tmp = new HtmlConverter(['header_style'=>'atx']);
             $markdown = $tmp->convert($contents->contents);
             $contents->contentsmd = $markdown;
             $contents->save();
