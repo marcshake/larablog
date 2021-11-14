@@ -16,17 +16,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $posts = BlogPosts::getPosts(3);
-        $morePosts  = BlogPosts::getPosts(25);
-        foreach ($posts as $r => $entry) {
-            $posts[$r]->contents = $this->shorten($entry->contents);
-        }
-        foreach ($morePosts as $r => $entry) {
-            $morePosts[$r]->contents = $this->shorten($entry->contents);
-        }
         $home = CmsPages::getHomepage();
 
-        return view('theme2020.home', ['posts'=>$posts, 'morePosts'=>$morePosts, 'home'=>$home]);
+        return view('theme2020.home', ['home'=>$home]);
     }
 
     private function shorten($string)

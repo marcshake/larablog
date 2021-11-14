@@ -56,9 +56,12 @@ class BlogPosts extends Model
      */
     public static function blogHome()
     {
-        $posts = self::select('mainImage', 'contents', 'id', 'title', 'visible', 'created_at', 'author')->orderBy('id', 'DESC')->where('visible', 1)->where('trashed', null)->with('authorname')->with('mainImagePath')->paginate(15);
+        $posts = self::orderBy('id', 'DESC')->where('visible', 1)->where('trashed', null)->with('authorname')->with('mainImagePath')->paginate(15);
         foreach ($posts as $r => $post) {
-            $posts[$r]->shortcontents = self::shorten($post->contents);
+            if($post->contentsmd == null) {
+                self::convertmd($post);
+            }
+            $posts[$r]->shortcontents = self::shorten($post->contentsmd);
             $posts[$r]->url = self::makeUrl($post->title);
         }
         return $posts;
@@ -79,8 +82,7 @@ class BlogPosts extends Model
      */
     public static function getByCategory($category)
     {
-        $posts = self::select('created_at', 'mainImage', 'contents', 'id', 'title', 'visible', 'updated_at', 'author')
-            ->orderBy('id', 'DESC')
+        $posts = self::orderBy('id', 'DESC')
             ->where('visible', 1)
             ->where('trashed', null)
             ->whereHas(
@@ -91,7 +93,10 @@ class BlogPosts extends Model
             )->with('authorname')->with('mainImagePath')
             ->paginate(15);
         foreach ($posts as $r => $post) {
-            $posts[$r]->shortcontents = self::shorten($post->contents);
+            if($post->contentsmd==null) {
+                self::convertmd($post);
+            }
+            $posts[$r]->shortcontents = self::shorten($post->contentsmd);
             $posts[$r]->url = self::makeUrl($post->title);
         }
         return $posts;
@@ -103,8 +108,7 @@ class BlogPosts extends Model
      */
     public static function getByTag($tag)
     {
-        $posts = self::select('created_at', 'mainImage', 'contents', 'id', 'title', 'visible', 'updated_at', 'author')
-            ->orderBy('id', 'DESC')
+        $posts = self::orderBy('id', 'DESC')
             ->where('visible', 1)
             ->where('trashed', null)
             ->whereHas(
@@ -115,22 +119,10 @@ class BlogPosts extends Model
             )->with('authorname')->with('mainImagePath')
             ->paginate(15);
         foreach ($posts as $r => $post) {
-            $posts[$r]->shortcontents = self::shorten($post->contents);
-            $posts[$r]->url = self::makeUrl($post->title);
-        }
-        return $posts;
-    }
+            if($post->contentsmd==null) {
+                self::convertmd($post);
+            }
 
-    /**
-     * Get a List of Posts
-     *
-     * @param  INT number of rows
-     * @return void
-     */
-    public static function getPosts($limit)
-    {
-        $posts = self::orderBy('id', 'DESC')->where('trashed', null)->with('mainImagePath')->where('visible', 1)->limit($limit)->get();
-        foreach ($posts as $r => $post) {
             $posts[$r]->shortcontents = self::shorten($post->contents);
             $posts[$r]->url = self::makeUrl($post->title);
         }
@@ -194,17 +186,11 @@ class BlogPosts extends Model
         $hash = md5($title . $id);
 
 
-        $posts = Cache::rememberForever(
-            $hash,
-            function () use ($title, $id) {
-                return self::where('trashed', null)->where('visible', 1)->where('title', $title)->where('id', $id)->with('mainImagePath')->with('tags')->with('comments')->firstOrFail();
-            }
-        );
+        $posts =self::where('trashed', null)->where('visible', 1)->where('title', $title)->where('id', $id)->with('mainImagePath')->with('tags')->with('comments')->firstOrFail();
+            
+        
         if($posts->contentsmd == null) {
-            $tmp = new HtmlConverter(['header_style'=>'atx']);
-            $markdown = $tmp->convert($posts->contents);
-            $posts->contentsmd = $markdown;
-            $posts->save();
+            $posts = self::convertmd($posts);
         }
         $html = new CommonMarkConverter();
         // Only Markdown now.
@@ -214,18 +200,25 @@ class BlogPosts extends Model
         return $posts;
     }
 
+    public static function convertmd($posts)
+    {
+        $tmp = new HtmlConverter(['header_style'=>'atx']);
+        $markdown = $tmp->convert($posts->contents);
+        $posts->contentsmd = $markdown;
+        $posts->save();
+        return $posts;
+    }
+
     /**
      * @param  $string
      * @return false|string
      */
     public static function shorten($string)
     {
-        $v['contents'] = $string;
-        $start = strpos($v['contents'], '<p>');
-        $end = strpos($v['contents'], '</p>', $start);
-        $paragraph = substr($v['contents'], $start, $end - $start + 4);
-        //        $tmp[$r]['contents'] = $paragraph;
-        return $paragraph;
+        
+        $line = strtok($string, "\n");
+        
+        return $line;
     }
 
     /**
@@ -234,6 +227,6 @@ class BlogPosts extends Model
      */
     public static function search($string)
     {
-        return self::where('contents', 'like', '%' . $string . '%')->where('visible', 1)->where('trashed', null)->get();
+        return self::where('contentsmd', 'like', '%' . $string . '%')->where('visible', 1)->where('trashed', null)->get();
     }
 }
