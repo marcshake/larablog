@@ -8,6 +8,7 @@ use App\CmsPages;
 use App\Tags;
 use Illuminate\Http\Request;
 use Illuminate\Mail\Markdown;
+use League\CommonMark\CommonMarkConverter;
 use League\CommonMark\MarkdownConverter;
 use League\HTMLToMarkdown\HtmlConverter;
 
@@ -167,6 +168,9 @@ class AdminController extends Controller
             $contents->contentsmd = $markdown;
             $contents->save();
         }
+        $html = new CommonMarkConverter();
+
+        $contents->parsed = $html->convertToHtml($contents->contentsmd);        
         return view('admin.adminEditor', ['contents' => $contents]);
     }
 
@@ -181,7 +185,7 @@ class AdminController extends Controller
     {
         $contents = BlogPosts::findOrFail($id);
         $contents->title = $request->title;
-        $contents->contents = $request->contents;
+        $contents->contents = $request->contentsmd;
         $contents->mainImage = $request->mainImage;
         $contents->description = $request->description;
 

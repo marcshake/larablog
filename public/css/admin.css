@@ -1134,3 +1134,8 @@ td:hover .subaction {
   overflow: auto;
   padding: 1em;
 }
+
+#mdpreview {
+  background: #fff;
+  color: #000;
+}
