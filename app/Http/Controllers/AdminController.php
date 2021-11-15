@@ -1,7 +1,5 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use App\BlogPosts;
 use App\Category;
 use App\CmsPages;
@@ -11,7 +9,6 @@ use Illuminate\Mail\Markdown;
 use League\CommonMark\CommonMarkConverter;
 use League\CommonMark\MarkdownConverter;
 use League\HTMLToMarkdown\HtmlConverter;
-
 /**
  * Class AdminController
  *
@@ -19,7 +16,6 @@ use League\HTMLToMarkdown\HtmlConverter;
  */
 class AdminController extends Controller
 {
-
     /**
      * AdminController constructor.
      */
@@ -27,7 +23,6 @@ class AdminController extends Controller
     {
         $this->middleware('auth');
     }
-
     /**
      * Display a listing of the resource.
      *
@@ -37,7 +32,6 @@ class AdminController extends Controller
     {
         return view('admin.adminPanel', ['beitraege' => BlogPosts::where('trashed', null)->count(), 'seiten' => CmsPages::count()]);
     }
-
     /**
      * Get a list of blogentries
      *
@@ -49,8 +43,6 @@ class AdminController extends Controller
         $posts = BlogPosts::overview($wip);
         return view('admin.adminListBlogs', ['collection' => $posts]);
     }
-
-
     /**
      * Show the form for creating a new resource.
      *
@@ -60,7 +52,6 @@ class AdminController extends Controller
     {
         return view('admin.adminNew');
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -83,14 +74,12 @@ class AdminController extends Controller
         $contents->contents = $request->contents;
         $contents->author = \Auth::user()->id;
         $contents->description = $request->description;
-
         $contents->save();
         $this->handleTags($request, $contents);
         $this->handleCategories($request, $contents);
         $id = $contents->id;
         return redirect('admin/edit/' . $id)->with('status', 'Changes saved');
     }
-
     /**
      * @param $request
      * @param $contents
@@ -116,7 +105,6 @@ class AdminController extends Controller
             }
         }
     }
-
     /**
      * @param $request
      * @param $contents
@@ -141,7 +129,6 @@ class AdminController extends Controller
             }
         }
     }
-
     /**
      * Display the specified resource.
      *
@@ -152,7 +139,6 @@ class AdminController extends Controller
     {
         //
     }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -169,11 +155,9 @@ class AdminController extends Controller
             $contents->save();
         }
         $html = new CommonMarkConverter();
-
         $contents->parsed = $html->convertToHtml($contents->contentsmd);        
         return view('admin.adminEditor', ['contents' => $contents]);
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -184,18 +168,16 @@ class AdminController extends Controller
     public function update(Request $request, $id)
     {
         $contents = BlogPosts::findOrFail($id);
-        $contents->title = $request->title;
-        $contents->contents = $request->contentsmd;
+        $contents->title = $request->title;        
+        $contents->contentsmd = $request->contents;
         $contents->mainImage = $request->mainImage;
         $contents->description = $request->description;
-
         $this->handleTags($request, $contents);
         $this->handleCategories($request, $contents);
         $contents->touch();
         $contents->save();
         return redirect('admin/edit/' . $id)->with('status', 'Changes saved!');
     }
-
     /**
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
@@ -204,7 +186,6 @@ class AdminController extends Controller
         \Artisan::call('cache:clear');
         return redirect('admin')->with('status', 'Cache Cleared');
     }
-
     /**
      * Remove the specified resource from storage.
      *
@@ -218,7 +199,6 @@ class AdminController extends Controller
         $entry->save();
         return redirect('admin/blogs')->with('status', 'Dropped Entry');
     }
-
     /**
      * Change visibility of Post
      *
@@ -231,7 +211,6 @@ class AdminController extends Controller
         $vis = $entry->visible == 1 ? 0 : 1;
         $entry->visible = $vis;
         $entry->touch();
-
         $entry->save();
         return redirect('admin/blogs')->with('status', 'Changed Visibility');
     }
