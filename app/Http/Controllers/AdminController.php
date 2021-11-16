@@ -50,36 +50,9 @@ class AdminController extends Controller
      */
     public function create()
     {
-        return view('admin.adminNew');
+        return view('admin.adminEditor');
     }
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        if ($request->title == null) {
-            return redirect('admin/new')->with('warning', 'Title must not be null');
-        }
-        if ($request->contents == null) {
-            return redirect('admin/new')->with('warning', 'Title must not be null');
-        }
-        if (isset($request->lb) && $request->lb == 1) {
-            $request->contents = nl2br($request->contents);
-        }
-        $contents = new BlogPosts;
-        $contents->title = $request->title;
-        $contents->contents = $request->contents;
-        $contents->author = \Auth::user()->id;
-        $contents->description = $request->description;
-        $contents->save();
-        $this->handleTags($request, $contents);
-        $this->handleCategories($request, $contents);
-        $id = $contents->id;
-        return redirect('admin/edit/' . $id)->with('status', 'Changes saved');
-    }
+
     /**
      * @param $request
      * @param $contents
