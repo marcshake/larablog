@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Oxygen);
+@import url(https://fonts.googleapis.com/css2?family=Ubuntu&display=swap);
 /*
 * Skeleton V2.0.4
 * Copyright 2014, Dave Gamache
@@ -1129,7 +1129,7 @@ td:hover .subaction {
 }
 
 .editor {
-  background: #eee;
+  background: #fff;
   height: 50vh;
   overflow: auto;
   padding: 1em;

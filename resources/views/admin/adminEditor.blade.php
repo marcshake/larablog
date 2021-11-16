@@ -8,7 +8,7 @@
     <form action="{{ url('admin/update') }}" method="post">
         @csrf
         <input type="hidden" name="mainImage" id="imageID" value="{{ $contents->mainImage }}">
-        <input type="hidden" name="id" value="{{$contents->id ?? null}}" />
+        <input type="hidden" name="id" value="{{ $contents->id ?? null }}" />
         <div class="field">
             <label class="label" for="title">{{ __('headline') }}</label>
             <div class="control">
@@ -32,11 +32,13 @@
                         <textarea name="contents" class="u-full-width editor" placeholder="Textarea"
                             id="contents">{{ $contents->contentsmd }}</textarea>
                     </div>
-                    <div class="six columns">
-                        <div id="mdpreview">
-                            {!! $contents->parsed !!}
-                            
-                        </div>
+                    <div class="six columns" >
+                        
+                            <div id="mdpreview">
+                                {!! $contents->parsed !!}
+
+                            </div>
+                        
                     </div>
                 </div>
             </div>

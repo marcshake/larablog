@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css?family=Oxygen");
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
 @import "~skeleton-scss/scss/skeleton.scss";
 
 // Variables
@@ -22,7 +23,7 @@ $link-color: #1eaedb !default;
 $font-color: #222 !default;
 
 // Typography
-$font-family: "Oxygen", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-family: "Ubuntu", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 
 //Grid Variables
 $container-width: 1280px !default;
@@ -376,7 +377,7 @@ td:hover .subaction {
   overflow: auto;
 }
 .editor {
-  background: #eee;
+  background: #fff;
   height: 50vh;
   overflow: auto;
   padding: 1em;

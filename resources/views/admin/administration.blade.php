@@ -16,7 +16,8 @@
 
 <body>
     <div class="container">
-        <a href="{{url('admin')}}">{{__('admin home')}}</a>
+        <a class="button" href="{{url('admin')}}">{{__('admin home')}}</a>
+        <a class="button" href="{{url('/')}}">{{__('home')}}</a>
     </div>
     
         <div class="row">

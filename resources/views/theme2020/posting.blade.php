@@ -5,7 +5,7 @@
 <meta content="{{$posting->mainImage ? asset('storage/uploads/'.$posting->mainImagePath->filename): asset('images/wall.jpg')}}" property="og:image">
 @endsection
 @section('maincontents')
-<div id="parascroll" class="header-image" style="background-image: url('{{$posting->mainImage ? asset('storage/uploads/'.$posting->mainImagePath->filename): asset('images/wall.jpg')}}')">
+<div id="parascroll" class="header-image" style="background-image: url('{{$posting->mainImage ? asset(env('IMAGE_PATH','').'storage/uploads/'.$posting->mainImagePath->filename): asset('images/wall.jpg')}}')">
     <div class="container h-100">
         <div class="d-flex h-100 text-center align-items-center text-white">
             <h1>{{$posting->title}}</h1>
