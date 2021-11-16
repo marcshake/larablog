@@ -1,5 +1,7 @@
 <?php
+
 namespace App\Http\Controllers;
+
 use App\BlogPosts;
 use App\Category;
 use App\CmsPages;
@@ -9,6 +11,7 @@ use Illuminate\Mail\Markdown;
 use League\CommonMark\CommonMarkConverter;
 use League\CommonMark\MarkdownConverter;
 use League\HTMLToMarkdown\HtmlConverter;
+
 /**
  * Class AdminController
  *
@@ -122,14 +125,14 @@ class AdminController extends Controller
     public function edit($id)
     {
         $contents = BlogPosts::findOrFail($id);
-        if($contents->contentsmd == null) {
-            $tmp = new HtmlConverter(['header_style'=>'atx']);
+        if ($contents->contentsmd == null) {
+            $tmp = new HtmlConverter(['header_style' => 'atx']);
             $markdown = $tmp->convert($contents->contents);
             $contents->contentsmd = $markdown;
             $contents->save();
         }
         $html = new CommonMarkConverter();
-        $contents->parsed = $html->convertToHtml($contents->contentsmd);        
+        $contents->parsed = $html->convertToHtml($contents->contentsmd);
         return view('admin.adminEditor', ['contents' => $contents]);
     }
     /**
@@ -142,23 +145,25 @@ class AdminController extends Controller
     public function update(Request $request)
     {
         $id = $request->id;
-        if($id == null) {
-            
+        if ($id == null) {
+
             $contents = new BlogPosts();
+        } else {
+            $contents = BlogPosts::where(['id' => $id])->first();
         }
-        else {
-            $contents = BlogPosts::where('id',$id);
-        }
-        $contents->title = $request->title;        
+
+        $contents->title = $request->title;
         $contents->contentsmd = $request->contents;
+        $contents->author = \Auth::user()->id;
+
         $contents->contents = '';
         $contents->mainImage = $request->mainImage;
         $contents->description = $request->description;
         $contents->save();
+        $contents->touch();
 
         $this->handleTags($request, $contents);
         $this->handleCategories($request, $contents);
-        $contents->touch();
         $id = $contents->id;
         return redirect('admin/edit/' . $id)->with('status', 'Changes saved!');
     }

@@ -217,7 +217,7 @@ class BlogPosts extends Model
     {
         
         $line = strtok($string, "\n");
-        $line = str_replace(['_','*'],['',''],$line);  
+        $line = str_replace(['_','*'], ['',''], $line);  
         return $line;
     }
 

@@ -35,6 +35,7 @@
                     <div class="six columns">
                         <div id="mdpreview">
                             {!! $contents->parsed !!}
+                            
                         </div>
                     </div>
                 </div>

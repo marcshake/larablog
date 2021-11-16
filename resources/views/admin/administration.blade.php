@@ -8,19 +8,22 @@
     <link rel="stylesheet" href="{{ mix('css/admin.css')}}">
     <script src="{{ mix('js/admin.js') }}"></script>
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/markdown-it/12.2.0/markdown-it.min.js" integrity="sha512-cTQeM/op796Fp1ZUxfech8gSMLT/HvrXMkRGdGZGQnbwuq/obG0UtcL04eByVa99qJik7WlnlQOr5/Fw5B36aw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <title>@yield('title') </title>
 
 
 </head>
 
 <body>
+    <div class="container">
+        <a href="{{url('admin')}}">{{__('admin home')}}</a>
+    </div>
     
         <div class="row">
-            <div class="two columns">
+            <div class="three columns">
                 @include('admin.navigation')
             </div>
-            <div class="columns ten">
+            <div class="columns nine">
                 @yield('contents')
             </div>
         </div>

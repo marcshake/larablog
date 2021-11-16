@@ -10928,6 +10928,11 @@ var __webpack_exports__ = {};
   \*******************************/
 window.$ = window.jQuery = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 $(function () {
+  var md = new markdownit();
+  $('#contents').on('keyup', function () {
+    var str = $(this).val();
+    $('#mdpreview').html(md.render(str));
+  });
   $.ajaxSetup({
     headers: {
       'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')

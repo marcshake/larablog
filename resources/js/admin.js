@@ -1,7 +1,14 @@
 window.$ = window.jQuery = require('jquery');
 $(
     function () {
-   
+        var md = new markdownit();
+        $('#contents').on(
+            'keyup', function () {
+                var str = $(this).val();
+
+                $('#mdpreview').html(md.render(str));
+            }
+        );
         $.ajaxSetup(
             {
                 headers: {
@@ -18,7 +25,9 @@ $(
             $.post(
                 '/ajax/image',
                 function (data) {
+                    
                     $('#modalContents').html(data);
+                    
                 }
             );
         };
