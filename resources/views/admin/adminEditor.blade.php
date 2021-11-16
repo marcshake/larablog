@@ -5,9 +5,10 @@
 @endsection
 
 @section('contents')
-    <form action="{{ url('admin/update', $contents->id ?? null) }}" method="post">
+    <form action="{{ url('admin/update') }}" method="post">
         @csrf
         <input type="hidden" name="mainImage" id="imageID" value="{{ $contents->mainImage }}">
+        <input type="hidden" name="id" value="{{$contents->id ?? null}}" />
         <div class="field">
             <label class="label" for="title">{{ __('headline') }}</label>
             <div class="control">

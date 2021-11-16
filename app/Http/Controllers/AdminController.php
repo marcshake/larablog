@@ -50,7 +50,8 @@ class AdminController extends Controller
      */
     public function create()
     {
-        return view('admin.adminEditor');
+        $contents = new Blogposts();
+        return view('admin.adminEditor', ['contents' => $contents]);
     }
 
     /**
@@ -138,17 +139,27 @@ class AdminController extends Controller
      * @param  int                      $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        $contents = BlogPosts::findOrFail($id);
+        $id = $request->id;
+        if($id == null) {
+            
+            $contents = new BlogPosts();
+        }
+        else {
+            $contents = BlogPosts::where('id',$id);
+        }
         $contents->title = $request->title;        
         $contents->contentsmd = $request->contents;
+        $contents->contents = '';
         $contents->mainImage = $request->mainImage;
         $contents->description = $request->description;
+        $contents->save();
+
         $this->handleTags($request, $contents);
         $this->handleCategories($request, $contents);
         $contents->touch();
-        $contents->save();
+        $id = $contents->id;
         return redirect('admin/edit/' . $id)->with('status', 'Changes saved!');
     }
     /**

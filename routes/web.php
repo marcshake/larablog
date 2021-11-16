@@ -45,7 +45,7 @@ Route::prefix('admin')->group(function () {
     Route::get('user/', 'UserManagerController@index');
     Route::get('user/edit/{id}', 'UserManagerController@edit');
     Route::get('purge', 'AdminController@cache');
-    Route::post('update/{id}', 'AdminController@update');
+    Route::post('update/', 'AdminController@update');
     
     Route::post('filer', 'ImageController@store');
     Route::post('cms/edit/{id}', 'AdminCMSController@update');
