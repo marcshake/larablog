@@ -171,6 +171,10 @@ class BlogPosts extends Model
         $title = urldecode($title);
         $posts = self::where('title', $title)->where('id', $id)->first();
         $posts->url = self::makeUrl($posts->url);
+        $html = new CommonMarkConverter();
+        // Only Markdown now.
+        $posts->output = $html->convertToHtml($posts->contentsmd);        
+
         return $posts;
     }
 
