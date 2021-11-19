@@ -9,8 +9,7 @@
         </li>
         <li>
             {{ __('media') }}<ul>
-                <li><a href="#">{{ __('Media List') }}</a></li>
-                <li><a href="#">{{ __('Add Media') }}</a></li>
+                <li><a href="{{ url('admin/filer') }}">{{ __('Media') }}</a></li>
             </ul>
         </li>
         <li>{{ __('Pages') }}<ul>
