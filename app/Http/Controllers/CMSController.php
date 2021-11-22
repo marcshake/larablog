@@ -13,6 +13,6 @@ class CMSController extends Controller
             $slug == 'home';
         }
         $page = CmsPages::where('filename', $slug)->where('hidden', null)->firstOrFail();
-        return view('theme2020.page', ['page'=>$page]);
+        return view('theme2021.page', ['page'=>$page]);
     }
 }
