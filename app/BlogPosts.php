@@ -200,7 +200,7 @@ class BlogPosts extends Model
         // Only Markdown now.
         $posts->output = $html->convertToHtml($posts->contentsmd);        
         $posts->url = self::makeUrl($posts->title);
-
+        
         return $posts;
     }
 
