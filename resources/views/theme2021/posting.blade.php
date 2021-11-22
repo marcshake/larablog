@@ -10,9 +10,9 @@
     <div class="container">
 
         <article>
-            <h1>{{$posting->title}}</h1>
+            <h1>{{ $posting->title }}</h1>
             {!! $posting->output !!}
-            test
+
         </article>
         {!! $BLOGREPEAT ?? '' !!}
 
