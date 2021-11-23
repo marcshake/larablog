@@ -22,6 +22,6 @@ class PreviewController extends Controller
     {
         $post = BlogPosts::getPreview($title, $id);
         $posts = BlogPosts::blogHome();
-        return view('theme2020.posting', ['posting'=>$post,'blogposts'=>$posts]); //todo: Hook in View
+        return view('theme2021.posting', ['posting'=>$post,'blogposts'=>$posts]); //todo: Hook in View
     }
 }
