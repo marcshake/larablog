@@ -8,15 +8,15 @@
 @endsection
 @section('contents')
     <div class="container">
-
         <article>
             <h1>{{ $posting->title }}</h1>
+            <div class="headimage">
+                <img src="{{$posting->mainImage ? asset(env('IMAGE_PATH','').'storage/uploads/'.$posting->mainImagePath->filename): asset('images/wall.jpg')}}" alt="{{$posting->title}}" width="100" height="200">
+            </div>
+        
             {!! $posting->output !!}
-
         </article>
         {!! $BLOGREPEAT ?? '' !!}
-
-
         Tags:
         @forelse ($posting->Tags as $tags)
             <a href="{{ url('tag', $tags->tag) }}" class="tag is-dark">{{ $tags->tag }}</a>
@@ -27,8 +27,5 @@
             <a class="tag is-dark" href="{{ url('category', $cats->name) }}">{{ $cats->name }}</a>
         @empty
         @endforelse
-
-
-
     </div>
 @endsection
