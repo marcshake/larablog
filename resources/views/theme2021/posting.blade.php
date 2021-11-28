@@ -7,7 +7,7 @@
         property="og:image">
 @endsection
 @section('contents')
-    <div class="container">
+    <div class="container contents">
         <article>
             <h1>{{ $posting->title }}</h1>
             <div class="headimage">

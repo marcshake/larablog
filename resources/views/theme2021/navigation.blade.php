@@ -1,6 +1,6 @@
-<div class="dark">
+<div class="dark navigation">
     <div class="container">
-        <nav class="navbar navigation">
+        <nav class="navbar">
             @if ($MAINMENU)
 
             @else

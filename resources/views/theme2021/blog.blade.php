@@ -13,7 +13,7 @@
 @extends('theme2021.layout')
 
 @section('contents')
-    <div class="container">
+    <div class="container contents">
         @forelse ($blogposts as $item)
 
             <!-- Project One -->

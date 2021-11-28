@@ -3,7 +3,7 @@
     {{$home->title}}
 @endsection
 @section('contents')
-<div class="container">
+<div class="container contents">
     {!!$home->contents!!}    
 </div>    
 @endsection

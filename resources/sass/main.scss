@@ -1,15 +1,23 @@
-@import url("https://fonts.googleapis.com/css2?family=Montagu+Slab&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Work+Sans&display=swap');
 
 body {
-    font-family: "Montagu Slab", serif;
+    font-family: "Work Sans", sans-serif;
     box-sizing: border-box;
     line-height: 1.4;
-    background-color: #fff;
+    background-color: #aaa;
     color: #000;
     margin: 0;
     padding: 0;
     font-size: 16px;
     font-size: calc(100% + 0.3vw);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Bebas Neue', cursive;
 }
 
 a {
@@ -21,20 +29,24 @@ a:hover {
     text-decoration: underline;
 }
 
+.navigation {
+    border-bottom:1px solid #111;
+}
+
 .container {
     max-width: 1000px;
     margin: auto;
     padding: 1em;
 }
 .dark {
-    background-color: #393939;
+    background-color: #202020;
     color: #efefef;
 
     a {
-        color: #88f;
+        color: #ff0;
     }
     a:hover {
-        color: #99f;
+        color: #f88;
         text-decoration: none;
     }
 }
@@ -96,6 +108,11 @@ img,
 
 .maincontents {
     min-height: 100vh;
+
+}
+.contents {
+    min-height: 100vh;
+    background-color: #eaeaea;
 }
 
 @media all and (max-width: 1000px) {
@@ -142,4 +159,3 @@ ul.pagination {
         }
     }
 }
-
