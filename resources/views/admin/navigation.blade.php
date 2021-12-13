@@ -13,7 +13,7 @@
             </ul>
         </li>
         <li>{{ __('Pages') }}<ul>
-                <li><a href="#">{{ __('All Pages') }}</a></li>
+                <li><a href="{{url('admin/cms')}}">{{ __('All Pages') }}</a></li>
                 <li><a href="#">{{ __('Add Page') }}</a></li>
                 <li><a href="#">{{ __('All Pages') }}</a></li>
             </ul>

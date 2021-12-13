@@ -3,7 +3,7 @@ body {
   font-family: "Work Sans", sans-serif;
   box-sizing: border-box;
   line-height: 1.4;
-  background-color: #aaa;
+  background-color: #fff;
   color: #000;
   margin: 0;
   padding: 0;
@@ -118,7 +118,7 @@ img,
 
 .contents {
   min-height: 100vh;
-  background-color: #eaeaea;
+  background-color: #fff;
 }
 
 @media all and (max-width: 1000px) {
