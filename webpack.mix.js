@@ -12,7 +12,7 @@ const mix = require('laravel-mix');
  */
 mix.copyDirectory('resources/images', 'public/images');
 mix.copyDirectory('resources/fonts', 'public/fonts');
-mix.js('resources/js/theme2020.js', 'public/js')
-    .js('resources/js/admin.js', 'public/js')
-    .sass('resources/sass/main.scss', 'public/css')
-    .sass('resources/sass/admin.scss', 'public/css').options({ processCssUrls: false }).version();
+mix.js('resources/js/admin.js', 'public/js')
+    .sass('resources/sass/admin.scss', 'public/css').version();
+
+mix.js("resources/js/app.js", "public/js").postCss("resources/css/app.css", "public/css", [require("tailwindcss"),]);

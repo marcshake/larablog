@@ -8,8 +8,11 @@
 * 12/9/2014
 * Sass Version by Seth Coelen https://github.com/whatsnewsaes
 */
+
 /* Base files. */
+
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -61,6 +64,7 @@ a {
 a:active {
   outline: 0;
 }
+
 a:hover {
   outline: 0;
 }
@@ -238,6 +242,7 @@ th {
 * 12/9/2014
 * Sass Version by Seth Coelen https://github.com/whatsnewsaes
 */
+
 html {
   font-size: 62.5%;
 }
@@ -253,6 +258,7 @@ body {
 a {
   color: #1eaedb;
 }
+
 a:hover {
   color: #1b9cc5;
 }
@@ -264,7 +270,8 @@ hr {
   border-top: 1px solid #e1e1e1;
 }
 
-.u-full-width, .table {
+.u-full-width,
+.table {
   width: 100%;
   box-sizing: border-box;
 }
@@ -282,7 +289,12 @@ hr {
   float: left;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin-top: 0;
   margin-bottom: 2rem;
   font-weight: 300;
@@ -349,11 +361,13 @@ h6 {
     font-size: 1.5rem;
   }
 }
+
 p {
   margin-top: 0;
 }
 
 /* Modules */
+
 /*
 * Skeleton V2.0.4
 * Copyright 2014, Dave Gamache
@@ -363,6 +377,7 @@ p {
 * 12/9/2014
 * Sass Version by Seth Coelen https://github.com/whatsnewsaes
 */
+
 .container {
   position: relative;
   width: 100%;
@@ -385,23 +400,24 @@ p {
     padding: 0;
   }
 }
+
 @media (min-width: 550px) {
   .container {
     width: 80%;
   }
 
   .column,
-.columns {
+  .columns {
     margin-left: 4%;
   }
 
   .column:first-child,
-.columns:first-child {
+  .columns:first-child {
     margin-left: 0;
   }
 
   .one.column,
-.one.columns {
+  .one.columns {
     width: 4.6666666667%;
   }
 
@@ -463,75 +479,76 @@ p {
   }
 
   .offset-by-one.column,
-.offset-by-one.columns {
+  .offset-by-one.columns {
     margin-left: 8.6666666667%;
   }
 
   .offset-by-two.column,
-.offset-by-two.columns {
+  .offset-by-two.columns {
     margin-left: 17.3333333333%;
   }
 
   .offset-by-three.column,
-.offset-by-three.columns {
+  .offset-by-three.columns {
     margin-left: 26%;
   }
 
   .offset-by-four.column,
-.offset-by-four.columns {
+  .offset-by-four.columns {
     margin-left: 34.6666666667%;
   }
 
   .offset-by-five.column,
-.offset-by-five.columns {
+  .offset-by-five.columns {
     margin-left: 43.3333333333%;
   }
 
   .offset-by-six.column,
-.offset-by-six.columns {
+  .offset-by-six.columns {
     margin-left: 52%;
   }
 
   .offset-by-seven.column,
-.offset-by-seven.columns {
+  .offset-by-seven.columns {
     margin-left: 60.6666666667%;
   }
 
   .offset-by-eight.column,
-.offset-by-eight.columns {
+  .offset-by-eight.columns {
     margin-left: 69.3333333333%;
   }
 
   .offset-by-nine.column,
-.offset-by-nine.columns {
+  .offset-by-nine.columns {
     margin-left: 78%;
   }
 
   .offset-by-ten.column,
-.offset-by-ten.columns {
+  .offset-by-ten.columns {
     margin-left: 86.6666666667%;
   }
 
   .offset-by-eleven.column,
-.offset-by-eleven.columns {
+  .offset-by-eleven.columns {
     margin-left: 95.3333333333%;
   }
 
   .offset-by-one-third.column,
-.offset-by-one-third.columns {
+  .offset-by-one-third.columns {
     margin-left: 34.6666666667%;
   }
 
   .offset-by-two-thirds.column,
-.offset-by-two-thirds.columns {
+  .offset-by-two-thirds.columns {
     margin-left: 69.3333333333%;
   }
 
   .offset-by-one-half.column,
-.offset-by-one-half.column {
+  .offset-by-one-half.column {
     margin-left: 52%;
   }
 }
+
 .container:after,
 .row:after,
 .u-cf {
@@ -561,7 +578,9 @@ button {
   box-sizing: border-box;
 }
 
-input[type=submit], input[type=reset], input[type=button] {
+input[type=submit],
+input[type=reset],
+input[type=button] {
   display: inline-block;
   height: 38px;
   padding: 0 30px;
@@ -588,7 +607,9 @@ button:hover {
   outline: 0;
 }
 
-input[type=submit]:hover, input[type=reset]:hover, input[type=button]:hover {
+input[type=submit]:hover,
+input[type=reset]:hover,
+input[type=button]:hover {
   color: #333;
   border-color: #888888;
   outline: 0;
@@ -601,7 +622,9 @@ button:focus {
   outline: 0;
 }
 
-input[type=submit]:focus, input[type=reset]:focus, input[type=button]:focus {
+input[type=submit]:focus,
+input[type=reset]:focus,
+input[type=button]:focus {
   color: #333;
   border-color: #888888;
   outline: 0;
@@ -614,7 +637,9 @@ button.button-primary {
   border-color: #33c3f0;
 }
 
-input[type=submit].button-primary, input[type=reset].button-primary, input[type=button].button-primary {
+input[type=submit].button-primary,
+input[type=reset].button-primary,
+input[type=button].button-primary {
   color: #fff;
   background-color: #33c3f0;
   border-color: #33c3f0;
@@ -627,7 +652,9 @@ button.button-primary:hover {
   border-color: #1eaedb;
 }
 
-input[type=submit].button-primary:hover, input[type=reset].button-primary:hover, input[type=button].button-primary:hover {
+input[type=submit].button-primary:hover,
+input[type=reset].button-primary:hover,
+input[type=button].button-primary:hover {
   color: #fff;
   background-color: #1eaedb;
   border-color: #1eaedb;
@@ -640,12 +667,21 @@ button.button-primary:focus {
   border-color: #1eaedb;
 }
 
-input[type=submit].button-primary:focus, input[type=reset].button-primary:focus, input[type=button].button-primary:focus {
+input[type=submit].button-primary:focus,
+input[type=reset].button-primary:focus,
+input[type=button].button-primary:focus {
   color: #fff;
   background-color: #1eaedb;
   border-color: #1eaedb;
 }
-input[type=email], input[type=number], input[type=search], input[type=text], input[type=tel], input[type=url], input[type=password] {
+
+input[type=email],
+input[type=number],
+input[type=search],
+input[type=text],
+input[type=tel],
+input[type=url],
+input[type=password] {
   height: 38px;
   padding: 6px 10px;
   background-color: #fff;
@@ -666,7 +702,13 @@ select {
   box-sizing: border-box;
 }
 
-input[type=email], input[type=number], input[type=search], input[type=text], input[type=tel], input[type=url], input[type=password] {
+input[type=email],
+input[type=number],
+input[type=search],
+input[type=text],
+input[type=tel],
+input[type=url],
+input[type=password] {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -681,7 +723,13 @@ textarea {
   padding-bottom: 6px;
 }
 
-input[type=email]:focus, input[type=number]:focus, input[type=search]:focus, input[type=text]:focus, input[type=tel]:focus, input[type=url]:focus, input[type=password]:focus {
+input[type=email]:focus,
+input[type=number]:focus,
+input[type=search]:focus,
+input[type=text]:focus,
+input[type=tel]:focus,
+input[type=url]:focus,
+input[type=password]:focus {
   border: 1px solid #33c3f0;
   outline: 0;
 }
@@ -704,7 +752,8 @@ fieldset {
   border-width: 0;
 }
 
-input[type=checkbox], input[type=radio] {
+input[type=checkbox],
+input[type=radio] {
   display: inline;
 }
 
@@ -728,12 +777,15 @@ ul {
   padding-left: 0;
   margin-top: 0;
 }
-ul ul, ul ol {
+
+ul ul,
+ul ol {
   margin: 1.5rem 0 1.5rem 3rem;
   font-size: 90%;
 }
 
-ol ol, ol ul {
+ol ol,
+ol ul {
   margin: 1.5rem 0 1.5rem 3rem;
   font-size: 90%;
 }
@@ -806,7 +858,9 @@ button.button-secondary {
   border-color: #333;
 }
 
-input[type=submit].button-secondary, input[type=reset].button-secondary, input[type=button].button-secondary {
+input[type=submit].button-secondary,
+input[type=reset].button-secondary,
+input[type=button].button-secondary {
   color: #fff;
   background-color: #333;
   border-color: #333;
@@ -819,7 +873,9 @@ button.button-secondary:hover {
   border-color: #e1e1e1;
 }
 
-input[type=submit].button-secondary:hover, input[type=reset].button-secondary:hover, input[type=button].button-secondary:hover {
+input[type=submit].button-secondary:hover,
+input[type=reset].button-secondary:hover,
+input[type=button].button-secondary:hover {
   color: #fff;
   background-color: #e1e1e1;
   border-color: #e1e1e1;
@@ -832,12 +888,21 @@ button.button-secondary:focus {
   border-color: #e1e1e1;
 }
 
-input[type=submit].button-secondary:focus, input[type=reset].button-secondary:focus, input[type=button].button-secondary:focus {
+input[type=submit].button-secondary:focus,
+input[type=reset].button-secondary:focus,
+input[type=button].button-secondary:focus {
   color: #fff;
   background-color: #e1e1e1;
   border-color: #e1e1e1;
 }
-input[type=email], input[type=number], input[type=search], input[type=text], input[type=tel], input[type=url], input[type=password] {
+
+input[type=email],
+input[type=number],
+input[type=search],
+input[type=text],
+input[type=tel],
+input[type=url],
+input[type=password] {
   height: 38px;
   padding: 6px 10px;
   background-color: #fff;
@@ -1060,6 +1125,7 @@ td:hover .subaction {
   opacity: 0;
   transition: opacity 0.15s ease-in-out;
 }
+
 .modal.modal-open {
   visibility: visible;
   -webkit-backface-visibility: visible;
@@ -1067,6 +1133,7 @@ td:hover .subaction {
   opacity: 1;
   z-index: 1;
 }
+
 .modal .modal-inner {
   position: relative;
   height: 100%;
@@ -1075,6 +1142,7 @@ td:hover .subaction {
   justify-content: center;
   align-items: center;
 }
+
 .modal .modal-inner .modal-content {
   background-color: white;
   max-width: 35em;
@@ -1083,13 +1151,16 @@ td:hover .subaction {
   margin: 2em;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.35);
 }
+
 .modal .modal-inner .modal-content .modal-close-icon {
   position: absolute;
   right: 1.5em;
 }
+
 .modal .modal-inner .modal-content .modal-content-inner {
   padding-right: 2em;
 }
+
 .modal .modal-inner .modal-content .modal-content-inner h1,
 .modal .modal-inner .modal-content .modal-content-inner h2,
 .modal .modal-inner .modal-content .modal-content-inner h3,
@@ -1098,22 +1169,27 @@ td:hover .subaction {
 .modal .modal-inner .modal-content .modal-content-inner h6 {
   margin-bottom: 0.25em;
 }
+
 .modal .modal-inner .modal-content .modal-content-inner p {
   margin-bottom: 1em;
 }
+
 .modal .modal-inner .modal-content .modal-buttons-seperator {
   margin: 1.5em 0;
   margin-top: 0;
 }
+
 .modal .modal-inner .modal-content .modal-buttons {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
 }
+
 .modal .modal-inner .modal-content .modal-buttons button {
   margin-left: 1em;
 }
+
 .modal .modal-inner .modal-content .modal-buttons button:first-child {
   margin-left: 0;
 }
@@ -1142,3 +1218,5 @@ td:hover .subaction {
   overflow: auto;
   height: 50vh;
 }
+
+
