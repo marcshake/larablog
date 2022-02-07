@@ -10,7 +10,8 @@
     <meta property="og:title" content="@yield('title')">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="description" content="{{ $metadescription ?? env('DESCRIPTION', '') }}">
-    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+    <link rel="stylesheet" href="{{ mix('css/theme2022.css') }}">
+    <script src="{{mix('js/theme2022.js')}}"></script>
     @yield('opengraph')
     <title>@yield('title') </title>
 </head>
