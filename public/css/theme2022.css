@@ -864,17 +864,6 @@ body {
   color: #1b1259;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  background-color: #1730bf;
-  color: #f2eb80;
-  border: solid 0.25em #1730bf;
-}
-
 a {
   color: #1730bf;
 }

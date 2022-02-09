@@ -9,16 +9,7 @@ body {
     background-color: $larablog-5-hex;
     color: $larablog-1-hex;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    background-color: $larablog-2-hex;
-    color: $larablog-4-hex;
-    border: solid .25em $larablog-2-hex;
-}
+
 a {
     color: $larablog-2-hex;
     &:hover {
