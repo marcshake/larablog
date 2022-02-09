@@ -875,6 +875,7 @@ a:hover {
 .navBar {
   float: left;
   width: 100%;
+  border-bottom: 1px solid #000;
 }
 
 .navBar ul {
@@ -961,6 +962,24 @@ a {
 
 .cleared {
   clear: both;
+}
+
+.bottomborder {
+  border-bottom: #aaa solid 1px;
+}
+
+.spaced {
+  margin-bottom: 2em;
+}
+
+.tags {
+  font-size: 0.75em;
+}
+
+.component-footer {
+  margin-top: 2em;
+  background: #11238c;
+  color: #f2eb80;
 }
 
 

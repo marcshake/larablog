@@ -17,7 +17,7 @@
         @forelse ($blogposts as $item)
 
             <!-- Project One -->
-            <div class="row">
+            <div class="row spaced bottomborder">
                 <div class="three columns">
                     <a href="{{ url('blog/' . $item->url, $item->id) }}">
                         <img src="{{ $item->mainImage ? asset(env('IMAGE_PATH', '') . 'storage/thumbnail/' . $item->mainImagePath->filename) : asset('images/wall.jpg') }}"

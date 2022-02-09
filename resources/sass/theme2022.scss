@@ -36,3 +36,20 @@ a {
 .cleared {
     clear: both;
 }
+
+.bottomborder {
+    border-bottom: #aaa solid 1px;
+}
+.spaced {
+    margin-bottom:2em;
+}
+
+.tags {
+    font-size:.75em;
+}
+
+.component-footer {
+    margin-top:2em;
+    background:$larablog-3-hex;
+    color:$larablog-4-hex;
+}
