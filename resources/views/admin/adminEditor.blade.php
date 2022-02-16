@@ -29,7 +29,7 @@
             <div class="control editor">
                 <div class="row">
                     <div class="six columns">
-                        <textarea name="contents" class="u-full-width editor" placeholder="Textarea"
+                        <textarea rows="25" cols="80" name="contents" class="u-full-width editor" placeholder="Textarea"
                             id="contents">{{ $contents->contentsmd }}</textarea>
                     </div>
                     <div class="six columns" >

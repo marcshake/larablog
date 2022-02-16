@@ -24,7 +24,6 @@ $(function () {
    */
 
   var myImagelib = function myImagelib() {
-    console.log('Called Imagebrowser');
     $('#modalTitle').html('Bild auswählen');
     $.post('/ajax/image', function (data) {
       $('#modalContents').html(data);
@@ -73,10 +72,11 @@ $(function () {
    */
 
 
-  $('.close-modal').click(function () {
+  $('.close-modal').on('click', function () {
     $('.modal').addClass('hidden');
+    return false;
   });
-  $('.open-modal').click(function () {
+  $('.open-modal').on('click', function () {
     $('.modal').removeClass('hidden');
   });
   $('.ibrowser').on('click', '.thumb', function () {
@@ -88,11 +88,11 @@ $(function () {
   $('#modalContents').on('click', '#deleteImage', function () {
     deleteImage($(this));
   });
-  $('.imageBrowser').click(function () {
+  $('.imageBrowser').on('click', function () {
     myImagelib();
   });
   $('.alert').delay(5000).fadeOut('slow');
-  $('#generator').click(function () {
+  $('#generator').on('click', function () {
     var r = Math.random().toString(36).substring(7);
     $('#password').val(r);
     return false;
@@ -11010,12 +11010,9 @@ __webpack_require__.r(__webpack_exports__);
 /*!***********************************!*\
   !*** ./resources/sass/admin.scss ***!
   \***********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ (() => {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
+throw new Error("Module build failed (from ./node_modules/mini-css-extract-plugin/dist/loader.js):\nModuleBuildError: Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\n\r\n    overflow: auto; /* Enable scroll if needed */\r\n           ^\r\n      Expected \";\".\n   ╷\n47 │     overflow: auto; /* Enable scroll if needed */\r\n   │             ^\n   ╵\n  stdin 47:13  root stylesheet\r\n      in E:\\xampp\\htdocs\\larablog\\resources\\sass\\admin.scss (line 47, column 13)\n    at processResult (E:\\xampp\\htdocs\\larablog\\node_modules\\webpack\\lib\\NormalModule.js:753:19)\n    at E:\\xampp\\htdocs\\larablog\\node_modules\\webpack\\lib\\NormalModule.js:855:5\n    at E:\\xampp\\htdocs\\larablog\\node_modules\\loader-runner\\lib\\LoaderRunner.js:399:11\n    at E:\\xampp\\htdocs\\larablog\\node_modules\\loader-runner\\lib\\LoaderRunner.js:251:18\n    at context.callback (E:\\xampp\\htdocs\\larablog\\node_modules\\loader-runner\\lib\\LoaderRunner.js:124:13)\n    at E:\\xampp\\htdocs\\larablog\\node_modules\\sass-loader\\dist\\index.js:89:7\n    at Function.call$2 (E:\\xampp\\htdocs\\larablog\\node_modules\\sass\\sass.dart.js:99012:16)\n    at render_closure1.call$2 (E:\\xampp\\htdocs\\larablog\\node_modules\\sass\\sass.dart.js:84527:12)\n    at _RootZone.runBinary$3$3 (E:\\xampp\\htdocs\\larablog\\node_modules\\sass\\sass.dart.js:29558:18)\n    at _FutureListener.handleError$1 (E:\\xampp\\htdocs\\larablog\\node_modules\\sass\\sass.dart.js:28080:21)");
 
 /***/ })
 
@@ -11106,8 +11103,7 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
 /******/ 			"/js/admin": 0,
-/******/ 			"css/theme2022": 0,
-/******/ 			"css/admin": 0
+/******/ 			"css/theme2022": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -11157,9 +11153,9 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["css/theme2022","css/admin"], () => (__webpack_require__("./resources/js/admin.js")))
-/******/ 	__webpack_require__.O(undefined, ["css/theme2022","css/admin"], () => (__webpack_require__("./resources/sass/theme2022.scss")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/theme2022","css/admin"], () => (__webpack_require__("./resources/sass/admin.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/theme2022"], () => (__webpack_require__("./resources/js/admin.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/theme2022"], () => (__webpack_require__("./resources/sass/theme2022.scss")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/theme2022"], () => (__webpack_require__("./resources/sass/admin.scss")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

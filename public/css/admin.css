@@ -841,6 +841,70 @@ there.
 /* Larger than Desktop HD */
 @media (min-width: 1200px) {}
 
+a {
+  color: #800;
+  text-decoration: none;
+}
 
+.subaction {
+  position: absolute;
+  font-size: x-small;
+  min-width: 15px;
+  min-height: 1em;
+  margin: 0.25em;
+  padding: 0.25em;
+  background-color: #fff;
+  border: 1px solid #aaa;
+}
+
+.subaction a {
+  display: none;
+}
+
+.subaction:hover a {
+  -webkit-animation-duration: 0.5ms;
+          animation-duration: 0.5ms;
+  display: inline;
+}
+
+#contents {
+  height: 40vh;
+  width: 100%;
+}
+
+#mdpreview {
+  height: 40vh;
+  width: 100%;
+  overflow: auto;
+}
+
+.modal {
+  box-shadow: #000 10px 10px 10px;
+  opacity: 1;
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  left: 50%;
+  top: 25%;
+  margin-left: -37.5%;
+  width: 75%;
+  overflow: auto;
+  /* Enable scroll if needed */
+  background: #fff;
+  border: 1px solid #800;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-contents-ajax {
+  padding: 1em;
+}
+
+.modal-buttons {
+  clear: both;
+}
 
 
