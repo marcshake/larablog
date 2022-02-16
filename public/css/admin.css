@@ -889,6 +889,7 @@ a {
   top: 25%;
   margin-left: -37.5%;
   width: 75%;
+  height: 75vh;
   overflow: auto;
   /* Enable scroll if needed */
   background: #fff;
