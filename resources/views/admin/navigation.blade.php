@@ -1,4 +1,5 @@
-<nav>
+<b>Adminpanel</b>
+<nav class="navipanel">
     <ul>
         <li>{{ __('blog') }}<ul>
                 <li><a href="{{ url('admin/blogs') }}">{{ __('List of Entries') }}</a></li>

@@ -908,4 +908,8 @@ a {
   clear: both;
 }
 
+.navipanel {
+  position: fixed;
+}
+
 
