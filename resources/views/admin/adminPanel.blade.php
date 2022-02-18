@@ -1,68 +1,44 @@
-@extends('layouts.administration')
+@extends('admin.administration')
 @section('title')
-Administrationspanel
+    {{ __('administration') }}
 @endsection
+@section('contents')
 
-@section('content')
-<div class="row">
-    <div class="columns six">
-        <div class="card">
-            <div class="card-header">
-                Übersicht:
-            </div>
-            <div class="card-content">
-                <div class="row">
-                    <div class="column">
-                        {{$beitraege}} Beiträge
-                    </div>
-                    <div class="column">
-                        {{$seiten}} Seiten
-                    </div>
+<p>
+        {{ __('new blog entry') }}</p>
 
-                </div>
-                <div class="row">
-                    <div class="column">
-                        0 Kommentare
-                        <br>
-                        Larablog
-                    </div>
-                </div>
+    <form action="{{ url('admin/update') }}" method="post">
+        @csrf
+        <div class="field">
+            <label class="label" for="title">{{ __('headline') }}</label>
+            <div class="control">
+                <input autocomplete="false" class="input u-full-width" type="text" placeholder="{{ __('headline') }}"
+                    value="" name="title" id="title">
             </div>
         </div>
-    </div>
-    <div class="columns six">
-        <div class="card">
-            <div class="card-header">
-                Neuer Beitrag
-            </div>
-            <div class="card-content">
-                <form action="{{ url('admin/save')}}" method="post">
-                    <input type="hidden" name="lb" value="1">
-                    @csrf
-                    <div class="field">
-                        <label class="label">Titel</label>
-                        <div class="control">
-                            <input class="input" type="text" placeholder="Titel" name="title">
-                        </div>
-                    </div>
-                    <div class="field">
-                        <label class="label">Beitrag</label>
-                        <div class="control">
-                            <textarea class="textarea u-full-width" placeholder="Beitrag" name="contents"></textarea>
-                        </div>
-                    </div>
-                    <div class="field is-grouped">
-                        <div class="control">
-                            <button class="button button-primary">Speichern</button>
-                        </div>
-                        <div class="control">
-                            <button class="button">Cancel</button>
-                        </div>
-                    </div>
-                </form>
+        <div class="field">
+            <label class="label" for="description">{{ __('shortdescription') }}</label>
+            <div class="control">
+                <input autocomplete="false" class="input u-full-width" type="text" id="description" value=""
+                    name="description" maxlength="255">
             </div>
         </div>
-    </div>
-</div>
+
+        <div class="field">
+            <label for="contents" class="label">{{ __('Contents') }}</label>
+            <div class="control editor">
+                <textarea name="contents" class="u-full-width editor" placeholder="Textarea" id="contents"></textarea>
+            </div>
+
+
+            <div class="buttons">
+                <input value="{{ __('save article') }}" class="button button-primary" type="submit">
+                <a href="{{ url('admin/blogs') }}" class="button">{{ __('cancel') }}</a>
+            </div>
+    </form>
+
+
+    <p>{{ __('statistics') }}</p>
+
 
 @endsection

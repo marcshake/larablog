@@ -1,9 +1,9 @@
-@extends('layouts.administration')
+@extends('admin.administration')
 @section('title')
 Bilder / Mediendateien
 @endsection
 
-@section('content')
+@section('contents')
 <div class="row">
     <div class="three columns">Hochladen</div>
     <div class="nine columns">

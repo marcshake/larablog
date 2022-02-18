@@ -18,7 +18,7 @@ class RssController extends Controller
      */
     public function index(Request $request)
     {
-        $posts = BlogPosts::getPosts(100);
+        $posts = BlogPosts::blogHome();
         $title = Config::get('app.name');
         $host = $request->getSchemeAndHttpHost();
         foreach ($posts as $r => $item) {

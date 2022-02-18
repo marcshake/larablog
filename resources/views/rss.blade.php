@@ -3,7 +3,7 @@
 
     <channel>
         <title>{{$title}}</title>
-        <link>https://www.w3schools.com</link>
+        <link>https://trancefish.de/</link>
         <description>Free web building tutorials</description>
         @foreach ($posts as $item)
         <item>

@@ -81,8 +81,10 @@ class ImageController extends Controller
         $file->storeAs('public/thumbnail', $originalName);
         $path = public_path('storage/thumbnail/'.$originalName);
         $pathtiny = public_path('storage/thumbnail/tiny_'.$originalName);
-        $iM->make($path)->fit(400, 225)->save($path);
-        $iM->make($path)->fit(200)->save($pathtiny);
+        // Rescale Images
+        $iM->make($path)->fit(400, 225)->save($path, 80);
+        $iM->make($path)->fit(200)->save($pathtiny, 80);
+        // Store in Database
         $media = new Media;
         $media->filename = $originalName;
         $media->internalFilename = $internalFilename;

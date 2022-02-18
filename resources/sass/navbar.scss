@@ -1,0 +1,46 @@
+
+.navBar {
+float: left;
+width:100%;
+border-bottom:1px solid #000;
+  & ul {
+      list-style: none;
+      margin:0;
+      padding:0;
+  }
+  & a#hamburger {
+    display:none
+}
+
+  & li {
+      display: inline;
+    
+  }
+  
+  & a {
+      padding:0.25em 1em;
+      float:left;
+      color:$larablog-1-hex;
+  }
+  & a:hover {
+      background-color: $larablog-4-hex;
+      color:$larablog-2-hex;
+  }
+  @media (max-width: 1000px) {
+      & .navi {
+          display: none;
+      }
+      & a#hamburger {
+          display: block;
+      }
+      & ul {
+          display: block;
+      }
+      & li {
+          display: block;;
+      }
+      & a {
+          display: block;
+          float: none;
+      }
+  }}

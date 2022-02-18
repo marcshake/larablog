@@ -13,6 +13,7 @@
 @endsection
 
 @section('maincontents')
+
     <div class="container bg-light rounded">
 
         <!-- Page Heading -->
@@ -25,9 +26,7 @@
             <div class="row">
                 <div class="col-md-4">
                     <a href="{{url('blog/'.$item->url,$item->id)}}">
-                        <img
-                            data-src="{{$item->mainImage ? asset('storage/thumbnail/'.$item->mainImagePath->filename): asset('images/wall.jpg')}}"
-                            class="img-fluid" alt="{{$item->title}}">
+                        <img data-src="{{$item->mainImage ? asset(env('IMAGE_PATH','').'storage/thumbnail/'.$item->mainImagePath->filename): asset('images/wall.jpg')}}" class="img-fluid" alt="{{$item->title}}" width="350" height="199">
                     </a>
                 </div>
                 <div class="col-md-8">

@@ -1,7 +1,14 @@
 window.$ = window.jQuery = require('jquery');
 $(
     function () {
-   
+        var md = new markdownit();
+        $('#contents').on(
+            'keyup', function () {
+                var str = $(this).val();
+
+                $('#mdpreview').html(md.render(str));
+            }
+        );
         $.ajaxSetup(
             {
                 headers: {
@@ -13,12 +20,13 @@ $(
          * Browse Images
          */
         var myImagelib = function () {
-            console.log('Called Imagebrowser');
             $('#modalTitle').html('Bild auswählen');
             $.post(
                 '/ajax/image',
                 function (data) {
+
                     $('#modalContents').html(data);
+
                 }
             );
         };
@@ -74,41 +82,42 @@ $(
         /**
          * All the Handlers
          */
-        $('.close-modal').click(
+        $('.close-modal').on('click',
             function () {
-                $('.modal').addClass('hidden')
+                $('.modal').addClass('hidden');
+                return false;
             }
         );
-        $('.open-modal').click(
+        $('.open-modal').on('click',
             function () {
-                $('.modal').removeClass('hidden')
+                $('.modal').removeClass('hidden');
             }
         );
         $('.ibrowser').on(
             'click', '.thumb',
             function () {
-                useImage($(this))
+                useImage($(this));
             }
         );
         $('.idetails').on(
             'click', '.thumb',
             function () {
-                imageDetails($(this))
+                imageDetails($(this));
             }
         );
         $('#modalContents').on(
             'click', '#deleteImage',
             function () {
-                deleteImage($(this))
+                deleteImage($(this));
             }
         );
-        $('.imageBrowser').click(
+        $('.imageBrowser').on('click',
             function () {
-                myImagelib()
+                myImagelib();
             }
         )
         $('.alert').delay(5000).fadeOut('slow');
-        $('#generator').click(
+        $('#generator').on('click',
             function () {
                 let r = Math.random().toString(36).substring(7);
                 $('#password').val(r);

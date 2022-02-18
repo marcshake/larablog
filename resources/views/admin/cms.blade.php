@@ -1,47 +1,40 @@
-@extends('layouts.administration')
+@extends('admin.administration')
+
 @section('title')
-Content-Seiten bearbeiten
+    {{ __('All Pages') }}
 @endsection
 
-@section('content')
-<div class="row">
-    <table class="table is-striped is-hoverable">
+@section('contents')
+    <h2>{{ __('All Pages') }}</h2>
+    <table class="u-full-width">
         <thead>
             <tr>
-                <th>Nummer</th>
-                <th>Dateiname</th>
-                <th>Seitentitel</th>
+                <th>{{ __('title') }}</th>
+                <th>{{ __('filename') }}</th>
+                <th colspan="2">
+                    {{ __('actions') }}
+                </th>
             </tr>
         </thead>
         <tbody>
-            @foreach ($collection as $item)
-            <tr>
-                <td>{{$loop->iteration}}</td>
-                <td>{{$item->filename}}
-                    @if ($item->hidden==1)
-                    <span class="tag is-light">entwurf</span>
-                    @endif
-
-                </td>
-                <td>
-                    <a href="{{url('admin/cms/edit',$item->id)}}">
-                        {{$item->title}}
-                    </a>
-                    <span class="subaction">
-                        <a href="{{url('admin/cms/delete',$item->id)}}">Löschen</a>
-                        <a href="#">Vorschau</a>
-                        <a href="{{url('admin/cms/status',$item->id)}}">
-                            {{$item->hidden ? 'Veröffentlichen' : 'Verstecken'}}
-                        </a>
-
-                    </span>
-
-                </td>
-            </tr>
-            @endforeach
+            @forelse ($collection as $item)
+                <tr>
+                    <td>
+                        {{ $item->title }}
+                    </td>
+                    <td>
+                        {{ $item->filename }}
+                    </td>
+                    <td>
+                        <a href="{{ url('admin/cms/edit', $item->id) }}">{{ __('edit') }}</a>
+                    </td>
+                    <td>
+                        <a href="{{ url('admin/cms/delete', $item->id) }}">{{ __('delete') }}</a>
+                    </td>
+                </tr>
+            @empty
         </tbody>
     </table>
-
-
-</div>
+    {{ __('No Pages available') }}
+    @endforelse
 @endsection

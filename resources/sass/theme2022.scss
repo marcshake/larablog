@@ -1,0 +1,55 @@
+@import "normalize.css";
+@import "skeleton.css";
+@import "component-iframe";
+@import "colors";
+@import "navbar";
+@import "fonts";
+html {
+    font-size: 16px;
+}
+body {
+    font-size: 1rem;
+    font-family: "Open Sans", sans-serif;
+}
+
+h1 {
+    font-size: 1.5rem;
+}
+h2 {
+    font-size: 1.3rem;
+}
+h3 {
+    font-size: 1.1rem;
+}
+h4 {
+    font-size: 1rem;
+}
+img {
+    width: 100%;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+.cleared {
+    clear: both;
+}
+
+.bottomborder {
+    border-bottom: #aaa solid 1px;
+}
+.spaced {
+    margin-bottom:2em;
+}
+
+.tags {
+    font-size:.75em;
+}
+
+.component-footer {
+    margin-top:2em;
+    background:$larablog-3-hex;
+    color:$larablog-4-hex;
+}
