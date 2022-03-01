@@ -861,7 +861,7 @@ there.
 
 body {
   background-color: #FBF8F1;
-  color: #54BAB9;
+  color: #307070;
 }
 
 a {
@@ -895,7 +895,7 @@ a:hover {
 .navBar a {
   padding: 0.25em 1em;
   float: left;
-  color: #54BAB9;
+  color: #307070;
 }
 
 .navBar a:hover {
