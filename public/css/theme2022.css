@@ -860,16 +860,16 @@ there.
 }
 
 body {
-  background-color: #f2f2f2;
-  color: #1b1259;
+  background-color: #FBF8F1;
+  color: #54BAB9;
 }
 
 a {
-  color: #1730bf;
+  color: #606060;
 }
 
 a:hover {
-  color: #11238c;
+  color: #303030;
 }
 
 .navBar {
@@ -895,12 +895,12 @@ a:hover {
 .navBar a {
   padding: 0.25em 1em;
   float: left;
-  color: #1b1259;
+  color: #54BAB9;
 }
 
 .navBar a:hover {
   background-color: #f2eb80;
-  color: #1730bf;
+  color: #606060;
 }
 
 @media (max-width: 1000px) {
@@ -978,8 +978,12 @@ a {
 
 .component-footer {
   margin-top: 2em;
-  background: #11238c;
+  background: #303030;
   color: #f2eb80;
+}
+
+.maincontents {
+  min-height: 90vh;
 }
 
 
