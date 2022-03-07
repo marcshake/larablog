@@ -10,7 +10,7 @@
     <div class="container contents">
         <article>
             <div class="headimage">
-                <img src="{{ $posting->mainImage? asset(env('IMAGE_PATH', '') . 'storage/uploads/' . $posting->mainImagePath->filename): asset('images/wall.jpg') }}"
+                <img class="img-fluid" src="{{ $posting->mainImage? asset(env('IMAGE_PATH', '') . 'storage/uploads/' . $posting->mainImagePath->filename): asset('images/wall.jpg') }}"
                     alt="{{ $posting->title }}" width="100" height="200">
             </div>
             <h1>{{ $posting->title }}</h1>
