@@ -17,8 +17,9 @@ class HomeController extends Controller
     public function index()
     {
         $home = CmsPages::getHomepage();
+        $posts = BlogPosts::blogHome();
 
-        return view('theme2021.home', ['home'=>$home]);
+        return view('theme2021.home', ['home'=>$home,'blogposts'=>$posts]);
     }
 
     private function shorten($string)
